@@ -18,8 +18,6 @@
         </header>
         <main id="main" class="main" role="main">
             $Layout
-            
-            <p>Test to branch hea</p>
         </main>
         <% include PageShowcase %>
         <footer class="footer-site" role="contentinfo">
