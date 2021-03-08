@@ -1,0 +1,120 @@
+/** ----------------------------------------------------------
+ *
+ * Contains the custom style of the page.
+ * Acts as the main stylesheet for theme.
+ *
+ *		Include your notes or table of contents below....
+ *		Include color hex's or values of your grid
+ *
+ *		1. Header
+ *		2. Body
+ *      - Sections
+ *		3. Forms
+ *    4. Fields
+ *    5. Global Settings
+ *		6. Footer
+ *      - Pre-footer
+ *      - Post-footer
+ *
+ * @author Institute of Innovation + Improvement
+ * ------------------------------------------------------- */
+
+/**
+  Header
+*/
+header {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  .site-header {
+    .site-header-brand {
+      .site-logo {
+        position: relative;
+        height: 141px;
+        width: 100%;
+        max-width: 300px;
+        z-index: 2;
+      }
+    }
+  }
+}
+
+
+/**
+  Body
+*/
+body {
+  &.page-background {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  &.dark-theme {
+    color: $white !important;
+    &:before {
+      position: fixed;
+      content: "";
+      top: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+  }
+}
+
+//Sections
+.page-section {
+  .section-wrapper {
+    padding: 15vh 100px;
+    .section-inner {
+      width: 100%;
+    }
+  }
+  //Accordion Section
+
+  //Finalist Section
+
+  //Gallery Section
+
+  //Judges Section
+  &.JudgesSection {
+
+  }
+
+  //Winners Section
+}
+
+
+/**
+  Global Settings
+*/
+
+//Typography
+a {
+  color: #fff !important;
+}
+
+.theme-button {
+  color: #fff;
+  border: 2px solid #fff;
+  background-color: transparent;
+  @include transition();
+  &:hover {
+    color: #000;
+    background-color: #fff;
+  }
+}
+
+//Layout
+.large-height {
+  min-height: 100vh;
+}
+
+.medium-height {
+  min-height: 85vh;
+}
+
+.small-height {
+  min-height: 50vh;
+}

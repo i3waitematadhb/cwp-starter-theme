@@ -18,6 +18,7 @@ import sitemap from './components/sitemap';
 import search from './components/search';
 import form from './components/form';
 import img from './components/img';
+import mod from './components/mod';
 
 navigation();
 content();
@@ -25,4 +26,5 @@ sitemap();
 search();
 form();
 img();
+mod();
 /* eslint-enable */
