@@ -11,6 +11,9 @@ export default function () {
   function initializeDocument()
   {
     animation();
+    accordion();
+    masonryLayout();
+    navigation();
   }
 
   function animation()
@@ -28,6 +31,44 @@ export default function () {
       }
     );
     wow.init();
+  }
+
+  function accordion()
+  {
+    let accordion = $('.accordion-btn');
+    accordion.click(function() {
+      let panel = $(this).next('.panel');
+      if ($(this).hasClass('active')) {
+        $(this).removeClass('active');
+        panel.css('max-height', '0px');
+      } else {
+        $(this).addClass('active');
+        panel.css('max-height', panel[0].scrollHeight + "px");
+      }
+    });
+  }
+
+  function masonryLayout()
+  {
+
+  }
+
+  function navigation()
+  {
+    let nav = $('.navbar-nav');
+    let navItem = nav.find('.nav-item');
+    navItem.mouseover(function () {
+      $(this).addClass('hover-active');
+      navItem.each(function() {
+        if (!$(this).hasClass('hover-active')) {
+          $(this).addClass('hover-inactive');
+        }
+      });
+    }).mouseleave(function (){
+      navItem.each(function() {
+        $(this).removeClass('hover-inactive hover-active');
+      });
+    });
   }
 }
 

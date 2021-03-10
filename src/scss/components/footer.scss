@@ -1,7 +1,15 @@
 .footer-site {
-  border-top: 1px solid $gray-300;
-  margin-top: 10px;
-  padding: 30px 0;
+  padding: 30px 100px;
+  hr {
+    border-color: #fff;
+  }
+  .footer-logo {
+    max-width: 180px;
+    height: 100px;
+  }
+  .footer-govt-logo {
+    filter: invert(1);
+  }
 }
 
 .footer-nav-links a {

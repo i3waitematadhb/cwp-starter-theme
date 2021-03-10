@@ -1,7 +1,7 @@
 <div class="main-nav">
-    <nav class="navbar navbar-expand-md navbar-light bg-white" aria-label="<%t CWP_Theme.MAIN 'Main' %>" role="navigation">
+    <nav class="navbar navbar-expand-md" aria-label="<%t CWP_Theme.MAIN_NAVIGATION 'Main navigation' %>">
         <div class="container">
-            <div class="collapse navbar-collapse" id="navbar-collapse">
+            <div class="collapse navbar-collapse justify-content-end" id="navbar-collapse">
                 <div class="d-block d-md-none border-bottom border-top">
                     <form class="form-inline" action="/search/SearchForm">
                         <% include HeaderSearch ExtraClass="col-12 pt-2 pb-2" %>
@@ -10,7 +10,7 @@
                 <ul class="nav navbar-nav" role="menubar">
                     <% loop Menu(1) %>
                         <li role="menuitem" class="nav-item $FirstLast $LinkingMode<% if $LinkingMode = current %> active<% end_if %><% if $Children %> dropdown <% end_if %>">
-                            <a href="$Link" <% if $LinkingMode = current %>aria-current="page"<% end_if %> class="nav-link $LinkingMode">$MenuTitle.XML</a>
+                            <a href="$Link" <% if $LinkingMode = current %>aria-label="current page"<% end_if %> class="nav-link $LinkingMode">$MenuTitle.XML</a>
 
                             <% if $Children %>
                                 <button class="btn btn-link float-right navbar-touch-caret" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">

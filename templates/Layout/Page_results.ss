@@ -75,5 +75,4 @@
             </section>
         </div>
     </div>
-    <% include PageUtilities %>
 </div>

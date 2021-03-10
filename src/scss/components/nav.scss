@@ -8,10 +8,48 @@
   }
 
   .nav-link {
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: #979797;
     padding: $navbar-padding-y $navbar-padding-x;
+    &.section {
+      color: #fff;
+    }
   }
 
   .navbar-nav {
+    .nav-item {
+      margin: auto 7px;
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+      &:hover {
+        .nav-link,
+        .btn-link{
+          color: #fff;
+        }
+      }
+      &.section {
+        .btn-link {
+          color: #fff;
+        }
+      }
+      &.hover-active {
+        .nav-link,
+        .btn-link{
+          color: #fff !important;
+        }
+      }
+      &.hover-inactive {
+        .nav-link,
+        .btn-link{
+          color: #979797 !important;
+        }
+      }
+    }
     // Remove background color from open dropdown
     > .open > a {
       &,
@@ -25,7 +63,7 @@
       &,
       &:hover,
       &:focus {
-        background-color: $gray-100;
+        color: #fff;
       }
     }
   }
@@ -41,11 +79,11 @@
       .navbar-touch-caret,
       &:hover .navbar-touch-caret,
       &:focus .navbar-touch-caret {
-        background: $gray-100;
+       color: #fff;
 
         &:hover,
         &:focus {
-          background-color: $gray-100;
+          background-color: transparent;
         }
       }
     }
@@ -59,30 +97,41 @@
 
   // All sub-navigation menus
   .dropdown-menu {
+    padding: 0;
     border-width: 0;
     margin-top: 0;
+    .active {
+      .dropdown-item {
+        color: #000;
+        background-color: #fff;
+      }
+    }
   }
 
   .dropdown-item {
+    letter-spacing: 1px;
+    padding: 16px 20px;
+    color: #fff;
+    background-color: #000;
+    @include transition;
     // All sub-navigation menu items
-    color: $navbar-light-color;
-
     &:hover,
     &:focus {
-      color: $navbar-light-hover-color;
+      background-color: #fff;
+      color: #000;
       text-decoration: none;
-    }
-
-    &:active {
-      background-color: $gray-100;
     }
   }
 
   .active {
     // Active (currently selected) sub-navigation menu items
     .dropdown-item {
-      background-color: $gray-100;
-      color: $navbar-light-hover-color;
+      color: #fff;
+      background-color: #000;
+      &:hover {
+        color: #000;
+        background-color: #fff;
+      }
     }
   }
 }
@@ -110,7 +159,7 @@
   .main-nav {
     .dropdown {
       // Make room for the caret to be displayed
-      padding-right: $navbar-padding-x * 1.75;
+      padding-right: $navbar-padding-x * 1.25;
     }
 
     .dropdown-menu {

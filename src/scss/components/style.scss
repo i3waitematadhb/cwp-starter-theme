@@ -71,7 +71,45 @@ body {
       width: 100%;
     }
   }
+  &:first-child {
+    .section-wrapper {
+      padding-bottom: 50px;
+    }
+  }
   //Accordion Section
+  &.AccordionSection {
+    .accordion-btn {
+      position: relative;
+      color: #fff;
+      width: 100%;
+      min-width: 350px;
+      background-color: transparent;
+      padding: 40px 30px;
+      cursor: pointer;
+      text-align: left;
+      border: 0;
+      border-top: 1px solid;
+      outline: none !important;
+      i {
+        position: absolute;
+        right: 32px;
+        top: 40%;
+      }
+      &.active {
+        i {
+          transform: rotate(180deg);
+        }
+      }
+    }
+    .panel {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+      &--content {
+        padding: 0 30px 40px 30px;
+      }
+    }
+  }
 
   //Finalist Section
 
@@ -87,12 +125,23 @@ body {
 
 
 /**
+  Forms
+*/
+
+
+
+/**
+  Fields
+*/
+
+
+/**
   Global Settings
 */
 
 //Typography
 a {
-  color: #fff !important;
+  @include transition();
 }
 
 .theme-button {
@@ -103,6 +152,9 @@ a {
   &:hover {
     color: #000;
     background-color: #fff;
+    a {
+      color: #000 !important;
+    }
   }
 }
 

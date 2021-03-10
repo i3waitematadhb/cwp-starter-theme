@@ -7550,6 +7550,9 @@ __webpack_require__.r(__webpack_exports__);
 
   function initializeDocument() {
     animation();
+    accordion();
+    masonryLayout();
+    navigation();
   }
 
   function animation() {
@@ -7567,6 +7570,40 @@ __webpack_require__.r(__webpack_exports__);
 
     });
     wow.init();
+  }
+
+  function accordion() {
+    var accordion = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.accordion-btn');
+    accordion.click(function () {
+      var panel = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).next('.panel');
+
+      if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).hasClass('active')) {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).removeClass('active');
+        panel.css('max-height', '0px');
+      } else {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).addClass('active');
+        panel.css('max-height', panel[0].scrollHeight + "px");
+      }
+    });
+  }
+
+  function masonryLayout() {}
+
+  function navigation() {
+    var nav = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.navbar-nav');
+    var navItem = nav.find('.nav-item');
+    navItem.mouseover(function () {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).addClass('hover-active');
+      navItem.each(function () {
+        if (!jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).hasClass('hover-active')) {
+          jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).addClass('hover-inactive');
+        }
+      });
+    }).mouseleave(function () {
+      navItem.each(function () {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).removeClass('hover-inactive hover-active');
+      });
+    });
   }
 });
 /* eslint-enable */

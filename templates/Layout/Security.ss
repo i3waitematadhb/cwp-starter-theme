@@ -20,4 +20,3 @@
         </section>
     </div>
 </div>
-<% include PageUtilities %>

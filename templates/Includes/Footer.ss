@@ -1,5 +1,6 @@
-<div class="container">
-    <div class="row justify-content-between">
+<% include PageUtilities %>
+<div class="container-fluid p-0">
+    <div class="row no-gutters justify-content-between">
         <% if $Footer.Children %>
             <nav class="footer-nav-links col-auto" aria-label="<%t CWP_Theme.FOOTER 'Footer' %>" role="navigation">
                 <% loop $Footer.Children %>
@@ -27,14 +28,14 @@
 
     <hr class="mb-4 mt-4">
 
-    <div class="row justify-content-between">
+    <div class="row no-gutters justify-content-between align-items-center pt-3">
         <div class="col-auto">
-            <p>
-                <small>&copy; $CurrentDatetime.Format(y) $SiteConfig.Title</small>
-            </p>
+            <a href="$BaseURL"><img src="$resourceURL("themes/starter/images/New-WHEA-Logo-C.svg")" class="footer-logo mr-md-4" alt="Waitemata DHB Health Excellence Awards Logo"></a>
+            <a href="https://www.waitematadhb.govt.nz/" target="_blank" rel="nofollow"><img src="$resourceURL("themes/starter/images/WaitemataLogo.svg")" class="footer-logo" alt="Waitemata DHB Logo"></a>
         </div>
+
         <div class="col-auto">
-            <a href="https://www.govt.nz/" class="footer-govt-logo">
+            <a href="https://www.govt.nz/" target="_blank" class="footer-govt-logo">
                 <img src="$resourceURL('themes/starter/images/newzealand-government-footer.png')"
                     width="210"
                     alt="<%t CWP_Footer.GovAlt 'newzealand.govt.nz - connecting you to New Zealand central &amp; local government services' %>"
