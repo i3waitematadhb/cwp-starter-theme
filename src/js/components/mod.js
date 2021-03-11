@@ -14,6 +14,7 @@ export default function () {
     accordion();
     masonryLayout();
     navigation();
+    judgesProfile();
   }
 
   function animation()
@@ -40,10 +41,26 @@ export default function () {
       let panel = $(this).next('.panel');
       if ($(this).hasClass('active')) {
         $(this).removeClass('active');
+        panel.removeClass('active');
         panel.css('max-height', '0px');
       } else {
         $(this).addClass('active');
         panel.css('max-height', panel[0].scrollHeight + "px");
+      }
+    });
+  }
+
+  function judgesProfile()
+  {
+    $('.show-hide--btn').click(function() {
+      if ($(this).hasClass('active')) {
+        $(this).removeClass('active');
+        $(this).find('span').text('Show more');
+        $(this).next('.judge-blurb').fadeOut();
+      } else {
+        $(this).addClass('active');
+        $(this).find('span').text('Hide');
+        $(this).next('.judge-blurb').fadeIn();
       }
     });
   }

@@ -23,8 +23,18 @@
   Header
 */
 header {
-  margin-top: 100px;
-  margin-bottom: 100px;
+  @media only screen and (min-width: 992px) {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+  @media only screen and (max-width: 991px) and (min-width: 576px) {
+    margin-top: 70px;
+    margin-bottom: 10px;
+  }
+  @media only screen and (max-width: 575px) {
+    margin-top: 50px;
+    margin-bottom: 10px;
+  }
   .site-header {
     .site-header-brand {
       .site-logo {
@@ -63,10 +73,24 @@ body {
   }
 }
 
+//Main
+#main.main {
+  min-height: 100vh;
+}
+
 //Sections
 .page-section {
+  position: relative;
   .section-wrapper {
-    padding: 15vh 100px;
+    @media only screen and (min-width: 992px) {
+      padding: 15vh 100px;
+    }
+    @media only screen and (max-width: 991px) and (min-width: 576px) {
+      padding: 12vh 50px;
+    }
+    @media only screen and (max-width: 575px) {
+      padding: 10vh 20px;
+    }
     .section-inner {
       width: 100%;
     }
@@ -110,14 +134,113 @@ body {
       }
     }
   }
-
+  //Category Section
+  &.CategorySection {
+    .category-item {
+      &:nth-child(odd) {
+        .category-item__content {
+          @media only screen and (min-width: 992px) {
+            padding-right: 50px;
+          }
+        }
+      }
+      &:nth-child(even) {
+        .category-item__content {
+          @media only screen and (min-width: 992px) {
+            padding-left: 50px;
+          }
+        }
+      }
+      &:not(:nth-last-of-type(-n+2)) {
+        .category-item__content {
+          @media only screen and (min-width: 992px) {
+            margin-bottom: 200px;
+          }
+          @media only screen and (max-width: 991px) {
+            margin-bottom: 80px;
+          }
+        }
+      }
+    }
+  }
   //Finalist Section
-
+  &.FinalistsSection {
+    .accordion-btn {
+      position: relative;
+      color: #fff;
+      width: 100%;
+      min-width: 350px;
+      background-color: transparent;
+      padding: 40px 30px;
+      cursor: pointer;
+      text-align: left;
+      border: 0;
+      border-top: 1px solid;
+      outline: none !important;
+      i {
+        position: absolute;
+        right: 32px;
+        top: 40%;
+      }
+      &.active {
+        i {
+          transform: rotate(180deg);
+        }
+      }
+    }
+    .panel {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+      &--content {
+        padding: 0 30px 40px 30px;
+      }
+      &.active {
+        max-height: 100%;
+      }
+    }
+  }
   //Gallery Section
 
   //Judges Section
   &.JudgesSection {
-
+    .judge-details {
+      margin-top: 40px;
+      text-align: center;
+      .judge-image {
+        background-size: cover;
+        width: 100%;
+        max-width: 280px;
+        height: 280px;
+        margin: auto auto 20px auto;
+        border-radius: 50%;
+        img {
+          visibility: hidden;
+        }
+      }
+      .show-hide--btn {
+        font-size: 13px;
+        color: #fff;
+        margin-top: 14px;
+        padding: 4px 12px;
+        border: 1px solid;
+        border-radius: 20px;
+        background-color: transparent;
+        @include transition();
+        &:hover,
+        &.active {
+          background-color: #fff;
+          color: #000;
+        }
+      }
+      .judge-blurb {
+        display: none;
+        margin-top: 20px;
+        p {
+          font-size: 15px;
+        }
+      }
+    }
   }
 
   //Winners Section

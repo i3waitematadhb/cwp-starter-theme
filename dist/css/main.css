@@ -28437,9 +28437,23 @@ body > header .open > a:focus {
 /**
   Header
 */
-header {
-  margin-top: 100px;
-  margin-bottom: 100px;
+@media only screen and (min-width: 992px) {
+  header {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+}
+@media only screen and (max-width: 991px) and (min-width: 576px) {
+  header {
+    margin-top: 70px;
+    margin-bottom: 10px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  header {
+    margin-top: 50px;
+    margin-bottom: 10px;
+  }
 }
 header .site-header .site-header-brand .site-logo {
   position: relative;
@@ -28471,8 +28485,27 @@ body.dark-theme:before {
   z-index: -1;
 }
 
-.page-section .section-wrapper {
-  padding: 15vh 100px;
+#main.main {
+  min-height: 100vh;
+}
+
+.page-section {
+  position: relative;
+}
+@media only screen and (min-width: 992px) {
+  .page-section .section-wrapper {
+    padding: 15vh 100px;
+  }
+}
+@media only screen and (max-width: 991px) and (min-width: 576px) {
+  .page-section .section-wrapper {
+    padding: 12vh 50px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .page-section .section-wrapper {
+    padding: 10vh 20px;
+  }
 }
 .page-section .section-wrapper .section-inner {
   width: 100%;
@@ -28510,6 +28543,101 @@ body.dark-theme:before {
 .page-section.AccordionSection .panel--content {
   padding: 0 30px 40px 30px;
 }
+@media only screen and (min-width: 992px) {
+  .page-section.CategorySection .category-item:nth-child(odd) .category-item__content {
+    padding-right: 50px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .page-section.CategorySection .category-item:nth-child(even) .category-item__content {
+    padding-left: 50px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .page-section.CategorySection .category-item:not(:nth-last-of-type(-n+2)) .category-item__content {
+    margin-bottom: 200px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .page-section.CategorySection .category-item:not(:nth-last-of-type(-n+2)) .category-item__content {
+    margin-bottom: 80px;
+  }
+}
+.page-section.FinalistsSection .accordion-btn {
+  position: relative;
+  color: #fff;
+  width: 100%;
+  min-width: 350px;
+  background-color: transparent;
+  padding: 40px 30px;
+  cursor: pointer;
+  text-align: left;
+  border: 0;
+  border-top: 1px solid;
+  outline: none !important;
+}
+.page-section.FinalistsSection .accordion-btn i {
+  position: absolute;
+  right: 32px;
+  top: 40%;
+}
+.page-section.FinalistsSection .accordion-btn.active i {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.page-section.FinalistsSection .panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+.page-section.FinalistsSection .panel--content {
+  padding: 0 30px 40px 30px;
+}
+.page-section.FinalistsSection .panel.active {
+  max-height: 100%;
+}
+.page-section.JudgesSection .judge-details {
+  margin-top: 40px;
+  text-align: center;
+}
+.page-section.JudgesSection .judge-details .judge-image {
+  background-size: cover;
+  width: 100%;
+  max-width: 280px;
+  height: 280px;
+  margin: auto auto 20px auto;
+  border-radius: 50%;
+}
+.page-section.JudgesSection .judge-details .judge-image img {
+  visibility: hidden;
+}
+.page-section.JudgesSection .judge-details .show-hide--btn {
+  font-size: 13px;
+  color: #fff;
+  margin-top: 14px;
+  padding: 4px 12px;
+  border: 1px solid;
+  border-radius: 20px;
+  background-color: transparent;
+  transition: all 0.2s ease-in-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  .page-section.JudgesSection .judge-details .show-hide--btn {
+    transition: none;
+  }
+}
+.page-section.JudgesSection .judge-details .show-hide--btn:hover, .page-section.JudgesSection .judge-details .show-hide--btn.active {
+  background-color: #fff;
+  color: #000;
+}
+.page-section.JudgesSection .judge-details .judge-blurb {
+  display: none;
+  margin-top: 20px;
+}
+.page-section.JudgesSection .judge-details .judge-blurb p {
+  font-size: 15px;
+}
+
 /**
   Forms
 */

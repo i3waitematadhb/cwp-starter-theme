@@ -7553,6 +7553,7 @@ __webpack_require__.r(__webpack_exports__);
     accordion();
     masonryLayout();
     navigation();
+    judgesProfile();
   }
 
   function animation() {
@@ -7579,10 +7580,25 @@ __webpack_require__.r(__webpack_exports__);
 
       if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).hasClass('active')) {
         jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).removeClass('active');
+        panel.removeClass('active');
         panel.css('max-height', '0px');
       } else {
         jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).addClass('active');
         panel.css('max-height', panel[0].scrollHeight + "px");
+      }
+    });
+  }
+
+  function judgesProfile() {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.show-hide--btn').click(function () {
+      if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).hasClass('active')) {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).removeClass('active');
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).find('span').text('Show more');
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).next('.judge-blurb').fadeOut();
+      } else {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).addClass('active');
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).find('span').text('Hide');
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).next('.judge-blurb').fadeIn();
       }
     });
   }
