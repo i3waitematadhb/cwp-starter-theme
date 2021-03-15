@@ -1,6 +1,9 @@
 /* eslint-disable */
 import $ from 'jquery';
 import WOW from 'wow.js';
+import jQueryBridget from 'jquery-bridget';
+import Masonry from 'masonry-layout';
+import isotope from 'isotope-layout';
 
 export default function () {
   $(document).ready(function ()
@@ -67,7 +70,14 @@ export default function () {
 
   function masonryLayout()
   {
-
+    // make Masonry a jQuery plugin
+    jQueryBridget( 'masonry', Masonry, $ );
+    // now you can use $().masonry()
+    $('.grid').masonry({
+      itemSelector: '.masonry-grid', // use a separate class for itemSelector, other than .col-
+      columnWidth: '.grid-sizer',
+      percentPosition: true
+    });
   }
 
   function navigation()
