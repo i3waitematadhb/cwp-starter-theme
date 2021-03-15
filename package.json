@@ -22,10 +22,14 @@
     "bootstrap": "^4.6.0",
     "font-awesome": "^4.7.0",
     "imagemin": "^6.0.0",
+    "isotope-layout": "^3.0.6",
     "jquery": "^3.6.0",
+    "jquery-bridget": "^3.0.0",
     "jquery-highlight": "^3.3.0",
+    "masonry-layout": "^4.2.2",
     "path": "^0.12.7",
     "popper.js": "^1.16.1",
+    "rfs": "^9.0.3",
     "wow.js": "^1.2.2"
   },
   "devDependencies": {

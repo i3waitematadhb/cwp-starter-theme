@@ -29,7 +29,7 @@
     <hr class="mb-4 mt-4">
 
     <div class="row no-gutters justify-content-between align-items-center pt-3">
-        <div class="col-auto">
+        <div class="col-auto pb-4">
             <a href="$BaseURL"><img src="$resourceURL("themes/starter/images/New-WHEA-Logo-C.svg")" class="footer-logo mr-md-4" alt="Waitemata DHB Health Excellence Awards Logo"></a>
             <a href="https://www.waitematadhb.govt.nz/" target="_blank" rel="nofollow"><img src="$resourceURL("themes/starter/images/WaitemataLogo.svg")" class="footer-logo" alt="Waitemata DHB Logo"></a>
         </div>

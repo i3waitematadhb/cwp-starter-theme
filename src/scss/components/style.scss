@@ -39,10 +39,17 @@ header {
     .site-header-brand {
       .site-logo {
         position: relative;
-        height: 141px;
+
         width: 100%;
         max-width: 300px;
         z-index: 2;
+        @media only screen and (min-width: 576px) {
+          height: 141px;
+        }
+        @media only screen and (max-width: 575px) {
+          height: 110px;
+          left: -60px;
+        }
       }
     }
   }
@@ -97,42 +104,17 @@ body {
   }
   &:first-child {
     .section-wrapper {
-      padding-bottom: 50px;
+      @media only screen and (min-width: 576px) {
+        padding-bottom: 50px;
+      }
+      @media only screen and (max-width: 575px) {
+        padding-bottom: 10px;
+      }
     }
   }
   //Accordion Section
   &.AccordionSection {
-    .accordion-btn {
-      position: relative;
-      color: #fff;
-      width: 100%;
-      min-width: 350px;
-      background-color: transparent;
-      padding: 40px 30px;
-      cursor: pointer;
-      text-align: left;
-      border: 0;
-      border-top: 1px solid;
-      outline: none !important;
-      i {
-        position: absolute;
-        right: 32px;
-        top: 40%;
-      }
-      &.active {
-        i {
-          transform: rotate(180deg);
-        }
-      }
-    }
-    .panel {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.2s ease-out;
-      &--content {
-        padding: 0 30px 40px 30px;
-      }
-    }
+
   }
   //Category Section
   &.CategorySection {
@@ -165,40 +147,7 @@ body {
   }
   //Finalist Section
   &.FinalistsSection {
-    .accordion-btn {
-      position: relative;
-      color: #fff;
-      width: 100%;
-      min-width: 350px;
-      background-color: transparent;
-      padding: 40px 30px;
-      cursor: pointer;
-      text-align: left;
-      border: 0;
-      border-top: 1px solid;
-      outline: none !important;
-      i {
-        position: absolute;
-        right: 32px;
-        top: 40%;
-      }
-      &.active {
-        i {
-          transform: rotate(180deg);
-        }
-      }
-    }
-    .panel {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.2s ease-out;
-      &--content {
-        padding: 0 30px 40px 30px;
-      }
-      &.active {
-        max-height: 100%;
-      }
-    }
+
   }
   //Gallery Section
 
@@ -262,6 +211,52 @@ body {
   Global Settings
 */
 
+//Accordion
+.accordion-btn {
+  position: relative;
+  color: #fff;
+  width: 100%;
+  min-width: 350px;
+  background-color: transparent;
+  cursor: pointer;
+  text-align: left;
+  border: 0;
+  border-top: 1px solid;
+  outline: none !important;
+  @media only screen and (min-width: 576px) {
+    padding: 40px 30px;
+  }
+  @media only screen and (max-width: 575px) {
+    padding: 40px 10px;
+  }
+  i {
+    position: absolute;
+    right: 32px;
+    top: 40%;
+  }
+  &.active {
+    i {
+      transform: rotate(180deg);
+    }
+  }
+}
+.panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  &--content {
+    @media only screen and (min-width: 576px) {
+      padding: 0 30px 40px 30px;
+    }
+    @media only screen and (max-width: 575px) {
+      padding: 0 10px 20px 10px;
+    }
+  }
+  &.active {
+    max-height: 100%;
+  }
+}
+
 //Typography
 a {
   @include transition();
@@ -280,16 +275,70 @@ a {
     }
   }
 }
+.display-4 {
+  @media only screen and (max-width: 575px) {
+    font-size: 2.5rem;
+  }
+}
 
+.display-5 {
+  @media only screen and (max-width: 575px) {
+    font-size: 2rem;
+  }
+}
+
+.h1,h1 {
+  @media only screen and (max-width: 575px) {
+    font-size: 2rem;
+  }
+}
+.h2,h2 {
+  @media only screen and (max-width: 575px) {
+    font-size: 1.6rem;
+  }
+}
+.h3,h3 {
+  @media only screen and (max-width: 575px) {
+    font-size: 1.4rem;
+  }
+}
+.h4,h4 {
+  @media only screen and (max-width: 575px) {
+    font-size: 1.2rem;
+  }
+}
+.h5,h5 {
+  @media only screen and (max-width: 575px) {
+    font-size: 1rem;
+  }
+}
+.h6,h6 {
+
+}
 //Layout
 .large-height {
-  min-height: 100vh;
+  @media only screen and (min-width: 576px) {
+    min-height: 100vh;
+  }
+  @media only screen and (max-width: 575px) {
+    min-height: 60vh;
+  }
 }
 
 .medium-height {
-  min-height: 85vh;
+  @media only screen and (min-width: 576px) {
+    min-height: 85vh;
+  }
+  @media only screen and (max-width: 575px) {
+    min-height: 50vh;
+  }
 }
 
 .small-height {
-  min-height: 50vh;
+  @media only screen and (min-width: 576px) {
+    min-height: 50vh;
+  }
+  @media only screen and (max-width: 575px) {
+    min-height: 30vh;
+  }
 }
