@@ -39,16 +39,16 @@ header {
     .site-header-brand {
       .site-logo {
         position: relative;
-
         width: 100%;
         max-width: 300px;
         z-index: 2;
         @media only screen and (min-width: 576px) {
           height: 141px;
+          width: 300px;
         }
         @media only screen and (max-width: 575px) {
           height: 110px;
-          left: -60px;
+          left: -50px;
         }
       }
     }
@@ -96,7 +96,7 @@ body {
       padding: 12vh 50px;
     }
     @media only screen and (max-width: 575px) {
-      padding: 10vh 20px;
+      padding: 8vh 20px;
     }
     .section-inner {
       width: 100%;
@@ -150,7 +150,13 @@ body {
 
   }
   //Gallery Section
-
+  &.GallerySection {
+    .grid {
+      .flexmasonry-item {
+        padding: 10px;
+      }
+    }
+  }
   //Judges Section
   &.JudgesSection {
     .judge-details {

@@ -1,0 +1,29 @@
+.hamburger {
+  float: right;
+  padding: 10px 5px;
+  outline: none !important;
+  z-index: 999;
+  @media only screen and (min-width: 1200px) {
+    display: none;
+  }
+  .hamburger-inner{
+    &,
+    &:before,
+    &:after{
+      width: 30px;
+      height: 2px;
+      background-color: #fff;
+    }
+  }
+  &.is-active {
+    .hamburger-inner {
+      &,
+      &:before,
+      &:after{
+        background-color: $white;
+        background-image: none;
+      }
+    }
+  }
+}
+

@@ -1,12 +1,12 @@
 <div class="main-nav">
-    <nav class="navbar navbar-expand-md" aria-label="<%t CWP_Theme.MAIN_NAVIGATION 'Main navigation' %>">
+    <nav class="navbar navbar-expand-xl" aria-label="<%t CWP_Theme.MAIN_NAVIGATION 'Main navigation' %>">
         <div class="container">
             <div class="collapse navbar-collapse justify-content-end" id="navbar-collapse">
-                <div class="d-block d-md-none border-bottom border-top">
-                    <form class="form-inline" action="/search/SearchForm">
-                        <% include HeaderSearch ExtraClass="col-12 pt-2 pb-2" %>
-                    </form>
-                </div>
+<%--                <div class="d-block d-md-none border-bottom border-top">--%>
+<%--                    <form class="form-inline" action="/search/SearchForm">--%>
+<%--                        <% include HeaderSearch ExtraClass="col-12 pt-2 pb-2" %>--%>
+<%--                    </form>--%>
+<%--                </div>--%>
                 <ul class="nav navbar-nav" role="menubar">
                     <% loop Menu(1) %>
                         <li role="menuitem" class="nav-item $FirstLast $LinkingMode<% if $LinkingMode = current %> active<% end_if %><% if $Children %> dropdown <% end_if %>">

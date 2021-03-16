@@ -8,10 +8,18 @@
   }
 
   .nav-link {
-    font-size: 18px;
     letter-spacing: 1px;
     color: #979797;
     padding: $navbar-padding-y $navbar-padding-x;
+    @media only screen and (min-width: 1331px) {
+      font-size: 18px;
+      padding: $navbar-padding-x;
+    }
+    @media only screen and (max-width: 1330px) {
+      font-size: 16px;
+      padding-right: 0.5rem;
+      padding-left: 0.5rem;
+    }
     &.section {
       color: #fff;
     }
@@ -19,7 +27,12 @@
 
   .navbar-nav {
     .nav-item {
-      margin: auto 7px;
+      @media only screen and (min-width: 1331px) {
+        margin: auto 7px;
+      }
+      @media only screen and (max-width: 1330px) {
+        margin: auto 2px;
+      }
       &:first-child {
         margin-left: 0;
       }
@@ -153,6 +166,15 @@
 
 .navbar-collapse {
   border-top: 0;
+  @media only screen and (max-width: 1130px) {
+
+  }
+  &.show {
+    background-color: #000;
+    .nav-item {
+      padding: 10px;
+    }
+  }
 }
 
 // Medium and up viewports
@@ -180,17 +202,20 @@
       }
     }
 
-    .nav-link {
-      padding: $navbar-padding-x;
-    }
-
     .navbar {
       border-bottom: 1px solid $navbar-light-toggler-border-color;
     }
   }
-
   .navbar-touch-caret {
-    padding: $navbar-padding-x;
     border-radius: 0;
+  }
+}
+
+.navbar-touch-caret {
+  @media only screen and (min-width: 1331px) {
+    padding: $navbar-padding-x;
+  }
+  @media only screen and (max-width: 1330px) {
+    padding: 0.5rem 1rem;
   }
 }
