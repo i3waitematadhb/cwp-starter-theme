@@ -135,12 +135,11 @@
     }
 
     .navbar {
-      border-bottom: 1px solid $navbar-light-toggler-border-color;
+      //border-bottom: 1px solid $navbar-light-toggler-border-color;
     }
   }
 
   .navbar-touch-caret {
     padding: $navbar-padding-x;
-    border-radius: 0;
   }
 }
