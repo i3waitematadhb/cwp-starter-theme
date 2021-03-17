@@ -12,9 +12,8 @@
         <% include Favicon %>
     </head>
     <body class="$ClassName">
-        <header role="banner">
+        <header>
             <% include Header %>
-            <% include MainNav %>
         </header>
         <main id="main" class="main" role="main">
             $Layout
@@ -23,7 +22,6 @@
         <footer class="footer-site" role="contentinfo">
             <% include Footer %>
         </footer>
-        <% require themedJavascript('dist/js/jquery.min.js') %>
         <% require themedJavascript('dist/js/main.js') %>
         <% include GoogleAnalytics %>
     </body>

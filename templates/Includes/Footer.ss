@@ -1,43 +1,55 @@
-<div class="container">
+<div class="container pt-4 pb-5">
     <div class="row justify-content-between">
-        <% if $Footer.Children %>
-            <nav class="footer-nav-links col-auto" aria-label="<%t CWP_Theme.FOOTER 'Footer' %>" role="navigation">
-                <% loop $Footer.Children %>
-                    <a href="$Link" class="$LinkingMode <% if $LinkingMode = current %> active<% end_if %>">
-                        $MenuTitle.XML
-                    </a>
-                <% end_loop %>
-            </nav>
-        <% end_if %>
-
-        <% if $SiteConfig.FacebookURL || $SiteConfig.TwitterUsername %>
-            <div class="footer-nav-links footer-social-links col-auto">
-                <% if $SiteConfig.TwitterUsername %>
-                    <a href="http://www.twitter.com/$SiteConfig.TwitterUsername">
-                        <%t CWP_Footer.FollowOnTwitter "Follow us on Twitter" %></a>
-                <% end_if %>
-
-                <% if $SiteConfig.FacebookURL %>
-                    <a href="http://www.facebook.com/$SiteConfig.FacebookURL">
-                        <%t CWP_Footer.FollowOnFacebook "Follow us on Facebook" %></a>
-                <% end_if %>
-            </div>
+        <% if $FooterVisibleItems %>
+            <% loop $FooterVisibleItems %>
+                <div class="col-md-auto col-sm-12">
+                    <div class="footer-item">
+                        <% if $ShowTitle %>
+                            <h5 class="item-title">$Name</h5>
+                        <% else %>
+                            <h5 class="item-title">&nbsp;</h5>
+                        <% end_if %>
+                        <div class="footer-content">
+                            <% if $ItemType == 'navigation' %>
+                                <% if $VisibleLinkItems %>
+                                    <ul>
+                                        <% loop $VisibleLinkItems %>
+                                            <li><a href="$Page.Link">$Title</a></li>
+                                        <% end_loop %>
+                                    </ul>
+                                <% end_if %>
+                            <% end_if %>
+                            <% if $ItemType == 'code' %>
+                                $EmbeddedCode.RAW
+                            <% end_if %>
+                            <% if $ItemType == 'logos' %>
+                                <% if $LogoItems %>
+                                    <% loop $LogoItems %>
+                                        <% if $WebsiteURL %><a href="$WebsiteURL"><% end_if %>
+                                        <img src="$LogoImage.URL" class="footer-image">
+                                        <% if $WebsiteURL %></a><% end_if %>
+                                    <% end_loop %>
+                                <% end_if %>
+                            <% end_if %>
+                        </div>
+                    </div>
+                </div>
+            <% end_loop %>
         <% end_if %>
     </div>
-
-    <hr class="mb-4 mt-4">
-
+</div>
+<div class="container-fluid bg-light-blue p-4">
     <div class="row justify-content-between">
         <div class="col-auto">
             <p>
-                <small>&copy; $CurrentDatetime.Format(y) $SiteConfig.Title</small>
+                <small>Copyright &copy; $Now.year $SiteConfig.Title</small>
             </p>
         </div>
         <div class="col-auto">
             <a href="https://www.govt.nz/" class="footer-govt-logo">
                 <img src="$resourceURL('themes/starter/images/newzealand-government-footer.png')"
-                    width="210"
-                    alt="<%t CWP_Footer.GovAlt 'newzealand.govt.nz - connecting you to New Zealand central &amp; local government services' %>"
+                     width="210"
+                     alt="<%t CWP_Footer.GovAlt 'newzealand.govt.nz - connecting you to New Zealand central &amp; local government services' %>"
                 />
             </a>
         </div>
