@@ -7856,6 +7856,62 @@ pre {
   font-size: 0.875rem;
 }
 
+.theme-text {
+  color: #004184;
+}
+
+.theme-text-darkgrey {
+  color: #6c768b;
+}
+
+.theme-button {
+  font-size: 16px;
+  text-align: center;
+  padding: 12px 15px;
+  min-width: 150px;
+  border: 0px;
+  border-radius: 50px;
+  color: #fff;
+  background: #004184;
+  background: linear-gradient(to right, #004184 0%, #59a0e9 40%, #59a0e9, #004184);
+  background-size: 300% 100%;
+  outline: none !important;
+  display: inline-block;
+  transition: all 0.2s ease-in-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  .theme-button {
+    transition: none;
+  }
+}
+
+.theme-button-light-blue {
+  background-color: #0072bf;
+  color: #fff;
+}
+
+.theme-button-alt {
+  font-size: 20px;
+  color: #fff;
+  background-color: #121f3e;
+  width: 100%;
+  padding: 15px;
+  border-radius: 50px !important;
+}
+.theme-button-alt:hover {
+  color: #121f3e;
+  background-color: #fff;
+}
+
+.theme-button-light {
+  background: #fff;
+  color: #004184 !important;
+}
+
+.bg-light-blue {
+  background-color: #0072bf;
+}
+
 body.mceContentBody a.ss-broken {
   background-color: #dc3545;
   border: 1px solid #dc3545;
