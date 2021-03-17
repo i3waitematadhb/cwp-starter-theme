@@ -5,7 +5,8 @@
 @import "./variables";
 
 // Third-party libraries
-@import "~font-awesome/scss/font-awesome";
+//@import "~font-awesome/scss/font-awesome";
+@import "!~@fortawesome/fontawesome-pro/css/all.css";
 
 @import "~bootstrap/scss/bootstrap";
 // sass-lint:enable clean-import-paths
@@ -15,6 +16,16 @@
 
 // Helpers
 @import "./utils/helpers";
+
+// Data Tables
+@import "~datatables.net-bs4/css/dataTables.bootstrap4.min.css";
+
+// Hamburger
+@import "~hamburgers/dist/hamburgers.css";
+@import "./components/hamburger-settings";
+
+// Apex Charts
+@import "./components/apexchart-settings";
 
 // Base theme components
 @import "./print";
@@ -31,4 +42,4 @@
 @import "./components/search";
 @import "./components/sitemap";
 @import "./components/buttons";
-
+@import "./components/style";
