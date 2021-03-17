@@ -39,16 +39,15 @@ header {
     .site-header-brand {
       .site-logo {
         position: relative;
-        width: 100%;
         max-width: 300px;
+        width: 300px;
         z-index: 2;
         @media only screen and (min-width: 576px) {
           height: 141px;
-          width: 300px;
         }
         @media only screen and (max-width: 575px) {
           height: 110px;
-          left: -50px;
+          left: -60px;
         }
       }
     }
