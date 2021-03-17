@@ -19,10 +19,14 @@ import search from './components/search';
 import form from './components/form';
 import img from './components/img';
 
+//Custom local components
+import mods from './components/mods';
+
 navigation();
 content();
 sitemap();
 search();
 form();
 img();
+mods();
 /* eslint-enable */
