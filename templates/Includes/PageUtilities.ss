@@ -8,7 +8,7 @@
                 <% end_if %>
                 <ul class="float-left list-inline">
                     <li class="list-inline-item">
-                        <a href="#" onclick="window.print(); return false;"><%t SilverStripe\\Forms\\GridField\\GridField.Print "Print" %></a>
+                        <i class="fal fa-print pr-2"></i><a href="#" onclick="window.print(); return false;"><%t SilverStripe\\Forms\\GridField\\GridField.Print "Print" %></a>
                     </li>
                     <%-- Uncomment this section to re-enable the PDF link in the template - see the documentation for
                     configuration instructions --%>

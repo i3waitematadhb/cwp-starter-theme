@@ -220,7 +220,7 @@ a.external {
   &::after {
     content: "\f08e";
     font-size: $font-size-sm;
-    font-family: FontAwesome;
+    font-family: $font-family-font-awesome-pro;
     position: relative;
     top: -3px;
     left: 3px;
@@ -236,7 +236,7 @@ a[href$=".DOCX"],
   &::before {
     margin-right: 5px;
     content: "\f016";
-    font-family: FontAwesome;
+    font-family: $font-family-font-awesome-pro;
   }
 }
 
@@ -248,7 +248,7 @@ a[href$=".XLSX"],
   &::before {
     margin-right: 5px;
     content: "\f1c3";
-    font-family: FontAwesome;
+    font-family: $font-family-font-awesome-pro;
   }
 }
 
@@ -262,7 +262,7 @@ a[href$=".ZIP"],
   &::before {
     margin-right: 5px;
     content: "\f1c6";
-    font-family: FontAwesome;
+    font-family: $font-family-font-awesome-pro;
   }
 }
 
@@ -272,7 +272,7 @@ a[href$=".EXE"],
   &::before {
     margin-right: 5px;
     content: "\f022";
-    font-family: FontAwesome;
+    font-family: $font-family-font-awesome-pro;
   }
 }
 
@@ -282,7 +282,7 @@ a[href$=".PDF"],
   &::before {
     margin-right: 5px;
     content: "\f1c1";
-    font-family: FontAwesome;
+    font-family: $font-family-font-awesome-pro;
   }
 }
 
@@ -311,4 +311,51 @@ pre {
 .meta-info {
   color: $text-muted;
   font-size: $font-size-sm;
+}
+.lineheight-1 {
+  line-height: 1.4em;
+}
+.lineheight-2 {
+  line-height: 1.6em;
+}
+.lineheight-3 {
+  line-height: 1.8em;
+}
+.spacing-1 {
+  letter-spacing: 1px;
+}
+.spacing-2 {
+  letter-spacing: 2px;
+}
+.text-bar {
+  position: relative;
+  &:after {
+    position: absolute;
+    border: 2px solid;
+  }
+}
+.display-5 {
+  font-size: $display5-size;
+  font-weight: $display5-weight;
+  line-height: $display-line-height;
+}
+.display-6 {
+  font-size: $display6-size;
+  font-weight: $display6-weight;
+  line-height: $display-line-height;
+}
+.text-color-green {
+  color: #8FC745 !important;
+}
+.text-color-blue {
+  color: #439BD5 !important;
+}
+.text-color-teal {
+  color: #01948A !important;
+}
+.text-color-orange {
+  color: #F79902 !important;
+}
+.text-color-red {
+  color: #dc1f26 !important;
 }

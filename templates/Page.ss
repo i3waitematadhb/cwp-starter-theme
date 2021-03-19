@@ -11,11 +11,7 @@
         <% require themedCSS('dist/css/main.css') %>
         <% include Favicon %>
     </head>
-    <body class="$ClassName">
-        <header role="banner">
-            <% include Header %>
-            <% include MainNav %>
-        </header>
+    <body class="$ClassName <% if $SiteConfig.PageBgImage %>bg-image<% end_if %>" <% if $SiteConfig.PageBgImage %>style="background-image: url('{$SiteConfig.PageBgImage.URL}');"<% end_if %>>
         <main id="main" class="main" role="main">
             $Layout
         </main>

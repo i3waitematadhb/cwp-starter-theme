@@ -25,12 +25,12 @@
         <% end_if %>
     </div>
 
-    <hr class="mb-4 mt-4">
-
     <div class="row justify-content-between">
         <div class="col-auto">
-            <p>
-                <small>&copy; $CurrentDatetime.Format(y) $SiteConfig.Title</small>
+            <p><img class="mr-1" src="$resourceURL('themes/starter/images/WDHB_logo.png')"
+                    width="100"
+                    alt="<%t CWP_Footer.WDHBLogoAlt 'Better, Best, Brilliant - Waitematā District Health Board' %>"
+            /> <small>Waitematā District Health Board - &copy; $Now.Year $SiteConfig.Title</small>
             </p>
         </div>
         <div class="col-auto">

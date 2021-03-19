@@ -272,7 +272,9 @@ $embed-responsive-aspect-ratios: join(
 // stylelint-disable value-keyword-case
 $font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
-$font-family-base:            $font-family-sans-serif !default;
+$font-family-font-awesome-pro: 'Font Awesome 5 Pro';
+$font-family-raleway:          'Raleway', sans-serif;
+$font-family-base:             $font-family-raleway !default;
 // stylelint-enable value-keyword-case
 
 $font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
@@ -305,11 +307,15 @@ $display1-size:               6rem !default;
 $display2-size:               5.5rem !default;
 $display3-size:               4.5rem !default;
 $display4-size:               3.5rem !default;
+$display5-size:               3rem !default;
+$display6-size:               2.7rem !default;
 
 $display1-weight:             300 !default;
 $display2-weight:             300 !default;
 $display3-weight:             300 !default;
 $display4-weight:             300 !default;
+$display5-weight:             300 !default;
+$display6-weight:             300 !default;
 $display-line-height:         $headings-line-height !default;
 
 $lead-font-size:              $font-size-base * 1.25 !default;
