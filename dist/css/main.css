@@ -24850,12 +24850,12 @@ body .main {
   font-weight: 700;
   margin-top: 10px;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 769px) {
   .navigation-container .navigation-items .nav-button p {
     font-size: 13px;
   }
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
   .navigation-container .navigation-items .nav-button p {
     font-size: 11px;
   }
@@ -24895,13 +24895,13 @@ body .main {
   padding: 14px 16px;
   transition: 0.3s;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 769px) {
   .tab button {
     float: left;
     border: 2px solid #439BD5;
   }
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
   .tab button {
     display: block;
     border: 0;
