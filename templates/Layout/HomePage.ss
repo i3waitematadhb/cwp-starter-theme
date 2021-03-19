@@ -34,7 +34,7 @@
                                     <!-- Tab links -->
                                     <div class="tab">
                                         <% loop $VisibleVideoTabs %>
-                                            <button class="tablinks<% if $Pos == 1 %> active<% end_if %>" id="tab{$ID}" data-id="{$ID}">{$Name}</button>
+                                            <button class="tablinks h5<% if $Pos == 1 %> active<% end_if %>" id="tab{$ID}" data-id="{$ID}">{$Name}</button>
                                         <% end_loop %>
                                     </div>
                                      <!-- Tab content -->
