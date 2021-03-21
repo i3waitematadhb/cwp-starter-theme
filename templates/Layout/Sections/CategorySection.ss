@@ -8,6 +8,15 @@
                 </div>
             </div>
         <% end_loop %>
+
+        <% if $Content %>
+            <div class="col-lg-9 pb-5 wow animate__animated animate__fadeInUp category-item">
+                <div class="category-item__content">
+                    $Content
+                </div>
+            </div>
+        <% end_if %>
     </div>
 </div>
 <% end_if %>
+
