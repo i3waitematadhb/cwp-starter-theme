@@ -28973,6 +28973,7 @@ header + .comments-holder-container .comments-holder .comments-list .comment .in
 .footer-site .footer-logo {
   max-width: 180px;
   height: 100px;
+  width: 100%;
 }
 .footer-site .footer-govt-logo {
   -webkit-filter: invert(1);
