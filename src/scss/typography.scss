@@ -220,7 +220,7 @@ a.external {
   &::after {
     content: "\f08e";
     font-size: $font-size-sm;
-    font-family: FontAwesome;
+    font-family: $font-awesome;
     position: relative;
     top: -3px;
     left: 3px;
@@ -236,7 +236,7 @@ a[href$=".DOCX"],
   &::before {
     margin-right: 5px;
     content: "\f016";
-    font-family: FontAwesome;
+    font-family: $font-awesome;
   }
 }
 
@@ -248,7 +248,7 @@ a[href$=".XLSX"],
   &::before {
     margin-right: 5px;
     content: "\f1c3";
-    font-family: FontAwesome;
+    font-family: $font-awesome;
   }
 }
 
@@ -262,7 +262,7 @@ a[href$=".ZIP"],
   &::before {
     margin-right: 5px;
     content: "\f1c6";
-    font-family: FontAwesome;
+    font-family: $font-awesome;
   }
 }
 
@@ -272,7 +272,7 @@ a[href$=".EXE"],
   &::before {
     margin-right: 5px;
     content: "\f022";
-    font-family: FontAwesome;
+    font-family: $font-awesome;
   }
 }
 
@@ -282,7 +282,7 @@ a[href$=".PDF"],
   &::before {
     margin-right: 5px;
     content: "\f1c1";
-    font-family: FontAwesome;
+    font-family: $font-awesome;
   }
 }
 
@@ -314,6 +314,37 @@ pre {
 }
 
 //addons
+.font-weight-medium {
+  font-weight: 600;
+}
+
+.display-5 {
+  @include font-size($display5-size);
+  font-weight: $display5-weight;
+  line-height: $display-line-height;
+}
+
+.lineheight-1 {
+
+  line-height: 1.4em;
+}
+
+.lineheight-2 {
+  line-height: 1.6em;
+}
+
+.lineheight-3 {
+  line-height: 1.8em;
+}
+
+.spacing-1 {
+  letter-spacing: 1px;
+}
+
+.spacing-2 {
+  letter-spacing: 2px;
+}
+
 .theme-text {
   color: $theme-color;
 }
@@ -325,7 +356,7 @@ pre {
   text-align: center;
   padding: 12px 15px;
   min-width: 150px;
-  border: 0px;
+  border: 0;
   border-radius: 50px;
   color: #fff;
   background: #004184;

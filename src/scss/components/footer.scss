@@ -2,7 +2,6 @@
   background-color: $theme-color;
   border-top: 1px solid $gray-300;
   padding: 30px 0 0;
-  .footer-item {
     .footer-content {
       margin-top: 20px;
       .footer-image {
@@ -26,7 +25,6 @@
         background-color: $white;
       }
     }
-  }
   .footer-govt-logo {
     filter: invert(1);
   }

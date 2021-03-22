@@ -1,5 +1,7 @@
 /* eslint-disable */
 import $ from 'jquery';
+import 'owl.carousel';
+import WOW from 'wow.js';
 import ApexCharts from 'apexcharts';
 
 export default function () {
@@ -14,6 +16,12 @@ export default function () {
 
   function initializeDocument()
   {
+    //Section Settings
+    sectionBanner();
+    sectionCarousel();
+    animation();
+
+    //Dashboard Settings
     dataTables();
     tableActionBtn();
 
@@ -35,32 +43,78 @@ export default function () {
     adminDataTables();
   }
 
+  function animation()
+  {
+    let wow = new WOW(
+      {
+        offset: 300,    // distance to the element when triggering the animation (default is 0)
+        mobile: true,
+        animateClass: 'animate__animated', // animation css class (default is animated)
+        live: true,     // act on asynchronously loaded content (default is true)
+        callback: function (section) {
+          //section.classList.add('tex');
+        },
+        scrollContainer: null // optional scroll container selector, otherwise use window
+      }
+    );
+    wow.init();
+  }
+
+  function sectionBanner()
+  {
+    let sliderBanner = $('.SliderBanner');
+    if (sliderBanner.length > 0) {
+      sliderBanner.find('.owl-carousel').owlCarousel({
+        items: 1,
+        dots: false
+      })
+    }
+  }
+
+  function sectionCarousel()
+  {
+    let carousel = $('#Carousel');
+    if (carousel.length > 0) {
+      carousel.owlCarousel(
+        {
+          items: 4,
+          loop: true,
+          nav: true,
+          lazy: true,
+        }
+      )
+    }
+  }
+
   function dataTables()
   {
-    let dataTable;
-    dataTable = $('#datatable').DataTable({
-      "columnDefs": [{
-        "targets": 0,
-        "data": null,
-        "orderable": false,
-        "className": 'details-control',
-        "defaultContent": ' '
-      }]
-    });
+    let dataTable, table = $('#datatable');
 
-    $('#datatable tbody').on('click', 'td.details-control', function () {
-      let tr = $(this).closest('tr');
-      let row = dataTable.row(tr);
-      if ( row.child.isShown() ) {
-        // This row is already open - close it
-        row.child.hide();
-        tr.removeClass('shown');
-      } else {
-        // Open this row
-        row.child(dataTableFormat(row.data()),'p-0').show();
-        tr.addClass('shown');
-      }
-    });
+    if (table.length > 0) {
+      dataTable = table.DataTable({
+        "columnDefs": [{
+          "targets": 0,
+          "data": null,
+          "orderable": false,
+          "className": 'details-control',
+          "defaultContent": ' '
+        }]
+      });
+
+      $('#datatable tbody').on('click', 'td.details-control', function () {
+        let tr = $(this).closest('tr');
+        let row = dataTable.row(tr);
+        if ( row.child.isShown() ) {
+          // This row is already open - close it
+          row.child.hide();
+          tr.removeClass('shown');
+        } else {
+          // Open this row
+          row.child(dataTableFormat(row.data()),'p-0').show();
+          tr.addClass('shown');
+        }
+      });
+    }
   }
 
   function dataTableFormat(rowData)
@@ -290,12 +344,15 @@ export default function () {
 
   function datePickerSettings()
   {
-    $('input[name="singledatepicker"]').daterangepicker({
-      singleDatePicker: true,
-      locale: {
-        format: 'DD/MM/YYYY'
-      }
-    });
+    let datePickerField = $('input[name="singledatepicker"]');
+    if (datePickerField.length > 0) {
+      datePickerField.daterangepicker({
+        singleDatePicker: true,
+        locale: {
+          format: 'DD/MM/YYYY'
+        }
+      });
+    }
   }
 
   function moduleForm()

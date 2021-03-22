@@ -6,7 +6,8 @@
         $MetaTags(false)
         <meta name="viewport" id="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=10.0,initial-scale=1.0" />
         <% if $RSSLink %>
-        <link rel='alternate' type='application/rss+xml' title='RSS' href='$RSSLink'>
+        <link rel='alternate' type='app
+        lication/rss+xml' title='RSS' href='$RSSLink'>
         <% end_if %>
         <% require themedCSS('dist/css/main.css') %>
         <% include Favicon %>
@@ -19,7 +20,7 @@
             $Layout
         </main>
         <% include PageShowcase %>
-        <footer class="footer-site" role="contentinfo">
+        <footer class="footer-site text-white" role="contentinfo">
             <% include Footer %>
         </footer>
         <% require themedJavascript('dist/js/main.js') %>

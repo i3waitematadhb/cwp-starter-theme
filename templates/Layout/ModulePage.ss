@@ -3,7 +3,7 @@
     <div class="main-content">
         <div class="container p-0">
             <div class="row">
-                <div class="col-md-12 dashboard-header">
+                <div class="col-lg-12 dashboard-header">
                     <div class="row justify-content-between align-items-center">
                         <div class="col-auto">
                             <h3 class="dashboard-title"><span class="theme-text">$Title</span></h3>
@@ -13,7 +13,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-12">
+                <div class="col-lg-12">
                     <div class="row">
                         <table id="datatable" class="table hover" style="width:100%">
                             <thead>
@@ -80,7 +80,7 @@
                         <div class="modal-body">
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-md-12">
+                                    <div class="col-lg-12">
                                         <div class="modal-title text-center theme-text">
                                             <h1 tabindex="-1" id="moduleFormModalLabel">Module: $CurrentUser.ClinicalModule.Name</h1>
                                             <p>Clinical Module</p>
@@ -99,7 +99,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-12">
+                                    <div class="col-lg-12">
                                         <% loop $CurrentUser.ClinicalModule.VisibleForms %>
                                             <% if $FormType == 'single' %>
                                                 <div class="form-container module-form single-form active">

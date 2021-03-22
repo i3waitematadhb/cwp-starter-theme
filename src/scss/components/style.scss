@@ -9,6 +9,9 @@
  *		1. Header
  *		2. Body
  *      - Side Nav
+ *      - Sections
+ *        - Card section
+ *        - Slider section
  *		3. Forms
  *    4. Fields
  *    5. Global Settings
@@ -31,15 +34,16 @@ header {
 .site-header {
   .site-header-brand {
     .brand-image {
-      width: 160px;
+      width: 250px;
     }
   }
 }
 
 //Navigations
 .quick-nav {
-  padding-bottom: 10px;
-  .navbar-light {
+  padding: 1rem;
+  .navbar {
+    padding: 0;
     .navbar-nav {
       .nav-item {
         &.login-btn {
@@ -96,7 +100,9 @@ header {
   }
 }
 .main-nav {
-  .navbar-light {
+  padding: 12px 0;
+
+  .navbar {
     .navbar-nav {
       width: 100%;
       .nav-link {
@@ -118,117 +124,6 @@ header {
  BODY
 =========================
 */
-
-/*
-  Section
-*/
-section {
-  &.page-section {
-    .section-content {
-    }
-    //login section
-    &.login-section {
-      .section-content {
-        position: relative;
-        height: 100vh;
-        &.content-background {
-          .figures {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            .login-figure {
-              position: absolute;
-              background-color: rgba(255,255,255,.08);
-              box-sizing: border-box;
-            }
-            &__first {
-              width: 70px;
-              height: 140px;
-              top: 25%;
-              right: 45%;
-              transform: rotate(-65deg);
-            }
-            &__second {
-              width: 250px;
-              height: 250px;
-              border-radius: 100%;
-              top: 13%;
-              left: -4%;
-            }
-            &__third {
-              width: 0;
-              height: 0;
-              border-top: 95px solid transparent;
-              border-bottom: 78px solid transparent;
-              border-left: 180px solid rgba(255,255,255,.08);
-              bottom: 8%;
-              left: 11%;
-              background-color: transparent;
-              -webkit-transform: rotate(-46deg);
-              transform: rotate(-46deg);
-            }
-            &__four {
-              width: 75px;
-              height: 150px;
-              top: 55%;
-              left: -1%;
-              -webkit-transform: rotate(-75deg);
-              transform: rotate(-75deg);
-            }
-            &__five {
-              width: 250px;
-              height: 250px;
-              bottom: 17%;
-              right: 4%;
-              border-radius: 100%;
-            }
-            &__six {
-              width: 0;
-              height: 0;
-              border-top: 60px solid transparent;
-              border-bottom: 70px solid transparent;
-              border-left: 160px solid rgba(255,255,255,.08);
-              top: 9%;
-              right: 24%;
-              background-color: transparent;
-              -webkit-transform: rotate(135deg);
-              transform: rotate(135deg);
-            }
-            &__seven {
-              width: 140px;
-              height: 140px;
-              bottom: 4%;
-              right: -2.1875rem;
-              border-radius: 100%;
-            }
-          }
-          &:after {
-            position: absolute;
-            content: "";
-            background: rgb(0,65,132);
-            background: linear-gradient(90deg, rgba(0,65,132,1) 17%, rgba(0,112,186,1) 100%);
-            opacity: 0.85;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-          }
-        }
-        .content-wrapper {
-          position: absolute;
-          width: 100%;
-          max-width: 500px;
-          top: 50%;
-          left: 50%;
-          -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-        }
-      }
-    }
-  }
-}
 
 /*
   Side Nav
@@ -358,6 +253,169 @@ section {
         }
       }
     }
+  }
+}
+
+/*
+  Sections
+*/
+section {
+  &.page-section {
+    &:not(:first-child) {
+      padding: 20vh 100px;
+      @media only screen and (max-width: 576px) {
+        padding: 10vh 20px;
+      }
+    }
+    .section-content {
+    }
+    //login section
+    &.login-section {
+      .section-content {
+        position: relative;
+        height: 100vh;
+        &.content-background {
+          .figures {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            .login-figure {
+              position: absolute;
+              background-color: rgba(255,255,255,.08);
+              box-sizing: border-box;
+            }
+            &__first {
+              width: 70px;
+              height: 140px;
+              top: 25%;
+              right: 45%;
+              transform: rotate(-65deg);
+            }
+            &__second {
+              width: 250px;
+              height: 250px;
+              border-radius: 100%;
+              top: 13%;
+              left: -4%;
+            }
+            &__third {
+              width: 0;
+              height: 0;
+              border-top: 95px solid transparent;
+              border-bottom: 78px solid transparent;
+              border-left: 180px solid rgba(255,255,255,.08);
+              bottom: 8%;
+              left: 11%;
+              background-color: transparent;
+              -webkit-transform: rotate(-46deg);
+              transform: rotate(-46deg);
+            }
+            &__four {
+              width: 75px;
+              height: 150px;
+              top: 55%;
+              left: -1%;
+              -webkit-transform: rotate(-75deg);
+              transform: rotate(-75deg);
+            }
+            &__five {
+              width: 250px;
+              height: 250px;
+              bottom: 17%;
+              right: 4%;
+              border-radius: 100%;
+            }
+            &__six {
+              width: 0;
+              height: 0;
+              border-top: 60px solid transparent;
+              border-bottom: 70px solid transparent;
+              border-left: 160px solid rgba(255,255,255,.08);
+              top: 9%;
+              right: 24%;
+              background-color: transparent;
+              -webkit-transform: rotate(135deg);
+              transform: rotate(135deg);
+            }
+            &__seven {
+              width: 140px;
+              height: 140px;
+              bottom: 4%;
+              right: -2.1875rem;
+              border-radius: 100%;
+            }
+          }
+          &:after {
+            position: absolute;
+            content: "";
+            background: rgb(0,65,132);
+            background: linear-gradient(90deg, rgba(0,65,132,1) 17%, rgba(0,112,186,1) 100%);
+            opacity: 0.85;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+          }
+        }
+        .content-wrapper {
+          position: absolute;
+          width: 100%;
+          max-width: 500px;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+
+    //Card section
+    &.Cards {
+      .card-item {
+        position: relative;
+        .card-img {
+          height: 350px;
+          border-radius: 0;
+          object-fit: cover;
+        }
+        .card-text {
+          position: absolute;
+          background-color: $theme-color;
+          padding: 20px;
+          max-width: 280px;
+          width: 100%;
+          top: 50%;
+          left: 50%;
+          transform: translate3d(-50%, -50%, 0);
+        }
+      }
+    }
+
+    //Slider Banner section
+    &.SliderBanner {
+      .owl-carousel {
+        .carousel-content {
+          position: relative;
+          .carousel-text {
+            position: absolute;
+            top: 50%;
+            transform: translate3d(0, -50%, 0);
+            max-width: 650px;
+            padding: 50px;
+            background: $linear-gradient;
+          }
+          img {
+            height: 85vh;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
+      }
+    }
+
+    //
   }
 }
 
@@ -1240,7 +1298,7 @@ section {
   40% { -o-transform: translate(15px); }
   60% { -o-transform: translate(-15px); }
   80% { -o-transform: translate(8px); }
-  100% { -o-origin-transform: translate(0); }
+  100% { -o-transform: translate(0); }
 }
 
 /*
