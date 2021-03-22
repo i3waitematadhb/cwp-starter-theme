@@ -1,0 +1,44 @@
+.position-right { //if logo position right
+  .hamburger {
+    left: 20px;
+  }
+}
+.position-left,
+.position-center { //if logo position left & center
+  .hamburger {
+    right: 20px;
+  }
+}
+.hamburger {
+  position: absolute;
+  padding: 0;
+  outline: none !important;
+  z-index: 999;
+  @media only screen and (min-width: 768px) {
+    top: 45px;
+  }
+  @media only screen and (max-width: 767px) and (min-width: 576px) {
+    top: 42px;
+  }
+  @media only screen and (max-width: 575px) {
+    top: 28px;
+  }
+  .hamburger-inner{
+    &,
+    &:before,
+    &:after{
+      background-color: $brand-primary;
+      background-image: $theme-color-gradient;
+    }
+  }
+  &.is-active {
+    .hamburger-inner {
+      &,
+      &:before,
+      &:after{
+        background-color: $white;
+        background-image: none;
+      }
+    }
+  }
+}

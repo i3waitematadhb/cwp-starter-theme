@@ -122,6 +122,30 @@
   color: #040505;
 }
 
+.alert-brand-primary {
+  color: #854010;
+  background-color: #ffe5d2;
+  border-color: #ffdac0;
+}
+.alert-brand-primary hr {
+  border-top-color: #ffcba7;
+}
+.alert-brand-primary .alert-link {
+  color: #572a0b;
+}
+
+.alert-brand-secondary {
+  color: #855600;
+  background-color: #ffedcc;
+  border-color: #ffe6b8;
+}
+.alert-brand-secondary hr {
+  border-top-color: #ffdd9f;
+}
+.alert-brand-secondary .alert-link {
+  color: #523500;
+}
+
 .table {
   width: 100%;
   margin-bottom: 1rem;
@@ -332,6 +356,46 @@
 .table-hover .table-dark:hover > td,
 .table-hover .table-dark:hover > th {
   background-color: #b9bbbe;
+}
+
+.table-brand-primary,
+.table-brand-primary > th,
+.table-brand-primary > td {
+  background-color: #ffdac0;
+}
+.table-brand-primary th,
+.table-brand-primary td,
+.table-brand-primary thead th,
+.table-brand-primary tbody + tbody {
+  border-color: #ffba8a;
+}
+
+.table-hover .table-brand-primary:hover {
+  background-color: #ffcba7;
+}
+.table-hover .table-brand-primary:hover > td,
+.table-hover .table-brand-primary:hover > th {
+  background-color: #ffcba7;
+}
+
+.table-brand-secondary,
+.table-brand-secondary > th,
+.table-brand-secondary > td {
+  background-color: #ffe6b8;
+}
+.table-brand-secondary th,
+.table-brand-secondary td,
+.table-brand-secondary thead th,
+.table-brand-secondary tbody + tbody {
+  border-color: #ffd07a;
+}
+
+.table-hover .table-brand-secondary:hover {
+  background-color: #ffdd9f;
+}
+.table-hover .table-brand-secondary:hover > td,
+.table-hover .table-brand-secondary:hover > th {
+  background-color: #ffdd9f;
 }
 
 .table-active,
@@ -664,6 +728,26 @@ button.bg-dark:focus {
   background-color: #1d2124 !important;
 }
 
+.bg-brand-primary {
+  background-color: #ff7b1e !important;
+}
+
+a.bg-brand-primary:hover, a.bg-brand-primary:focus,
+button.bg-brand-primary:hover,
+button.bg-brand-primary:focus {
+  background-color: #ea6100 !important;
+}
+
+.bg-brand-secondary {
+  background-color: #ffa500 !important;
+}
+
+a.bg-brand-secondary:hover, a.bg-brand-secondary:focus,
+button.bg-brand-secondary:hover,
+button.bg-brand-secondary:focus {
+  background-color: #cc8400 !important;
+}
+
 .bg-white {
   background-color: #fff !important;
 }
@@ -742,6 +826,14 @@ button.bg-dark:focus {
 
 .border-dark {
   border-color: #343a40 !important;
+}
+
+.border-brand-primary {
+  border-color: #ff7b1e !important;
+}
+
+.border-brand-secondary {
+  border-color: #ffa500 !important;
 }
 
 .border-white {
@@ -4526,6 +4618,22 @@ a.text-dark:hover, a.text-dark:focus {
   color: #121416 !important;
 }
 
+.text-brand-primary {
+  color: #ff7b1e !important;
+}
+
+a.text-brand-primary:hover, a.text-brand-primary:focus {
+  color: #d15600 !important;
+}
+
+.text-brand-secondary {
+  color: #ffa500 !important;
+}
+
+a.text-brand-secondary:hover, a.text-brand-secondary:focus {
+  color: #b37400 !important;
+}
+
 .text-body {
   color: #212529 !important;
 }
@@ -7777,7 +7885,7 @@ a.external {
 a.external::after {
   content: "\F08E";
   font-size: 0.875rem;
-  font-family: FontAwesome;
+  font-family: "Font Awesome 5 Pro";
   position: relative;
   top: -3px;
   left: 3px;
@@ -7791,7 +7899,7 @@ a[href$=".DOCX"]::before,
 .doc::before {
   margin-right: 5px;
   content: "\F016";
-  font-family: FontAwesome;
+  font-family: "Font Awesome 5 Pro";
 }
 
 a[href$=".xls"]::before,
@@ -7801,7 +7909,7 @@ a[href$=".XLSX"]::before,
 .xls::before {
   margin-right: 5px;
   content: "\F1C3";
-  font-family: FontAwesome;
+  font-family: "Font Awesome 5 Pro";
 }
 
 a[href$=".gz"]::before,
@@ -7813,7 +7921,7 @@ a[href$=".ZIP"]::before,
 .archive::before {
   margin-right: 5px;
   content: "\F1C6";
-  font-family: FontAwesome;
+  font-family: "Font Awesome 5 Pro";
 }
 
 a[href$=".exe"]::before,
@@ -7821,7 +7929,7 @@ a[href$=".EXE"]::before,
 .application::before {
   margin-right: 5px;
   content: "\F022";
-  font-family: FontAwesome;
+  font-family: "Font Awesome 5 Pro";
 }
 
 a[href$=".pdf"]::before,
@@ -7829,7 +7937,7 @@ a[href$=".PDF"]::before,
 .pdf::before {
   margin-right: 5px;
   content: "\F1C1";
-  font-family: FontAwesome;
+  font-family: "Font Awesome 5 Pro";
 }
 
 .blockquote-footer {
@@ -7854,6 +7962,80 @@ pre {
 .meta-info {
   color: #767676;
   font-size: 0.875rem;
+}
+
+.open-sans {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.noto-sans {
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+.ibm-serif {
+  font-family: "IBM Plex Serif", serif;
+}
+
+.cormorant-garamond {
+  font-family: "Cormorant Garamond", serif;
+}
+
+.source-sans-pro {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.dm-serif {
+  font-family: "DM Serif Display", serif;
+}
+
+.display-5 {
+  font-size: 3rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.display-6 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.font-weight-medium {
+  font-weight: 500;
+}
+
+.font-weight-semibold {
+  font-weight: 600;
+}
+
+.font-weight-medium {
+  font-weight: 600;
+}
+
+.display-5 {
+  font-size: 3rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.lineheight-1 {
+  line-height: 1.4em;
+}
+
+.lineheight-2 {
+  line-height: 1.6em;
+}
+
+.lineheight-3 {
+  line-height: 1.8em;
+}
+
+.spacing-1 {
+  letter-spacing: 1px;
+}
+
+.spacing-2 {
+  letter-spacing: 2px;
 }
 
 body.mceContentBody a.ss-broken {
