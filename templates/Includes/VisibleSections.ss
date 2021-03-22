@@ -7,18 +7,10 @@
                         $CodeEditor
                     <% end_if %>
                     <div class="section-container">
-<%--                        <% if $DisplayTypeTrim == 'Carousel' %>--%>
-<%--                            <div class="fancy__background"></div>--%>
-<%--                            <div class="fancy__circle-wrapper">--%>
-<%--                                <div class="fancy__circle">--%>
-<%--                                    <div class="fancy__circle-inner"></div>--%>
-<%--                                </div>--%>
-<%--                            </div>--%>
-<%--                        <% end_if %>--%>
                         <div class="container-fluid p-0 align-self-center">
                             <div class="row no-gutters">
                                 <% if $ShowSectionHeader %>
-                                    <div class="<% if $SectionHeaderPosition == 'position-top'%>col-md-12<% else %>col-lg-4 col-md-5<% if $SectionHeaderPosition == 'position-right' %> order-last<% end_if %><% end_if %>">
+                                    <div class="<% if $SectionHeaderPosition == 'position-top'%>col-lg-12<% else %>col-lg-4 col-lg-5<% if $SectionHeaderPosition == 'position-right' %> order-last<% end_if %><% end_if %>">
                                         <div class="section-header<% if $SectionHeaderSize != 'none' %> $SectionHeaderSize<% end_if %> wow animate__animated animate__fadeInUp">
                                             <% if $SectionHeader %>
                                                 $SectionHeader
@@ -28,14 +20,14 @@
                                         </div>
                                     </div>
                                 <% end_if %>
-                                <div class="<% if $ShowSectionHeader %><% if $SectionHeaderPosition != 'position-top' %>col-lg-8 col-md-7<% if $SectionHeaderPosition == 'position-right' %> order-first<% end_if %><% else %>col-md-12<% end_if %><% else %>col-md-12<% end_if %>">
+                                <div class="<% if $ShowSectionHeader %><% if $SectionHeaderPosition != 'position-top' %>col-lg-8 col-lg-7<% if $SectionHeaderPosition == 'position-right' %> order-first<% end_if %><% else %>col-lg-12<% end_if %><% else %>col-lg-12<% end_if %>">
                                     <div class="{$DisplayTypeTrim}-container section-body">
                                         $Show
                                     </div>
                                 </div>
                                 <% if $ShowSectionFooter %>
                                     <div class="col-md-12">
-                                        <div class="section-footer<% if $SectionFooterSize != 'none' %> $SectionFooterSize<% end_if %> text-center p-md-5 wow animate__animated animate__fadeInUp">
+                                        <div class="section-footer<% if $SectionFooterSize != 'none' %> $SectionFooterSize<% end_if %> text-center p-lg-5 wow animate__animated animate__fadeInUp">
                                             <% if $SectionFooter %>{$SectionFooter}<% end_if %>
                                         </div>
                                     </div>
