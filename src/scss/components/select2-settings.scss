@@ -1,0 +1,32 @@
+.category--filter {
+  .select2-container {
+    width: 100% !important;
+    .select2-selection {
+      &--multiple {
+        padding: 14px 10px;
+        border: 2px solid $gray-100;//$brand-primary;
+        border-radius: 0;
+      }
+      &__choice {
+        font-size: 15px;
+        color: #fff;
+        padding: 3px 15px 3px 8px;
+        border-radius: 50px;
+        border: 0;
+        background-color: $brand-primary;
+        background-image: $theme-color-gradient;
+        &__remove {
+          color: #fff;
+          margin-right: 4px;
+        }
+      }
+    }
+  }
+}
+.select2-dropdown {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0;
+  .select2-results__option {
+    padding: 15px 20px;
+  }
+}
