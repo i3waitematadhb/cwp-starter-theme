@@ -28987,6 +28987,21 @@ header + .comments-holder-container .comments-holder .comments-list .comment .in
   margin-right: 0;
 }
 
+#poper {
+  background-color: #fff;
+  color: #000;
+  border-radius: 0 !important;
+}
+#poper .message {
+  color: #000;
+}
+#poper .message .policylink {
+  color: #000;
+}
+#poper .credit {
+  display: none;
+}
+
 .step-navigation > .step-buttons {
   padding-left: 0;
 }

@@ -28,3 +28,19 @@
     margin-right: 0;
   }
 }
+
+//Cookie Pop-up
+#poper {
+  background-color: #fff;
+  color: #000;
+  border-radius: 0 !important;
+  .message {
+    color: #000;
+    .policylink {
+      color: #000;
+    }
+  }
+  .credit {
+    display: none;
+  }
+}
