@@ -24812,6 +24812,20 @@ body .main {
   min-height: 100vh;
 }
 
+.page-section.section-Banner {
+  position: relative;
+}
+.page-section.section-Banner .banner-image {
+  height: 80vh;
+  width: 100%;
+}
+.page-section.section-Banner .banner-content {
+  position: absolute;
+}
+
+/**
+  Cardiology Page
+ */
 .navigation-container {
   background-color: white;
   padding: 30px;

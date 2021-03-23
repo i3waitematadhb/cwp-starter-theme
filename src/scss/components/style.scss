@@ -21,6 +21,24 @@ body {
   }
 }
 
+//Section
+.page-section {
+  &.section-Banner {
+    position: relative;
+    .banner-image {
+      height: 80vh;
+      width: 100%;
+    }
+    .banner-content {
+      position: absolute;
+    }
+  }
+}
+
+//Pages
+/**
+  Cardiology Page
+ */
 //Carousel Navigator
 .navigation-container {
   background-color: rgb(255 255 255 / 100%);
