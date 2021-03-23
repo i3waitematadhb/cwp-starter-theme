@@ -26,5 +26,6 @@
         <% require themedJavascript('dist/js/jquery.min.js') %>
         <% require themedJavascript('dist/js/main.js') %>
         <% include GoogleAnalytics %>
+        <script type="text/javascript" src="https://cookieconsent.popupsmart.com/src/js/popper.js"></script><script> window.start.init({Palette:"palette6",Mode:"banner bottom",Time:"3",Theme:"classic",})</script>
     </body>
 </html>
