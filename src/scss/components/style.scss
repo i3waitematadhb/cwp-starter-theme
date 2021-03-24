@@ -24,13 +24,22 @@ body {
 //Section
 .page-section {
   &.section-Banner {
-    position: relative;
+    .Banner-container {
+      position: relative;
+    }
     .banner-image {
-      height: 80vh;
+      height: 85vh;
       width: 100%;
+      object-fit: cover;
+      object-position: center;
     }
     .banner-content {
       position: absolute;
+      top: 50%;
+      max-width: 650px;
+      padding: 50px;
+      background: linear-gradient(to right, rgb(1 148 138) 0%, rgb(1 148 138) 80%);
+      transform: translate3d(0, -50%, 0);
     }
   }
 }
