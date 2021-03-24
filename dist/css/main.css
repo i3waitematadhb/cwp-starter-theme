@@ -29672,6 +29672,10 @@ body.dark-theme {
 /**
   Global Settings
 */
+.wow {
+  visibility: hidden;
+}
+
 .accordion-btn {
   position: relative;
   color: #fff;
