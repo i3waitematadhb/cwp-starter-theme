@@ -312,6 +312,12 @@ pre {
   color: $text-muted;
   font-size: $font-size-sm;
 }
+
+.font-poppins {
+  font-family: $font-family-poppins;
+}
+
+
 .lineheight-1 {
   line-height: 1.4em;
 }
@@ -334,6 +340,18 @@ pre {
     border: 2px solid;
   }
 }
+.theme-button,
+.theme-button--gradient {
+  padding: 10px 20px;
+  border-radius: 50px;
+}
+.theme-button {
+  background: $theme-color;
+  &--gradient {
+    background: $theme-color-gradient;
+  }
+}
+
 .display-5 {
   font-size: $display5-size;
   font-weight: $display5-weight;

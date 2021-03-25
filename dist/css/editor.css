@@ -7879,6 +7879,10 @@ pre {
   font-size: 0.875rem;
 }
 
+.font-poppins {
+  font-family: "Poppins", sans-serif;
+}
+
 .lineheight-1 {
   line-height: 1.4em;
 }
@@ -7905,6 +7909,19 @@ pre {
 .text-bar:after {
   position: absolute;
   border: 2px solid;
+}
+
+.theme-button,
+.theme-button--gradient {
+  padding: 10px 20px;
+  border-radius: 50px;
+}
+
+.theme-button {
+  background: #01948A;
+}
+.theme-button--gradient {
+  background: linear-gradient(70deg, #55D1A6 10%, #01948A 100%);
 }
 
 .display-5 {

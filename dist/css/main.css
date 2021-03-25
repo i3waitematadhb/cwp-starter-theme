@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600&display=swap);/*!
+@import url(https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600&display=swap);@import url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&display=swap);/*!
  * Font Awesome Pro 5.15.3 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license (Commercial License)
  */
@@ -18788,6 +18788,7 @@ pre code {
 
 .container,
 .container-fluid,
+.container-xxl,
 .container-xl,
 .container-lg,
 .container-md,
@@ -18819,6 +18820,10 @@ pre code {
     max-width: 1440px;
   }
 }
+.container-xl, .container-lg, .container-md, .container-sm, .container {
+  max-width: 1700px;
+}
+
 .row {
   display: -ms-flexbox;
   display: flex;
@@ -22458,7 +22463,8 @@ input[type=button].btn-block {
 .navbar .container-sm,
 .navbar .container-md,
 .navbar .container-lg,
-.navbar .container-xl {
+.navbar .container-xl,
+.navbar .container-xxl {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
@@ -22546,7 +22552,8 @@ input[type=button].btn-block {
 .navbar-expand-sm > .container-sm,
 .navbar-expand-sm > .container-md,
 .navbar-expand-sm > .container-lg,
-.navbar-expand-sm > .container-xl {
+.navbar-expand-sm > .container-xl,
+.navbar-expand-sm > .container-xxl {
     padding-right: 0;
     padding-left: 0;
   }
@@ -22574,7 +22581,8 @@ input[type=button].btn-block {
 .navbar-expand-sm > .container-sm,
 .navbar-expand-sm > .container-md,
 .navbar-expand-sm > .container-lg,
-.navbar-expand-sm > .container-xl {
+.navbar-expand-sm > .container-xl,
+.navbar-expand-sm > .container-xxl {
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
   }
@@ -22597,7 +22605,8 @@ input[type=button].btn-block {
 .navbar-expand-md > .container-sm,
 .navbar-expand-md > .container-md,
 .navbar-expand-md > .container-lg,
-.navbar-expand-md > .container-xl {
+.navbar-expand-md > .container-xl,
+.navbar-expand-md > .container-xxl {
     padding-right: 0;
     padding-left: 0;
   }
@@ -22625,7 +22634,8 @@ input[type=button].btn-block {
 .navbar-expand-md > .container-sm,
 .navbar-expand-md > .container-md,
 .navbar-expand-md > .container-lg,
-.navbar-expand-md > .container-xl {
+.navbar-expand-md > .container-xl,
+.navbar-expand-md > .container-xxl {
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
   }
@@ -22648,7 +22658,8 @@ input[type=button].btn-block {
 .navbar-expand-lg > .container-sm,
 .navbar-expand-lg > .container-md,
 .navbar-expand-lg > .container-lg,
-.navbar-expand-lg > .container-xl {
+.navbar-expand-lg > .container-xl,
+.navbar-expand-lg > .container-xxl {
     padding-right: 0;
     padding-left: 0;
   }
@@ -22676,7 +22687,8 @@ input[type=button].btn-block {
 .navbar-expand-lg > .container-sm,
 .navbar-expand-lg > .container-md,
 .navbar-expand-lg > .container-lg,
-.navbar-expand-lg > .container-xl {
+.navbar-expand-lg > .container-xl,
+.navbar-expand-lg > .container-xxl {
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
   }
@@ -22699,7 +22711,8 @@ input[type=button].btn-block {
 .navbar-expand-xl > .container-sm,
 .navbar-expand-xl > .container-md,
 .navbar-expand-xl > .container-lg,
-.navbar-expand-xl > .container-xl {
+.navbar-expand-xl > .container-xl,
+.navbar-expand-xl > .container-xxl {
     padding-right: 0;
     padding-left: 0;
   }
@@ -22727,7 +22740,8 @@ input[type=button].btn-block {
 .navbar-expand-xl > .container-sm,
 .navbar-expand-xl > .container-md,
 .navbar-expand-xl > .container-lg,
-.navbar-expand-xl > .container-xl {
+.navbar-expand-xl > .container-xl,
+.navbar-expand-xl > .container-xxl {
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
   }
@@ -22755,7 +22769,8 @@ input[type=button].btn-block {
 .navbar-expand > .container-sm,
 .navbar-expand > .container-md,
 .navbar-expand > .container-lg,
-.navbar-expand > .container-xl {
+.navbar-expand > .container-xl,
+.navbar-expand > .container-xxl {
   padding-right: 0;
   padding-left: 0;
 }
@@ -22775,7 +22790,8 @@ input[type=button].btn-block {
 .navbar-expand > .container-sm,
 .navbar-expand > .container-md,
 .navbar-expand > .container-lg,
-.navbar-expand > .container-xl {
+.navbar-expand > .container-xl,
+.navbar-expand > .container-xxl {
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
 }
@@ -29134,6 +29150,10 @@ pre {
   font-size: 0.875rem;
 }
 
+.font-poppins {
+  font-family: "Poppins", sans-serif;
+}
+
 .lineheight-1 {
   line-height: 1.4em;
 }
@@ -29160,6 +29180,19 @@ pre {
 .text-bar:after {
   position: absolute;
   border: 2px solid;
+}
+
+.theme-button,
+.theme-button--gradient {
+  padding: 10px 20px;
+  border-radius: 50px;
+}
+
+.theme-button {
+  background: #01948A;
+}
+.theme-button--gradient {
+  background: linear-gradient(70deg, #55D1A6 10%, #01948A 100%);
 }
 
 .display-5 {
@@ -29820,20 +29853,21 @@ body .main {
 .page-section.section-Banner .Banner-container {
   position: relative;
 }
-.page-section.section-Banner .banner-image {
-  height: 85vh;
-  width: 100%;
+.page-section.section-Banner .Banner-container.withBgImage {
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  display: block;
+  vertical-align: middle;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  height: 100%;
 }
 .page-section.section-Banner .banner-content {
   position: absolute;
   top: 50%;
   max-width: 650px;
   padding: 50px;
-  background: linear-gradient(to right, #01948a 0%, #01948a 80%);
   -webkit-transform: translate3d(0, -50%, 0);
           transform: translate3d(0, -50%, 0);
 }
@@ -30001,3 +30035,7 @@ video {
 ul li {
   margin-bottom: 10px;
 }
+
+/**
+  Global Settings
+*/

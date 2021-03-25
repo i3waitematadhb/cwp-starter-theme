@@ -9,7 +9,7 @@
                                 $CodeEditor
                             </div>
                         <% end_if %>
-                        <div class="{$DisplayTypeTrim}-container">
+                        <div class="{$DisplayTypeTrim}-container<% if $BgImage %> withBgImage<% end_if %>" <% if $BgImage %>style="background-image: url('{$BgImage.URL}')"<% end_if %>>
                             $Show
                         </div>
                     </div>

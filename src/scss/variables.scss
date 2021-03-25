@@ -18,6 +18,9 @@ $gray-900: #212529 !default;
 $black:    #000 !default;
 
 $theme-color: #01948A;
+$theme-color-secondary: #55D1A6;
+$theme-color-gradient: linear-gradient(70deg, $theme-color-secondary 10%, $theme-color 100%);
+
 $grays: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $grays: map-merge(
@@ -209,7 +212,8 @@ $container-max-widths: (
   sm: 540px,
   md: 720px,
   lg: 960px,
-  xl: 1440px
+  xl: 1440px,
+  xxl: 1700px
 ) !default;
 
 @include _assert-ascending($container-max-widths, "$container-max-widths");
@@ -275,6 +279,7 @@ $font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Rob
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 $font-family-font-awesome-pro: 'Font Awesome 5 Pro';
 $font-family-raleway:          'Raleway', sans-serif;
+$font-family-poppins:          'Poppins', sans-serif;
 $font-family-base:             $font-family-raleway !default;
 // stylelint-enable value-keyword-case
 

@@ -1,5 +1,6 @@
 /* eslint-disable */
 import $ from 'jquery';
+import WOW from 'wow.js';
 import 'owl.carousel.es6';
 import tab from "bootstrap/js/src/tab";
 
@@ -11,10 +12,29 @@ export default function () {
 
   function initializeDocument()
   {
+
+    animation();
+
+    //Cardiology Page
     slider();
     openTab();
     videoPlay();
     googleAnalytics();
+  }
+
+  function animation()
+  {
+    let wow = new WOW(
+      {
+        offset: 300,    // distance to the element when triggering the animation (default is 0)
+        live: true,     // act on asynchronously loaded content (default is true)
+        callback: function (section) {
+          //section.classList.add('tex');
+        },
+        scrollContainer: null // optional scroll container selector, otherwise use window
+      }
+    );
+    wow.init();
   }
 
   function slider()
