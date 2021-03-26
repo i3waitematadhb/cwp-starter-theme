@@ -1,5 +1,5 @@
-<div class="container-fluid site-header clearfix p-0">
-    <div class="row no-gutters">
+<div class="container site-header clearfix">
+    <div class="row">
         <div class="col-lg-3 col-10">
             <% include SkipLinks %>
             <div class="site-header-brand">
@@ -17,16 +17,20 @@
                 </button>
             </div>
         </div>
+        <div class="col-lg-9">
+            <% include MainNav %>
+            <% include HeaderSearch %>
+            <% include LanguageSelector %>
+        </div>
     </div>
 
-    <% include HeaderSearch %>
-    <% include LanguageSelector %>
-    <div class="col-lg-9">
-        <% include MainNav %>
-        <button class="hamburger hamburger--squeeze" type="button">
-            <span class="hamburger-box">
-                <span class="hamburger-inner"></span>
-            </span>
-        </button>
-    </div>
+
+<%--    <div class="col-lg-9">--%>
+<%--        <% include MainNav %>--%>
+<%--        <button class="hamburger hamburger--squeeze" type="button">--%>
+<%--            <span class="hamburger-box">--%>
+<%--                <span class="hamburger-inner"></span>--%>
+<%--            </span>--%>
+<%--        </button>--%>
+<%--    </div>--%>
 </div>

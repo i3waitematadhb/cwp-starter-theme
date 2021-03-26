@@ -15,7 +15,6 @@
         <% if not $isNoHeader %>
             <header role="banner">
                 <% include Header %>
-
             </header>
         <% end_if %>
         <main id="main" class="main" role="main">
