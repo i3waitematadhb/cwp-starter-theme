@@ -5,7 +5,10 @@
 @import "./variables";
 
 // Third-party libraries
-@import "~font-awesome/scss/font-awesome";
+@import "!~@fortawesome/fontawesome-pro/css/all.css";
+@import "~animate.css/animate.css";
+@import "~owl.carousel/src/scss/owl.carousel";
+@import "~select2/dist/css/select2.min.css";
 
 @import "~bootstrap/scss/bootstrap";
 // sass-lint:enable clean-import-paths
@@ -31,4 +34,4 @@
 @import "./components/search";
 @import "./components/sitemap";
 @import "./components/buttons";
-
+@import "./components/style";
