@@ -3,6 +3,7 @@ import $ from 'jquery';
 import 'owl.carousel';
 import WOW from 'wow.js';
 import pagination from 'paginationjs';
+import simpleParallax from 'simple-parallax-js';
 
 export default function () {
   $(document).ready(function ()
@@ -20,6 +21,8 @@ export default function () {
     //Animation
     AnimationSettings();
     BackgroundSettings();
+
+    simpleParallaxSettings();
 
     //Sections
     AccordionSection();
@@ -142,6 +145,15 @@ export default function () {
       }
     );
     wow.init();
+  }
+
+  function simpleParallaxSettings()
+  {
+    let imageParallax = document.getElementsByClassName('parallax-image');
+    new simpleParallax(imageParallax, {
+      delay: .5,
+      transition: 'cubic-bezier(0,0,0,1)'
+    })
   }
 
   function AccordionSection()
