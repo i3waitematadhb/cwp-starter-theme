@@ -18,7 +18,6 @@ $gray-900: #212529 !default;
 $black:    #000 !default;
 
 // theme gradient color
-
 $theme-color-gradient: linear-gradient(155.92deg, #ffa500 5.36%, #ff7b1e 85.08%);
 $theme-color-gradient-inverted: linear-gradient(155.92deg, #ff7b1e 5.36%, #ffa500 85.08%);
 $theme-color-multi-gradient : linear-gradient(to right, #ff6900 0%, #ffa500 40%, #ef9d43, #ff6900);
@@ -73,6 +72,7 @@ $colors: map-merge(
 );
 
 $brand-primary:   #ff7b1e !default;
+$brand-primary-dark: #5d6264 !default;
 $brand-secondary: #ffa500 !default;
 $primary:       $blue !default;
 $secondary:     $gray-600 !default; // @todo check with Paul in case this should be white still
@@ -152,7 +152,8 @@ $spacers: map-merge(
     7: ($spacer * 6),
     8: ($spacer * 8),
     9: ($spacer * 10),
-    10: ($spacer * 12)
+    10: ($spacer * 12),
+    11: ($spacer * 13)
   ),
     $spacers
 );
@@ -177,14 +178,14 @@ $sizes: map-merge(
 // Settings for the `<body>` element.
 
 $body-bg:                   $white !default;
-$body-color:                $gray-900 !default;
+$body-color:                $brand-primary-dark !default;//$gray-900 !default;
 
 
 // Links
 //
 // Style anchor elements.
 
-$link-color:                              #0070b7 !default; // Original: theme-color("primary") !default;
+$link-color:                              theme-color("brand-primary") !default;//#0070b7 !default; // Original: theme-color("primary") !default;
 $link-decoration:                         none !default;
 $link-hover-color:                        darken($link-color, 5%) !default; // Original: darken($link-color, 15%) !default;
 $link-hover-decoration:                   underline !default;
@@ -291,6 +292,7 @@ $font-family-noto-sans-jp: 'Noto Sans JP', sans-serif;
 $font-family-ibm-plex-serif: 'IBM Plex Serif', serif;
 $font-family-dm-serif-display: 'DM Serif Display', serif;
 $font-family-cormorant-garamond: 'Cormorant Garamond', serif;
+$font-family-work-sans: 'Work Sans', sans-serif;
 $font-family-font-awesomePro: 'Font Awesome 5 Pro';
 $font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;

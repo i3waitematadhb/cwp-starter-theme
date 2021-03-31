@@ -1,3 +1,19 @@
+//Fonts
+//Cormorant Garamond
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+//DM Serif Display
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+//IBM Plex Serif
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+//Noto Sans JP
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
+//Open Sans
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+//Source Sans Pro
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+//Work Sans
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 .typography {
   font-family: $font-family-sans-serif;
   font-size: $font-size-base;
@@ -214,6 +230,11 @@ i.fa:hover {
 }
 
 // EXTERNAL LINKS
+a {
+  &:hover {
+    text-decoration: none;
+  }
+}
 a.external {
   display: inline-block;
 
@@ -314,6 +335,50 @@ pre {
 }
 
 //Custom typography format
+/**
+    Custom typography
+ */
+
+// theme text
+.theme-text-normal {
+  color: theme-color("brand-primary");
+}
+.theme-text-gradient {
+  color: transparent;
+  background-color: $brand-primary;
+  background-image: $theme-color-gradient;
+  background-clip: text;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=theme-color("brand-primary"), endColorstr=theme-color("brand-secondary"));
+  display: inline-block;
+}
+
+// theme buttons
+.theme-button,
+.theme-button-light,
+.theme-button-gradient{
+  display: inline-block;
+  border-radius: 50px;
+  margin-bottom: 0;
+  @media only screen and (min-width: 768px) {
+    padding: 15px 25px;
+  }
+  @media only screen and (max-width: 767px) {
+    padding: 12px 20px;
+  }
+}
+
+.theme-button {
+  color: $white;
+  background-color: theme-color("brand-primary");
+}
+.theme-button-light {
+  color: theme-color("brand-primary");
+  background-color: $gray-100;
+}
+.theme-button-gradient {
+  color: $white;
+  background-image: $theme-color-multi-gradient;
+}
 
 // fonts
 .open-sans {
@@ -330,6 +395,9 @@ pre {
 }
 .source-sans-pro {
   font-family: $font-family-source-sans-pro;
+}
+.work-sans {
+  font-family: $font-family-work-sans;
 }
 .dm-serif {
   font-family: $font-family-dm-serif-display;
