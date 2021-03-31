@@ -2,7 +2,7 @@
     <div class="overlay-{$ImageOverlay}">
 <% end_if %>
 <% if $Image %>
-    <img src="$Image.URL" alt="$Title - $SiteConfig.Title" class="$ImageHeight">
+    <img src="$Image.URL" alt="$Title - $SiteConfig.Title" class="$ImageHeight<% if $IsParallax %> parallax-image<% end_if %>">
 <% else %>
     <img src="{$resourceURL('themes/starter/images/BannerPlaceholderImage.jpg')}" alt="$Title - $SiteConfig.Title" class="$ImageHeight">
 <% end_if %>
