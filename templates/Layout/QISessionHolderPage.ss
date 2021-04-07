@@ -1,6 +1,6 @@
-<% include VisibleSections %>
 <div class="container-fluid p-0">
     <div class="row no-gutters">
+        <% include VisibleSections %>
         <section class="sessions-lists col-lg-12">
             <div class="container-fluid p-0">
                 <div class="row no-gutters">
