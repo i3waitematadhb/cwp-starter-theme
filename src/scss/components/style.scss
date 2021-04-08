@@ -61,10 +61,10 @@ header {
 body {
   &.page-background {
     @media only screen and (min-width: 577px) {
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
+      background-position: center !important;
+      background-size: cover !important;
+      background-repeat: no-repeat !important;
+      background-attachment: fixed !important;
     }
   }
   &.dark-theme {
