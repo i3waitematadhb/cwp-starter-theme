@@ -19,7 +19,7 @@
                             </div>
                         <% end_if %>
                         <div class="<% if $ShowSectionHeader %><% if $SectionHeaderPosition != 'position-top' %>col-lg-8<% if $SectionHeaderPosition == 'position-right' %> order-first<% end_if %><% else %>col-lg-12<% end_if %><% else %>col-lg-12<% end_if %>">
-                            <div class="{$DisplayTypeTrim}-container section-body">
+                            <div class="{$DisplayTypeTrim}-container section-body $ContentWidth">
                                 $Show
                             </div>
                         </div>
