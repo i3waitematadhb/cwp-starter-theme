@@ -18,6 +18,7 @@ import sitemap from './components/sitemap';
 import search from './components/search';
 import form from './components/form';
 import img from './components/img';
+import animatedSlider from "./components/animatedSlider";
 import mods from './components/mods';
 
 navigation();
@@ -26,5 +27,6 @@ sitemap();
 search();
 form();
 img();
+animatedSlider();
 mods();
 /* eslint-enable */

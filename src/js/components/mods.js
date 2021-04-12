@@ -1,7 +1,6 @@
 /* eslint-disable */
 import $ from 'jquery';
 
-
 export default function () {
   $(document).ready(function ()
   {
@@ -13,5 +12,4 @@ export default function () {
 
   }
 }
-
 /* eslint-enable */
