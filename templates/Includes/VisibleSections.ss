@@ -1,10 +1,10 @@
 <% if $VisibleSections %>
     <% loop $VisibleSections %>
-        <section id="section-{$DisplayTypeTrim}{$ID}" class="page-section section-{$DisplayTypeTrim} {$SectionWidth}<% if $SectionPadding != 'none' %> {$SectionPadding}<% end_if %><% if $SectionBgType == 'background-image' %> section-bgImg<% end_if %>" <% if $SectionBgType != 'none' %><% if $SectionBgType == 'background-image' || $SectionBgType == 'background-color' || $SectionBgType == 'background-gradient' %><% if $SectionBgImage || $SectionBgColor || $ColorGradient1 && $ColorGradient2 %> style="<% if $SectionBgType == 'background-image' %>background-image:url('{$SectionBgImage.URL}');<% else_if $SectionBgType == 'background-gradient' %>background-image: linear-gradient(-90deg, #{$ColorGradient1} -50%, #{$ColorGradient2} 100%);<% else %>background-color:#{$SectionBgColor};<% end_if %>"<% end_if %><% end_if %><% end_if %>>
+        <section id="section-{$DisplayTypeTrim}{$ID}" class="page-section section-{$DisplayTypeTrim} {$SectionWidth}<% if $SectionBgType == 'background-image' %> section-bgImg<% end_if %> wow animate__animated animate__fadeIn animate__slow" <% if $SectionBgType != 'none' %><% if $SectionBgType == 'background-image' || $SectionBgType == 'background-color' || $SectionBgType == 'background-gradient' %><% if $SectionBgImage || $SectionBgColor || $ColorGradient1 && $ColorGradient2 %> style="<% if $SectionBgType == 'background-image' %>background-image:url('{$SectionBgImage.URL}');<% else_if $SectionBgType == 'background-gradient' %>background-image: linear-gradient(-90deg, #{$ColorGradient1} -50%, #{$ColorGradient2} 100%);<% else %>background-color:#{$SectionBgColor};<% end_if %>"<% end_if %><% end_if %><% end_if %>>
             <% if $CodeEditor %>
                 $CodeEditor
             <% end_if %>
-            <div class="section-container">
+            <div class="section-container<% if $SectionPadding != 'none' %> {$SectionPadding}<% end_if %>">
                 <div class="container-fluid p-0">
                     <div class="row no-gutters">
                         <% if $ShowSectionHeader %>
@@ -32,15 +32,6 @@
                         <% end_if %>
                     </div>
                 </div>
-                <% if $Pos == 1 %>
-                    <% if not $Up.PageBanner %>
-                        <div class="scroll-down">
-                            <button class="scroll-down--btn animate__animated animate__slow animate__infinite animate__fadeInDown text-white">
-                                <i class="fal fa-angle-down h1"></i>
-                            </button>
-                        </div>
-                    <% end_if %>
-                <% end_if %>
             </div>
         </section>
     <% end_loop %>
