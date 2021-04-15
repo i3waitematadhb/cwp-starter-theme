@@ -921,6 +921,11 @@ header {
   //Image Banner Section
   &.section-ImageBanner {
     .ImageBanner-container {
+      .simpleParallax {
+        &:before {
+
+        }
+      }
       .overlay-dark,
       .overlay-light{
         position: relative;

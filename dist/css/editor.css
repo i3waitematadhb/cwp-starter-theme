@@ -9877,71 +9877,78 @@ a.text-brand-secondary:hover, a.text-brand-secondary:focus {
 }
 
 @font-face {
-  font-family: "EksellDisplay";
+  font-family: "Eksell Display";
   src: url("../fonts/EksellDisplay-Stencil.otf") format("opentype");
   font-weight: 300;
 }
 @font-face {
-  font-family: "EksellDisplay";
+  font-family: "Eksell Display";
   src: url("../fonts/EksellDisplay-Small.otf") format("opentype");
   font-weight: normal;
 }
 @font-face {
-  font-family: "EksellDisplay";
+  font-family: "Eksell Display";
   src: url("../fonts/EksellDisplayWeb-Medium.otf") format("opentype");
 }
 @font-face {
-  font-family: "EksellDisplay";
+  font-family: "Eksell Display";
   src: url("../fonts/EksellDisplayWeb-Medium.otf") format("opentype");
 }
 @font-face {
-  font-family: "EksellDisplay";
+  font-family: "Eksell Display";
   src: url("../fonts/EksellDisplay-Small.otf") format("opentype");
   font-weight: 700;
 }
 @font-face {
-  font-family: "EksellDisplay";
+  font-family: "Eksell Display";
   src: url("../fonts/EksellDisplay-Small.otf") format("opentype");
   font-weight: 800;
 }
 @font-face {
-  font-family: "EksellDisplay";
+  font-family: "Eksell Display";
   src: url("../fonts/EksellDisplay-Small.otf") format("opentype");
   font-weight: bold;
 }
 @font-face {
-  font-family: "ClanFont";
+  font-family: "FF Clan";
   src: url("../fonts/FF-Clan-OT-Thin.otf") format("opentype");
+  font-display: swap;
   font-weight: 200;
 }
 @font-face {
-  font-family: "ClanFont";
+  font-family: "FF Clan";
   src: url("../fonts/FF-Clan-OT-Book.otf") format("opentype");
+  font-display: swap;
   font-weight: 300;
 }
 @font-face {
-  font-family: "ClanFont";
+  font-family: "FF Clan";
   src: url("../fonts/FF-Clan-OT-News.otf") format("opentype");
+  font-display: swap;
   font-weight: 400;
 }
 @font-face {
-  font-family: "ClanFont";
+  font-family: "FF Clan";
   src: url("../fonts/FF-Clan-OT-Bold.otf") format("opentype");
+  font-display: swap;
   font-weight: 600;
 }
 @font-face {
-  font-family: "ClanFont";
+  font-family: "FF Clan";
   src: url("../fonts/FF-Clan-OT-Medium.otf") format("opentype");
+  font-display: swap;
   font-weight: 500;
 }
 @font-face {
-  font-family: "ClanFont";
+  font-family: "FF Clan";
   src: url("../fonts/FF-Clan-OT-Black.otf") format("opentype");
+  font-display: swap;
   font-weight: 800;
 }
 @font-face {
-  font-family: "ClanFont";
+  font-family: "FF Clan";
   src: url("../fonts/FF-Clan-OT-Ultra.otf") format("opentype");
+  font-display: swap;
   font-weight: 900;
 }
 .typography {
@@ -10283,7 +10290,11 @@ pre {
 }
 
 .eksell-display {
-  font-family: "EksellDisplay", sans-serif;
+  font-family: "Eksell Display", sans-serif;
+}
+
+.ff-clan {
+  font-family: "FF Clan", sans-serif;
 }
 
 .display-5 {
