@@ -340,8 +340,19 @@ pre {
 
 //Custom typography format
 /**
-    Custom typography
- */
+   Custom typography
+*/
+
+//Macron
+.macron {
+  position: relative;
+  &:after {
+    content: '\2013';
+    position: absolute;
+    left: 50%;
+    transform: translate3d(-50%, -33%, 0);
+  }
+}
 
 // theme text
 .theme-text-normal {

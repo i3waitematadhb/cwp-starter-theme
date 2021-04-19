@@ -30230,8 +30230,19 @@ pre {
 }
 
 /**
-    Custom typography
- */
+   Custom typography
+*/
+.macron {
+  position: relative;
+}
+.macron:after {
+  content: "\2013";
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate3d(-50%, -33%, 0);
+          transform: translate3d(-50%, -33%, 0);
+}
+
 .theme-text-normal {
   color: #ff7b1e;
 }
@@ -33267,5 +33278,5 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(1, #ff7b1e));
+  background-color: #242424;
 }
