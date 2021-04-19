@@ -8,3 +8,7 @@
         $Content
     </div>
 <% end_if %>
+
+<% if $ExtraImage %>
+    <img src="$ExtraImage.URL" alt="ExtraImage" class="extra-image">
+<% end_if %>
