@@ -447,11 +447,6 @@ pre {
   font-weight: $font-weight-semibold;
 }
 
-//addons
-.font-weight-medium {
-  font-weight: 600;
-}
-
 .display-5 {
   @include font-size($display5-size);
   font-weight: $display5-weight;

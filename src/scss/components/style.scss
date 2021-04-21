@@ -852,7 +852,7 @@ header {
           }
         }
         .featuredNews-text {
-          max-width: 550px;
+          max-width: 650px;
           .content-text {
             position: relative;
           }
@@ -946,6 +946,19 @@ header {
       .overlay-light {
         &:after {
           background: linear-gradient(130deg, rgb(255 255 255 / 90%) 37.13%, rgba(244, 244, 244, 0) 93.26%);
+        }
+      }
+      .project-banner {
+        overflow: hidden;
+        img {
+          position: relative;
+          top: 0;
+          left: 50%;
+          max-width: 200%;
+          width: 100%;
+          transform: translateX(-50%);
+          will-change: -webkit-filter, filter, transform;
+          backface-visibility: hidden;
         }
       }
       img {
@@ -1228,8 +1241,8 @@ header {
               backface-visibility: hidden;
               @include transition();
               .project-category {
-                font-size: 13px;
-                font-weight: 600;
+                font-size: 12px;
+                font-weight: 400;
                 padding: 7px 15px;
                 margin: 5px;
                 color: $brand-primary;
@@ -1333,8 +1346,8 @@ header {
               backface-visibility: hidden;
               @include transition();
               .project-category {
-                font-size: 13px;
-                font-weight: 600;
+                font-size: 12px;
+                font-weight: 400;
                 padding: 7px 15px;
                 color: $brand-primary;
               }
@@ -1582,8 +1595,8 @@ header {
                   backface-visibility: hidden;
                   @include transition();
                   .project-category {
-                    font-size: 13px;
-                    font-weight: 600;
+                    font-size: 12px;
+                    font-weight: 400;
                     padding: 7px 15px;
                     color: $brand-primary;
                   }
@@ -1831,8 +1844,8 @@ header {
           backface-visibility: hidden;
           @include transition();
           .project-category {
-            font-size: 13px;
-            font-weight: 600;
+            font-size: 12px;
+            font-weight: 400;
             padding: 7px 15px;
             color: $brand-primary;
           }
@@ -1938,7 +1951,6 @@ header {
 */
 
 //Body
-
 main {
 
 }
@@ -1953,6 +1965,48 @@ body {
   }
   100% {
     opacity: 1;
+  }
+}
+
+//Mouse Scroll Icon
+.icon-scroll,
+.icon-scroll:before {
+  position: absolute;
+  left: 50%
+}
+.icon-scroll {
+  width: 30px;
+  height: 50px;
+  margin-left: -20px;
+  bottom: 10px;
+  margin-top: -35px;
+  border: 2px solid #fff;
+  border-radius: 25px
+}
+@media (max-width: 767px) {
+  .icon-scroll {
+    position: relative
+  }
+}
+.icon-scroll:before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  margin-left: -3px;
+  top: 8px;
+  border-radius: 4px;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-name: scroll
+}
+@keyframes scroll {
+  0% {
+    opacity: 1
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(26px)
   }
 }
 
