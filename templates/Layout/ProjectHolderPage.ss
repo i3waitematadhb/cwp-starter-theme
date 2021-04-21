@@ -27,13 +27,11 @@
                                             <label for="dropdown-category">Category</label>
                                             <select class="select-category" name="categories[]" multiple="multiple">
                                                 <% loop $VisibleProjectCategories %>
-                                                    <option value="$Name">$Name</option>
+                                                    <option value="$Title">$Title</option>
                                                 <% end_loop %>
                                             </select>
                                         </div>
-                                        <div class="project-filters-item category--filter w-25">
-
-                                        </div>
+                                        <div class="project-filters-item category--filter w-25"></div>
                                     </div>
                                 </div>
                             </div>
