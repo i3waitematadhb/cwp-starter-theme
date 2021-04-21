@@ -14,16 +14,16 @@
                                     <% end_if %>
 
                                     <div class="teaser-date">
-                                        <div class="teaser-date--inner source-sans-pro">
-                                            <span class="day">$Date.DayOfMonth</span>
-                                            <span class="month">{$Date.ShortMonth} '{$Date.Format(YY)}</span>
+                                        <div class="teaser-date--inner ff-clan">
+                                            <span class="day font-weight-bold">$Date.DayOfMonth</span>
+                                            <span class="month font-weight-normal">{$Date.ShortMonth} '{$Date.Format(YY)}</span>
                                         </div>
                                     </div>
                                 </div>
                             </a>
                             <div class="blog-item--content">
-                                <a href="$Link" class="text-decoration-none text-dark"><h3 class="source-sans-pro">$Title</h3></a>
-                                <p class="desc source-sans-pro">{$Abstract}...</p>
+                                <a href="$Link" class="text-decoration-none text-dark"><h3 class="ff-clan">$Title</h3></a>
+                                <p class="desc ff-clan">{$Abstract}...</p>
                             </div>
                             <% if $Authors %>
                                 <% loop $Authors %>
@@ -39,9 +39,9 @@
                                         </div>
                                         <div class="author-text">
                                             <a href="$Link" class="text-decoration-none">
-                                                <p class="author-text--name source-sans-pro">$Title</p>
+                                                <p class="author-text--name ff-clan">$Title</p>
                                             </a>
-                                            <p class="author-text--title source-sans-pro">$Position</p>
+                                            <p class="author-text--title ff-clan">$Position</p>
                                         </div>
                                     </div>
                                 <% end_loop %>
