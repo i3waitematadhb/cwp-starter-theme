@@ -3,6 +3,7 @@ import $ from 'jquery';
 import 'owl.carousel';
 import WOW from 'wow.js';
 import pagination from 'paginationjs';
+import 'select2';
 import simpleParallax from 'simple-parallax-js';
 
 export default function () {
@@ -13,7 +14,6 @@ export default function () {
 
   function initializeDocument()
   {
-
     //Header
     HamburgerSettings();
     Navigation();
@@ -23,6 +23,7 @@ export default function () {
     BackgroundSettings();
 
     simpleParallaxSettings();
+    bannerShrink();
 
     //Sections
     AccordionSection();
@@ -48,6 +49,24 @@ export default function () {
         $(this).addClass('is-active');
         $('.navigation').addClass('open');
       }
+    });
+  }
+
+  function bannerShrink()
+  {
+    $(window).scroll(function() {
+      let scroll = $(window).scrollTop();
+      $(".ImageBanner-container .project-banner img").css({
+        transform: 'translate3d(-50%, -'+(scroll/100)+'%, 0) scale('+(100 + scroll/5)/100+')',
+        height: 'calc(103vh - ' + scroll +'px)',
+        filter: 'blur(' + (scroll/50) + 'px)',
+        '-webkit-filter': 'blur(' + (scroll/50) + 'px)',
+      });
+       //
+       // $('.scroll-down').css({
+       //   filter: 'blur(' + (scroll/50) + 'px)',
+       //   '-webkit-filter': 'blur(' + (scroll/50) + 'px)',
+       // });
     });
   }
 
@@ -101,7 +120,6 @@ export default function () {
 
     navItem.each(function () {
       $(this).find('.navi-link').click(function (e) {
-        console.log('gdfgdg');
         e.preventDefault();
         navigation.removeClass('open');
       });
@@ -386,6 +404,24 @@ export default function () {
     return column;
   }
 
+  function pageLoader()
+  {
+    let layerClass = ".right-layer";
+    let layers = document.querySelectorAll(layerClass);
+    let ctr = 1;
+    for (const layer of layers) {
+      layer.classList.toggle("active");
+      console.log(ctr);
+      if (layers.length === ctr) {
+        setTimeout(function() {
+          $('body').removeClass('active-loader');
+        }, 1000);
+
+      }
+      ctr = ctr + 1;
+    }
+  }
+
   function ProjectList()
   {
     let projectList = $('.project-lists');
@@ -500,11 +536,9 @@ export default function () {
     data.forEach(function (i){
       let categories = i.categories;
       let categorySpan = '';
-
       categories.forEach(function (i) {
         categorySpan += '<span class="project-category badge badge-pill badge-light m-1">' + i + '</span>';
       });
-
       column +=
         '<div class="col-md-3 wow animate__animated animate__fadeInUp project-content" data-wow-delay="0.' + ctr +'s">' +
         '<a href="' + i.link + '">' +
@@ -514,7 +548,7 @@ export default function () {
         '</div>' +
         '<div class="project-item__content">' +
         '<div class="project-title">' +
-        '<h4 class="text-white font-weight-bold mb-md-3">' + i.title + '</h4>' +
+        '<h5 class="text-white font-weight-semibold mb-md-3">' + i.title + '</h5>' +
         '</div>' +
         '<div class="project-categories">' + categorySpan + '</div>' +
         '</div>' +
