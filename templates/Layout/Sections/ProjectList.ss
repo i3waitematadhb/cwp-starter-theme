@@ -16,12 +16,12 @@
                                     </div>
                                     <div class="project-item__content">
                                         <div class="project-title">
-                                            <h3 class="text-white font-weight-bold mb-md-3">$CollectionPage.Title</h3>
+                                            <h3 class="text-white font-weight-semibold mb-md-3">$CollectionPage.Title</h3>
                                         </div>
                                         <% if $CollectionPage.Categories %>
                                             <div class="project-categories">
                                                 <% loop $CollectionPage.Categories %>
-                                                    <span class="project-category badge badge-pill badge-light">$Name</span>
+                                                    <span class="project-category badge badge-pill badge-light">$Title</span>
                                                 <% end_loop %>
                                             </div>
                                         <% end_if %>
