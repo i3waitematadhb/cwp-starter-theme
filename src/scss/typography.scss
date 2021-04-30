@@ -260,7 +260,34 @@ a[href$=".DOCX"],
 .doc {
   &::before {
     margin-right: 5px;
-    content: "\f016";
+    content: "\f1c2";
+    font-family: $font-family-font-awesomePro;
+  }
+}
+
+a[href$=".ppt"],
+a[href$=".PPT"],
+a[href$=".pptx"],
+a[href$=".PPTX"],
+.ppt {
+  &::before {
+    margin-right: 5px;
+    content: "\f1c4";
+    font-family: $font-family-font-awesomePro;
+  }
+}
+
+a[href$=".png"],
+a[href$=".PNG"],
+a[href$=".jpg"],
+a[href$=".JPG"],
+a[href$=".jpeg"],
+a[href$=".JPEG"],
+.png,
+.jpg {
+  &::before {
+    margin-right: 5px;
+    content: "\f1c5";
     font-family: $font-family-font-awesomePro;
   }
 }
@@ -382,17 +409,39 @@ pre {
   }
 }
 
-.theme-button {
+.theme-button-alt,
+.theme-button-light-alt,
+.theme-button-gradient-alt{
+  display: inline-block;
+  margin-bottom: 0;
+  padding: 12px 20px;
+}
+
+.theme-button,
+.theme-button-alt{
   color: $white;
   background-color: theme-color("brand-primary");
+  a {
+    color: $white;
+
+  }
 }
-.theme-button-light {
+.theme-button-light,
+.theme-button-light-alt{
   color: theme-color("brand-primary");
   background-color: $gray-100;
+  a{
+    color: theme-color("brand-primary");
+  }
 }
-.theme-button-gradient {
+.theme-button-gradient,
+.theme-button-gradient-alt
+{
   color: $white;
   background-image: $theme-color-multi-gradient;
+  a {
+    color: $white;
+  }
 }
 
 // fonts

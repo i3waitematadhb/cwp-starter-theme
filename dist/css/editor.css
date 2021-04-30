@@ -10160,7 +10160,30 @@ a[href$=".docx"]::before,
 a[href$=".DOCX"]::before,
 .doc::before {
   margin-right: 5px;
-  content: "\F016";
+  content: "\F1C2";
+  font-family: "Font Awesome 5 Pro";
+}
+
+a[href$=".ppt"]::before,
+a[href$=".PPT"]::before,
+a[href$=".pptx"]::before,
+a[href$=".PPTX"]::before,
+.ppt::before {
+  margin-right: 5px;
+  content: "\F1C4";
+  font-family: "Font Awesome 5 Pro";
+}
+
+a[href$=".png"]::before,
+a[href$=".PNG"]::before,
+a[href$=".jpg"]::before,
+a[href$=".JPG"]::before,
+a[href$=".jpeg"]::before,
+a[href$=".JPEG"]::before,
+.png::before,
+.jpg::before {
+  margin-right: 5px;
+  content: "\F1C5";
   font-family: "Font Awesome 5 Pro";
 }
 
@@ -10276,19 +10299,42 @@ pre {
   }
 }
 
-.theme-button {
+.theme-button-alt,
+.theme-button-light-alt,
+.theme-button-gradient-alt {
+  display: inline-block;
+  margin-bottom: 0;
+  padding: 12px 20px;
+}
+
+.theme-button,
+.theme-button-alt {
   color: #fff;
   background-color: #ff7b1e;
 }
+.theme-button a,
+.theme-button-alt a {
+  color: #fff;
+}
 
-.theme-button-light {
+.theme-button-light,
+.theme-button-light-alt {
   color: #ff7b1e;
   background-color: #f8f9fa;
 }
+.theme-button-light a,
+.theme-button-light-alt a {
+  color: #ff7b1e;
+}
 
-.theme-button-gradient {
+.theme-button-gradient,
+.theme-button-gradient-alt {
   color: #fff;
   background-image: linear-gradient(to right, #ff6900 0%, #ffa500 40%, #ef9d43, #ff6900);
+}
+.theme-button-gradient a,
+.theme-button-gradient-alt a {
+  color: #fff;
 }
 
 .open-sans {

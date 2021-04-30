@@ -1940,6 +1940,20 @@ header {
   }
 }
 
+//Resources Holder Page
+.ResourcesHolderPage {
+  .resources-filters {
+    &--item {
+      .filter-content {
+        label {
+          font-size: 20px;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
 /*
 =========================
  Global Settings
@@ -2135,7 +2149,8 @@ body {
     padding: 10px 25px;
   }
 }
-.theme-button-gradient {
+.theme-button-gradient,
+.theme-button-gradient-alt{
   @include transition();
   background-size: 300% 100%;
   box-shadow: 0 9px 18px rgba(0, 0, 0, 0);
@@ -2283,7 +2298,7 @@ body {
  */
 ::-webkit-scrollbar-track
 {
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
+  -webkit-box-shadow: inset 0 0 6px #dadada;
   background-color: #fff;
 }
 
@@ -2295,5 +2310,5 @@ body {
 
 ::-webkit-scrollbar-thumb
 {
-  background-color: #242424;
+  background-color: #dadada;
 }
