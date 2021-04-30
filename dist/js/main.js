@@ -17885,6 +17885,7 @@ function _arrayLikeToArray(arr, len) {
     AnimationSettings();
     BackgroundSettings();
     simpleParallaxSettings();
+    showResourcesAbstract();
     bannerShrink(); //Sections
 
     AccordionSection();
@@ -17895,8 +17896,21 @@ function _arrayLikeToArray(arr, len) {
     RelatedProjectsSection();
     SliderBannerSection(); //Page
 
-    ProjectList();
+    projectList();
+    resourcesLists();
     QualityImprovementSessionHolderPage();
+  }
+
+  function bannerShrink() {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scroll(function () {
+      var scroll = jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scrollTop();
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".ImageBanner-container .project-banner img").css({
+        transform: 'translate3d(-50%, -' + scroll / 100 + '%, 0) scale(' + (100 + scroll / 5) / 100 + ')',
+        height: 'calc(103vh - ' + scroll + 'px)',
+        filter: 'blur(' + scroll / 50 + 'px)',
+        '-webkit-filter': 'blur(' + scroll / 50 + 'px)'
+      });
+    });
   }
 
   function HamburgerSettings() {
@@ -17908,22 +17922,6 @@ function _arrayLikeToArray(arr, len) {
         jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).addClass('is-active');
         jquery__WEBPACK_IMPORTED_MODULE_0___default()('.navigation').addClass('open');
       }
-    });
-  }
-
-  function bannerShrink() {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scroll(function () {
-      var scroll = jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scrollTop();
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".ImageBanner-container .project-banner img").css({
-        transform: 'translate3d(-50%, -' + scroll / 100 + '%, 0) scale(' + (100 + scroll / 5) / 100 + ')',
-        height: 'calc(103vh - ' + scroll + 'px)',
-        filter: 'blur(' + scroll / 50 + 'px)',
-        '-webkit-filter': 'blur(' + scroll / 50 + 'px)'
-      }); //
-      // $('.scroll-down').css({
-      //   filter: 'blur(' + (scroll/50) + 'px)',
-      //   '-webkit-filter': 'blur(' + (scroll/50) + 'px)',
-      // });
     });
   }
 
@@ -17989,7 +17987,7 @@ function _arrayLikeToArray(arr, len) {
       offset: 300,
       // distance to the element when triggering the animation (default is 0)
       mobile: true,
-      animateClass: 'page-section',
+      animateClass: 'animate__animated',
       // animation css class (default is animated)
       live: true,
       // act on asynchronously loaded content (default is true)
@@ -18030,6 +18028,21 @@ function _arrayLikeToArray(arr, len) {
     new simple_parallax_js__WEBPACK_IMPORTED_MODULE_5___default.a(imageParallax, {
       delay: .5,
       transition: 'cubic-bezier(0,0,0,1)'
+    });
+  }
+
+  function showResourcesAbstract() {
+    var abstractBtn = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.abstract-btn');
+    abstractBtn.click(function () {
+      if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).hasClass('active')) {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).removeClass('active');
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).text('Show Abstract');
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).next('.abstract-content').fadeOut();
+      } else {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).addClass('active');
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).text('Hide');
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).next('.abstract-content').fadeIn();
+      }
     });
   }
 
@@ -18268,7 +18281,6 @@ function _arrayLikeToArray(arr, len) {
       });
       callAPIEndpoint('ajax/getAllQualityImprovementSessions', 'Get', null, function (result) {
         if (!result.error) {
-          console.log(result);
           createPaginationForQISessions(result.data);
         }
       });
@@ -18343,7 +18355,7 @@ function _arrayLikeToArray(arr, len) {
     }
   }
 
-  function ProjectList() {
+  function projectList() {
     var projectList = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.project-lists');
 
     if (projectList.length > 0) {
@@ -18356,12 +18368,10 @@ function _arrayLikeToArray(arr, len) {
         var stringifyCategories = JSON.stringify(categories);
         dropdownToggle.text(selectedYear);
         callAPIEndpoint('ajax/getProjectsByFilter', 'POST', 'categories=' + encodeURIComponent(stringifyCategories) + '&year=' + selectedYear + '&type=' + pageType, function (result) {
-          console.log(result);
-
           if (result.data.length) {
             createPaginationForProjects(result.data);
           } else {
-            noResultsFound();
+            noResultsFound('projects');
           }
         });
       });
@@ -18381,7 +18391,7 @@ function _arrayLikeToArray(arr, len) {
           if (result.data.length) {
             createPaginationForProjects(result.data);
           } else {
-            noResultsFound();
+            noResultsFound('projects');
           }
         });
       });
@@ -18399,12 +18409,10 @@ function _arrayLikeToArray(arr, len) {
           categories.splice(index, 1);
           stringifyCategories = JSON.stringify(categories);
           callAPIEndpoint('ajax/getProjectsByFilter', 'POST', 'categories=' + encodeURIComponent(stringifyCategories) + '&year=' + selectedYear + '&type=' + pageType, function (result) {
-            console.log(result);
-
             if (result.data.length) {
               createPaginationForProjects(result.data);
             } else {
-              noResultsFound();
+              noResultsFound('projects');
             }
           });
         }
@@ -18419,10 +18427,11 @@ function _arrayLikeToArray(arr, len) {
     }
   }
 
-  function noResultsFound() {
-    var pagination = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.paginate-action');
-    var row = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.paginated-projects .row');
-    var column = '<div class="col-md-12 pt-5 pb-5"><p class="text-center display-4"><i>No matching records found.</i></p></div>';
+  function noResultsFound(type) {
+    var row, column, pagination;
+    pagination = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.paginate-action');
+    type === 'projects' ? row = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.paginated-projects .row') : row = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.paginated-resources .row');
+    column = '<div class="col-md-12 pt-5 pb-5"><p class="text-center display-4"><i>No matching records found.</i></p></div>';
     pagination.empty();
     row.empty();
     row.append(column);
@@ -18456,6 +18465,79 @@ function _arrayLikeToArray(arr, len) {
         categorySpan += '<span class="project-category badge badge-pill badge-light m-1">' + i + '</span>';
       });
       column += '<div class="col-md-3 wow animate__animated animate__fadeInUp project-content" data-wow-delay="0.' + ctr + 's">' + '<a href="' + i.link + '">' + '<div class="project-item">' + '<div class="project-item__image">' + '<img src="' + i.image + '" class="" alt="' + i.imageAlt + '">' + '</div>' + '<div class="project-item__content">' + '<div class="project-title">' + '<h5 class="text-white font-weight-semibold mb-md-3">' + i.title + '</h5>' + '</div>' + '<div class="project-categories">' + categorySpan + '</div>' + '</div>' + '</div>' + '</a>' + '</div>';
+      ctr = ctr + 1;
+    });
+    return column;
+  }
+
+  function resourcesLists() {
+    var resourcesFilter = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.resources-filters');
+
+    if (resourcesFilter.length > 0) {
+      var selectedFilters = [];
+      var index,
+          stringifyFilters,
+          resourcesPageID = resourcesFilter.find('#page-id').val();
+      var selectCategory = resourcesFilter.find('.resources-categories');
+      selectCategory.select2({
+        placeholder: 'Select a category'
+      });
+      selectCategory.on("select2:select", function (e) {
+        var selectedCategory = e.params.data.text;
+        selectedFilters.push(selectedCategory);
+        stringifyFilters = JSON.stringify(selectedFilters);
+        callAPIEndpoint('ajax/getFilteredResources', 'POST', 'filters=' + encodeURIComponent(stringifyFilters) + '&resourcesPageID=' + resourcesPageID, function (result) {
+          if (result.data.length) {
+            createPaginationForResources(result.data);
+          } else {
+            noResultsFound('resources');
+          }
+        });
+      });
+      selectCategory.on("select2:unselect", function (e) {
+        var removedCategory = e.params.data.text;
+        index = selectedFilters.indexOf(removedCategory);
+
+        if (index > -1) {
+          selectedFilters.splice(index, 1);
+          stringifyFilters = JSON.stringify(selectedFilters);
+          callAPIEndpoint('ajax/getFilteredResources', 'POST', 'filters=' + encodeURIComponent(stringifyFilters) + '&resourcesPageID=' + resourcesPageID, function (result) {
+            if (result.data.length) {
+              createPaginationForResources(result.data);
+            } else {
+              noResultsFound('resources');
+            }
+          });
+        }
+      });
+    }
+  }
+
+  function createPaginationForResources(data) {
+    var resourcesItem = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.paginated-resources .row');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.paginate-action').pagination({
+      dataSource: data,
+      locator: 'items',
+      totalNumber: 30,
+      pageSize: 8,
+      prevText: 'PREV',
+      nextText: 'NEXT',
+      callback: function callback(data, pagination) {
+        // template method of yourself
+        var column = createColumnForResources(data);
+        resourcesItem.empty();
+        resourcesItem.prepend(column);
+      }
+    });
+  }
+
+  function createColumnForResources(data) {
+    var column = '';
+    var ctr = 0;
+    data.forEach(function (i) {
+      console.log(i.PageFilter);
+      console.log(i.PageAuthors);
+      column += '<div class="col-md-3 wow animate__animated animate__fadeInUp project-content" data-wow-delay="0.' + ctr + 's">' + '<div class="resource-item pb-4">' + '<div class="resource-item__content">' + '<div class="resource-title">' + '<h6 class="text-dark font-weight-semibold mb-md-3">' + i.PageTitle + '</h6>' + '</div>' + '<div class="resource-text">' + i.PageContent + '</div>' + '</div>' + '</div>' + '</div>';
       ctr = ctr + 1;
     });
     return column;

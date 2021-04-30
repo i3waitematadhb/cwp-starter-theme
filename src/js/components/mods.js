@@ -23,6 +23,7 @@ export default function () {
     BackgroundSettings();
 
     simpleParallaxSettings();
+    showResourcesAbstract();
     bannerShrink();
 
     //Sections
@@ -35,21 +36,9 @@ export default function () {
     SliderBannerSection();
 
     //Page
-    ProjectList();
+    projectList();
+    resourcesLists();
     QualityImprovementSessionHolderPage();
-  }
-
-  function HamburgerSettings()
-  {
-    $('.hamburger').click(function() {
-      if ($(this).hasClass('is-active')) {
-        $(this).removeClass('is-active');
-        $('.navigation').removeClass('open');
-      } else {
-        $(this).addClass('is-active');
-        $('.navigation').addClass('open');
-      }
-    });
   }
 
   function bannerShrink()
@@ -62,11 +51,19 @@ export default function () {
         filter: 'blur(' + (scroll/50) + 'px)',
         '-webkit-filter': 'blur(' + (scroll/50) + 'px)',
       });
-       //
-       // $('.scroll-down').css({
-       //   filter: 'blur(' + (scroll/50) + 'px)',
-       //   '-webkit-filter': 'blur(' + (scroll/50) + 'px)',
-       // });
+    });
+  }
+
+  function HamburgerSettings()
+  {
+    $('.hamburger').click(function() {
+      if ($(this).hasClass('is-active')) {
+        $(this).removeClass('is-active');
+        $('.navigation').removeClass('open');
+      } else {
+        $(this).addClass('is-active');
+        $('.navigation').addClass('open');
+      }
     });
   }
 
@@ -132,7 +129,7 @@ export default function () {
       {
         offset: 300,    // distance to the element when triggering the animation (default is 0)
         mobile: true,
-        animateClass: 'page-section', // animation css class (default is animated)
+        animateClass: 'animate__animated', // animation css class (default is animated)
         live: true,     // act on asynchronously loaded content (default is true)
         callback: function (section) {
           //section.classList.add('tex');
@@ -172,6 +169,22 @@ export default function () {
       delay: .5,
       transition: 'cubic-bezier(0,0,0,1)'
     })
+  }
+
+  function showResourcesAbstract()
+  {
+    let abstractBtn = $('.abstract-btn');
+    abstractBtn.click(function (){
+      if ($(this).hasClass('active')) {
+        $(this).removeClass('active');
+        $(this).text('Show Abstract');
+        $(this).next('.abstract-content').fadeOut();
+      } else {
+        $(this).addClass('active');
+        $(this).text('Hide');
+        $(this).next('.abstract-content').fadeIn();
+      }
+    });
   }
 
   function AccordionSection()
@@ -331,7 +344,6 @@ export default function () {
       });
       callAPIEndpoint('ajax/getAllQualityImprovementSessions', 'Get' ,null, function (result){
         if (!result.error) {
-          console.log(result);
           createPaginationForQISessions(result.data)
         }
       });
@@ -422,13 +434,12 @@ export default function () {
     }
   }
 
-  function ProjectList()
+  function projectList()
   {
     let projectList = $('.project-lists');
     if (projectList.length > 0) {
       let pageType = projectList.attr('data-type');
       let categories = [];
-
       let dropdownProjectFilter = projectList.find('.project-filters #dropdown-year');
       dropdownProjectFilter.find('.dropdown-item').click(function () {
         let selectedYear = $(this).text();
@@ -437,11 +448,10 @@ export default function () {
         dropdownToggle.text(selectedYear);
         callAPIEndpoint('ajax/getProjectsByFilter', 'POST',
           'categories=' + encodeURIComponent(stringifyCategories) + '&year=' + selectedYear + '&type=' + pageType, function (result) {
-            console.log(result);
             if (result.data.length) {
               createPaginationForProjects(result.data);
             } else {
-              noResultsFound();
+              noResultsFound('projects');
             }
           });
       });
@@ -463,7 +473,7 @@ export default function () {
             if (result.data.length) {
               createPaginationForProjects(result.data);
             } else {
-              noResultsFound();
+              noResultsFound('projects');
             }
           });
       });
@@ -481,13 +491,12 @@ export default function () {
           stringifyCategories = JSON.stringify(categories);
           callAPIEndpoint('ajax/getProjectsByFilter', 'POST',
             'categories=' + encodeURIComponent(stringifyCategories) + '&year=' + selectedYear + '&type=' + pageType, function (result) {
-              console.log(result);
-              if (result.data.length) {
-                createPaginationForProjects(result.data);
-              } else {
-                noResultsFound();
-              }
-            });
+            if (result.data.length) {
+              createPaginationForProjects(result.data);
+            } else {
+              noResultsFound('projects');
+            }
+          });
         }
       });
 
@@ -500,11 +509,12 @@ export default function () {
     }
   }
 
-  function noResultsFound()
+  function noResultsFound(type)
   {
-    let pagination = $('.paginate-action');
-    let row = $('.paginated-projects .row');
-    let column = '<div class="col-md-12 pt-5 pb-5"><p class="text-center display-4"><i>No matching records found.</i></p></div>';
+    let row, column, pagination;
+    pagination = $('.paginate-action');
+    (type === 'projects') ? row = $('.paginated-projects .row') : row = $('.paginated-resources .row');
+    column = '<div class="col-md-12 pt-5 pb-5"><p class="text-center display-4"><i>No matching records found.</i></p></div>';
     pagination.empty();
     row.empty();
     row.append(column);
@@ -554,6 +564,92 @@ export default function () {
         '</div>' +
         '</div>' +
         '</a>' +
+        '</div>';
+      ctr = ctr + 1;
+    });
+
+    return column;
+  }
+
+  function resourcesLists()
+  {
+    let resourcesFilter = $('.resources-filters');
+    if (resourcesFilter.length > 0) {
+      let selectedFilters = [];
+      let index, stringifyFilters, resourcesPageID = resourcesFilter.find('#page-id').val();
+      let selectCategory = resourcesFilter.find('.resources-categories');
+      selectCategory.select2({
+        placeholder: 'Select a category'
+      });
+      selectCategory.on("select2:select", function (e) {
+        let selectedCategory = e.params.data.text;
+        selectedFilters.push(selectedCategory);
+        stringifyFilters = JSON.stringify(selectedFilters);
+        callAPIEndpoint('ajax/getFilteredResources','POST','filters=' + encodeURIComponent(stringifyFilters) + '&resourcesPageID=' + resourcesPageID, function (result) {
+          if (result.data.length) {
+            createPaginationForResources(result.data);
+          } else {
+            noResultsFound('resources');
+          }
+        });
+      });
+      selectCategory.on("select2:unselect", function (e) {
+        let removedCategory = e.params.data.text;
+        index = selectedFilters.indexOf(removedCategory);
+        if (index > -1) {
+          selectedFilters.splice(index, 1);
+          stringifyFilters = JSON.stringify(selectedFilters);
+          callAPIEndpoint('ajax/getFilteredResources','POST','filters=' + encodeURIComponent(stringifyFilters) + '&resourcesPageID=' + resourcesPageID, function (result) {
+            if (result.data.length) {
+              createPaginationForResources(result.data);
+            } else {
+              noResultsFound('resources');
+            }
+          });
+        }
+      });
+    }
+  }
+
+  function createPaginationForResources(data)
+  {
+    let resourcesItem = $('.paginated-resources .row');
+    $('.paginate-action').pagination({
+      dataSource: data,
+      locator: 'items',
+      totalNumber: 30,
+      pageSize: 8,
+      prevText: 'PREV',
+      nextText: 'NEXT',
+      callback: function(data, pagination) {
+        // template method of yourself
+        let column = createColumnForResources(data);
+        resourcesItem.empty();
+        resourcesItem.prepend(column);
+      }
+    });
+  }
+
+  function createColumnForResources(data)
+  {
+    let column = '';
+    let ctr = 0;
+
+    data.forEach(function (i){
+      console.log(i.PageFilter);
+      console.log(i.PageAuthors);
+
+
+      column +=
+        '<div class="col-md-3 wow animate__animated animate__fadeInUp project-content" data-wow-delay="0.' + ctr +'s">' +
+          '<div class="resource-item pb-4">' +
+            '<div class="resource-item__content">' +
+              '<div class="resource-title">' +
+                '<h6 class="text-dark font-weight-semibold mb-md-3">' + i.PageTitle + '</h6>' +
+              '</div>' +
+              '<div class="resource-text">' + i.PageContent + '</div>' +
+            '</div>' +
+          '</div>' +
         '</div>';
       ctr = ctr + 1;
     });
