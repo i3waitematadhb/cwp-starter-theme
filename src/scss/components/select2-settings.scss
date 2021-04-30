@@ -1,13 +1,15 @@
-.category--filter {
+.category--filter,
+.resources-filters--item {
   .select2-container {
     width: 100% !important;
     .select2-selection {
       &--multiple {
         padding: 14px 10px;
-        border: 2px solid $gray-100;//$brand-primary;
+        border: 2px solid #eaeaea;//$gray-100;//$brand-primary;
         border-radius: 0;
       }
       &__choice {
+        font-family: $font-family-nunito-sans;
         font-size: 15px;
         color: #fff;
         padding: 3px 15px 3px 8px;
@@ -27,6 +29,12 @@
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0;
   .select2-results__option {
+    font-family: $font-family-nunito-sans;
     padding: 15px 20px;
+    &--highlighted[aria-selected] {
+      background-color: $brand-primary;
+      background-image: $theme-color-gradient;
+    }
   }
 }
+
