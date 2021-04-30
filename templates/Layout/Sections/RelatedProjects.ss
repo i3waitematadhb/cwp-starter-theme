@@ -14,12 +14,12 @@
                             </div>
                             <div class="project-item__content">
                                 <div class="project-title">
-                                    <h4 class="text-white font-weight-bold mb-md-3">$Title</h4>
+                                    <h5 class="text-white font-weight-semibold mb-md-3">$Title</h5>
                                 </div>
                                 <% if $Categories %>
                                     <div class="project-categories">
                                         <% loop $Categories %>
-                                            <span class="project-category badge badge-pill badge-light">$Name</span>
+                                            <span class="project-category badge badge-pill badge-light m-1">$Title</span>
                                         <% end_loop %>
                                     </div>
                                 <% end_if %>
