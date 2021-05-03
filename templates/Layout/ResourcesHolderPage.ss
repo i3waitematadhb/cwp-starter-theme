@@ -21,14 +21,8 @@
                             </div>
                         <% end_loop %>
                     <% end_if %>
-                    <div class="col-lg-12">
-                        <div class="paginated-resources pt-6">
-                            <div class="container p-0">
-                                <div class="row">
-
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-lg-12 pt-6">
+                        <div class="paginated-resources grid"></div>
                         <div class="paginate-action"></div>
                     </div>
                 </div>
