@@ -26,6 +26,7 @@
     "imagemin": "^6.0.0",
     "imagesloaded": "^4.1.4",
     "jquery": "^3.6.0",
+    "flexmasonry": "^0.2.3",
     "jquery-highlight": "^3.3.0",
     "object-fit-images": "^3.2.4",
     "owl.carousel": "^2.3.4",
