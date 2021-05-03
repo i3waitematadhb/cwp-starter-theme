@@ -3997,6 +3997,217 @@ setTransitionEndSupport();
 
 /***/ }),
 
+/***/ "./node_modules/flexmasonry/src/flexmasonry.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/flexmasonry/src/flexmasonry.js ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var defaultOptions = {
+  /*
+   * If `responsive` is `true`, `breakpointCols` will be used to determine
+   * how many columns a grid should have at a given responsive breakpoint.
+   */
+  responsive: true,
+
+  /*
+   * A list of how many columns should be shown at different responsive
+   * breakpoints, defined by media queries.
+   */
+  breakpointCols: {
+    'min-width: 1500px': 6,
+    'min-width: 1200px': 5,
+    'min-width: 992px': 4,
+    'min-width: 768px': 3,
+    'min-width: 576px': 2
+  },
+
+  /*
+   * If `responsive` is `false`, this number of columns will always be shown,
+   * no matter the width of the screen.
+   */
+  numCols: 4
+};
+var _resizeId = null;
+var _options = {};
+var _targets = [];
+
+function init(targets) {
+  var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+  if (typeof targets === 'string') {
+    _targets = document.querySelectorAll(targets);
+  } else {
+    _targets = targets;
+  }
+
+  _options = Object.assign(defaultOptions, options);
+
+  _targets.forEach(function (target) {
+    setUp(target);
+    setHeight(target);
+  });
+
+  addEventListeners();
+  return this;
+}
+
+function setUp(target) {
+  target.classList.add('flexmasonry');
+
+  if (_options.responsive) {
+    target.classList.add('flexmasonry-responsive');
+  }
+
+  setColsClass(target);
+  Array.from(target.children).forEach(function (item) {
+    item.classList.add('flexmasonry-item');
+  });
+  addBreakElements(target);
+}
+
+function onLoad() {
+  _targets.forEach(function (target) {
+    setHeight(target);
+  });
+}
+
+function onResize() {
+  if (_resizeId) {
+    window.cancelAnimationFrame(_resizeId);
+  }
+
+  _resizeId = window.requestAnimationFrame(function () {
+    refreshAll();
+  });
+}
+
+function addEventListeners() {
+  window.addEventListener('load', onLoad);
+  window.addEventListener('resize', onResize);
+}
+
+function removeEventListeners() {
+  window.removeEventListener('load', onLoad);
+  window.removeEventListener('resize', onResize);
+}
+
+function setHeight(target) {
+  if (getCurrentCols() < 2) {
+    target.style.removeProperty('height');
+    return;
+  }
+
+  var heights = [];
+  Array.from(target.children).forEach(function (item) {
+    if (item.classList.contains('flexmasonry-break')) {
+      return;
+    }
+
+    var comp = window.getComputedStyle(item);
+    var order = comp.getPropertyValue('order');
+    var height = comp.getPropertyValue('height');
+
+    if (!heights[order - 1]) {
+      heights[order - 1] = 0;
+    }
+
+    heights[order - 1] += Math.ceil(parseFloat(height));
+  });
+  var maxHeight = Math.max.apply(Math, heights);
+  target.style.height = maxHeight + 'px';
+}
+
+function addBreakElements(target) {
+  var breakEls = target.querySelectorAll('.flexmasonry-break');
+
+  if (Array.from(breakEls).length === getCurrentCols() - 1) {
+    return;
+  }
+
+  for (var i = 1; i < getCurrentCols(); i++) {
+    var breakDiv = document.createElement('div');
+    breakDiv.classList.add('flexmasonry-break');
+    breakDiv.classList.add('flexmasonry-break-' + i);
+    target.appendChild(breakDiv);
+  }
+}
+
+function removeBreakElements(target) {
+  var breakEls = target.querySelectorAll('.flexmasonry-break');
+
+  if (Array.from(breakEls).length === getCurrentCols() - 1) {
+    return;
+  }
+
+  Array.from(breakEls).forEach(function (breakEl) {
+    breakEl.parentNode.removeChild(breakEl);
+  });
+}
+
+function setColsClass(target) {
+  if (target.classList.contains('flexmasonry-cols-' + getCurrentCols())) {
+    return;
+  }
+
+  target.className = target.className.replace(/(flexmasonry-cols-\d+)/, '');
+  target.classList.add('flexmasonry-cols-' + getCurrentCols());
+}
+
+function getCurrentCols() {
+  if (!_options.responsive) {
+    return _options.numCols;
+  }
+
+  var keys = Object.keys(_options.breakpointCols);
+
+  for (var _i = 0, _keys = keys; _i < _keys.length; _i++) {
+    var key = _keys[_i];
+
+    if (window.matchMedia('(' + key + ')').matches) {
+      return _options.breakpointCols[key];
+    }
+  }
+
+  return 1;
+}
+
+function refresh(target) {
+  var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  _options = Object.assign(defaultOptions, options);
+  setColsClass(target);
+  removeBreakElements(target);
+  addBreakElements(target);
+  setHeight(target);
+  return this;
+}
+
+function refreshAll() {
+  var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+  _targets.forEach(function (target) {
+    refresh(target, options);
+  });
+
+  return this;
+}
+
+function destroyAll() {
+  removeEventListeners();
+}
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  init: init,
+  refresh: refresh,
+  refreshAll: refreshAll,
+  destroyAll: destroyAll
+});
+
+/***/ }),
+
 /***/ "./node_modules/jquery-highlight/jquery.highlight.js":
 /*!***********************************************************!*\
   !*** ./node_modules/jquery-highlight/jquery.highlight.js ***!
@@ -17788,6 +17999,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var select2__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(select2__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var simple_parallax_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! simple-parallax-js */ "./node_modules/simple-parallax-js/dist/simpleParallax.min.js");
 /* harmony import */ var simple_parallax_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(simple_parallax_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var flexmasonry_src_flexmasonry__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! flexmasonry/src/flexmasonry */ "./node_modules/flexmasonry/src/flexmasonry.js");
 function _createForOfIteratorHelper(o, allowArrayLike) {
   var it;
 
@@ -17864,6 +18076,7 @@ function _arrayLikeToArray(arr, len) {
   return arr2;
 }
 /* eslint-disable */
+
 
 
 
@@ -18418,8 +18631,6 @@ function _arrayLikeToArray(arr, len) {
         }
       });
       callAPIEndpoint('ajax/getAllProjects', 'POST', 'type=' + pageType, function (result) {
-        console.log(result);
-
         if (!result.error) {
           createPaginationForProjects(result.data);
         }
@@ -18510,23 +18721,38 @@ function _arrayLikeToArray(arr, len) {
           });
         }
       });
+      callAPIEndpoint('ajax/getAllResources', 'POST', 'resourcesPageID=' + resourcesPageID, function (result) {
+        if (!result.error) {
+          console.log(result);
+
+          if (result.data.length) {
+            createPaginationForResources(result.data);
+          } else {
+            noResultsFound('resources');
+          }
+        }
+      });
     }
   }
 
   function createPaginationForResources(data) {
-    var resourcesItem = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.paginated-resources .row');
+    var resourcesItem = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.paginated-resources');
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('.paginate-action').pagination({
       dataSource: data,
       locator: 'items',
       totalNumber: 30,
-      pageSize: 8,
+      pageSize: 9,
       prevText: 'PREV',
       nextText: 'NEXT',
       callback: function callback(data, pagination) {
-        // template method of yourself
+        //Template method of yourself
         var column = createColumnForResources(data);
         resourcesItem.empty();
         resourcesItem.prepend(column);
+        console.log(data); //Load functions
+
+        resourcesAbstract();
+        masonryLayout();
       }
     });
   }
@@ -18535,12 +18761,63 @@ function _arrayLikeToArray(arr, len) {
     var column = '';
     var ctr = 0;
     data.forEach(function (i) {
-      console.log(i.PageFilter);
-      console.log(i.PageAuthors);
-      column += '<div class="col-md-3 wow animate__animated animate__fadeInUp project-content" data-wow-delay="0.' + ctr + 's">' + '<div class="resource-item pb-4">' + '<div class="resource-item__content">' + '<div class="resource-title">' + '<h6 class="text-dark font-weight-semibold mb-md-3">' + i.PageTitle + '</h6>' + '</div>' + '<div class="resource-text">' + i.PageContent + '</div>' + '</div>' + '</div>' + '</div>';
+      var abstractColumn = '',
+          categoryColumn = '',
+          authorColumn = '';
+
+      if (i["abstract"]) {
+        abstractColumn += '<div class="resource-abstract"><button class="read-abstract"><span class="ff-clan font-weight-semibold theme-text-gradient">Read abstract</span></button><div class="abstract-content">' + i["abstract"] + '</div></div>';
+      }
+
+      if (i.authors) {
+        i.authors.forEach(function (title) {
+          authorColumn += "<span class='resource-author font-weight-light'><span class='font-weight-bold'>Posted by: </span>" + title + "</span>";
+        });
+      }
+
+      if (i.categories) {
+        i.categories.forEach(function (title) {
+          categoryColumn += "<span class='resource-category font-weight-light m-1'>" + title + "</span>";
+        });
+      }
+
+      console.log(i.authors);
+      column += '<div class="resource-item wow animate__animated animate__fadeInUp" data-wow-delay="0.' + ctr + 's">' + '<div class="resource-item__content">' + '<div class="resource-title">' + '<h6 class="text-dark font-weight-bold mb-md-3">' + i.title + '</h6>' + '</div>' + '<div class="resource-content mb-4">' + i.content + '</div>' + '<div class="resources-authors text-dark">' + authorColumn + '</div>' + '<div class="resources-categories text-dark"><span class="font-weight-bold">Categories: </span>' + categoryColumn + '</div>' + abstractColumn + '</div>' + '</div>';
       ctr = ctr + 1;
     });
     return column;
+  }
+
+  function masonryLayout() {
+    flexmasonry_src_flexmasonry__WEBPACK_IMPORTED_MODULE_6__["default"].init('.grid', {
+      responsive: true,
+      breakpointCols: {
+        'min-width: 1500px': 3,
+        'min-width: 1200px': 3,
+        'min-width: 992px': 2,
+        'min-width: 768px': 2,
+        'min-width: 576px': 1
+      },
+      numCols: 3
+    });
+  }
+
+  function resourcesAbstract() {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.read-abstract').click(function () {
+      if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).hasClass('active')) {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).removeClass('active').find('span').text('Read abstract');
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).next('.abstract-content').hide(); //remove added height from abstract content
+
+        var abstractContentHeight = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).parent('.resource-abstract').innerHeight();
+        var paginatedResources = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.paginated-resources');
+        var fixPagResHeight = paginatedResources.height() - abstractContentHeight + 34;
+        paginatedResources.css('height', fixPagResHeight + 'px');
+      } else {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).addClass('active').find('span').text('Hide abstract');
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).next('.abstract-content').fadeIn();
+        masonryLayout();
+      }
+    });
   }
 
   function callAPIEndpoint(endpoint, method, postData, callback) {

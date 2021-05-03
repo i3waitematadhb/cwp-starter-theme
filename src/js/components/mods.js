@@ -5,6 +5,7 @@ import WOW from 'wow.js';
 import pagination from 'paginationjs';
 import 'select2';
 import simpleParallax from 'simple-parallax-js';
+import FlexMasonry from 'flexmasonry/src/flexmasonry';
 
 export default function () {
   $(document).ready(function ()
@@ -501,7 +502,6 @@ export default function () {
       });
 
       callAPIEndpoint('ajax/getAllProjects','POST', 'type=' + pageType, function (result) {
-        console.log(result);
         if (!result.error) {
           createPaginationForProjects(result.data)
         }
@@ -551,19 +551,19 @@ export default function () {
       });
       column +=
         '<div class="col-md-3 wow animate__animated animate__fadeInUp project-content" data-wow-delay="0.' + ctr +'s">' +
-        '<a href="' + i.link + '">' +
-        '<div class="project-item">' +
-        '<div class="project-item__image">' +
-        '<img src="' + i.image + '" class="" alt="' + i.imageAlt + '">' +
-        '</div>' +
-        '<div class="project-item__content">' +
-        '<div class="project-title">' +
-        '<h5 class="text-white font-weight-semibold mb-md-3">' + i.title + '</h5>' +
-        '</div>' +
-        '<div class="project-categories">' + categorySpan + '</div>' +
-        '</div>' +
-        '</div>' +
-        '</a>' +
+          '<a href="' + i.link + '">' +
+            '<div class="project-item">' +
+              '<div class="project-item__image">' +
+                '<img src="' + i.image + '" class="" alt="' + i.imageAlt + '">' +
+              '</div>' +
+              '<div class="project-item__content">' +
+                '<div class="project-title">' +
+                  '<h5 class="text-white font-weight-semibold mb-md-3">' + i.title + '</h5>' +
+                '</div>' +
+                '<div class="project-categories">' + categorySpan + '</div>' +
+              '</div>' +
+            '</div>' +
+          '</a>' +
         '</div>';
       ctr = ctr + 1;
     });
@@ -608,24 +608,39 @@ export default function () {
           });
         }
       });
+      callAPIEndpoint('ajax/getAllResources','POST', 'resourcesPageID=' + resourcesPageID, function (result) {
+        if (!result.error) {
+          console.log(result);
+          if (result.data.length) {
+            createPaginationForResources(result.data)
+          } else {
+            noResultsFound('resources');
+          }
+        }
+      });
     }
   }
 
   function createPaginationForResources(data)
   {
-    let resourcesItem = $('.paginated-resources .row');
+    let resourcesItem = $('.paginated-resources');
     $('.paginate-action').pagination({
       dataSource: data,
       locator: 'items',
       totalNumber: 30,
-      pageSize: 8,
+      pageSize: 9,
       prevText: 'PREV',
       nextText: 'NEXT',
       callback: function(data, pagination) {
-        // template method of yourself
+        //Template method of yourself
         let column = createColumnForResources(data);
         resourcesItem.empty();
         resourcesItem.prepend(column);
+        console.log(data);
+
+        //Load functions
+        resourcesAbstract();
+        masonryLayout();
       }
     });
   }
@@ -634,27 +649,72 @@ export default function () {
   {
     let column = '';
     let ctr = 0;
-
     data.forEach(function (i){
-      console.log(i.PageFilter);
-      console.log(i.PageAuthors);
-
-
+      let abstractColumn = '', categoryColumn = '', authorColumn = '';
+      if (i.abstract) {
+        abstractColumn += '<div class="resource-abstract"><button class="read-abstract"><span class="ff-clan font-weight-semibold theme-text-gradient">Read abstract</span></button><div class="abstract-content">' + i.abstract + '</div></div>';
+      }
+      if (i.authors) {
+        i.authors.forEach(function(title){
+          authorColumn += "<span class='resource-author font-weight-light'><span class='font-weight-bold'>Posted by: </span>" + title + "</span>";
+        });
+      }
+      if (i.categories) {
+        i.categories.forEach(function(title){
+          categoryColumn += "<span class='resource-category font-weight-light m-1'>" + title + "</span>";
+        });
+      }
+      console.log(i.authors);
       column +=
-        '<div class="col-md-3 wow animate__animated animate__fadeInUp project-content" data-wow-delay="0.' + ctr +'s">' +
-          '<div class="resource-item pb-4">' +
-            '<div class="resource-item__content">' +
-              '<div class="resource-title">' +
-                '<h6 class="text-dark font-weight-semibold mb-md-3">' + i.PageTitle + '</h6>' +
-              '</div>' +
-              '<div class="resource-text">' + i.PageContent + '</div>' +
+        '<div class="resource-item wow animate__animated animate__fadeInUp" data-wow-delay="0.' + ctr +'s">' +
+          '<div class="resource-item__content">' +
+            '<div class="resource-title">' +
+              '<h6 class="text-dark font-weight-bold mb-md-3">'+ i.title +'</h6>' +
             '</div>' +
+            '<div class="resource-content mb-4">'+ i.content +'</div>' +
+            '<div class="resources-authors text-dark">' + authorColumn + '</div>' +
+            '<div class="resources-categories text-dark"><span class="font-weight-bold">Categories: </span>' + categoryColumn + '</div>' +
+            abstractColumn +
           '</div>' +
         '</div>';
       ctr = ctr + 1;
     });
-
     return column;
+  }
+
+  function masonryLayout()
+  {
+    FlexMasonry.init('.grid', {
+      responsive: true,
+      breakpointCols: {
+        'min-width: 1500px': 3,
+        'min-width: 1200px': 3,
+        'min-width: 992px': 2,
+        'min-width: 768px': 2,
+        'min-width: 576px': 1,
+      },
+      numCols: 3
+    });
+  }
+
+  function resourcesAbstract()
+  {
+    $('.read-abstract').click(function() {
+      if ($(this).hasClass('active')) {
+        $(this).removeClass('active').find('span').text('Read abstract');
+        $(this).next('.abstract-content').hide();
+
+        //remove added height from abstract content
+        let abstractContentHeight = $(this).parent('.resource-abstract').innerHeight();
+        let paginatedResources   = $('.paginated-resources');
+        let fixPagResHeight = (paginatedResources.height() - abstractContentHeight + 34);
+        paginatedResources.css('height', fixPagResHeight + 'px');
+      } else {
+        $(this).addClass('active').find('span').text('Hide abstract');
+        $(this).next('.abstract-content').fadeIn();
+        masonryLayout();
+      }
+    });
   }
 
   function callAPIEndpoint(endpoint, method, postData, callback)
