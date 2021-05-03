@@ -10279,7 +10279,8 @@ pre {
 
 .theme-button,
 .theme-button-light,
-.theme-button-gradient {
+.theme-button-gradient,
+.clear-button {
   display: inline-block;
   border-radius: 50px;
   margin-bottom: 0;
@@ -10287,14 +10288,16 @@ pre {
 @media only screen and (min-width: 768px) {
   .theme-button,
 .theme-button-light,
-.theme-button-gradient {
+.theme-button-gradient,
+.clear-button {
     padding: 15px 25px;
   }
 }
 @media only screen and (max-width: 767px) {
   .theme-button,
 .theme-button-light,
-.theme-button-gradient {
+.theme-button-gradient,
+.clear-button {
     padding: 12px 20px;
   }
 }
@@ -10315,6 +10318,27 @@ pre {
 .theme-button a,
 .theme-button-alt a {
   color: #fff;
+}
+
+.clear-button {
+  color: #343a40;
+  border: 1px solid #343a40;
+  transition: all 0.2s ease-in-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  .clear-button {
+    transition: none;
+  }
+}
+.clear-button a {
+  color: #343a40 !important;
+}
+.clear-button:hover {
+  background-color: #343a40;
+  color: #fff;
+}
+.clear-button:hover a {
+  color: #fff !important;
 }
 
 .theme-button-light,

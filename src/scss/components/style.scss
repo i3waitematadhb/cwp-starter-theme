@@ -1946,8 +1946,43 @@ header {
     &--item {
       .filter-content {
         label {
-          font-size: 20px;
+          font-size: 18px;
           font-weight: 600;
+        }
+      }
+    }
+  }
+  .paginated-resources {
+    //height: 100vh !important;
+    .resource-item {
+      &__content {
+        border-radius: 20px;
+        background-color: #fff;
+        margin: 5px;
+        padding: 20px;
+      }
+      .resources-authors {
+        .resource-author {
+          font-size: 14px;
+        }
+      }
+      .resources-categories {
+        margin-bottom: 5px;
+        font-size: 14px;
+        .resource-category {
+        }
+      }
+      .read-abstract {
+        font-size: 14px;
+        background-color: transparent;
+        padding: 20px 0 0;
+        border: 0;
+      }
+      .abstract-content {
+        margin-top: 20px;
+        display: none;
+        img {
+          border: 1px solid $dark;
         }
       }
     }
@@ -2102,7 +2137,7 @@ body {
     padding: 40px 20px;
   }
   ul {
-    font-weight: 700;
+    font-weight: 600;
     text-align: right;
     list-style: none;
     padding: 0;
@@ -2113,6 +2148,7 @@ body {
       a {
         padding: 5px 12px;
         color: $brand-primary;
+        display: block;
       }
       &.active {
         a {

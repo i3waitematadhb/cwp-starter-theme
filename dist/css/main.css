@@ -1,4 +1,85 @@
 @import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);@import url(https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap);@import url(https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap);@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap);@import url(https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap);@import url(https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap);@import url(https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);@import url(https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700&display=swap);/*!
+ * FlexMasonry
+ * Version: 0.2.3
+ * Author: Gilbert Pellegrom <gilbert@pellegrom.me>
+ * License: MIT
+ */
+.flexmasonry {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: column wrap;
+        flex-flow: column wrap;
+    -ms-flex-line-pack: justify;
+        align-content: space-between;
+}
+
+.flexmasonry-item { width: 100%; }
+.flexmasonry-cols-2 .flexmasonry-item { width: 50%; }
+.flexmasonry-cols-3 .flexmasonry-item { width: 33.333%; }
+.flexmasonry-cols-4 .flexmasonry-item { width: 25%; }
+.flexmasonry-cols-5 .flexmasonry-item { width: 20%; }
+.flexmasonry-cols-6 .flexmasonry-item { width: 16.666%; }
+.flexmasonry-cols-7 .flexmasonry-item { width: 14.285%; }
+.flexmasonry-cols-8 .flexmasonry-item { width: 12.5%; }
+
+.flexmasonry-cols-2 .flexmasonry-item:nth-child(2n+1) { -ms-flex-order: 1; order: 1; }
+.flexmasonry-cols-2 .flexmasonry-item:nth-child(2n)   { -ms-flex-order: 2; order: 2; }
+
+.flexmasonry-cols-3 .flexmasonry-item:nth-child(3n+1) { -ms-flex-order: 1; order: 1; }
+.flexmasonry-cols-3 .flexmasonry-item:nth-child(3n+2) { -ms-flex-order: 2; order: 2; }
+.flexmasonry-cols-3 .flexmasonry-item:nth-child(3n)   { -ms-flex-order: 3; order: 3; }
+
+.flexmasonry-cols-4 .flexmasonry-item:nth-child(4n+1) { -ms-flex-order: 1; order: 1; }
+.flexmasonry-cols-4 .flexmasonry-item:nth-child(4n+2) { -ms-flex-order: 2; order: 2; }
+.flexmasonry-cols-4 .flexmasonry-item:nth-child(4n+3) { -ms-flex-order: 3; order: 3; }
+.flexmasonry-cols-4 .flexmasonry-item:nth-child(4n)   { -ms-flex-order: 4; order: 4; }
+
+.flexmasonry-cols-5 .flexmasonry-item:nth-child(5n+1) { -ms-flex-order: 1; order: 1; }
+.flexmasonry-cols-5 .flexmasonry-item:nth-child(5n+2) { -ms-flex-order: 2; order: 2; }
+.flexmasonry-cols-5 .flexmasonry-item:nth-child(5n+3) { -ms-flex-order: 3; order: 3; }
+.flexmasonry-cols-5 .flexmasonry-item:nth-child(5n+4) { -ms-flex-order: 4; order: 4; }
+.flexmasonry-cols-5 .flexmasonry-item:nth-child(5n)   { -ms-flex-order: 5; order: 5; }
+
+.flexmasonry-cols-6 .flexmasonry-item:nth-child(6n+1) { -ms-flex-order: 1; order: 1; }
+.flexmasonry-cols-6 .flexmasonry-item:nth-child(6n+2) { -ms-flex-order: 2; order: 2; }
+.flexmasonry-cols-6 .flexmasonry-item:nth-child(6n+3) { -ms-flex-order: 3; order: 3; }
+.flexmasonry-cols-6 .flexmasonry-item:nth-child(6n+4) { -ms-flex-order: 4; order: 4; }
+.flexmasonry-cols-6 .flexmasonry-item:nth-child(6n+5) { -ms-flex-order: 5; order: 5; }
+.flexmasonry-cols-6 .flexmasonry-item:nth-child(6n)   { -ms-flex-order: 6; order: 6; }
+
+.flexmasonry-cols-7 .flexmasonry-item:nth-child(7n+1) { -ms-flex-order: 1; order: 1; }
+.flexmasonry-cols-7 .flexmasonry-item:nth-child(7n+2) { -ms-flex-order: 2; order: 2; }
+.flexmasonry-cols-7 .flexmasonry-item:nth-child(7n+3) { -ms-flex-order: 3; order: 3; }
+.flexmasonry-cols-7 .flexmasonry-item:nth-child(7n+4) { -ms-flex-order: 4; order: 4; }
+.flexmasonry-cols-7 .flexmasonry-item:nth-child(7n+5) { -ms-flex-order: 5; order: 5; }
+.flexmasonry-cols-7 .flexmasonry-item:nth-child(7n+6) { -ms-flex-order: 6; order: 6; }
+.flexmasonry-cols-7 .flexmasonry-item:nth-child(7n)   { -ms-flex-order: 7; order: 7; }
+
+.flexmasonry-cols-8 .flexmasonry-item:nth-child(8n+1) { -ms-flex-order: 1; order: 1; }
+.flexmasonry-cols-8 .flexmasonry-item:nth-child(8n+2) { -ms-flex-order: 2; order: 2; }
+.flexmasonry-cols-8 .flexmasonry-item:nth-child(8n+3) { -ms-flex-order: 3; order: 3; }
+.flexmasonry-cols-8 .flexmasonry-item:nth-child(8n+4) { -ms-flex-order: 4; order: 4; }
+.flexmasonry-cols-8 .flexmasonry-item:nth-child(8n+5) { -ms-flex-order: 5; order: 5; }
+.flexmasonry-cols-8 .flexmasonry-item:nth-child(8n+6) { -ms-flex-order: 6; order: 6; }
+.flexmasonry-cols-8 .flexmasonry-item:nth-child(8n+7) { -ms-flex-order: 7; order: 7; }
+.flexmasonry-cols-8 .flexmasonry-item:nth-child(8n)   { -ms-flex-order: 8; order: 8; }
+
+.flexmasonry-break {
+    content: "";
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    width: 0 !important;
+    margin: 0;
+}
+.flexmasonry-break-1 { -ms-flex-order: 1; order: 1; }
+.flexmasonry-break-2 { -ms-flex-order: 2; order: 2; }
+.flexmasonry-break-3 { -ms-flex-order: 3; order: 3; }
+.flexmasonry-break-4 { -ms-flex-order: 4; order: 4; }
+.flexmasonry-break-5 { -ms-flex-order: 5; order: 5; }
+.flexmasonry-break-6 { -ms-flex-order: 6; order: 6; }
+.flexmasonry-break-7 { -ms-flex-order: 7; order: 7; }
+
+/*!
  * Font Awesome Pro 5.15.3 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license (Commercial License)
  */
@@ -30618,7 +30699,8 @@ pre {
 
 .theme-button,
 .theme-button-light,
-.theme-button-gradient {
+.theme-button-gradient,
+.clear-button {
   display: inline-block;
   border-radius: 50px;
   margin-bottom: 0;
@@ -30626,14 +30708,16 @@ pre {
 @media only screen and (min-width: 768px) {
   .theme-button,
 .theme-button-light,
-.theme-button-gradient {
+.theme-button-gradient,
+.clear-button {
     padding: 15px 25px;
   }
 }
 @media only screen and (max-width: 767px) {
   .theme-button,
 .theme-button-light,
-.theme-button-gradient {
+.theme-button-gradient,
+.clear-button {
     padding: 12px 20px;
   }
 }
@@ -30654,6 +30738,27 @@ pre {
 .theme-button a,
 .theme-button-alt a {
   color: #fff;
+}
+
+.clear-button {
+  color: #343a40;
+  border: 1px solid #343a40;
+  transition: all 0.2s ease-in-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  .clear-button {
+    transition: none;
+  }
+}
+.clear-button a {
+  color: #343a40 !important;
+}
+.clear-button:hover {
+  background-color: #343a40;
+  color: #fff;
+}
+.clear-button:hover a {
+  color: #fff !important;
 }
 
 .theme-button-light,
@@ -33338,8 +33443,34 @@ header .navigation.open .navigation--list {
 }
 
 .ResourcesHolderPage .resources-filters--item .filter-content label {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
+}
+.ResourcesHolderPage .paginated-resources .resource-item__content {
+  border-radius: 20px;
+  background-color: #fff;
+  margin: 5px;
+  padding: 20px;
+}
+.ResourcesHolderPage .paginated-resources .resource-item .resources-authors .resource-author {
+  font-size: 14px;
+}
+.ResourcesHolderPage .paginated-resources .resource-item .resources-categories {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+.ResourcesHolderPage .paginated-resources .resource-item .read-abstract {
+  font-size: 14px;
+  background-color: transparent;
+  padding: 20px 0 0;
+  border: 0;
+}
+.ResourcesHolderPage .paginated-resources .resource-item .abstract-content {
+  margin-top: 20px;
+  display: none;
+}
+.ResourcesHolderPage .paginated-resources .resource-item .abstract-content img {
+  border: 1px solid #343a40;
 }
 
 /*
@@ -33503,7 +33634,7 @@ body {
   padding: 40px 20px;
 }
 .paginate-action ul {
-  font-weight: 700;
+  font-weight: 600;
   text-align: right;
   list-style: none;
   padding: 0;
@@ -33516,6 +33647,7 @@ body {
 .paginate-action ul li a {
   padding: 5px 12px;
   color: #ff7b1e;
+  display: block;
 }
 .paginate-action ul li.active a {
   color: #fff;

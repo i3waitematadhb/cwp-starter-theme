@@ -397,7 +397,8 @@ pre {
 // theme buttons
 .theme-button,
 .theme-button-light,
-.theme-button-gradient{
+.theme-button-gradient,
+.clear-button {
   display: inline-block;
   border-radius: 50px;
   margin-bottom: 0;
@@ -426,6 +427,23 @@ pre {
 
   }
 }
+
+.clear-button {
+  color: $dark;
+  border: 1px solid $dark;
+  @include transition();
+  a {
+    color: $dark !important;
+  }
+  &:hover {
+    background-color: $dark;
+    color: #fff;
+    a {
+      color: #fff !important;
+    }
+  }
+}
+
 .theme-button-light,
 .theme-button-light-alt{
   color: theme-color("brand-primary");
