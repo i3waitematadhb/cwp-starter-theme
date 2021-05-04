@@ -17218,7 +17218,7 @@ readers do not read off random characters that represent icons */
 .category--filter .select2-container .select2-selection--multiple,
 .resources-filters--item .select2-container .select2-selection--multiple {
   padding: 14px 10px;
-  border: 2px solid #eaeaea;
+  border: 2px solid #fff;
   border-radius: 0;
 }
 .category--filter .select2-container .select2-selection__choice,
@@ -30697,6 +30697,29 @@ pre {
   display: inline-block;
 }
 
+@media only screen and (min-width: 768px) {
+  a .theme-button,
+a .theme-button-light,
+a .theme-button-gradient,
+a .clear-button,
+a .theme-button-alt,
+a .theme-button-light-alt,
+a .theme-button-gradient-alt {
+    padding: 15px 25px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  a .theme-button,
+a .theme-button-light,
+a .theme-button-gradient,
+a .clear-button,
+a .theme-button-alt,
+a .theme-button-light-alt,
+a .theme-button-gradient-alt {
+    padding: 12px 20px;
+  }
+}
+
 .theme-button,
 .theme-button-light,
 .theme-button-gradient,
@@ -30705,19 +30728,25 @@ pre {
   border-radius: 50px;
   margin-bottom: 0;
 }
+.theme-button a,
+.theme-button-light a,
+.theme-button-gradient a,
+.clear-button a {
+  display: block;
+}
 @media only screen and (min-width: 768px) {
-  .theme-button,
-.theme-button-light,
-.theme-button-gradient,
-.clear-button {
+  .theme-button a,
+.theme-button-light a,
+.theme-button-gradient a,
+.clear-button a {
     padding: 15px 25px;
   }
 }
 @media only screen and (max-width: 767px) {
-  .theme-button,
-.theme-button-light,
-.theme-button-gradient,
-.clear-button {
+  .theme-button a,
+.theme-button-light a,
+.theme-button-gradient a,
+.clear-button a {
     padding: 12px 20px;
   }
 }
@@ -30727,7 +30756,12 @@ pre {
 .theme-button-gradient-alt {
   display: inline-block;
   margin-bottom: 0;
+}
+.theme-button-alt a,
+.theme-button-light-alt a,
+.theme-button-gradient-alt a {
   padding: 12px 20px;
+  display: block;
 }
 
 .theme-button,
@@ -33452,12 +33486,28 @@ header .navigation.open .navigation--list {
   margin: 5px;
   padding: 20px;
 }
-.ResourcesHolderPage .paginated-resources .resource-item .resources-authors .resource-author {
+.ResourcesHolderPage .paginated-resources .resource-item .resources-authors {
   font-size: 14px;
 }
 .ResourcesHolderPage .paginated-resources .resource-item .resources-categories {
   margin-bottom: 5px;
   font-size: 14px;
+}
+.ResourcesHolderPage .paginated-resources .resource-item .resources-categories .resource-category {
+  position: relative;
+  font-size: 12px;
+  color: #fff;
+  border-radius: 20px;
+  border: 0;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  padding: 5px 10px;
+  background-color: #ff7b1e;
+  background-image: linear-gradient(155.92deg, #ffa500 5.36%, #ff7b1e 85.08%);
+}
+.ResourcesHolderPage .paginated-resources .resource-item .resources-categories .resource-category:active {
+  top: 2px;
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.12);
 }
 .ResourcesHolderPage .paginated-resources .resource-item .read-abstract {
   font-size: 14px;

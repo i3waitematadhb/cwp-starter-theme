@@ -10277,6 +10277,29 @@ pre {
   display: inline-block;
 }
 
+@media only screen and (min-width: 768px) {
+  a .theme-button,
+a .theme-button-light,
+a .theme-button-gradient,
+a .clear-button,
+a .theme-button-alt,
+a .theme-button-light-alt,
+a .theme-button-gradient-alt {
+    padding: 15px 25px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  a .theme-button,
+a .theme-button-light,
+a .theme-button-gradient,
+a .clear-button,
+a .theme-button-alt,
+a .theme-button-light-alt,
+a .theme-button-gradient-alt {
+    padding: 12px 20px;
+  }
+}
+
 .theme-button,
 .theme-button-light,
 .theme-button-gradient,
@@ -10285,19 +10308,25 @@ pre {
   border-radius: 50px;
   margin-bottom: 0;
 }
+.theme-button a,
+.theme-button-light a,
+.theme-button-gradient a,
+.clear-button a {
+  display: block;
+}
 @media only screen and (min-width: 768px) {
-  .theme-button,
-.theme-button-light,
-.theme-button-gradient,
-.clear-button {
+  .theme-button a,
+.theme-button-light a,
+.theme-button-gradient a,
+.clear-button a {
     padding: 15px 25px;
   }
 }
 @media only screen and (max-width: 767px) {
-  .theme-button,
-.theme-button-light,
-.theme-button-gradient,
-.clear-button {
+  .theme-button a,
+.theme-button-light a,
+.theme-button-gradient a,
+.clear-button a {
     padding: 12px 20px;
   }
 }
@@ -10307,7 +10336,12 @@ pre {
 .theme-button-gradient-alt {
   display: inline-block;
   margin-bottom: 0;
+}
+.theme-button-alt a,
+.theme-button-light-alt a,
+.theme-button-gradient-alt a {
   padding: 12px 20px;
+  display: block;
 }
 
 .theme-button,
