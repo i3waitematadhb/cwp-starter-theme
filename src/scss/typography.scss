@@ -395,6 +395,23 @@ pre {
 }
 
 // theme buttons
+a {
+  .theme-button,
+  .theme-button-light,
+  .theme-button-gradient,
+  .clear-button,
+  .theme-button-alt,
+  .theme-button-light-alt,
+  .theme-button-gradient-alt{
+    @media only screen and (min-width: 768px) {
+      padding: 15px 25px;
+    }
+    @media only screen and (max-width: 767px) {
+      padding: 12px 20px;
+    }
+  }
+}
+
 .theme-button,
 .theme-button-light,
 .theme-button-gradient,
@@ -402,11 +419,14 @@ pre {
   display: inline-block;
   border-radius: 50px;
   margin-bottom: 0;
-  @media only screen and (min-width: 768px) {
-    padding: 15px 25px;
-  }
-  @media only screen and (max-width: 767px) {
-    padding: 12px 20px;
+  a {
+    display: block;
+    @media only screen and (min-width: 768px) {
+      padding: 15px 25px;
+    }
+    @media only screen and (max-width: 767px) {
+      padding: 12px 20px;
+    }
   }
 }
 
@@ -415,7 +435,10 @@ pre {
 .theme-button-gradient-alt{
   display: inline-block;
   margin-bottom: 0;
-  padding: 12px 20px;
+  a {
+    padding: 12px 20px;
+    display: block;
+  }
 }
 
 .theme-button,
