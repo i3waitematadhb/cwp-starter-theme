@@ -1962,14 +1962,28 @@ header {
         padding: 20px;
       }
       .resources-authors {
+        font-size: 14px;
         .resource-author {
-          font-size: 14px;
         }
       }
       .resources-categories {
         margin-bottom: 5px;
         font-size: 14px;
         .resource-category {
+          position: relative;
+          font-size: 12px;
+          color: #fff;
+          border-radius: 20px;
+          border: 0;
+          margin-right: 5px;
+          margin-bottom: 5px;
+          padding: 5px 10px;
+          background-color: $brand-primary;
+          background-image: $theme-color-gradient;
+          &:active {
+            top: 2px;
+            box-shadow: 0 4px 5px 0 rgb(0 0 0 / 12%);
+          }
         }
       }
       .read-abstract {
