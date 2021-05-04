@@ -18086,6 +18086,7 @@ function _arrayLikeToArray(arr, len) {
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
+  var selectedFilters = [];
   jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
     initializeDocument();
   });
@@ -18098,7 +18099,6 @@ function _arrayLikeToArray(arr, len) {
     AnimationSettings();
     BackgroundSettings();
     simpleParallaxSettings();
-    showResourcesAbstract();
     bannerShrink(); //Sections
 
     AccordionSection();
@@ -18241,21 +18241,6 @@ function _arrayLikeToArray(arr, len) {
     new simple_parallax_js__WEBPACK_IMPORTED_MODULE_5___default.a(imageParallax, {
       delay: .5,
       transition: 'cubic-bezier(0,0,0,1)'
-    });
-  }
-
-  function showResourcesAbstract() {
-    var abstractBtn = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.abstract-btn');
-    abstractBtn.click(function () {
-      if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).hasClass('active')) {
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).removeClass('active');
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).text('Show Abstract');
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).next('.abstract-content').fadeOut();
-      } else {
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).addClass('active');
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).text('Hide');
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).next('.abstract-content').fadeIn();
-      }
     });
   }
 
@@ -18551,7 +18536,6 @@ function _arrayLikeToArray(arr, len) {
       for (_iterator.s(); !(_step = _iterator.n()).done;) {
         var layer = _step.value;
         layer.classList.toggle("active");
-        console.log(ctr);
 
         if (layers.length === ctr) {
           setTimeout(function () {
@@ -18599,8 +18583,6 @@ function _arrayLikeToArray(arr, len) {
         categories.push(selectedCategory.text);
         stringifyCategories = JSON.stringify(categories);
         callAPIEndpoint('ajax/getProjectsByFilter', 'POST', 'categories=' + encodeURIComponent(stringifyCategories) + '&year=' + selectedYear + '&type=' + pageType, function (result) {
-          console.log(result);
-
           if (result.data.length) {
             createPaginationForProjects(result.data);
           } else {
@@ -18641,7 +18623,7 @@ function _arrayLikeToArray(arr, len) {
   function noResultsFound(type) {
     var row, column, pagination;
     pagination = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.paginate-action');
-    type === 'projects' ? row = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.paginated-projects .row') : row = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.paginated-resources .row');
+    type === 'projects' ? row = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.paginated-projects .row') : row = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.paginated-resources');
     column = '<div class="col-md-12 pt-5 pb-5"><p class="text-center display-4"><i>No matching records found.</i></p></div>';
     pagination.empty();
     row.empty();
@@ -18685,7 +18667,6 @@ function _arrayLikeToArray(arr, len) {
     var resourcesFilter = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.resources-filters');
 
     if (resourcesFilter.length > 0) {
-      var selectedFilters = [];
       var index,
           stringifyFilters,
           resourcesPageID = resourcesFilter.find('#page-id').val();
@@ -18723,8 +18704,6 @@ function _arrayLikeToArray(arr, len) {
       });
       callAPIEndpoint('ajax/getAllResources', 'POST', 'resourcesPageID=' + resourcesPageID, function (result) {
         if (!result.error) {
-          console.log(result);
-
           if (result.data.length) {
             createPaginationForResources(result.data);
           } else {
@@ -18748,10 +18727,10 @@ function _arrayLikeToArray(arr, len) {
         //Template method of yourself
         var column = createColumnForResources(data);
         resourcesItem.empty();
-        resourcesItem.prepend(column);
-        console.log(data); //Load functions
+        resourcesItem.prepend(column); //Load functions
 
-        resourcesAbstract();
+        showResourcesAbstract();
+        resourcesTagClick();
         masonryLayout();
       }
     });
@@ -18770,22 +18749,70 @@ function _arrayLikeToArray(arr, len) {
       }
 
       if (i.authors) {
-        i.authors.forEach(function (title) {
-          authorColumn += "<span class='resource-author font-weight-light'><span class='font-weight-bold'>Posted by: </span>" + title + "</span>";
+        i.authors.forEach(function (i, idx, array) {
+          if (idx === array.length - 1) {
+            authorColumn += "<span class='resource-author'>" + i + "</span>";
+          } else {
+            authorColumn += "<span class='resource-author'>" + i + ",&nbsp;</span>";
+          }
         });
       }
 
       if (i.categories) {
-        i.categories.forEach(function (title) {
-          categoryColumn += "<span class='resource-category font-weight-light m-1'>" + title + "</span>";
+        i.categories.forEach(function (i, idx, array) {
+          categoryColumn += "<button class='resource-category'><span class=''>" + i + "</span></button>";
         });
       }
 
-      console.log(i.authors);
-      column += '<div class="resource-item wow animate__animated animate__fadeInUp" data-wow-delay="0.' + ctr + 's">' + '<div class="resource-item__content">' + '<div class="resource-title">' + '<h6 class="text-dark font-weight-bold mb-md-3">' + i.title + '</h6>' + '</div>' + '<div class="resource-content mb-4">' + i.content + '</div>' + '<div class="resources-authors text-dark">' + authorColumn + '</div>' + '<div class="resources-categories text-dark"><span class="font-weight-bold">Categories: </span>' + categoryColumn + '</div>' + abstractColumn + '</div>' + '</div>';
+      column += '<div class="resource-item wow animate__animated animate__fadeInUp" data-wow-delay="0.' + ctr + 's">' + '<div class="resource-item__content">' + '<div class="resource-title">' + '<h6 class="text-dark font-weight-bold mb-md-3">' + i.title + '</h6>' + '</div>' + '<div class="resource-content mb-4">' + i.content + '</div>' + '<div class="resources-authors text-dark"><span class="font-weight-bold">Posted by: </span>' + authorColumn + '</div>' + '<div class="resources-categories text-dark mt-3"><span class="font-weight-bold">Tags: </span>' + categoryColumn + '</div>' + abstractColumn + '</div>' + '</div>';
       ctr = ctr + 1;
     });
     return column;
+  }
+
+  function showResourcesAbstract() {
+    var abstractBtn = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.read-abstract');
+    abstractBtn.click(function () {
+      if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).hasClass('active')) {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).removeClass('active');
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).find('span').text('Read Abstract');
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).next('.abstract-content').hide();
+        masonryLayout();
+      } else {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).addClass('active');
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).find('span').text('Hide');
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).next('.abstract-content').show();
+        masonryLayout();
+      }
+    });
+  }
+
+  function resourcesTagClick() {
+    var tag = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.resource-category');
+    tag.click(function () {
+      var tag = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).find('span').text();
+      var resourcesPageID = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#page-id').val();
+      callAPIEndpoint('ajax/findTagsParent', 'POST', 'tag=' + encodeURIComponent(tag) + '&resourcesPageID=' + resourcesPageID, function (result) {
+        var dropdownFilter = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#dropdown-' + result.data.parentID);
+        var isTagExist = selectedFilters.indexOf(result.data.tagName);
+
+        if (isTagExist === -1) {
+          selectedFilters.push(result.data.tagName);
+          dropdownFilter.val(selectedFilters);
+          dropdownFilter.trigger('change');
+        } //API call
+
+
+        var stringifyFilters = JSON.stringify(selectedFilters);
+        callAPIEndpoint('ajax/getFilteredResources', 'POST', 'filters=' + encodeURIComponent(stringifyFilters) + '&resourcesPageID=' + resourcesPageID, function (result) {
+          if (result.data.length) {
+            createPaginationForResources(result.data);
+          } else {
+            noResultsFound('resources');
+          }
+        });
+      });
+    });
   }
 
   function masonryLayout() {
@@ -18799,24 +18826,6 @@ function _arrayLikeToArray(arr, len) {
         'min-width: 576px': 1
       },
       numCols: 3
-    });
-  }
-
-  function resourcesAbstract() {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.read-abstract').click(function () {
-      if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).hasClass('active')) {
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).removeClass('active').find('span').text('Read abstract');
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).next('.abstract-content').hide(); //remove added height from abstract content
-
-        var abstractContentHeight = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).parent('.resource-abstract').innerHeight();
-        var paginatedResources = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.paginated-resources');
-        var fixPagResHeight = paginatedResources.height() - abstractContentHeight + 34;
-        paginatedResources.css('height', fixPagResHeight + 'px');
-      } else {
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).addClass('active').find('span').text('Hide abstract');
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).next('.abstract-content').fadeIn();
-        masonryLayout();
-      }
     });
   }
 

@@ -8,6 +8,7 @@ import simpleParallax from 'simple-parallax-js';
 import FlexMasonry from 'flexmasonry/src/flexmasonry';
 
 export default function () {
+  let selectedFilters = [];
   $(document).ready(function ()
   {
     initializeDocument();
@@ -24,7 +25,6 @@ export default function () {
     BackgroundSettings();
 
     simpleParallaxSettings();
-    showResourcesAbstract();
     bannerShrink();
 
     //Sections
@@ -170,22 +170,6 @@ export default function () {
       delay: .5,
       transition: 'cubic-bezier(0,0,0,1)'
     })
-  }
-
-  function showResourcesAbstract()
-  {
-    let abstractBtn = $('.abstract-btn');
-    abstractBtn.click(function (){
-      if ($(this).hasClass('active')) {
-        $(this).removeClass('active');
-        $(this).text('Show Abstract');
-        $(this).next('.abstract-content').fadeOut();
-      } else {
-        $(this).addClass('active');
-        $(this).text('Hide');
-        $(this).next('.abstract-content').fadeIn();
-      }
-    });
   }
 
   function AccordionSection()
@@ -424,7 +408,6 @@ export default function () {
     let ctr = 1;
     for (const layer of layers) {
       layer.classList.toggle("active");
-      console.log(ctr);
       if (layers.length === ctr) {
         setTimeout(function() {
           $('body').removeClass('active-loader');
@@ -470,7 +453,6 @@ export default function () {
         stringifyCategories = JSON.stringify(categories);
         callAPIEndpoint('ajax/getProjectsByFilter', 'POST',
           'categories=' + encodeURIComponent(stringifyCategories) + '&year=' + selectedYear + '&type=' + pageType, function (result) {
-            console.log(result);
             if (result.data.length) {
               createPaginationForProjects(result.data);
             } else {
@@ -513,7 +495,7 @@ export default function () {
   {
     let row, column, pagination;
     pagination = $('.paginate-action');
-    (type === 'projects') ? row = $('.paginated-projects .row') : row = $('.paginated-resources .row');
+    (type === 'projects') ? row = $('.paginated-projects .row') : row = $('.paginated-resources');
     column = '<div class="col-md-12 pt-5 pb-5"><p class="text-center display-4"><i>No matching records found.</i></p></div>';
     pagination.empty();
     row.empty();
@@ -567,7 +549,6 @@ export default function () {
         '</div>';
       ctr = ctr + 1;
     });
-
     return column;
   }
 
@@ -575,7 +556,6 @@ export default function () {
   {
     let resourcesFilter = $('.resources-filters');
     if (resourcesFilter.length > 0) {
-      let selectedFilters = [];
       let index, stringifyFilters, resourcesPageID = resourcesFilter.find('#page-id').val();
       let selectCategory = resourcesFilter.find('.resources-categories');
       selectCategory.select2({
@@ -610,7 +590,6 @@ export default function () {
       });
       callAPIEndpoint('ajax/getAllResources','POST', 'resourcesPageID=' + resourcesPageID, function (result) {
         if (!result.error) {
-          console.log(result);
           if (result.data.length) {
             createPaginationForResources(result.data)
           } else {
@@ -636,10 +615,10 @@ export default function () {
         let column = createColumnForResources(data);
         resourcesItem.empty();
         resourcesItem.prepend(column);
-        console.log(data);
 
         //Load functions
-        resourcesAbstract();
+        showResourcesAbstract();
+        resourcesTagClick();
         masonryLayout();
       }
     });
@@ -655,16 +634,19 @@ export default function () {
         abstractColumn += '<div class="resource-abstract"><button class="read-abstract"><span class="ff-clan font-weight-semibold theme-text-gradient">Read abstract</span></button><div class="abstract-content">' + i.abstract + '</div></div>';
       }
       if (i.authors) {
-        i.authors.forEach(function(title){
-          authorColumn += "<span class='resource-author font-weight-light'><span class='font-weight-bold'>Posted by: </span>" + title + "</span>";
+        i.authors.forEach(function(i, idx, array){
+          if (idx === array.length - 1) {
+            authorColumn += "<span class='resource-author'>" + i + "</span>";
+          } else {
+            authorColumn += "<span class='resource-author'>" + i + ",&nbsp;</span>";
+          }
         });
       }
       if (i.categories) {
-        i.categories.forEach(function(title){
-          categoryColumn += "<span class='resource-category font-weight-light m-1'>" + title + "</span>";
+        i.categories.forEach(function(i, idx,array){
+          categoryColumn += "<button class='resource-category'><span class=''>" + i + "</span></button>";
         });
       }
-      console.log(i.authors);
       column +=
         '<div class="resource-item wow animate__animated animate__fadeInUp" data-wow-delay="0.' + ctr +'s">' +
           '<div class="resource-item__content">' +
@@ -672,14 +654,59 @@ export default function () {
               '<h6 class="text-dark font-weight-bold mb-md-3">'+ i.title +'</h6>' +
             '</div>' +
             '<div class="resource-content mb-4">'+ i.content +'</div>' +
-            '<div class="resources-authors text-dark">' + authorColumn + '</div>' +
-            '<div class="resources-categories text-dark"><span class="font-weight-bold">Categories: </span>' + categoryColumn + '</div>' +
+            '<div class="resources-authors text-dark"><span class="font-weight-bold">Posted by: </span>' + authorColumn + '</div>' +
+            '<div class="resources-categories text-dark mt-3"><span class="font-weight-bold">Tags: </span>' + categoryColumn + '</div>' +
             abstractColumn +
           '</div>' +
         '</div>';
       ctr = ctr + 1;
     });
     return column;
+  }
+  function showResourcesAbstract()
+  {
+    let abstractBtn = $('.read-abstract');
+    abstractBtn.click(function (){
+      if ($(this).hasClass('active')) {
+        $(this).removeClass('active');
+        $(this).find('span').text('Read Abstract');
+        $(this).next('.abstract-content').hide();
+        masonryLayout();
+      } else {
+        $(this).addClass('active');
+        $(this).find('span').text('Hide');
+        $(this).next('.abstract-content').show();
+        masonryLayout();
+      }
+    });
+  }
+
+  function resourcesTagClick()
+  {
+    let tag = $('.resource-category');
+    tag.click(function() {
+      let tag = $(this).find('span').text();
+      let resourcesPageID = $('#page-id').val();
+      callAPIEndpoint('ajax/findTagsParent', 'POST', 'tag=' + encodeURIComponent(tag) + '&resourcesPageID=' + resourcesPageID, function (result) {
+        let dropdownFilter = $('#dropdown-'+result.data.parentID)
+        let isTagExist = selectedFilters.indexOf(result.data.tagName);
+        if (isTagExist === -1) {
+          selectedFilters.push(result.data.tagName)
+          dropdownFilter.val(selectedFilters);
+          dropdownFilter.trigger('change');
+        }
+
+        //API call
+        let stringifyFilters = JSON.stringify(selectedFilters);
+        callAPIEndpoint('ajax/getFilteredResources','POST','filters=' + encodeURIComponent(stringifyFilters) + '&resourcesPageID=' + resourcesPageID, function (result) {
+          if (result.data.length) {
+            createPaginationForResources(result.data);
+          } else {
+            noResultsFound('resources');
+          }
+        });
+      });
+    });
   }
 
   function masonryLayout()
@@ -694,26 +721,6 @@ export default function () {
         'min-width: 576px': 1,
       },
       numCols: 3
-    });
-  }
-
-  function resourcesAbstract()
-  {
-    $('.read-abstract').click(function() {
-      if ($(this).hasClass('active')) {
-        $(this).removeClass('active').find('span').text('Read abstract');
-        $(this).next('.abstract-content').hide();
-
-        //remove added height from abstract content
-        let abstractContentHeight = $(this).parent('.resource-abstract').innerHeight();
-        let paginatedResources   = $('.paginated-resources');
-        let fixPagResHeight = (paginatedResources.height() - abstractContentHeight + 34);
-        paginatedResources.css('height', fixPagResHeight + 'px');
-      } else {
-        $(this).addClass('active').find('span').text('Hide abstract');
-        $(this).next('.abstract-content').fadeIn();
-        masonryLayout();
-      }
     });
   }
 
