@@ -9,7 +9,7 @@
                         <% loop $VisibleFilters %>
                             <div class="col-lg-4 resources-filters--item">
                                 <div class="filter-content">
-                                    <label for="dropdown-{$ID}" class="d-block">$Name</label>
+                                    <label for="dropdown-{$ID}" class="d-block text-dark">$Name</label>
                                     <% if $VisibleFilterItems %>
                                         <select class="resources-categories" name="category-{$ID}[]" multiple="multiple" id="dropdown-{$ID}">
                                             <% loop $VisibleFilterItems %>
