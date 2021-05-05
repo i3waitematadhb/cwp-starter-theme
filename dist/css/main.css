@@ -28768,6 +28768,7 @@ a {
   padding: 20px 25px;
   border: 2px solid #000;
   border-radius: 50px;
+  display: inline-block;
 }
 
 .banner-element {
@@ -29512,6 +29513,14 @@ body > header .open > a:focus {
 /**
   Header
 */
+.pre-header {
+  display: none;
+  font-weight: 700;
+}
+.pre-header .alert {
+  border-radius: 0;
+}
+
 @media only screen and (min-width: 992px) {
   header {
     margin-top: 100px;

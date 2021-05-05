@@ -7892,6 +7892,7 @@ a {
   padding: 20px 25px;
   border: 2px solid #000;
   border-radius: 50px;
+  display: inline-block;
 }
 
 body.mceContentBody a.ss-broken {
