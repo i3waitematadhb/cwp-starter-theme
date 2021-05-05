@@ -12,9 +12,11 @@
         <% include Favicon %>
     </head>
      <body class="$ClassName<% if $PageBanner || $SiteConfig.PageBanner %> page-background<% if $PageBanner %> {$PageTheme}<% else %><% if $SiteConfig.PageBanner %> {$SiteConfig.PageTheme}<% end_if %><% end_if %>-theme<% end_if %>" <% if $PageBanner || $SiteConfig.PageBanner %>style="<% if $PageBanner %>background-image: url('{$SiteConfig.IEPageBanner.URL}'); background: linear-gradient( rgb(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.6)100%),url('{$PageBanner.URL}');<% else %><% if $SiteConfig.PageBanner %>background-image:url('{$SiteConfig.IEPageBanner.URL}'); background-color:#000; background: linear-gradient( rgb(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.6)100%),url('{$SiteConfig.PageBanner.URL}');<% end_if %><% end_if %>"<% end_if %>>
-        <% if $SiteConfig.PreHeader %>
-            <% include PreHeader %>
-        <% end_if %>
+<%--        <% if $ShowAnnouncement %>--%>
+<%--            <% if $SiteConfig.PreHeader %>--%>
+<%--                <% include PreHeader %>--%>
+<%--            <% end_if %>--%>
+<%--        <% end_if %>--%>
         <header role="banner">
             <% include Header %>
         </header>
