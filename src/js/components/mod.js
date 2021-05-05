@@ -116,15 +116,31 @@ export default function () {
   function popupAnnouncement()
   {
     let preHeader = $('.pre-header');
-    let annoucementCookie = localStorage.getItem('announcement');
+    let annoucementCookie = getCookie('announcementShown');
 
-    if (annoucementCookie === null) {
-      preHeader.css('display', 'block');
+    if (annoucementCookie === null || annoucementCookie === '') {
+      preHeader.show();
     }
-    preHeader.on('closed.bs.alert', function () {
-      localStorage.setItem('announcementShown', 1);
-      $(this).alert('close');
-    })
+
+    preHeader.find('.alert button').click(function() {
+      document.cookie = 'announcementShown=1;'
+      preHeader.hide();
+    });
+  }
+
+  function getCookie(cname) {
+    let name = cname + "=";
+    let ca = document.cookie.split(';');
+    for(let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) === ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) === 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
   }
 }
 

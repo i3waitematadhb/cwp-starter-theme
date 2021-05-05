@@ -7862,16 +7862,35 @@ __webpack_require__.r(__webpack_exports__);
 
   function popupAnnouncement() {
     var preHeader = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.pre-header');
-    var annoucementCookie = localStorage.getItem('announcement');
+    var annoucementCookie = getCookie('announcementShown');
 
-    if (annoucementCookie === null) {
-      preHeader.css('display', 'block');
+    if (annoucementCookie === null || annoucementCookie === '') {
+      preHeader.show();
     }
 
-    preHeader.on('closed.bs.alert', function () {
-      localStorage.setItem('announcementShown', 1);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).alert('close');
+    preHeader.find('.alert button').click(function () {
+      document.cookie = 'announcementShown=1;';
+      preHeader.hide();
     });
+  }
+
+  function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+
+    for (var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+
+      while (c.charAt(0) === ' ') {
+        c = c.substring(1);
+      }
+
+      if (c.indexOf(name) === 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+
+    return "";
   }
 });
 /* eslint-enable */
