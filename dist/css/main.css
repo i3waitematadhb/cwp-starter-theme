@@ -29514,8 +29514,12 @@ body > header .open > a:focus {
   Header
 */
 .pre-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
   display: none;
   font-weight: 700;
+  z-index: 9999;
 }
 .pre-header .alert {
   border-radius: 0;
