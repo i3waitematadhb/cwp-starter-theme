@@ -7768,6 +7768,7 @@ __webpack_require__.r(__webpack_exports__);
     judgesProfile();
     masonryLayout();
     navigation();
+    popupAnnouncement();
   }
 
   function animation() {
@@ -7856,6 +7857,20 @@ __webpack_require__.r(__webpack_exports__);
       navItem.each(function () {
         jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).removeClass('hover-inactive hover-active');
       });
+    });
+  }
+
+  function popupAnnouncement() {
+    var preHeader = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.pre-header');
+    var annoucementCookie = localStorage.getItem('announcement');
+
+    if (annoucementCookie === null) {
+      preHeader.css('display', 'block');
+    }
+
+    preHeader.on('closed.bs.alert', function () {
+      localStorage.setItem('announcementShown', 1);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).alert('close');
     });
   }
 });

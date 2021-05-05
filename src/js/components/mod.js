@@ -17,6 +17,7 @@ export default function () {
     judgesProfile();
     masonryLayout();
     navigation();
+    popupAnnouncement();
   }
 
   function animation()
@@ -110,6 +111,20 @@ export default function () {
         $(this).removeClass('hover-inactive hover-active');
       });
     });
+  }
+
+  function popupAnnouncement()
+  {
+    let preHeader = $('.pre-header');
+    let annoucementCookie = localStorage.getItem('announcement');
+
+    if (annoucementCookie === null) {
+      preHeader.css('display', 'block');
+    }
+    preHeader.on('closed.bs.alert', function () {
+      localStorage.setItem('announcementShown', 1);
+      $(this).alert('close');
+    })
   }
 }
 
