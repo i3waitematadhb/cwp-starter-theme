@@ -4,32 +4,34 @@
             <% if $CodeEditor %>
                 $CodeEditor
             <% end_if %>
-            <div class="section-container<% if $SectionPadding != 'none' %> {$SectionPadding}<% end_if %>">
-                <div class="container-fluid p-0">
-                    <div class="row no-gutters">
-                        <% if $ShowSectionHeader %>
-                            <div class="<% if $SectionHeaderPosition == 'position-top'%>col-lg-12<% else %>col-lg-4<% if $SectionHeaderPosition == 'position-right' %> order-last<% end_if %><% end_if %>">
-                                <div class="section-header<% if $SectionHeaderSize != 'none' %> $SectionHeaderSize<% end_if %> wow animate__animated animate__fadeInUp">
-                                    <% if $SectionHeader %>
-                                        $SectionHeader
-                                    <% else %>
-                                        <h1 class="section-header--title<% if $SectionHeaderPosition == 'position-top'%> text-center<% end_if %> theme-text-gradient">Your header goes here.</h1>
-                                    <% end_if %>
+            <div class="{$SectionContainer}">
+                <div class="section-container<% if $ReadablePaddings %><% loop $ReadablePaddings %> $Name<% end_loop %><% end_if %>">
+                    <div class="container-fluid p-0">
+                        <div class="row no-gutters">
+                            <% if $ShowSectionHeader %>
+                                <div class="<% if $SectionHeaderPosition == 'position-top'%>col-lg-12<% else %>col-lg-4<% if $SectionHeaderPosition == 'position-right' %> order-last<% end_if %><% end_if %>">
+                                    <div class="section-header<% if $SectionHeaderSize != 'none' %> $SectionHeaderSize<% end_if %> wow animate__animated animate__fadeInUp">
+                                        <% if $SectionHeader %>
+                                            $SectionHeader
+                                        <% else %>
+                                            <h1 class="section-header--title<% if $SectionHeaderPosition == 'position-top'%> text-center<% end_if %> theme-text-gradient">Your header goes here.</h1>
+                                        <% end_if %>
+                                    </div>
+                                </div>
+                            <% end_if %>
+                            <div class="<% if $ShowSectionHeader %><% if $SectionHeaderPosition != 'position-top' %>col-lg-8<% if $SectionHeaderPosition == 'position-right' %> order-first<% end_if %><% else %>col-lg-12<% end_if %><% else %>col-lg-12<% end_if %>">
+                                <div class="{$DisplayTypeTrim}-container section-body">
+                                    $Show
                                 </div>
                             </div>
-                        <% end_if %>
-                        <div class="<% if $ShowSectionHeader %><% if $SectionHeaderPosition != 'position-top' %>col-lg-8<% if $SectionHeaderPosition == 'position-right' %> order-first<% end_if %><% else %>col-lg-12<% end_if %><% else %>col-lg-12<% end_if %>">
-                            <div class="{$DisplayTypeTrim}-container section-body $ContentWidth">
-                                $Show
-                            </div>
+                            <% if $ShowSectionFooter %>
+                                <div class="col-md-12">
+                                    <div class="section-footer<% if $SectionFooterSize != 'none' %> $SectionFooterSize<% end_if %> text-center p-lg-5 wow animate__animated animate__fadeInUp">
+                                        <% if $SectionFooter %>{$SectionFooter}<% end_if %>
+                                    </div>
+                                </div>
+                            <% end_if %>
                         </div>
-                        <% if $ShowSectionFooter %>
-                            <div class="col-md-12">
-                                <div class="section-footer<% if $SectionFooterSize != 'none' %> $SectionFooterSize<% end_if %> text-center p-lg-5 wow animate__animated animate__fadeInUp">
-                                    <% if $SectionFooter %>{$SectionFooter}<% end_if %>
-                                </div>
-                            </div>
-                        <% end_if %>
                     </div>
                 </div>
             </div>
