@@ -27,8 +27,8 @@
     &,
     &:before,
     &:after{
-      background-color: $brand-primary;
-      background-image: $theme-color-gradient;
+      background-color: $brand-color;
+      background-image: $theme-gradient;
     }
   }
   &.is-active {

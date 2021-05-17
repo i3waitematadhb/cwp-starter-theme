@@ -1,23 +1,3 @@
-//Fonts
-//Cormorant Garamond
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
-//DM Serif Display
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
-//IBM Plex Serif
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
-//Noto Sans JP
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
-//Open Sans
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
-//Source Sans Pro
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
-//Work Sans
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-//Nunito Sans
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
-@import "./eksell-font";
-@import "./clan-font";
-
 .typography {
   font-family: $font-family-sans-serif;
   font-size: $font-size-base;
@@ -382,106 +362,150 @@ pre {
 }
 
 // theme text
-.theme-text-normal {
-  color: theme-color("brand-primary");
-}
 .theme-text-gradient {
   color: transparent;
-  background-color: $brand-primary;
-  background-image: $theme-color-gradient;
+  background-color: $brand-color;
+  background-image: $theme-gradient;
   background-clip: text;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=theme-color("brand-primary"), endColorstr=theme-color("brand-secondary"));
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$brand-color, endColorstr=$brand-secondary-color);
   display: inline-block;
 }
 
-// theme buttons
-a {
-  .theme-button,
-  .theme-button-light,
-  .theme-button-gradient,
-  .clear-button,
-  .theme-button-alt,
-  .theme-button-light-alt,
-  .theme-button-gradient-alt{
-    @media only screen and (min-width: 768px) {
-      padding: 15px 25px;
-    }
-    @media only screen and (max-width: 767px) {
-      padding: 12px 20px;
-    }
-  }
-}
-
-.theme-button,
-.theme-button-light,
-.theme-button-gradient,
-.clear-button {
+//buttons
+.btn-nobg-white-sml,
+.btn-nobg-dark-sml,
+.btn-bg-white-sml,
+.btn-bg-dark-sml,
+.btn-bg-gradient-sml,
+.btn-bg-theme-sml {
   display: inline-block;
   border-radius: 50px;
-  margin-bottom: 0;
-  a {
-    display: block;
-    @media only screen and (min-width: 768px) {
-      padding: 15px 25px;
-    }
-    @media only screen and (max-width: 767px) {
-      padding: 12px 20px;
-    }
-  }
-}
-
-.theme-button-alt,
-.theme-button-light-alt,
-.theme-button-gradient-alt{
-  display: inline-block;
-  margin-bottom: 0;
-  a {
-    padding: 12px 20px;
-    display: block;
-  }
-}
-
-.theme-button,
-.theme-button-alt{
-  color: $white;
-  background-color: theme-color("brand-primary");
-  a {
-    color: $white;
-
-  }
-}
-
-.clear-button {
-  color: $dark;
-  border: 1px solid $dark;
   @include transition();
   a {
-    color: $dark !important;
+    display: inline-block;
+    padding: 10px 18px;
+    @include transition();
   }
-  &:hover {
-    background-color: $dark;
-    color: #fff;
-    a {
-      color: #fff !important;
-    }
+}
+.btn-nobg-white,
+.btn-nobg-dark,
+.btn-bg-white,
+.btn-bg-dark,
+.btn-bg-gradient,
+.btn-bg-theme {
+  display: inline-block;
+  border-radius: 50px;
+  @include transition();
+  a {
+    display: inline-block;
+    padding: 15px 25px;
+    @include transition();
   }
 }
 
-.theme-button-light,
-.theme-button-light-alt{
-  color: theme-color("brand-primary");
-  background-color: $gray-100;
-  a{
-    color: theme-color("brand-primary");
+a {
+  .btn-nobg-white-sml,
+  .btn-nobg-dark-sml,
+  .btn-bg-white-sml,
+  .btn-bg-dark-sml,
+  .btn-bg-gradient-sml,
+  .btn-bg-theme-sml {
+    display: inline-block;
+    padding: 10px 18px;
+  }
+  .btn-nobg-white,
+  .btn-nobg-dark,
+  .btn-bg-white,
+  .btn-bg-dark,
+  .btn-bg-gradient,
+  .btn-bg-them {
+    display: inline-block;
+    padding: 15px 25px;
   }
 }
-.theme-button-gradient,
-.theme-button-gradient-alt
-{
-  color: $white;
-  background-image: $theme-color-multi-gradient;
+
+.btn-nobg-white-sml,
+.btn-nobg-white {
+  border: 2px solid $light;
+  color: $light;
+  &:hover {
+    color: $dark;
+    background-color: $light;
+  }
   a {
-    color: $white;
+    color: $light;
+    &:hover {
+      color: $dark;
+    }
+  }
+}
+.btn-nobg-dark-sml,
+.btn-nobg-dark {
+  color: $dark;
+  border: 2px solid $dark;
+  &:hover {
+    color: $light;
+    background-color: $dark;
+  }
+  a {
+    color: $dark;
+    &:hover {
+      color: $light;
+    }
+  }
+}
+.btn-bg-white-sml,
+.btn-bg-white {
+  color: $dark;
+  background-color: $light;
+  &:hover {
+    color: $light;
+    background-color: $dark;
+  }
+  a {
+    color: $dark;
+    &:hover {
+      color: $light;
+    }
+  }
+}
+.btn-bg-dark-sml,
+.btn-bg-dark {
+  color: $light;
+  background-color: $dark;
+
+  &:hover {
+    color: $dark;
+    background-color: $light;
+  }
+  a {
+    color: $light;
+    &:hover {
+      color: $dark;
+    }
+  }
+}
+.btn-bg-gradient-sml,
+.btn-bg-gradient {
+  color: $light;
+  background-image: $theme-gradient-multicolor;
+  background-size: 300% 100%;
+  &:hover {
+    background-position: 100% 0;
+  }
+  a {
+    color: $light;
+  }
+}
+.btn-bg-theme-sml,
+.btn-bg-theme {
+  background-color: $brand-color;
+  color: $light;
+  &:hover {
+    background-color: $brand-secondary-color;
+  }
+  a {
+    color: $light;
   }
 }
 
@@ -507,7 +531,12 @@ a {
 .nunito-sans {
   font-family: $font-family-nunito-sans;
 }
-
+.sf-pro {
+  font-family: $font-family-sf-pro;
+}
+.recoleta {
+  font-family: $font-family-recoleta;
+}
 .dm-serif {
   font-family: $font-family-dm-serif-display;
 }
@@ -537,12 +566,6 @@ a {
   font-weight: $font-weight-semibold;
 }
 
-.display-5 {
-  @include font-size($display5-size);
-  font-weight: $display5-weight;
-  line-height: $display-line-height;
-}
-
 .lineheight-1 {
 
   line-height: 1.4em;
@@ -564,6 +587,24 @@ a {
   letter-spacing: 2px;
 }
 
-.p-lg-6 {
-
-}
+//Fonts
+//Cormorant Garamond
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+//DM Serif Display
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+//IBM Plex Serif
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+//Noto Sans JP
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
+//Open Sans
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+//Source Sans Pro
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+//Work Sans
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+//Nunito Sans
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+@import "./font-eksell";
+@import "./font-clan";
+@import "./font-sf-pro";
+@import "./font-recoleta";

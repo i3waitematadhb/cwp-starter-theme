@@ -17,10 +17,12 @@ $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 $black:    #000 !default;
 
-// theme gradient color
-$theme-color-gradient: linear-gradient(155.92deg, #ffa500 5.36%, #ff7b1e 85.08%);
-$theme-color-gradient-inverted: linear-gradient(155.92deg, #ff7b1e 5.36%, #ffa500 85.08%);
-$theme-color-multi-gradient : linear-gradient(to right, #ff6900 0%, #ffa500 40%, #ef9d43, #ff6900);
+//Theme Colors
+$brand-color: #ff7b1e !default;
+$brand-secondary-color: #ffa500 !default;
+$theme-gradient: linear-gradient(155.92deg, $brand-secondary-color 5.36%, $brand-color 85.08%);
+$theme-gradient-inverted: linear-gradient(155.92deg, $brand-color 5.36%, $brand-secondary-color 85.08%);
+$theme-gradient-multicolor : linear-gradient(to right, #ff6900 0%, #ffa500 40%, #ef9d43, #ff6900);
 
 $grays: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -71,9 +73,6 @@ $colors: map-merge(
     $colors
 );
 
-$brand-primary:   #ff7b1e !default;
-$brand-primary-dark: #5d6264 !default;
-$brand-secondary: #ffa500 !default;
 $primary:       $blue !default;
 $secondary:     $gray-600 !default; // @todo check with Paul in case this should be white still
 $success:       $green !default;
@@ -87,8 +86,8 @@ $theme-colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $theme-colors: map-merge(
   (
-    "brand-primary":   $brand-primary,
-    "brand-secondary": $brand-secondary,
+    "brand":      $brand-color,
+    "brand-secondary": $brand-secondary-color,
     "primary":    $primary,
     "secondary":  $secondary,
     "success":    $success,
@@ -178,14 +177,13 @@ $sizes: map-merge(
 // Settings for the `<body>` element.
 
 $body-bg:                   $white !default;
-$body-color:                $brand-primary-dark !default;//$gray-900 !default;
-
+$body-color:                $dark !default;//$gray-900 !default; #5d6264
 
 // Links
 //
 // Style anchor elements.
 
-$link-color:                              theme-color("brand-primary") !default;//#0070b7 !default; // Original: theme-color("primary") !default;
+$link-color:                              $brand-color !default;//#0070b7 !default; // Original: theme-color("primary") !default;
 $link-decoration:                         none !default;
 $link-hover-color:                        darken($link-color, 5%) !default; // Original: darken($link-color, 15%) !default;
 $link-hover-decoration:                   underline !default;
@@ -296,6 +294,8 @@ $font-family-work-sans: 'Work Sans', sans-serif;
 $font-family-nunito-sans: 'Nunito Sans', sans-serif;
 $font-family-eksell-display: 'Eksell Display', sans-serif;
 $font-family-ff-clan: 'FF Clan', sans-serif;
+$font-family-sf-pro: 'SF Pro', sans-serif;
+$font-family-recoleta: 'Recoleta', sans-serif;
 $font-family-font-awesomePro: 'Font Awesome 5 Pro';
 
 $font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
