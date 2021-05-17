@@ -20,21 +20,22 @@ export default function () {
     HamburgerSettings();
     Navigation();
 
-    //Animation
     AnimationSettings();
     BackgroundSettings();
-
-    simpleParallaxSettings();
-    bannerShrink();
+    //BannerScrollSettings();
+    //SimpleParallaxSettings();
 
     //Sections
     AccordionSection();
     BlogSection();
     CarouselSection();
+    ImageBannerSection();
+    ImageWithTextOverlaySection();
     QIProjectListSection();
     QIFeedbackFormSection();
     RelatedProjectsSection();
     SliderBannerSection();
+
 
     //Page
     projectList();
@@ -42,12 +43,12 @@ export default function () {
     QualityImprovementSessionHolderPage();
   }
 
-  function bannerShrink()
+  function BannerScrollSettings()
   {
     $(window).scroll(function() {
       let scroll = $(window).scrollTop();
       $(".ImageBanner-container .project-banner img").css({
-        transform: 'translate3d(-50%, -'+(scroll/100)+'%, 0) scale('+(100 + scroll/5)/100+')',
+        transform: 'translate3d(-50%, -'+(scroll/100)+'%, 0) scale('+(100 + scroll/6)/100+')',
         height: 'calc(103vh - ' + scroll +'px)',
         filter: 'blur(' + (scroll/50) + 'px)',
         '-webkit-filter': 'blur(' + (scroll/50) + 'px)',
@@ -163,15 +164,33 @@ export default function () {
     wow.init();
   }
 
-  function simpleParallaxSettings()
+  function SimpleParallaxSettings()
   {
-    let imageParallax = document.getElementsByClassName('parallax-image');
-    new simpleParallax(imageParallax, {
-      delay: .5,
-      transition: 'cubic-bezier(0,0,0,1)'
-    })
-  }
+    // let imageParallax = document.getElementsByClassName('parallax-image');
+    // new simpleParallax(imageParallax, {
+    //   delay: .3,
+    //   transition: 'cubic-bezier(0,0,0,1)',
+    // });
 
+    let imageParallax = $('.parallax-image');
+    imageParallax.scrollie({
+      scrollOffset : -50,
+      scrollingInView : function(elem, offset, direction, coords, scrollRatio, thisTop, winPos) {
+        $(window).scroll(function() {
+          let scroll = $(window).scrollTop();
+          elem.parent('.overlay-dark').next('.imageBanner-content').css({
+            filter: 'blur(' + (scroll/50) + 'px)',
+          });
+          elem.css({
+            transform: 'translate3d(0, -'+(scroll/100)+'%, 0) scale('+(100 + scroll/6)/100+')',
+            filter: 'blur(' + (scroll/50) + 'px)',
+            //height: 'calc('+ elem.data("height") +'vh - ' + (scroll/100) +'vh)',
+            '-webkit-filter': 'blur(' + (scroll/50) + 'px)',
+          });
+        });
+      }
+    });
+  }
   function AccordionSection()
   {
     let acc = document.getElementsByClassName("accordion");
@@ -242,6 +261,52 @@ export default function () {
         }
       });
     }
+  }
+
+  function ImageBannerSection()
+  {
+    let imageBanner = $('.section-ImageBanner');
+    if (imageBanner.length > 0) {
+      $(window).scroll(function () {
+        let scrollTop = $(window).scrollTop();
+        let opacity   = scrollTop / 500;
+        let scale     = scrollTop * .0004 + 1;
+        let title     = scrollTop * .4;
+        let position  =  100 - (scrollTop / 20);
+        let bannerImage = imageBanner.find('img');
+        let bannerText  = imageBanner.find('.imageBanner-content');
+        let mouseScroll = imageBanner.find('.scroll-down');
+        // bannerImage.parent('.section-content').css({
+        //   height: 'calc('+ bannerImage.data('height') + 'vh - ' + scrollTop + 'px)',
+        // });
+        bannerImage.css({
+          transform: 'scale('+scale+')',
+          filter: 'blur('+ (scrollTop/50) +'px)',
+          "background-position": 'center '+position+'%'
+        });
+        bannerText.css({"margin-top": title + "px", opacity: 'calc(1 - '+ opacity +')'});
+        //bannerText.css({opacity: 'calc(1 - '+ opacity +')'});
+        mouseScroll.css({opacity: 'calc(1 - '+ opacity +')'});
+      });
+    }
+  }
+
+  function ImageWithTextOverlaySection()
+  {
+    // $(window).scroll(function() {
+    //   let scroll = $(window).scrollTop();
+    //   let scale = (scroll/8)/100;
+    //   if (scale < 1 ) {
+    //     $(".ImageWithTextOverlay-container .imageWithTextOverlay-image img").css({
+    //       transform: 'scale(1)',
+    //     });
+    //   }
+    //   if (scale > 1 && scale < 2) {
+    //     $(".ImageWithTextOverlay-container .imageWithTextOverlay-image img").css({
+    //       transform: 'scale('+(scroll/9)/100+')',
+    //     });
+    //   }
+    // });
   }
 
   function RelatedProjectsSection()
@@ -495,7 +560,7 @@ export default function () {
   {
     let row, column, pagination;
     pagination = $('.paginate-action');
-    (type === 'projects') ? row = $('.paginated-projects .row') : row = $('.paginated-resources');
+    (type === 'projects') ? row = $('.paginated-projects .row') : [row = $('.paginated-resources'), row.css('height', 'auto')];
     column = '<div class="col-md-12 pt-5 pb-5"><p class="text-center display-4"><i>No matching records found.</i></p></div>';
     pagination.empty();
     row.empty();
