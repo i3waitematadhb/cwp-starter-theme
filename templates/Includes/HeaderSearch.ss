@@ -1,5 +1,5 @@
-<% if $HeaderSearchForm %>
+<% if $SearchForm %>
     <div class="site-header-search $ExtraClass">
-        $HeaderSearchForm
+        $SearchForm
     </div>
 <% end_if %>

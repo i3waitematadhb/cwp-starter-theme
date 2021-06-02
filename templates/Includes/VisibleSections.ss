@@ -5,7 +5,7 @@
                 $CodeEditor
             <% end_if %>
             <div class="{$SectionContainer}">
-                <div class="section-container<% if $ReadablePaddings %><% loop $ReadablePaddings %> $Name<% end_loop %><% end_if %>">
+                <div class="section-container<% if $ReadablePaddings %><% loop $ReadablePaddings %> $Name<% end_loop %><% end_if %><% if $ReadableMobilePaddings %> <% loop $ReadableMobilePaddings %> $Name<% end_loop %><% end_if %>">
                     <div class="container-fluid p-0">
                         <div class="row no-gutters">
                             <% if $ShowSectionHeader %>
@@ -37,4 +37,6 @@
             </div>
         </section>
     <% end_loop %>
+<% else %>
+    <section class="no-section"></section>
 <% end_if %>

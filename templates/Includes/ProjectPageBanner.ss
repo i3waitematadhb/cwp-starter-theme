@@ -5,15 +5,16 @@
                 <div class="row no-gutters">
                     <div class="col-lg-12">
                         <div class="ImageBanner-container section-body">
-                            <div class="project-banner">
-                            <img src="$PageBanner.URL" alt="$Title - $SiteConfig.Title" class="large">
-                            </div>
+<%--                            <div class="project-banner">--%>
+<%--                            <img src="$PageBanner.URL" alt="$Title - $SiteConfig.Title" class="large">--%>
+<%--                            </div>--%>
+                            <% if $PageBanner %>
+                                <div class="image-banner--image bh-large" style="background-image: url('{$PageBanner.URL}');" data-height="100"></div>
+                                <% include MouseIconScroll %>
+                            <% end_if %>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="scroll-down">
-               <div class="icon-scroll"></div>
             </div>
         </div>
     </section>
@@ -56,17 +57,17 @@
                     <div class="ContentSection-container section-body container-fluid p-0">
                         <div class="contentSection-content wow animate__animate animate__fadeInRight">
                             <% if $Categories %>
-                                <h5><span class="spacing-1 ff-clan font-weight-bold lineheight-3 text-dark">CATEGORIES</span></h5>
+                                <h5><span class="spacing-1 ff-clan font-weight-bold lineheight-3 text-brand">CATEGORIES</span></h5>
                                 <% loop $Categories %><p><span class="h4 font-weight-light spacing-1 nunito-sans text-dark">$Title</span></p><% end_loop %>
                             <% end_if %>
                             <% if $ReadableAuthors %>
                                 <p><span class="nunito-sans">&nbsp;</span></p>
-                                <h5><span class="spacing-1 ff-clan font-weight-bold lineheight-3 text-dark">AUTHOR/S</span></h5>
+                                <h5><span class="spacing-1 ff-clan font-weight-bold lineheight-3 text-brand">AUTHOR/S</span></h5>
                                 <% loop $ReadableAuthors %><p><span class="h4 font-weight-light spacing-1 nunito-sans text-dark">$Name</span></p><% end_loop %>
                             <% end_if %>
                             <% if $Year %>
                                 <p><span class="nunito-sans">&nbsp;</span></p>
-                                <h5><span class="spacing-1 ff-clan font-weight-bold lineheight-3 text-dark">DATE</span></h5>
+                                <h5><span class="spacing-1 ff-clan font-weight-bold lineheight-3 text-brand">DATE</span></h5>
                                 <p><span class="h4 font-weight-light spacing-1 nunito-sans text-dark">$Year</span></p>
                             <% end_if %>
                         </div>
