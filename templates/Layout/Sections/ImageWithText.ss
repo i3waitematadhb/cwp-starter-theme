@@ -4,7 +4,7 @@
             <% if $Image %>
                 <img src="$Image.URL" class="<% if $GradientBackground %>withGradient<% end_if %>" alt="$Title - $SiteConfig.Title">
             <% else %>
-                <img src="{$resourceURL('themes/starter/images/BannerPlaceholderImage.jpg')}" class="<% if $GradientBackground %>withGradient<% end_if %>" alt="$Title - $SiteConfig.Title">
+                <img src="{$resourceURL('themes/starter/images/PlaceholderImage.png')}" class="<% if $GradientBackground %>withGradient<% end_if %>" alt="$Title - $SiteConfig.Title">
             <% end_if %>
         </div>
     </div>

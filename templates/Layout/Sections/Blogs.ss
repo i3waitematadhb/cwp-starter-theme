@@ -22,7 +22,7 @@
                                 </div>
                             </a>
                             <div class="blog-item--content">
-                                <a href="$Link" class="text-decoration-none text-dark"><h3 class="ff-clan">$Title</h3></a>
+                                <a href="$Link" class="text-decoration-none text-dark"><h5 class="ff-clan mb-3">$Title</h5></a>
                                 <p class="desc ff-clan">{$Abstract}...</p>
                             </div>
                             <% if $Authors %>

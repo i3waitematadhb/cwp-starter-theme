@@ -6,16 +6,18 @@
                     <div class="card">
                         <div class="card-body<% if $Page.Date %> d-flex align-items-end<% end_if %>">
                             <% if $Page %>
-                            <a href="$Page.Link" class="card-link<% if $Page.Date %> w-90<% end_if %>">
-                            <% end_if %>
-                            <h5 class="card-title font-weight-semibold theme-text-gradient">$Name</h5>
-                            <% if $Page %>
-                            </a>
-                            <% if $Page.Date %>
-                                <div class="card-date">
-                                    <p class="text-center"><span class="d-block font-weight-light">{$Page.Date.ShortMonth}</span><span class="font-weight-bold theme-text-normal d-block">{$Page.Date.DayOfMonth}</span><span class="d-block font-weight-light">{$Page.Date.Year}</span></p>
-                                </div>
-                            <% end_if %>
+                                <a href="$Page.Link" class="card-link<% if $Page.Date %> w-90<% end_if %>">
+                                <h5 class="card-title font-weight-semibold theme-text-gradient mb-0">$Name</h5>
+                                </a>
+                                <% if $Page.Date %>
+                                    <div class="card-date">
+                                        <p class="text-center"><span class="d-block font-weight-light">{$Page.Date.ShortMonth}</span><span class="font-weight-bold text-brand d-block">{$Page.Date.DayOfMonth}</span><span class="d-block font-weight-light">{$Page.Date.Year}</span></p>
+                                    </div>
+                                <% end_if %>
+                            <% else %>
+                                <% if $Content %>
+                                    $Content
+                                <% end_if %>
                             <% end_if %>
                         </div>
                         <div class="card-image">

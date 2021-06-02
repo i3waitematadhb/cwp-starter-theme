@@ -7,7 +7,7 @@
                         <% if $SliderImage %>
                             <img src="{$SliderImage.URL}" alt="$Title - $SiteConfig.Title">
                         <% else %>
-                            <img src="{$resourceURL('themes/starter/images/BannerPlaceholderImage.jpg')}" alt="$Title - $SiteConfig.Title">
+                            <img src="{$resourceURL('themes/starter/images/PlaceholderImage.png')}" alt="$Title - $SiteConfig.Title">
                         <% end_if %>
                     </div>
                     <% if $Content %>
