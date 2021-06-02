@@ -14,8 +14,12 @@
     <body class="$ClassName">
         <header role="banner">
             <% include Header %>
+<%--            <% include MainNav %>--%>
         </header>
-        <main id="main" class="main" role="main">
+        <% include Search %>
+        <% include NewNav %>
+<%--        <% include Nav %>--%>
+        <main id="main" class="main row no-gutters" role="main">
             $Layout
         </main>
         <% include PageShowcase %>
@@ -23,6 +27,7 @@
             <% include Footer %>
         </footer>
         <% require themedJavascript('dist/js/jquery.min.js') %>
+        <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2542/jquery.scrollie.min_1.js"></script>
         <% require themedJavascript('dist/js/main.js') %>
         <% include GoogleAnalytics %>
     </body>
