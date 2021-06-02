@@ -19,7 +19,6 @@ import search from './components/search';
 import form from './components/form';
 import img from './components/img';
 import mods from './components/mods';
-import smoothScroll from './components/smoothScroll';
 
 navigation();
 content();
@@ -28,6 +27,4 @@ search();
 form();
 img();
 mods();
-smoothScroll();
-
 /* eslint-enable */
