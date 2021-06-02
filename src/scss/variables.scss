@@ -18,6 +18,7 @@ $gray-900: #212529 !default;
 $black:    #000 !default;
 
 //Theme Colors
+$dark-blue: #011d3e !default;
 $brand-color: #ff7b1e !default;
 $brand-secondary-color: #ffa500 !default;
 $theme-gradient: linear-gradient(155.92deg, $brand-secondary-color 5.36%, $brand-color 85.08%);
@@ -81,6 +82,7 @@ $warning:       $yellow !default;
 $danger:        $red !default;
 $light:         $gray-100 !default;
 $dark:          $gray-800 !default;
+$black:         #000 !default;
 
 $theme-colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -95,7 +97,9 @@ $theme-colors: map-merge(
     "warning":    $warning,
     "danger":     $danger,
     "light":      $light,
-    "dark":       $dark
+    "dark":       $dark,
+    "black":      $black,
+    "dark-blue":  $dark-blue
   ),
     $theme-colors
 );
@@ -296,6 +300,8 @@ $font-family-eksell-display: 'Eksell Display', sans-serif;
 $font-family-ff-clan: 'FF Clan', sans-serif;
 $font-family-sf-pro: 'SF Pro', sans-serif;
 $font-family-recoleta: 'Recoleta', sans-serif;
+$font-family-lato: 'Lato', sans-serif;
+$font-family-assistant: 'Assistant', sans-serif;
 $font-family-font-awesomePro: 'Font Awesome 5 Pro';
 
 $font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
@@ -729,7 +735,7 @@ $nav-tabs-border-width:             $border-width !default;
 $nav-tabs-border-radius:            0 !default; // Original: $border-radius !default;
 $nav-tabs-link-hover-border-color:  $gray-200 $gray-200 $nav-tabs-border-color !default;
 $nav-tabs-link-active-color:        $gray-700 !default;
-$nav-tabs-link-active-bg:           $body-bg !default;
+$nav-tabs-link-active-bg:           transparent !default;//$body-bg !default;
 $nav-tabs-link-active-border-color: $gray-300 $gray-300 $nav-tabs-link-active-bg !default;
 
 $nav-pills-border-radius:           $border-radius !default;

@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);@import url(https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap);@import url(https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap);@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap);@import url(https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap);@import url(https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap);@import url(https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);@import url(https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700&display=swap);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);@import url(https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap);@import url(https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap);@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap);@import url(https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap);@import url(https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap);@import url(https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);@import url(https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700&display=swap);@import url(https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap);@import url(https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&display=swap);@charset "UTF-8";
 .alert {
   position: relative;
   padding: 0.75rem 1.25rem;
@@ -145,6 +145,30 @@
 }
 .alert-brand-secondary .alert-link {
   color: #523500;
+}
+
+.alert-black {
+  color: black;
+  background-color: #cccccc;
+  border-color: #b8b8b8;
+}
+.alert-black hr {
+  border-top-color: #ababab;
+}
+.alert-black .alert-link {
+  color: black;
+}
+
+.alert-dark-blue {
+  color: #010f20;
+  background-color: #ccd2d8;
+  border-color: #b8c0c9;
+}
+.alert-dark-blue hr {
+  border-top-color: #aab3be;
+}
+.alert-dark-blue .alert-link {
+  color: black;
 }
 
 .table {
@@ -397,6 +421,46 @@
 .table-hover .table-brand-secondary:hover > td,
 .table-hover .table-brand-secondary:hover > th {
   background-color: #ffdd9f;
+}
+
+.table-black,
+.table-black > th,
+.table-black > td {
+  background-color: #b8b8b8;
+}
+.table-black th,
+.table-black td,
+.table-black thead th,
+.table-black tbody + tbody {
+  border-color: #7a7a7a;
+}
+
+.table-hover .table-black:hover {
+  background-color: #ababab;
+}
+.table-hover .table-black:hover > td,
+.table-hover .table-black:hover > th {
+  background-color: #ababab;
+}
+
+.table-dark-blue,
+.table-dark-blue > th,
+.table-dark-blue > td {
+  background-color: #b8c0c9;
+}
+.table-dark-blue th,
+.table-dark-blue td,
+.table-dark-blue thead th,
+.table-dark-blue tbody + tbody {
+  border-color: #7b899b;
+}
+
+.table-hover .table-dark-blue:hover {
+  background-color: #aab3be;
+}
+.table-hover .table-dark-blue:hover > td,
+.table-hover .table-dark-blue:hover > th {
+  background-color: #aab3be;
 }
 
 .table-active,
@@ -749,6 +813,26 @@ button.bg-brand-secondary:focus {
   background-color: #cc8400 !important;
 }
 
+.bg-black {
+  background-color: #000 !important;
+}
+
+a.bg-black:hover, a.bg-black:focus,
+button.bg-black:hover,
+button.bg-black:focus {
+  background-color: black !important;
+}
+
+.bg-dark-blue {
+  background-color: #011d3e !important;
+}
+
+a.bg-dark-blue:hover, a.bg-dark-blue:focus,
+button.bg-dark-blue:hover,
+button.bg-dark-blue:focus {
+  background-color: #00060c !important;
+}
+
 .bg-white {
   background-color: #fff !important;
 }
@@ -835,6 +919,14 @@ button.bg-brand-secondary:focus {
 
 .border-brand-secondary {
   border-color: #ffa500 !important;
+}
+
+.border-black {
+  border-color: #000 !important;
+}
+
+.border-dark-blue {
+  border-color: #011d3e !important;
 }
 
 .border-white {
@@ -6817,6 +6909,22 @@ a.text-brand-secondary:hover, a.text-brand-secondary:focus {
   color: #b37400 !important;
 }
 
+.text-black {
+  color: #000 !important;
+}
+
+a.text-black:hover, a.text-black:focus {
+  color: black !important;
+}
+
+.text-dark-blue {
+  color: #011d3e !important;
+}
+
+a.text-dark-blue:hover, a.text-dark-blue:focus {
+  color: black !important;
+}
+
 .text-body {
   color: #343a40 !important;
 }
@@ -10205,7 +10313,6 @@ pre {
 .btn-bg-gradient-sml,
 .btn-bg-theme-sml {
   display: inline-block;
-  border-radius: 50px;
   transition: all 0.2s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -10239,6 +10346,10 @@ pre {
   }
 }
 
+.btn-radius {
+  border-radius: 50px;
+}
+
 .btn-nobg-white,
 .btn-nobg-dark,
 .btn-bg-white,
@@ -10246,7 +10357,6 @@ pre {
 .btn-bg-gradient,
 .btn-bg-theme {
   display: inline-block;
-  border-radius: 50px;
   transition: all 0.2s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -10266,7 +10376,7 @@ pre {
 .btn-bg-gradient a,
 .btn-bg-theme a {
   display: inline-block;
-  padding: 15px 25px;
+  padding: 23px 25px;
   transition: all 0.2s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -10294,7 +10404,7 @@ a .btn-nobg-dark,
 a .btn-bg-white,
 a .btn-bg-dark,
 a .btn-bg-gradient,
-a .btn-bg-them {
+a .btn-bg-theme {
   display: inline-block;
   padding: 15px 25px;
 }
@@ -10434,6 +10544,14 @@ a .btn-bg-them {
 
 .sf-pro {
   font-family: "SF Pro", sans-serif;
+}
+
+.lato {
+  font-family: "Lato", sans-serif;
+}
+
+.assistant {
+  font-family: "Assistant", sans-serif;
 }
 
 .recoleta {
