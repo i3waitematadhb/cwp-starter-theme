@@ -18,8 +18,10 @@ import sitemap from './components/sitemap';
 import search from './components/search';
 import form from './components/form';
 import img from './components/img';
-import animatedSlider from "./components/animatedSlider";
 import mods from './components/mods';
+
+//customJS
+import multiboxMenu from "./components/customJS/multiboxMenu";
 
 navigation();
 content();
@@ -27,6 +29,7 @@ sitemap();
 search();
 form();
 img();
-animatedSlider();
 mods();
+
+multiboxMenu();
 /* eslint-enable */
