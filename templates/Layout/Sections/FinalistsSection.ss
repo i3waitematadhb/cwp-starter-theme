@@ -19,7 +19,9 @@
                                             <div class="row">
                                                 <% loop $Finalists %>
                                                     <div class="col-lg-4 pb-5">
-                                                        <img src="$Image.URL" class="w-100 mb-4" alt="Waitemata Health Excellence Awards Finalist - {$Name}">
+                                                        <% if $Image %>
+                                                            <img src="$Image.URL" class="w-100 mb-4" alt="Waitemata Health Excellence Awards Finalist - {$Name}">
+                                                        <% end_if %>
                                                         $Content.RAW
                                                     </div>
                                                 <% end_loop %>
