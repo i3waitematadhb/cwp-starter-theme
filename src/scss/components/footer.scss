@@ -1,23 +1,22 @@
 .footer-site {
-  border-top: 8px solid $brand-color;
-  margin: 10px auto;
-  @media only screen and (min-width: 1201px) {
-    padding: 100px;
-  }
-  @media only screen and (max-width: 1200px) and (min-width: 768px) {
-    padding: 50px;
-  }
-  @media only screen and (max-width: 767px) {
-    padding: 20px;
-    div.col-md-3 {
-      margin-bottom: 20px;
-      img {
-        max-width: 200px;
-      }
-    }
-  }
+  //border-top: 8px solid $brand-color;
+  //margin: 10px auto;
+  //@media only screen and (min-width: 1201px) {
+  //  //padding: 100px;
+  //}
+  //@media only screen and (max-width: 1200px) and (min-width: 768px) {
+  //  padding: 50px;
+  //}
+  //@media only screen and (max-width: 767px) {
+  //  padding: 20px;
+  //  div.col-md-3 {
+  //    margin-bottom: 20px;
+  //    img {
+  //      max-width: 200px;
+  //    }
+  //  }
+  //}
 }
-
 .footer-nav-links a {
   margin-right: 30px;
 
@@ -25,7 +24,6 @@
     margin-right: 0;
   }
 }
-
 .post-footer {
   background-color: $gray-100;
   @media only screen and (min-width: 768px) {
