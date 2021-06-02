@@ -15,9 +15,20 @@ body > header .open > a:focus {
   }
 }
 
+.lp-right {
+  .site-header-brand {
+    float: right;
+  }
+}
+.lp-left,
+.lp-center {
+  .site-header-brand {
+    float: left;
+  }
+}
+
 .site-header-brand {
   overflow: visible;
-  float: left;
 }
 
 .site-header-brand a {

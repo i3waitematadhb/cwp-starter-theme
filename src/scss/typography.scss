@@ -206,6 +206,9 @@ table {
 
 // Links
 // Icons
+a {
+  text-decoration: none !important;
+}
 a.fa,
 a.fa:hover,
 i.fa,
@@ -220,7 +223,7 @@ a.external {
   &::after {
     content: "\f08e";
     font-size: $font-size-sm;
-    font-family: FontAwesome;
+    font-family: $font-family-font-awesomePro;
     position: relative;
     top: -3px;
     left: 3px;
@@ -236,7 +239,7 @@ a[href$=".DOCX"],
   &::before {
     margin-right: 5px;
     content: "\f016";
-    font-family: FontAwesome;
+    font-family: $font-family-font-awesomePro;
   }
 }
 
@@ -248,7 +251,7 @@ a[href$=".XLSX"],
   &::before {
     margin-right: 5px;
     content: "\f1c3";
-    font-family: FontAwesome;
+    font-family: $font-family-font-awesomePro;
   }
 }
 
@@ -262,7 +265,7 @@ a[href$=".ZIP"],
   &::before {
     margin-right: 5px;
     content: "\f1c6";
-    font-family: FontAwesome;
+    font-family: $font-family-font-awesomePro;
   }
 }
 
@@ -272,7 +275,7 @@ a[href$=".EXE"],
   &::before {
     margin-right: 5px;
     content: "\f022";
-    font-family: FontAwesome;
+    font-family: $font-family-font-awesomePro;
   }
 }
 
@@ -282,7 +285,7 @@ a[href$=".PDF"],
   &::before {
     margin-right: 5px;
     content: "\f1c1";
-    font-family: FontAwesome;
+    font-family: $font-family-font-awesomePro;
   }
 }
 
@@ -311,4 +314,241 @@ pre {
 .meta-info {
   color: $text-muted;
   font-size: $font-size-sm;
+}
+
+//text
+.text-orange {
+  color: theme-color("brand-primary");
+}
+.text-gradient {
+  color: transparent;
+  background-color: $brand-color;
+  background-image: $theme-gradient;
+  background-clip: text;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$brand-color, endColorstr=$brand-secondary-color);
+  display: inline-block;
+}
+.macron {
+  position: relative;
+  &:after {
+    content: '\2013';
+    position: absolute;
+    left: 50%;
+    transform: translate3d(-50%, -33%, 0);
+  }
+}
+//buttons
+.btn-nobg-white-sml,
+.btn-nobg-dark-sml,
+.btn-bg-white-sml,
+.btn-bg-dark-sml,
+.btn-bg-gradient-sml,
+.btn-bg-theme-sml {
+  display: inline-block;
+  border-radius: 50px;
+  @include transition();
+  a {
+    display: inline-block;
+    padding: 10px 18px;
+    @include transition();
+  }
+}
+.btn-nobg-white,
+.btn-nobg-dark,
+.btn-bg-white,
+.btn-bg-dark,
+.btn-bg-gradient,
+.btn-bg-theme {
+  display: inline-block;
+  border-radius: 50px;
+  @include transition();
+  a {
+    display: inline-block;
+    padding: 15px 25px;
+    @include transition();
+  }
+}
+
+a {
+  .btn-nobg-white-sml,
+  .btn-nobg-dark-sml,
+  .btn-bg-white-sml,
+  .btn-bg-dark-sml,
+  .btn-bg-gradient-sml,
+  .btn-bg-theme-sml {
+    display: inline-block;
+    padding: 10px 18px;
+  }
+  .btn-nobg-white,
+  .btn-nobg-dark,
+  .btn-bg-white,
+  .btn-bg-dark,
+  .btn-bg-gradient,
+  .btn-bg-them {
+    display: inline-block;
+    padding: 15px 25px;
+  }
+}
+
+.btn-nobg-white-sml,
+.btn-nobg-white {
+  border: 2px solid $light;
+  color: $light;
+  &:hover {
+    color: $dark;
+    background-color: $light;
+  }
+  a {
+    color: $light;
+    &:hover {
+      color: $dark;
+    }
+  }
+}
+.btn-nobg-dark-sml,
+.btn-nobg-dark {
+  color: $dark;
+  border: 2px solid $dark;
+  &:hover {
+    color: $light;
+    background-color: $dark;
+  }
+  a {
+    color: $dark;
+    &:hover {
+      color: $light;
+    }
+  }
+}
+.btn-bg-white-sml,
+.btn-bg-white {
+  color: $dark;
+  background-color: $light;
+  &:hover {
+    color: $light;
+    background-color: $dark;
+  }
+  a {
+    color: $dark;
+    &:hover {
+      color: $light;
+    }
+  }
+}
+.btn-bg-dark-sml,
+.btn-bg-dark {
+  color: $light;
+  background-color: $dark;
+
+  &:hover {
+    color: $dark;
+    background-color: $light;
+  }
+  a {
+    color: $light;
+    &:hover {
+      color: $dark;
+    }
+  }
+}
+.btn-bg-gradient-sml,
+.btn-bg-gradient {
+  color: $light;
+  background-image: $theme-gradient-multicolor;
+  background-size: 300% 100%;
+  &:hover {
+    background-position: 100% 0;
+  }
+  a {
+    color: $light;
+  }
+}
+.btn-bg-theme-sml,
+.btn-bg-theme {
+  background-color: $brand-color;
+  color: $light;
+  &:hover {
+    background-color: $brand-secondary-color;
+  }
+  a {
+    color: $light;
+  }
+}
+
+// fonts
+.open-sans {
+  font-family: $font-family-sans-serif;
+}
+.noto-sans {
+  font-family: $font-family-noto-sans-jp;
+}
+.ibm-serif {
+  font-family: $font-family-ibm-plex-serif;
+}
+.cormorant-garamond {
+  font-family: $font-family-cormorant-garamond;
+}
+.source-sans-pro {
+  font-family: $font-family-source-sans-pro;
+}
+.work-sans {
+  font-family: $font-family-work-sans;
+}
+.nunito-sans {
+  font-family: $font-family-nunito-sans;
+}
+.sf-pro {
+  font-family: $font-family-sf-pro;
+}
+.recoleta {
+  font-family: $font-family-recoleta;
+}
+.dm-serif {
+  font-family: $font-family-dm-serif-display;
+}
+.eksell-display {
+  font-family: $font-family-eksell-display;
+}
+.ff-clan {
+  font-family: $font-family-ff-clan;
+}
+
+.display-5 {
+  @include font-size($display5-size);
+  font-weight: $display5-weight;
+  line-height: $display-line-height;
+}
+
+.display-6 {
+  @include font-size($display6-size);
+  font-weight: $display6-weight;
+  line-height: $display-line-height;
+}
+
+.font-weight-medium {
+  font-weight: $font-weight-medium !important;
+}
+.font-weight-semibold {
+  font-weight: $font-weight-semibold !important;
+}
+
+.lineheight-1 {
+
+  line-height: 1.4em;
+}
+
+.lineheight-2 {
+  line-height: 1.6em;
+}
+
+.lineheight-3 {
+  line-height: 1.8em;
+}
+
+.spacing-1 {
+  letter-spacing: 1px;
+}
+
+.spacing-2 {
+  letter-spacing: 2px;
 }
