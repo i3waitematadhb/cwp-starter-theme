@@ -4,7 +4,7 @@
             aria-label="<%t CWP_Search.Button "Search" %>"
             type="text"
             name="Search"
-            class="text form-control searchfield form-control-lg assistant"
+            class="text form-control searchfield form-control-lg poppins font-weight-light"
             value="$SearchQuery.ATT"
             placeholder="<%t CWP_Search.Placeholder "Search" %>"/>
         <label class="sr-only" for="SearchForm_SearchForm_Search"><%t CWP_Search.Button "Search" %></label>
