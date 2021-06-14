@@ -14,7 +14,7 @@
                                     <% end_if %>
 
                                     <div class="teaser-date">
-                                        <div class="teaser-date--inner ff-clan">
+                                        <div class="teaser-date--inner poppins">
                                             <span class="day font-weight-bold">$Date.DayOfMonth</span>
                                             <span class="month font-weight-normal">{$Date.ShortMonth} '{$Date.Format(YY)}</span>
                                         </div>
@@ -22,8 +22,8 @@
                                 </div>
                             </a>
                             <div class="blog-item--content">
-                                <a href="$Link" class="text-decoration-none text-dark"><h5 class="ff-clan mb-3">$Title</h5></a>
-                                <p class="desc ff-clan">{$Abstract}...</p>
+                                <a href="$Link" class="text-decoration-none text-dark"><h5 class="poppins mb-3">$Title</h5></a>
+                                <p class="desc poppins">{$Abstract}...</p>
                             </div>
                             <% if $Authors %>
                                 <% loop $Authors %>
@@ -39,9 +39,9 @@
                                         </div>
                                         <div class="author-text">
                                             <a href="$Link" class="text-decoration-none">
-                                                <p class="author-text--name ff-clan">$Title</p>
+                                                <p class="author-text--name poppins">$Title</p>
                                             </a>
-                                            <p class="author-text--title ff-clan">$Position</p>
+                                            <p class="author-text--title poppins">$Position</p>
                                         </div>
                                     </div>
                                 <% end_loop %>
