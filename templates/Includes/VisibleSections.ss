@@ -10,7 +10,7 @@
                         <div class="row no-gutters">
                             <% if $ShowSectionHeader %>
                                 <div class="<% if $SectionHeaderPosition == 'position-top'%>col-lg-12<% else %>col-lg-4<% if $SectionHeaderPosition == 'position-right' %> order-last<% end_if %><% end_if %>">
-                                    <div class="section-header<% if $SectionHeaderSize != 'none' %> $SectionHeaderSize<% end_if %> wow animate__animated animate__fadeInUp">
+                                    <div class="section-header<% if $ReadableHeaderPaddings %><% loop $ReadableHeaderPaddings %> $Name<% end_loop %><% end_if %> wow animate__animated animate__fadeInUp">
                                         <% if $SectionHeader %>
                                             $SectionHeader
                                         <% else %>
@@ -26,7 +26,7 @@
                             </div>
                             <% if $ShowSectionFooter %>
                                 <div class="col-md-12">
-                                    <div class="section-footer<% if $SectionFooterSize != 'none' %> $SectionFooterSize<% end_if %> text-center p-lg-5 wow animate__animated animate__fadeInUp">
+                                    <div class="section-footer<% if $ReadableFooterPaddings %><% loop $ReadableFooterPaddings %> $Name<% end_loop %><% end_if %> text-center wow animate__animated animate__fadeInUp">
                                         <% if $SectionFooter %>{$SectionFooter}<% end_if %>
                                     </div>
                                 </div>
