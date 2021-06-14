@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="feedback-form active">
-                    <p class="text-center mb-5"><span class="dm-serif theme-text-gradient h4">Tell us more about you and what help your are looking for?</span></p>
+                    $Content
                     <div class="form-group">
                         <label for="feedback-textarea" class="d-block">About me</label>
                         <textarea id="feedback-textarea"></textarea>
