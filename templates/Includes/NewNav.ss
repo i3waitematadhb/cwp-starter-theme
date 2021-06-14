@@ -11,7 +11,7 @@
                                         <div class="primaryNav">
                                             <ul class="primary-ul list-unstyled">
                                                 <% loop Menu(1) %>
-                                                    <li class="li-{$Pos} pt-4 pb-4"><span class="display-6 ff-clan font-weight-medium">$MenuTitle.XML</span><svg class="primaryNavItem__svg___1VE2h" width="9px" height="15px"><path fill="currentColor" fill-rule="evenodd" d="M7 9l-6 6-1-1 6-6-6-6 1-1 7 7-1 1z"></path></svg></li>
+                                                    <li class="li-{$Pos} pt-4 pb-4" data-dropdown="{$ID}"><span class="h2 font-weight-medium">$MenuTitle.XML</span><svg class="primaryNavItem__svg___1VE2h" width="9px" height="15px"><path fill="currentColor" fill-rule="evenodd" d="M7 9l-6 6-1-1 6-6-6-6 1-1 7 7-1 1z"></path></svg></li>
                                                 <% end_loop %>
                                             </ul>
                                         </div>
@@ -24,14 +24,19 @@
                             </div>
                             <div class="navigation-secondary">
                                 <% loop Menu(1) %>
-                                    <div class="panel__nav" data-toggle="dropdown-{$ID}">
+                                    <div class="panel__nav" data-toggle="{$ID}">
                                         <div class="panel__3">
                                             <div class="panel__scroll">
                                                 <div class="panel__content">
                                                     <div class="content__inner">
-                                                        <% loop $Children %>
-                                                            <div class="">$MenuTitle.XML</div>
-                                                        <% end_loop %>
+                                                        <a href="$Link"><span class="h3 text-dark">$MenuTitle.XML</span></a>
+                                                        <div class="">
+                                                            <ul class="list-unstyled">
+                                                            <% loop $Children %>
+                                                                <li><a href="$Link"><span class="h5 text-dark">$MenuTitle.XML</span></a></li>
+                                                            <% end_loop %>
+                                                            </ul>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
