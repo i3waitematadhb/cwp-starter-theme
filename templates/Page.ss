@@ -14,10 +14,10 @@
     <body class="$ClassName">
         <header role="banner">
             <% include Header %>
-<%--            <% include MainNav %>--%>
+            <% include MainNav %>
         </header>
-        <% include Search %>
-        <% include NewNav %>
+<%--        <% include Search %>--%>
+<%--        <% include NewNav %>--%>
 <%--        <% include Nav %>--%>
         <main id="main" class="main row no-gutters" role="main">
             $Layout
@@ -28,6 +28,7 @@
         </footer>
         <% require themedJavascript('dist/js/jquery.min.js') %>
         <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2542/jquery.scrollie.min_1.js"></script>
+        <script type="text/javascript" src="https://unpkg.com/external-svg-loader@1.3.1/svg-loader.min.js" async></script>
         <% require themedJavascript('dist/js/main.js') %>
         <% include GoogleAnalytics %>
     </body>
