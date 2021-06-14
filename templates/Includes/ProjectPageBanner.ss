@@ -57,18 +57,18 @@
                     <div class="ContentSection-container section-body container-fluid p-0">
                         <div class="contentSection-content wow animate__animate animate__fadeInRight">
                             <% if $Categories %>
-                                <h5><span class="spacing-1 ff-clan font-weight-bold lineheight-3 text-brand">CATEGORIES</span></h5>
-                                <% loop $Categories %><p><span class="h4 font-weight-light spacing-1 nunito-sans text-dark">$Title</span></p><% end_loop %>
+                                <h5><span class="spacing-1 poppins font-weight-bold lineheight-3 theme-text-gradient">CATEGORIES</span></h5>
+                                <% loop $Categories %><p><span class="h4 font-weight-light spacing-1 poppins text-dark">$Title</span></p><% end_loop %>
                             <% end_if %>
                             <% if $ReadableAuthors %>
-                                <p><span class="nunito-sans">&nbsp;</span></p>
-                                <h5><span class="spacing-1 ff-clan font-weight-bold lineheight-3 text-brand">AUTHOR/S</span></h5>
-                                <% loop $ReadableAuthors %><p><span class="h4 font-weight-light spacing-1 nunito-sans text-dark">$Name</span></p><% end_loop %>
+                                <p><span class="poppins">&nbsp;</span></p>
+                                <h5><span class="spacing-1 poppins font-weight-bold lineheight-3 theme-text-gradient">AUTHOR/S</span></h5>
+                                <% loop $ReadableAuthors %><p><span class="h4 font-weight-light spacing-1 poppins text-dark">$Name</span></p><% end_loop %>
                             <% end_if %>
                             <% if $Year %>
-                                <p><span class="nunito-sans">&nbsp;</span></p>
-                                <h5><span class="spacing-1 ff-clan font-weight-bold lineheight-3 text-brand">DATE</span></h5>
-                                <p><span class="h4 font-weight-light spacing-1 nunito-sans text-dark">$Year</span></p>
+                                <p><span class="poppins">&nbsp;</span></p>
+                                <h5><span class="spacing-1 poppins font-weight-bold lineheight-3 theme-text-gradient">DATE</span></h5>
+                                <p><span class="h4 font-weight-light spacing-1 poppins text-dark">$Year</span></p>
                             <% end_if %>
                         </div>
                     </div>
