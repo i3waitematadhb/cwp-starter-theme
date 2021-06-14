@@ -3,8 +3,8 @@
 <% end_if %>
 <% if $VisibleEventFinalists %>
     <% loop $VisibleEventFinalists %>
-        <button class="accordion-btn active"><span class="h4 font-weight-light lineheight-3 spacing-1">$Finalists.Year</span> <i class="fal fa-chevron-down"></i></button>
-        <div class="panel active">
+        <button class="accordion-btn<% if $First %> active<% end_if %>"><span class="h4 font-weight-light lineheight-3 spacing-1">$Finalists.Year</span> <i class="fal fa-chevron-down"></i></button>
+        <div class="panel<% if $First %> active<% end_if %>">
             <div class="panel--content">
                 <div class="container-fluid p-0">
                     <div class="row no-gutters">
