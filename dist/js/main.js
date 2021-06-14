@@ -24833,39 +24833,23 @@ function _arrayLikeToArray(arr, len) {
         jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).removeClass('is-active');
         siteheader.removeClass('open');
         menu.removeClass('open');
-        navbackdrop.animate({
-          step: function step() {
-            navbackdrop.css('transform', 'translate3d(-400px, 0, 0)');
-          } //transform : 'translate3d(-400px, 0, 0)'
-
-        }); // menuDrawer.removeClass('open')
-        // let myEvent = menuDrawer.find('.menu-drawer-content').animate({
-        //   width: '0',
-        //   right: '-100%'
-        // });
-        // myEvent.promise().done(function () {
-        //   menuDrawer.css({
-        //     'visibility' : 'hidden',
-        //     'background-color': 'rgba(0, 0, 0, 0)'
-        //   });
-        // })
       } else {
         jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).addClass('is-active');
         siteheader.addClass('open');
         menu.addClass('open');
-        navbackdrop.animate({
-          step: function step() {
-            navbackdrop.css('transform', 'translate3d(0, 0, 0)');
+        primaryNav.find('.primary-ul li').each(function (i) {
+          if (i < 1) {
+            var dropdownData = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('data-dropdown');
+            var panelNav = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.panel__nav');
+            panelNav.each(function () {
+              if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('data-toggle') === dropdownData) {
+                jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).css({
+                  'display': 'block'
+                });
+              }
+            });
           }
-        }); // menuDrawer.addClass('open');
-        // menuDrawer.css({
-        //   'background-color': 'rgba(0, 0, 0, 0.8)',
-        //   'visibility' : 'visible'
-        // });
-        // menuDrawer.find('.menu-drawer-content').animate({
-        //   width: '468px',
-        //   right: '0%'
-        // });
+        });
       }
     });
   }
