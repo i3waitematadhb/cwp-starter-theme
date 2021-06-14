@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);@import url(https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap);@import url(https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap);@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap);@import url(https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap);@import url(https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap);@import url(https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);@import url(https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700&display=swap);@import url(https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap);@import url(https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&display=swap);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);@import url(https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap);@import url(https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap);@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap);@import url(https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap);@import url(https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap);@import url(https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);@import url(https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700&display=swap);@import url(https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap);@import url(https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&display=swap);@import url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);@charset "UTF-8";
 .alert {
   position: relative;
   padding: 0.75rem 1.25rem;
@@ -6818,7 +6818,7 @@ button.bg-dark-blue:focus {
 }
 
 .font-weight-bolder {
-  font-weight: bolder !important;
+  font-weight: 900 !important;
 }
 
 .font-italic {
@@ -10304,6 +10304,7 @@ pre {
           background-clip: text;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$brand-color, endColorstr=$brand-secondary-color);
   display: inline-block;
+  padding: 1px 0;
 }
 
 .btn-nobg-white-sml,
@@ -10313,17 +10314,7 @@ pre {
 .btn-bg-gradient-sml,
 .btn-bg-theme-sml {
   display: inline-block;
-  transition: all 0.2s ease-in-out;
-}
-@media (prefers-reduced-motion: reduce) {
-  .btn-nobg-white-sml,
-.btn-nobg-dark-sml,
-.btn-bg-white-sml,
-.btn-bg-dark-sml,
-.btn-bg-gradient-sml,
-.btn-bg-theme-sml {
-    transition: none;
-  }
+  transition: all 400ms cubic-bezier(0.76, 0, 0.24, 1);
 }
 .btn-nobg-white-sml a,
 .btn-nobg-dark-sml a,
@@ -10332,22 +10323,18 @@ pre {
 .btn-bg-gradient-sml a,
 .btn-bg-theme-sml a {
   display: inline-block;
-  padding: 10px 18px;
-  transition: all 0.2s ease-in-out;
-}
-@media (prefers-reduced-motion: reduce) {
-  .btn-nobg-white-sml a,
-.btn-nobg-dark-sml a,
-.btn-bg-white-sml a,
-.btn-bg-dark-sml a,
-.btn-bg-gradient-sml a,
-.btn-bg-theme-sml a {
-    transition: none;
-  }
+  padding: 10px 25px;
+  transition: all 400ms cubic-bezier(0.76, 0, 0.24, 1);
 }
 
 .btn-radius {
   border-radius: 50px;
+  box-shadow: 0 6px 8px 0 #0000001f;
+  position: relative;
+  top: 0;
+}
+.btn-radius:hover {
+  top: -5px;
 }
 
 .btn-nobg-white,
@@ -10357,17 +10344,7 @@ pre {
 .btn-bg-gradient,
 .btn-bg-theme {
   display: inline-block;
-  transition: all 0.2s ease-in-out;
-}
-@media (prefers-reduced-motion: reduce) {
-  .btn-nobg-white,
-.btn-nobg-dark,
-.btn-bg-white,
-.btn-bg-dark,
-.btn-bg-gradient,
-.btn-bg-theme {
-    transition: none;
-  }
+  transition: all 400ms cubic-bezier(0.76, 0, 0.24, 1);
 }
 .btn-nobg-white a,
 .btn-nobg-dark a,
@@ -10376,18 +10353,8 @@ pre {
 .btn-bg-gradient a,
 .btn-bg-theme a {
   display: inline-block;
-  padding: 23px 25px;
-  transition: all 0.2s ease-in-out;
-}
-@media (prefers-reduced-motion: reduce) {
-  .btn-nobg-white a,
-.btn-nobg-dark a,
-.btn-bg-white a,
-.btn-bg-dark a,
-.btn-bg-gradient a,
-.btn-bg-theme a {
-    transition: none;
-  }
+  padding: 20px 30px;
+  transition: all 400ms cubic-bezier(0.76, 0, 0.24, 1);
 }
 
 a .btn-nobg-white-sml,
@@ -10397,7 +10364,7 @@ a .btn-bg-dark-sml,
 a .btn-bg-gradient-sml,
 a .btn-bg-theme-sml {
   display: inline-block;
-  padding: 10px 18px;
+  padding: 10px 25px;
 }
 a .btn-nobg-white,
 a .btn-nobg-dark,
@@ -10406,7 +10373,7 @@ a .btn-bg-dark,
 a .btn-bg-gradient,
 a .btn-bg-theme {
   display: inline-block;
-  padding: 15px 25px;
+  padding: 20px 30px;
 }
 
 .btn-nobg-white-sml,
@@ -10416,7 +10383,7 @@ a .btn-bg-theme {
 }
 .btn-nobg-white-sml:hover,
 .btn-nobg-white:hover {
-  color: #343a40;
+  color: #ff7b1e;
   background-color: #f8f9fa;
 }
 .btn-nobg-white-sml a,
@@ -10425,7 +10392,7 @@ a .btn-bg-theme {
 }
 .btn-nobg-white-sml a:hover,
 .btn-nobg-white a:hover {
-  color: #343a40;
+  color: #ff7b1e;
 }
 
 .btn-nobg-dark-sml,
@@ -10454,12 +10421,12 @@ a .btn-bg-theme {
 }
 .btn-bg-white-sml:hover,
 .btn-bg-white:hover {
-  color: #f8f9fa;
+  color: #ff7b1e;
   background-color: #343a40;
 }
 .btn-bg-white-sml a,
 .btn-bg-white a {
-  color: #343a40;
+  color: #ff7b1e;
 }
 .btn-bg-white-sml a:hover,
 .btn-bg-white a:hover {
@@ -10548,6 +10515,10 @@ a .btn-bg-theme {
 
 .lato {
   font-family: "Lato", sans-serif;
+}
+
+.poppins {
+  font-family: "Poppins", sans-serif;
 }
 
 .assistant {

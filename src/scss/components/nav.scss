@@ -13,7 +13,30 @@
   }
 
   .nav-link {
-    padding: $navbar-padding-y $navbar-padding-x;
+    @include transition();
+    //padding: $navbar-padding-y $navbar-padding-x;
+  }
+
+  &.header-light {
+    .navbar-nav {
+      .nav-link {
+        color: $white;
+        &:hover {
+          color: $brand-color;
+        }
+      }
+    }
+  }
+
+  &.header-dark {
+    .navbar-nav {
+      .nav-link {
+        color: $dark;
+        &:hover {
+          color: $brand-color;
+        }
+      }
+    }
   }
 
   .navbar-nav {
@@ -30,7 +53,7 @@
       &,
       &:hover,
       &:focus {
-        background-color: $gray-100;
+
       }
     }
   }
@@ -58,21 +81,28 @@
     &.open {
       .dropdown-menu {
         display: block;
-      //  transform: translate3d(100%, -30%, 0);
-      //  height: auto;
+        //display: flex;
       }
     }
     .dropdown-menu {
+      //position: fixed;
       height: auto;
-      //box-shadow: 0 0 11px 0 #00000040;
-      background-color: #00000052;
-      border-radius: 8px;
-      border: 2px solid #fff;
+      //width: 100%;
+      border: 0;
+      padding: 20px 25px;
+      align-items: center;
+      justify-content: center;
+      background-color: #fff;
+      box-shadow: 0 7px 20px 0 #00000026;
+      border-radius: 0 0 8px 8px;
       .dropdown-item {
-        color: #fff;
+        color: $dark;
+        background-color: transparent;
         border-bottom: 0;
+        padding: 10px;
         &:hover {
-          color: #fff;
+          background: transparent !important;
+          color: $brand-color;
         }
       }
     }
@@ -84,27 +114,27 @@
     margin-top: 0;
   }
 
-  .dropdown-item {
-    // All sub-navigation menu items
-    color: $navbar-light-color;
-
-    &:hover,
-    &:focus {
-      color: $navbar-light-hover-color;
-      text-decoration: none;
-    }
-
-    &:active {
-      background-color: $gray-100;
-    }
-  }
+  //.dropdown-item {
+  //  // All sub-navigation menu items
+  //  color: $navbar-light-color;
+  //
+  //  &:hover,
+  //  &:focus {
+  //    color: $navbar-light-hover-color;
+  //    text-decoration: none;
+  //  }
+  //
+  //  &:active {
+  //    background-color: $gray-100;
+  //  }
+  //}
 
   .active {
     // Active (currently selected) sub-navigation menu items
-    .dropdown-item {
-      background-color: $gray-100;
-      color: $navbar-light-hover-color;
-    }
+    //.dropdown-item {
+    //  background-color: $gray-100;
+    //  color: $navbar-light-hover-color;
+    //}
   }
 }
 
@@ -133,6 +163,8 @@
 .navbar-collapse {
   border-top: 0;
   display: block !important;
+  align-items: center;
+  justify-content: center;
 }
 
 // Medium and up viewports
@@ -166,12 +198,12 @@
         }
       }
     }
-
-    .nav-link {
-      //padding: $navbar-padding-x;
-
+    .navbar-expand-md {
+      .nav-link {
+        //padding: $navbar-padding-x;
+        padding: 2.5rem 2rem;
+      }
     }
-
     .navbar {
       //border-bottom: 1px solid $navbar-light-toggler-border-color;
     }
@@ -186,33 +218,12 @@
 }
 
 //Custom
-.navbar-light {
-  .navbar-nav {
-    .nav-link {
-      color: $white;
-      padding: 1rem 2rem;
-      @include transition();
-      span {
-        position: relative;
-        &:after {
-          position: absolute;
-          content: '';
-          left: 0;
-          bottom: 0;
-          width: 100%;
-        }
-      }
-      &:hover {
-        color: $brand-color;
-      }
-    }
-  }
-}
 header {
   &.scrolled {
     .navbar-light {
       .navbar-nav {
         .nav-link {
+          padding: 2.2rem 2rem;
           &:hover {
             color: #242424;
           }

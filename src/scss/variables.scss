@@ -302,11 +302,12 @@ $font-family-sf-pro: 'SF Pro', sans-serif;
 $font-family-recoleta: 'Recoleta', sans-serif;
 $font-family-lato: 'Lato', sans-serif;
 $font-family-assistant: 'Assistant', sans-serif;
+$font-family-poppins: 'Poppins', sans-serif;
 $font-family-font-awesomePro: 'Font Awesome 5 Pro';
 
 $font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
-$font-family-base:            $font-family-ff-clan !default;
+$font-family-base:            $font-family-poppins !default;
 // stylelint-enable value-keyword-case
 
 $font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
@@ -319,7 +320,8 @@ $font-weight-normal:          400 !default;
 $font-weight-medium:          500 !default;
 $font-weight-semibold:        600 !default;
 $font-weight-bold:            700 !default;
-$font-weight-bolder:          bolder !default;
+$font-weight-heavy:           800 !default;
+$font-weight-bolder:          900 !default;
 
 $font-weight-base:            $font-weight-normal !default;
 $line-height-base:            1.5 !default;

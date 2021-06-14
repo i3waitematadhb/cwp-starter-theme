@@ -9,7 +9,7 @@
         border-radius: 0;
       }
       &__choice {
-        font-family: $font-family-sf-pro;
+        font-family: $font-family-poppins;
         font-size: 15px;
         color: #fff;
         padding: 3px 15px 3px 8px;
@@ -29,7 +29,7 @@
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0;
   .select2-results__option {
-    font-family: $font-family-sf-pro;
+    font-family: $font-family-poppins;
     padding: 15px 20px;
     &--highlighted[aria-selected] {
       background-color: $brand-color;

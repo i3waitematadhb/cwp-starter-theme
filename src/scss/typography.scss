@@ -369,6 +369,7 @@ pre {
   background-clip: text;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$brand-color, endColorstr=$brand-secondary-color);
   display: inline-block;
+  padding: 1px 0;
 }
 
 //buttons
@@ -379,15 +380,21 @@ pre {
 .btn-bg-gradient-sml,
 .btn-bg-theme-sml {
   display: inline-block;
-  @include transition();
+  transition: all 400ms cubic-bezier(0.76, 0, 0.24, 1);
   a {
     display: inline-block;
-    padding: 10px 18px;
-    @include transition();
+    padding: 10px 25px;
+    transition: all 400ms cubic-bezier(0.76, 0, 0.24, 1);
   }
 }
 .btn-radius {
   border-radius: 50px;
+  box-shadow: 0 6px 8px 0 #0000001f;
+  position: relative;
+  top: 0;
+  &:hover {
+    top: -5px;
+  }
 }
 .btn-nobg-white,
 .btn-nobg-dark,
@@ -396,11 +403,11 @@ pre {
 .btn-bg-gradient,
 .btn-bg-theme {
   display: inline-block;
-  @include transition();
+  transition: all 400ms cubic-bezier(0.76, 0, 0.24, 1);
   a {
     display: inline-block;
-    padding: 23px 25px;
-    @include transition();
+    padding: 20px 30px;
+    transition: all 400ms cubic-bezier(0.76, 0, 0.24, 1);
   }
 }
 
@@ -412,7 +419,7 @@ a {
   .btn-bg-gradient-sml,
   .btn-bg-theme-sml {
     display: inline-block;
-    padding: 10px 18px;
+    padding: 10px 25px;
   }
   .btn-nobg-white,
   .btn-nobg-dark,
@@ -421,7 +428,7 @@ a {
   .btn-bg-gradient,
   .btn-bg-theme {
     display: inline-block;
-    padding: 15px 25px;
+    padding: 20px 30px;
   }
 }
 
@@ -430,13 +437,13 @@ a {
   border: 2px solid $light;
   color: $light;
   &:hover {
-    color: $dark;
+    color: $brand-color;
     background-color: $light;
   }
   a {
     color: $light;
     &:hover {
-      color: $dark;
+      color: $brand-color;
     }
   }
 }
@@ -460,11 +467,11 @@ a {
   color: $dark;
   background-color: $light;
   &:hover {
-    color: $light;
+    color: $brand-color;
     background-color: $dark;
   }
   a {
-    color: $dark;
+    color: $brand-color;
     &:hover {
       color: $light;
     }
@@ -537,6 +544,9 @@ a {
 }
 .lato {
   font-family: $font-family-lato;
+}
+.poppins {
+  font-family: $font-family-poppins;
 }
 .assistant {
   font-family: $font-family-assistant;
@@ -615,6 +625,7 @@ a {
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 //Assistant
 @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import "./font-eksell";
 @import "./font-clan";
 @import "./font-sf-pro";
