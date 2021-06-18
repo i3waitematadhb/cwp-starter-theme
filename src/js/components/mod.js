@@ -2,6 +2,8 @@
 import $ from 'jquery';
 import WOW from 'wow.js';
 import FlexMasonry from 'flexmasonry/src/flexmasonry';
+import masonry from 'masonry-layout/dist/masonry.pkgd.min';
+import imagesLoaded from 'imagesloaded';
 
 export default function () {
   $(document).ready(function ()
@@ -83,15 +85,25 @@ export default function () {
 
   function masonryLayout()
   {
-    FlexMasonry.init('.grid', {
-      breakpointCols: {
-        'min-width: 1500px': 3,
-        'min-width: 1200px': 3,
-        'min-width: 992px': 2,
-        'min-width: 768px': 2,
-        'min-width: 576px': 1,
-      },
-      numCols: 3
+    // FlexMasonry.init('.grid', {
+    //   responsive: true,
+    //   breakpointCols: {
+    //     'min-width: 1500px': 3,
+    //     'min-width: 1200px': 3,
+    //     'min-width: 992px': 2,
+    //     'min-width: 768px': 2,
+    //     'min-width: 576px': 1,
+    //   },
+    //   numCols: 3
+    // });
+    let $grid = $('.grid').masonry({
+      // options...
+      itemSelector: '.gallery-image',
+      percentPosition: true,
+    });
+
+    $grid.imagesLoaded().progress( function() {
+      $grid.masonry();
     });
   }
 
