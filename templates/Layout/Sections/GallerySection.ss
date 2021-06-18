@@ -13,7 +13,7 @@
                                 <div class="grid">
                                     <% loop $Galleries %>
                                         <% if $Image %>
-                                            <img src="$Image.URL" class="winners-image">
+                                            <div class="gallery-image"><img src="$Image.URL" class="gallery-img"></div>
                                         <% end_if %>
                                     <% end_loop %>
                                 </div>
