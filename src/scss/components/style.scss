@@ -159,6 +159,21 @@ body {
       .flexmasonry-item {
         padding: 10px;
       }
+      .gallery-image {
+        @media only screen and (min-width: 1201px) {
+          width: 33.33333%;
+        }
+        @media only screen and (max-width: 1200px) and (min-width: 768px) {
+          width: 50%;
+        }
+        @media only screen and (max-width: 767px) {
+          width: 100%;
+        }
+        .gallery-img {
+          padding: 10px;
+          width: 100%;
+        }
+      }
     }
   }
   //Judges Section

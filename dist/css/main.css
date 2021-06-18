@@ -29634,6 +29634,25 @@ body.dark-theme {
 .page-section.GallerySection .grid .flexmasonry-item {
   padding: 10px;
 }
+@media only screen and (min-width: 1201px) {
+  .page-section.GallerySection .grid .gallery-image {
+    width: 33.33333%;
+  }
+}
+@media only screen and (max-width: 1200px) and (min-width: 768px) {
+  .page-section.GallerySection .grid .gallery-image {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .page-section.GallerySection .grid .gallery-image {
+    width: 100%;
+  }
+}
+.page-section.GallerySection .grid .gallery-image .gallery-img {
+  padding: 10px;
+  width: 100%;
+}
 .page-section.JudgesSection .judge-details {
   margin-top: 40px;
   text-align: center;
