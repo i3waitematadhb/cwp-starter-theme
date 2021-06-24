@@ -1,0 +1,13 @@
+//transform: translate3d(0, -50%, 0);
+//top: 50%;
+#nprogress {
+  .bar {
+    background-color: $white;
+    height:20px;
+    left: 0;
+    margin: 0;
+  }
+  .peg {
+    box-shadow: 0 0 10px transparent, 0 0 5px transparent;
+  }
+}
