@@ -1,0 +1,54 @@
+<div class="animatedBanner-content">
+    <svg width="1500" height="500" viewBox="0 0 1500 500" fill="none" xmlns="http://www.w3.org/2000/svg" class="m-home-hero__bg-svg">
+        <rect x="1276.3348973551253" width="70.06111775970085" height="5" y="410" fill="#FF7B1E" style="transform: translate(-100vw, 0px); animation-delay: 372.592ms; animation-duration: 4858.49ms;"></rect>
+        <rect x="1310.5538270134937" width="365.18964586936164" height="5" y="370" fill="#FFA500" style="transform: translate(-100vw, 0px); animation-delay: -89.5759ms; animation-duration: 5969.78ms;"></rect>
+        <rect x="897.7688948327934" width="322.83683278589905" height="5" y="150" fill="#F56600" style="transform: translate(-100vw, 0px); animation-delay: -55.434ms; animation-duration: 6669.04ms;"></rect>
+        <rect x="530.027301111965" width="327.3513810721555" height="5" y="250" fill="#FFA05C" style="transform: translate(-100vw, 0px); animation-delay: 454.364ms; animation-duration: 6635.71ms;"></rect>
+        <rect x="1185.658440908005" width="127.47336499071098" height="5" y="310" fill="#F56600" style="transform: translate(-100vw, 0px); animation-delay: 223.836ms; animation-duration: 6190.38ms;"></rect>
+        <rect x="1272.8778582783889" width="270.3058502632484" height="5" y="490" fill="#CC5500" style="transform: translate(-100vw, 0px); animation-delay: -245.307ms; animation-duration: 5305.76ms;"></rect>
+        <rect x="697.7016444027145" width="307.15059994509534" height="5" y="120" fill="#FF7B1E" style="transform: translate(-100vw, 0px); animation-delay: 217.551ms; animation-duration: 4831.47ms;"></rect>
+        <rect x="204.9857902931742" width="304.874749319068" height="5" y="10" fill="#FFA500" style="transform: translate(-100vw, 0px); animation-delay: 478.411ms; animation-duration: 5816.81ms;"></rect>
+        <rect x="361.41473676664583" width="339.67329392448795" height="5" y="310" fill="#F56600" style="transform: translate(-100vw, 0px); animation-delay: -201.432ms; animation-duration: 4143.59ms;"></rect>
+        <rect x="867.5425918675082" width="149.90267625438048" height="5" y="100" fill="#FFA05C" style="transform: translate(-100vw, 0px); animation-delay: -32.2927ms; animation-duration: 6607.63ms;"></rect>
+        <rect x="892.6207933532725" width="50" height="5" y="460" fill="#F56600" style="transform: translate(-100vw, 0px); animation-delay: -177.133ms; animation-duration: 6182.89ms;"></rect>
+        <rect x="1023.3822705208894" width="170.9682940876867" height="5" y="120" fill="#CC5500" style="transform: translate(-100vw, 0px); animation-delay: -155.425ms; animation-duration: 6590.28ms;"></rect>
+        <rect x="1342.8258334576483" width="125.47465799566764" height="5" y="480" fill="#FF7B1E" style="transform: translate(-100vw, 0px); animation-delay: -422.69ms; animation-duration: 6441.53ms;"></rect>
+        <rect x="1140.1926221706342" width="168.84271058924386" height="5" y="440" fill="#FFA500" style="transform: translate(-100vw, 0px); animation-delay: -446.329ms; animation-duration: 7698.27ms;"></rect>
+        <rect x="1216.5361372081052" width="139.46126101994417" height="5" y="20" fill="#F56600" style="transform: translate(-100vw, 0px); animation-delay: -222.281ms; animation-duration: 4175.95ms;"></rect>
+        <rect x="636.8830433956462" width="315.095645147582" height="5" y="110" fill="#FFA05C" style="transform: translate(-100vw, 0px); animation-delay: 266.931ms; animation-duration: 6461.26ms;"></rect>
+        <rect x="100.4931244272711" width="390.106587631737" height="5" y="460" fill="#F56600" style="transform: translate(-100vw, 0px); animation-delay: 377.332ms; animation-duration: 5300.69ms;"></rect>
+        <rect x="284.8079525216125" width="176.2866743317801" height="5" y="380" fill="#CC5500" style="transform: translate(-100vw, 0px); animation-delay: -461.513ms; animation-duration: 6435.51ms;"></rect>
+        <rect x="396.83171855503707" width="193.116835802389" height="5" y="330" fill="#FF7B1E" style="transform: translate(-100vw, 0px); animation-delay: 195.27ms; animation-duration: 4761.72ms;"></rect>
+        <rect x="741.7498825808239" width="112.7802265721594" height="5" y="460" fill="#FFA500" style="transform: translate(-100vw, 0px); animation-delay: -473.964ms; animation-duration: 5910.55ms;"></rect>
+        <rect x="1209.413533925031" width="50" height="5" y="290" fill="#F56600" style="transform: translate(-100vw, 0px); animation-delay: 244.281ms; animation-duration: 5941.93ms;"></rect>
+        <rect x="1341.2642149455132" width="254.57199904915012" height="5" y="250" fill="#FFA05C" style="transform: translate(-100vw, 0px); animation-delay: 42.0129ms; animation-duration: 7894.14ms;"></rect>
+        <rect x="588.2640645940046" width="85.05036233869268" height="5" y="30" fill="#F56600" style="transform: translate(-100vw, 0px); animation-delay: 338.637ms; animation-duration: 4480.07ms;"></rect>
+        <rect x="658.3581662264988" width="245.49195070461423" height="5" y="350" fill="#CC5500" style="transform: translate(-100vw, 0px); animation-delay: -105.152ms; animation-duration: 7744.44ms;"></rect>
+        <rect x="418.011689956994" width="185.33657019103939" height="5" y="320" fill="#FF7B1E" style="transform: translate(-100vw, 0px); animation-delay: 492.395ms; animation-duration: 6406.37ms;"></rect>
+        <rect x="1084.5154280127517" width="50" height="5" y="150" fill="#FFA500" style="transform: translate(-100vw, 0px); animation-delay: -189.606ms; animation-duration: 7074.15ms;"></rect>
+        <rect x="1060.827299098819" width="155.7796166205348" height="5" y="270" fill="#F56600" style="transform: translate(-100vw, 0px); animation-delay: 480.73ms; animation-duration: 7957.37ms;"></rect>
+        <rect x="268.59125553818643" width="396.6771369168383" height="5" y="160" fill="#FFA05C" style="transform: translate(-100vw, 0px); animation-delay: -385.808ms; animation-duration: 7583ms;"></rect>
+        <rect x="959.2036053658558" width="50" height="5" y="250" fill="#F56600" style="transform: translate(-100vw, 0px); animation-delay: -222.817ms; animation-duration: 4424.61ms;"></rect>
+        <rect x="922.932341940399" width="267.3538064793171" height="5" y="260" fill="#CC5500" style="transform: translate(-100vw, 0px); animation-delay: -267.248ms; animation-duration: 5289.51ms;"></rect>
+        <rect x="229.7897288665246" width="287.0148661414194" height="5" y="280" fill="#FF7B1E" style="transform: translate(-100vw, 0px); animation-delay: -129.308ms; animation-duration: 7574.8ms;"></rect>
+        <rect x="802.2289034709362" width="321.3461772247311" height="5" y="270" fill="#FFA500" style="transform: translate(-100vw, 0px); animation-delay: 11.5474ms; animation-duration: 4905.84ms;"></rect>
+        <rect x="249.11062155510865" width="50" height="5" y="340" fill="#F56600" style="transform: translate(-100vw, 0px); animation-delay: 433.586ms; animation-duration: 5011.62ms;"></rect>
+        <rect x="346.49823609952045" width="306.8875024357698" height="5" y="300" fill="#FFA05C" style="transform: translate(-100vw, 0px); animation-delay: -103.727ms; animation-duration: 4892.31ms;"></rect>
+        <rect x="513.7522898941363" width="339.9501852379752" height="5" y="290" fill="#F56600" style="transform: translate(-100vw, 0px); animation-delay: -163.639ms; animation-duration: 4010.43ms;"></rect>
+        <rect x="760.7411458570167" width="268.27169898239515" height="5" y="200" fill="#CC5500" style="transform: translate(-100vw, 0px); animation-delay: 386.297ms; animation-duration: 7434.08ms;"></rect>
+        <rect x="1177.657296286777" width="50" height="5" y="370" fill="#FF7B1E" style="transform: translate(-100vw, 0px); animation-delay: 107.237ms; animation-duration: 5158.46ms;"></rect>
+        <rect x="1368.320027936809" width="66.54998501509519" height="5" y="50" fill="#FFA500" style="transform: translate(-100vw, 0px); animation-delay: -250.04ms; animation-duration: 5083.46ms;"></rect>
+        <rect x="201.3499166111473" width="232.5858893698289" height="5" y="50" fill="#F56600" style="transform: translate(-100vw, 0px); animation-delay: -345.047ms; animation-duration: 7256.6ms;"></rect>
+        <rect x="1193.9962925411378" width="119.8135980713273" height="5" y="370" fill="#FFA05C" style="transform: translate(-100vw, 0px); animation-delay: 205.842ms; animation-duration: 5598.89ms;"></rect>
+        <rect x="226.54276269786544" width="112.73488334568249" height="5" y="340" fill="#F56600" style="transform: translate(-100vw, 0px); animation-delay: -332.333ms; animation-duration: 6408.41ms;"></rect>
+        <rect x="116.9269033005944" width="106.48636187002536" height="5" y="260" fill="#CC5500" style="transform: translate(-100vw, 0px); animation-delay: 336.921ms; animation-duration: 6340.14ms;"></rect>
+        <rect x="170.09127781377532" width="357.9590376419164" height="5" y="440" fill="#FF7B1E" style="transform: translate(-100vw, 0px); animation-delay: 19.3461ms; animation-duration: 5937.37ms;"></rect>
+        <rect x="828.2919728596622" width="210.92526969659318" height="5" y="260" fill="#FFA500" style="transform: translate(-100vw, 0px); animation-delay: 94.4209ms; animation-duration: 4728.53ms;"></rect>
+        <rect x="1043.2378681153555" width="301.98070242833774" height="5" y="70" fill="#F56600" style="transform: translate(-100vw, 0px); animation-delay: 87.7516ms; animation-duration: 6810.57ms;"></rect>
+        <rect x="523.4240568885922" width="83.05708551027155" height="5" y="110" fill="#FFA05C" style="transform: translate(-100vw, 0px); animation-delay: 125.346ms; animation-duration: 4296.54ms;"></rect>
+        <rect x="1290.3183876916555" width="175.65257293680708" height="5" y="430" fill="#F56600" style="transform: translate(-100vw, 0px); animation-delay: -384.792ms; animation-duration: 5299.31ms;"></rect>
+        <rect x="92.02091530578782" width="327.23406774391276" height="5" y="40" fill="#CC5500" style="transform: translate(-100vw, 0px); animation-delay: 408.058ms; animation-duration: 4348.24ms;"></rect>
+        <rect x="1221.4660371788345" width="202.89986825313574" height="5" y="470" fill="#FF7B1E" style="transform: translate(-100vw, 0px); animation-delay: 486.719ms; animation-duration: 6895ms;"></rect>
+        <rect x="1436.0008282614262" width="345.70568366399766" height="5" y="250" fill="#FFA500" style="transform: translate(-100vw, 0px); animation-delay: 200.613ms; animation-duration: 4937.64ms;"></rect>
+    </svg>
+</div>
