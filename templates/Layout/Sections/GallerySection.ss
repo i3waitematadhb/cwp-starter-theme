@@ -1,10 +1,8 @@
-<% if $Content %>
-    $Content
-<% end_if %>
+
 <% if $VisibleGallery %>
     <% loop $VisibleGallery %>
-        <button class="accordion-btn active"><span class="h4 font-weight-light lineheight-3 spacing-1">$Year</span> <i class="fal fa-chevron-down"></i></button>
-        <div class="panel active">
+        <button class="accordion-btn <% if $First %> active<% end_if %>"><span class="h4 font-weight-light lineheight-3 spacing-1">$Year</span> <i class="fal fa-chevron-down"></i></button>
+        <div class="panel <% if $First %> active<% end_if %>">
             <div class="panel--content">
                 <div class="container-fluid p-0">
                     <div class="row no-gutters">
@@ -18,6 +16,11 @@
                                     <% end_loop %>
                                 </div>
                             </div>
+                            <% if $Up.Content %>
+                            <div class="col-lg-12">
+                                $Up.Content
+                            </div>
+                            <% end_if %>
 <%--                            <div class="masonry-flex grid">--%>
 <%--                                <div class="grid-sizer"></div>--%>
 <%--                                <% loop $Galleries %>--%>
