@@ -1,7 +1,7 @@
 <div class="container-fluid p-0">
     <div class="row no-gutters">
         <% include VisibleSections %>
-        <section class="resources-filters col-lg-12 pt-8 pb-8">
+        <section class="resources-filters col-lg-12 pt-lg-10 pb-lg-8">
             <div class="container">
                 <div class="row">
                     <% if $VisibleFilters %>
