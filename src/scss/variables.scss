@@ -19,6 +19,8 @@ $black:    #000 !default;
 
 //Theme Colors
 $dark-blue: #011d3e !default;
+$ecald-color: #8F5EA7 !default;
+$waitemata-color: #01948A !default;
 $brand-color: #ff7b1e !default;
 $brand-secondary-color: #ffa500 !default;
 $theme-gradient: linear-gradient(155.92deg, $brand-secondary-color 5.36%, $brand-color 85.08%);
@@ -90,6 +92,8 @@ $theme-colors: map-merge(
   (
     "brand":      $brand-color,
     "brand-secondary": $brand-secondary-color,
+    "ecald":      $ecald-color,
+    "waitemata":  $waitemata-color,
     "primary":    $primary,
     "secondary":  $secondary,
     "success":    $success,

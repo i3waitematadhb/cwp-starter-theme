@@ -147,6 +147,30 @@
   color: #523500;
 }
 
+.alert-ecald {
+  color: #4a3157;
+  background-color: #e9dfed;
+  border-color: #e0d2e6;
+}
+.alert-ecald hr {
+  border-top-color: #d5c2dd;
+}
+.alert-ecald .alert-link {
+  color: #2e1f36;
+}
+
+.alert-waitemata {
+  color: #014d48;
+  background-color: #cceae8;
+  border-color: #b8e1de;
+}
+.alert-waitemata hr {
+  border-top-color: #a6d9d6;
+}
+.alert-waitemata .alert-link {
+  color: #001b19;
+}
+
 .alert-black {
   color: black;
   background-color: #cccccc;
@@ -421,6 +445,46 @@
 .table-hover .table-brand-secondary:hover > td,
 .table-hover .table-brand-secondary:hover > th {
   background-color: #ffdd9f;
+}
+
+.table-ecald,
+.table-ecald > th,
+.table-ecald > td {
+  background-color: #e0d2e6;
+}
+.table-ecald th,
+.table-ecald td,
+.table-ecald thead th,
+.table-ecald tbody + tbody {
+  border-color: #c5abd1;
+}
+
+.table-hover .table-ecald:hover {
+  background-color: #d5c2dd;
+}
+.table-hover .table-ecald:hover > td,
+.table-hover .table-ecald:hover > th {
+  background-color: #d5c2dd;
+}
+
+.table-waitemata,
+.table-waitemata > th,
+.table-waitemata > td {
+  background-color: #b8e1de;
+}
+.table-waitemata th,
+.table-waitemata td,
+.table-waitemata thead th,
+.table-waitemata tbody + tbody {
+  border-color: #7bc7c2;
+}
+
+.table-hover .table-waitemata:hover {
+  background-color: #a6d9d6;
+}
+.table-hover .table-waitemata:hover > td,
+.table-hover .table-waitemata:hover > th {
+  background-color: #a6d9d6;
 }
 
 .table-black,
@@ -813,6 +877,26 @@ button.bg-brand-secondary:focus {
   background-color: #cc8400 !important;
 }
 
+.bg-ecald {
+  background-color: #8F5EA7 !important;
+}
+
+a.bg-ecald:hover, a.bg-ecald:focus,
+button.bg-ecald:hover,
+button.bg-ecald:focus {
+  background-color: #744a88 !important;
+}
+
+.bg-waitemata {
+  background-color: #01948A !important;
+}
+
+a.bg-waitemata:hover, a.bg-waitemata:focus,
+button.bg-waitemata:hover,
+button.bg-waitemata:focus {
+  background-color: #01615b !important;
+}
+
 .bg-black {
   background-color: #000 !important;
 }
@@ -919,6 +1003,14 @@ button.bg-dark-blue:focus {
 
 .border-brand-secondary {
   border-color: #ffa500 !important;
+}
+
+.border-ecald {
+  border-color: #8F5EA7 !important;
+}
+
+.border-waitemata {
+  border-color: #01948A !important;
 }
 
 .border-black {
@@ -6909,6 +7001,22 @@ a.text-brand-secondary:hover, a.text-brand-secondary:focus {
   color: #b37400 !important;
 }
 
+.text-ecald {
+  color: #8F5EA7 !important;
+}
+
+a.text-ecald:hover, a.text-ecald:focus {
+  color: #664177 !important;
+}
+
+.text-waitemata {
+  color: #01948A !important;
+}
+
+a.text-waitemata:hover, a.text-waitemata:focus {
+  color: #004843 !important;
+}
+
 .text-black {
   color: #000 !important;
 }
@@ -10296,6 +10404,19 @@ pre {
           transform: translate3d(-50%, -33%, 0);
 }
 
+.header-line {
+  position: relative;
+  padding-left: 130px;
+}
+.header-line:after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 0;
+  width: 110px;
+  border-bottom: 5px solid #ff7b1e;
+}
+
 .theme-text-gradient {
   color: transparent;
   background-color: #ff7b1e;
@@ -10314,7 +10435,7 @@ pre {
 .btn-bg-gradient-sml,
 .btn-bg-theme-sml {
   display: inline-block;
-  transition: all 400ms cubic-bezier(0.76, 0, 0.24, 1);
+  transition: all 200ms linear;
 }
 .btn-nobg-white-sml a,
 .btn-nobg-dark-sml a,
@@ -10324,7 +10445,7 @@ pre {
 .btn-bg-theme-sml a {
   display: inline-block;
   padding: 10px 25px;
-  transition: all 400ms cubic-bezier(0.76, 0, 0.24, 1);
+  transition: all 200ms linear;
 }
 
 .btn-radius {
@@ -10334,7 +10455,7 @@ pre {
   top: 0;
 }
 .btn-radius:hover {
-  top: -5px;
+  top: -10px;
 }
 
 .btn-nobg-white,
@@ -10344,7 +10465,7 @@ pre {
 .btn-bg-gradient,
 .btn-bg-theme {
   display: inline-block;
-  transition: all 400ms cubic-bezier(0.76, 0, 0.24, 1);
+  transition: all 200ms linear;
 }
 .btn-nobg-white a,
 .btn-nobg-dark a,
@@ -10354,7 +10475,7 @@ pre {
 .btn-bg-theme a {
   display: inline-block;
   padding: 20px 30px;
-  transition: all 400ms cubic-bezier(0.76, 0, 0.24, 1);
+  transition: all 200ms linear;
 }
 
 a .btn-nobg-white-sml,
@@ -10559,6 +10680,10 @@ a .btn-bg-theme {
 
 .font-weight-semibold {
   font-weight: 600;
+}
+
+.lineheight-100 {
+  line-height: 100%;
 }
 
 .lineheight-1 {

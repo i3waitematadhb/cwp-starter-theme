@@ -10,14 +10,20 @@
     position: absolute;
     transform: translate3d(0%, -50%, 0);
     top: 50%;
+    transition: background-color 400ms cubic-bezier(0.76, 0, 0.24, 1);
   }
-
   .nav-link {
+    position: relative;
+    z-index: 1001;
     @include transition();
     //padding: $navbar-padding-y $navbar-padding-x;
   }
 
   &.header-light {
+    .revealBg {
+      //background-color: rgb(0 0 0 / 63%);
+      background-color: #242424;
+    }
     .navbar-nav {
       .nav-link {
         color: $white;
@@ -25,15 +31,36 @@
           color: $brand-color;
         }
       }
+      .dropdown-menu {
+        background-color: #161719;//$white;
+        .dropdown-item {
+          color: #fff;
+          //background-image: linear-gradient(
+          //    155.92deg
+          //  , #ffa500 5.36%, #ff7b1e 85.08%);
+          //-webkit-background-clip: text;
+          //color: transparent;
+          //background-color: #ff7b1e;
+        }
+      }
     }
   }
 
   &.header-dark {
+    .revealBg {
+      background-color: rgb(255 255 255 / 63%);
+    }
     .navbar-nav {
       .nav-link {
         color: $dark;
         &:hover {
           color: $brand-color;
+        }
+      }
+      .dropdown-menu {
+        background-color: $dark;
+        .dropdown-item {
+          color: $white;
         }
       }
     }
@@ -80,29 +107,78 @@
 
     &.open {
       .dropdown-menu {
-        display: block;
+        //display: block;
         //display: flex;
+        //top: 100%;
+        opacity: 1;
+        //height: 70%;
+        height: 400px;
+        z-index: 1000;
       }
     }
     .dropdown-menu {
-      //position: fixed;
-      height: auto;
-      //width: 100%;
+      position: fixed;
+      display: flex;
+      height: 0;
+      width: 100%;
       border: 0;
-      padding: 20px 25px;
       align-items: center;
       justify-content: center;
-      background-color: #fff;
       box-shadow: 0 7px 20px 0 #00000026;
-      border-radius: 0 0 8px 8px;
+      overflow: hidden;
+      opacity: 0;
+      transition: opacity 400ms cubic-bezier(0.76, 0, 0.24, 1), height 400ms cubic-bezier(0.76, 0, 0.24, 1);
+      border-radius: 0;
+      .dropdown-items {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        width: 100%;
+        max-width: 1250px;
+        padding: 0;
+        li {
+          flex: 0 33.33333%;
+          padding: 20px;
+        }
+      }
       .dropdown-item {
-        color: $dark;
+        position: relative;
         background-color: transparent;
-        border-bottom: 0;
-        padding: 10px;
+        overflow: hidden;
+        //border-bottom: 0;
+        //padding: 10px 35px;
+        padding: 30px 25px;
+        border: 1px solid hsla(0,0%,100%,0.1);
+        .menu-icon {
+          width: 100%;
+          max-width: 50px;
+          margin-right: 20px;
+          filter: grayscale(1) brightness(100);
+          transition: filter 300ms cubic-bezier(0.76, 0, 0.24, 1);
+        }
+        .nav-bg-img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          background-size: cover;
+          background-position: center;
+          transform: scale(1.1);
+          opacity: 0;
+          z-index: -1;
+          transition: opacity 400ms cubic-bezier(0.76, 0, 0.24, 1), transform 400ms cubic-bezier(0.76, 0, 0.24, 1);
+        }
         &:hover {
           background: transparent !important;
-          color: $brand-color;
+          color: #fff;
+          .menu-icon {
+            filter: grayscale(0);
+          }
+          .nav-bg-img {
+            transform: scale(1.2);
+            opacity: 0.4;
+          }
         }
       }
     }
@@ -201,7 +277,7 @@
     .navbar-expand-md {
       .nav-link {
         //padding: $navbar-padding-x;
-        padding: 2.5rem 2rem;
+        padding: 3.5rem 2rem;
       }
     }
     .navbar {
@@ -214,21 +290,5 @@
     box-shadow: none !important;
     //padding: $navbar-padding-x;
     border-radius: 0;
-  }
-}
-
-//Custom
-header {
-  &.scrolled {
-    .navbar-light {
-      .navbar-nav {
-        .nav-link {
-          padding: 2.2rem 2rem;
-          &:hover {
-            color: #242424;
-          }
-        }
-      }
-    }
   }
 }

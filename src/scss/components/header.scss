@@ -2,27 +2,20 @@ body > header .open > a:focus {
   @include outline-focus();
 }
 
-header {
-  transition: background 400ms cubic-bezier(0.76, 0, 0.24, 1);
-  background-color: #0000000a;
-  &.scrolled {
-    background: $theme-gradient-inverted;
-    box-shadow: 0px -5px 20px 1px #00000057;
-    .site-header {
-      @media only screen and (min-width: 991px) {
-        padding: 20px;
-      }
-      @media only screen and (max-width: 992px) {
-        padding-top: 15px;
-        padding-bottom: 15px;
-      }
-      .site-logo {
-        width: 160px !important;
-      }
-    }
+.scroll-down {
+  header {
+    top: -100%;
+  }
+}
+.scroll-up {
+  header {
+    background-color: #000000c7;
   }
 }
 
+header {
+  transition: top 400ms cubic-bezier(0.76, 0, 0.24, 1), background-color 400ms cubic-bezier(0.76, 0, 0.24, 1);
+}
 .site-header {
   position: relative;
   max-width: 300px;
@@ -34,7 +27,7 @@ header {
     max-width: 414px;
   }
   @media only screen and (min-width: 991px) {
-    padding: 21px 40px;
+    padding: 35px 40px;
   }
   @media only screen and (max-width: 992px) {
     padding-top: 15px;

@@ -361,6 +361,19 @@ pre {
   }
 }
 
+.header-line {
+  position: relative;
+  padding-left: 130px;
+  &:after {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 0;
+    width: 110px;
+    border-bottom: 5px solid #ff7b1e;
+  }
+}
+
 // theme text
 .theme-text-gradient {
   color: transparent;
@@ -380,11 +393,11 @@ pre {
 .btn-bg-gradient-sml,
 .btn-bg-theme-sml {
   display: inline-block;
-  transition: all 400ms cubic-bezier(0.76, 0, 0.24, 1);
+  transition: all 200ms linear;
   a {
     display: inline-block;
     padding: 10px 25px;
-    transition: all 400ms cubic-bezier(0.76, 0, 0.24, 1);
+    transition: all 200ms linear;
   }
 }
 .btn-radius {
@@ -393,7 +406,7 @@ pre {
   position: relative;
   top: 0;
   &:hover {
-    top: -5px;
+    top: -10px;
   }
 }
 .btn-nobg-white,
@@ -403,11 +416,11 @@ pre {
 .btn-bg-gradient,
 .btn-bg-theme {
   display: inline-block;
-  transition: all 400ms cubic-bezier(0.76, 0, 0.24, 1);
+  transition: all 200ms linear;
   a {
     display: inline-block;
     padding: 20px 30px;
-    transition: all 400ms cubic-bezier(0.76, 0, 0.24, 1);
+    transition: all 200ms linear;
   }
 }
 
@@ -582,24 +595,22 @@ a {
 .font-weight-semibold {
   font-weight: $font-weight-semibold;
 }
-
+.lineheight-100 {
+  line-height: 100%;
+}
 .lineheight-1 {
 
   line-height: 1.4em;
 }
-
 .lineheight-2 {
   line-height: 1.6em;
 }
-
 .lineheight-3 {
   line-height: 1.8em;
 }
-
 .spacing-1 {
   letter-spacing: 1px;
 }
-
 .spacing-2 {
   letter-spacing: 2px;
 }
