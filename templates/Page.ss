@@ -11,7 +11,8 @@
         <% require themedCSS('dist/css/main.css') %>
         <% include Favicon %>
     </head>
-    <body class="$ClassName">
+    <body class="$ClassName" <% if $PageBackground %>style="background-image: url('{$PageBackground.URL}');background-size: 100vw;"<% end_if %>>
+        <% include PageLoader %>
         <header role="banner">
             <% include Header %>
             <% include MainNav %>
