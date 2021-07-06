@@ -1,10 +1,10 @@
 <div class="container-fluid p-0">
     <div class="row no-gutters">
         <% include VisibleSections %>
-        <section class="project-lists col-lg-12" data-type="project">
+        <section class="project-lists col-lg-12 pb-lg-8" data-type="project">
             <div class="container-fluid p-0">
                 <div class="row no-gutters">
-                    <div class="col-lg-12 pt-8 pb-8" style="background-color: #f5f5f5;">
+                    <div class="col-lg-12 pt-lg-10 pb-7" style="background-color: #f7f7f7;">
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-12">
