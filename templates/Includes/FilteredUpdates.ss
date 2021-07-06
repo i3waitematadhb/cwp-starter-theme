@@ -1,15 +1,15 @@
 <% loop $FilteredUpdates(10) %>
     <article class="news-events-article listing__item<% if $ClassName == 'CWP\CWP\PageTypes\NewsPage' || $ClassName == 'CWP\CWP\PageTypes\NewsHolder' %>--news-events<% end_if %> clearfix">
 
-        <% if $FeaturedImage %>
-            <figure class="float-right news-events-item-figure">
-                $FeaturedImage.Fill(150, 150)
+        <% if $Image %>
+            <figure class="float-left news-events-item-figure">
+                $Image.Fill(150, 150)
             </figure>
         <% end_if %>
 
-        <header>
-            <h1 class="h4 listing__title"><a href="$Link">$Title</a></h1>
-        </header>
+
+        <h1 class="h4 listing__title"><a href="$Link">$Title</a></h1>
+
 
         <% if $Up.ControllerName == 'CWP\\CWP\\PageTypes\\EventHolder' %>
 
