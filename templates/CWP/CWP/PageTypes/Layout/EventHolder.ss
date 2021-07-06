@@ -1,13 +1,5 @@
-<div class="container">
-    <div class="row">
-        <div class="col-lg-12">
-            <header class="page-header">
-                $Breadcrumbs
-                <h1>$Title</h1>
-            </header>
-        </div>
-    </div>
-
+<% include VisibleSections %>
+<div class="container pt-lg-10 pb-lg-10">
     <div class="row">
         <div class="col-lg-8">
             <% if $Content.RichLinks %>
