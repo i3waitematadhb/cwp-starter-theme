@@ -7,7 +7,6 @@
             </header>
         </div>
     </div>
-
     <div class="row">
         <section class="col-lg-8<% if not $SideBarView || not $SideBarView.Widgets %> offset-lg-2<% end_if %>">
             <div class="blog-main">
