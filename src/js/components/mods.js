@@ -5,18 +5,56 @@ import WOW from 'wow.js';
 import pagination from 'paginationjs';
 import 'select2';
 import FlexMasonry from 'flexmasonry/src/flexmasonry';
-import revealer from 'circular-revealer';
-import TimelineMax from "gsap/gsap-core";
-import TweenMax from "gsap/gsap-core";
-import 'fullpage.js/vendors/easings.min';
-import 'fullpage.js/vendors/scrolloverflow.min';
-import fullpage from 'fullpage.js/dist/fullpage.extensions.min';
+import NProgress from 'nprogress/nprogress';
+import {shuffle} from "gsap/gsap-core";
 
 export default function () {
   let selectedFilters = [];
   $(document).ready(function ()
   {
+    NProgress.configure({ showSpinner: false });
     initializeDocument();
+  });
+
+  //PageLoader
+  $(window).on('load', function(){
+    NProgress.start();
+    setTimeout(function () {
+      pageLoad();
+      NProgress.done();
+    }, 1000);
+  });
+
+  //Header
+  const body = document.body;
+  const scrollUp = "scroll-up";
+  const scrollDown = "scroll-down";
+  let lastScroll = 0;
+  window.addEventListener("scroll", () => {
+    let topPos = $(window).scrollTop();
+    const currentScroll = window.pageYOffset;
+    if (currentScroll <= 0) {
+      body.classList.remove(scrollUp);
+      return;
+    }
+    if (currentScroll > lastScroll && !body.classList.contains(scrollDown)) {
+      // down
+      console.log(topPos);
+      if (topPos > 550) {
+        body.classList.remove(scrollUp);
+        body.classList.add(scrollDown);
+      }
+    } else if (
+      currentScroll < lastScroll &&
+      body.classList.contains(scrollDown)
+    ) {
+      // up
+      if (topPos > 550) {
+        body.classList.remove(scrollDown);
+        body.classList.add(scrollUp);
+      }
+    }
+    lastScroll = currentScroll;
   });
 
   function initializeDocument()
@@ -51,6 +89,8 @@ export default function () {
     resourcesLists();
     QualityImprovementSessionHolderPage();
 
+    PreloadingSettings();
+
     //FullPage
     //fullpageSettings();
   }
@@ -71,26 +111,33 @@ export default function () {
   function HeaderSettings()
   {
     let header = $('header');
-    let logoURL = header.find('.site-logo-main').attr('src');
-    let position = $(window).scrollTop();
-    $(window).scroll(function() {
-      let scroll = $(window).scrollTop();
-      if (scroll > position){
-        if (scroll > 500) {
-          let alt = header.find('.site-logo-main').data('logo');
-          header.addClass('scrolled');
-          header.find('.site-logo-main').attr('src', alt);
-        }
-        if (scroll > 750) {
-          header.addClass('hide');
-        }
-      } else {
-        if (scroll < 500) {
-          header.removeClass('scrolled');
-          header.find('.site-logo-main').attr('src', logoURL);
-        }
-      }
-      position = scroll;
+    //Navigation
+    header.find('.navbar .nav-item').each(function() {
+      $(this).mouseover(function() {
+        header.find('.navbar').addClass('revealBg');
+      }).mouseout(function () {
+        header.find('.navbar').removeClass('revealBg');
+      });
+    });
+
+    let dropdownMenu = $('.dropdown-items')
+    dropdownMenu.find('li').each(function(i) {
+      $(this).find('.dropdown-item').mouseover(function () {
+        let img = $(this).find('img');
+
+      }).mouseout(function() {
+        let img = $(this).find('img');
+      });
+    });
+
+    //links
+    $('a').click(function (event) {
+      let nav = $(this);
+      event.preventDefault();
+      $('.preloader').addClass('active');
+      setTimeout(function () {
+        window.location.href = nav.attr('href');
+      }, 150);
     });
   }
 
@@ -488,15 +535,17 @@ export default function () {
         let mouseScroll  = sectionVideoBanner.find('.mouseScroll');
         let bannerVideo  = sectionVideoBanner.find('#video-content');
         let bannerText   = sectionVideoBanner.find('.videoBanner-content');
-        bannerVideo.css({
-          transform: 'scale('+scale+')',
-          //filter: 'blur('+ (scrollTop/50) +'px)',
-          opacity: 'calc(1.5 - '+ opacity +')',
-          height: 'calc(' + bannerHeight + 'px - ' + scrollTop/100 + 'vh)'
-        });
+        if (scrollTop < 630) {
+          bannerVideo.css({
+            transform: 'scale('+scale+')',
+            //filter: 'blur('+ (scrollTop/50) +'px)',
+            opacity: 'calc(1.5 - '+ opacity +')',
+            height: 'calc(' + bannerHeight + 'px - ' + scrollTop/100 + 'vh)'
+          });
 
-        bannerText.css({"margin-top": title + "px", opacity: 'calc(1 - '+ opacity +')'});
-        mouseScroll.css({opacity: 'calc(1 - '+ opacity +')'});
+          bannerText.css({"margin-top": title + "px", opacity: 'calc(1 - '+ opacity +')'});
+          mouseScroll.css({opacity: 'calc(1 - '+ opacity +')'});
+        }
       });
     }
   }
@@ -870,7 +919,7 @@ export default function () {
       let tag = $(this).find('span').text();
       let resourcesPageID = $('#page-id').val();
       callAPIEndpoint('ajax/findTagsParent', 'POST', 'tag=' + encodeURIComponent(tag) + '&resourcesPageID=' + resourcesPageID, function (result) {
-        let dropdownFilter = $('#dropdown-'+result.data.parentID)
+        let dropdownFilter = $('#dropdown-'+result.data.tagID)
         let isTagExist = selectedFilters.indexOf(result.data.tagName);
         if (isTagExist === -1) {
           selectedFilters.push(result.data.tagName)
@@ -906,27 +955,103 @@ export default function () {
     });
   }
 
-  function fullpageSettings()
+  function pageLoad()
   {
-    new fullpage('#main', {
-      //options here
-      licenseKey: '2AE8017F-584546CA-AAD1AA0F-28DECE26',
-      scrollingSpeed: 1000,
-      keyboardScrolling: true,
-      navigation: true,
-      scrollBar: true,
-      autoScrolling:true,
-      easing: 'easeInOutCubic',
-      scrollHorizontally: true,
-      verticalCentered:true,
-      onLeave: function(origin, destination, direction){
+    let pageLoader = $('.page-loader');
+    pageLoader.addClass('hide');
+    setTimeout(function () {
+      pageLoader.empty();
+    },2000);
+  }
 
-      },
-      afterLoad: function(origin, destination, direction){
-        // let destinationID = $('#'+destination.item.id);
-        // destinationID.removeClass('skew');
-      },
-    });
+  function PreloadingSettings()
+  {
+    // Typerwrite text content. Use a pipe to indicate the start of the second line "|".
+    let textArray = [
+      "ideas.",
+      "creativity.",
+      "health outcomes.",
+      "patient experience.",
+    ];
+
+    //Run the loop
+    typeWriter("output", shuffle(textArray));
+  }
+  // values to keep track of the number of letters typed, which quote to use. etc. Don't change these values.
+  let i = 0,
+    a = 0,
+    isBackspacing = false,
+    isParagraph = false;
+  // Speed (in milliseconds) of typing.
+  let speedForward = 100, //Typing Speed
+    speedWait = 1000, // Wait between typing and backspacing
+    speedBetweenLines = 1000, //Wait between first and second lines
+    speedBackspace = 25; //Backspace Speed
+  function typeWriter(id, ar) {
+    let element = $("#" + id),
+      randArray=  Math.floor(Math.random() * ar.length),
+      aString = ar[a],
+      eHeader = element.children("h1"), //Header element
+      eParagraph = element.children("p"); //Subheader element
+
+    // Determine if animation should be typing or backspacing
+    if (!isBackspacing) {
+
+      // If full string hasn't yet been typed out, continue typing
+      if (i < aString.length) {
+
+        // If character about to be typed is a pipe, switch to second line and continue.
+        if (aString.charAt(i) === "|") {
+          isParagraph = true;
+          eHeader.removeClass("cursor");
+          eParagraph.addClass("cursor");
+          i++;
+          setTimeout(function(){ typeWriter(id, ar); }, speedBetweenLines);
+
+          // If character isn't a pipe, continue typing.
+        } else {
+          // Type header or subheader depending on whether pipe has been detected
+          if (!isParagraph) {
+            eHeader.text(eHeader.text() + aString.charAt(i));
+          } else {
+            eParagraph.text(eParagraph.text() + aString.charAt(i));
+          }
+          i++;
+          setTimeout(function(){ typeWriter(id, ar); }, speedForward);
+        }
+
+        // If full string has been typed, switch to backspace mode.
+      } else if (i === aString.length) {
+
+        isBackspacing = true;
+        setTimeout(function(){ typeWriter(id, ar); }, speedWait);
+      }
+
+      // If backspacing is enabled
+    } else {
+
+      // If either the header or the paragraph still has text, continue backspacing
+      if (eHeader.text().length > 0 || eParagraph.text().length > 0) {
+
+        // If paragraph still has text, continue erasing, otherwise switch to the header.
+        if (eParagraph.text().length > 0) {
+          eParagraph.text(eParagraph.text().substring(0, eParagraph.text().length - 1));
+        } else if (eHeader.text().length > 0) {
+          eParagraph.removeClass("cursor");
+          eHeader.addClass("cursor");
+          eHeader.text(eHeader.text().substring(0, eHeader.text().length - 1));
+        }
+        setTimeout(function(){ typeWriter(id, ar); }, speedBackspace);
+
+        // If neither head or paragraph still has text, switch to next quote in array and start typing.
+      } else {
+        isBackspacing = false;
+        i = 0;
+        isParagraph = false;
+        a = (a + 1) % ar.length; //Moves to next position in array, always looping back to 0
+        setTimeout(function(){ typeWriter(id, ar); }, 50);
+      }
+    }
   }
 
   function callAPIEndpoint(endpoint, method, postData, callback)
