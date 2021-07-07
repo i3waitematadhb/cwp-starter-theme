@@ -3,7 +3,6 @@
         <div class="<% if not $SideBarView || not $SideBarView.Widgets %>col-lg-8 offset-lg-2<% else %>col-lg-12<% end_if %>">
             <header class="page-header">
                 $Breadcrumbs
-                <h1>$Title</h1>
             </header>
         </div>
     </div>
