@@ -5,7 +5,7 @@
             <div class="page-breadcrumbs">$Breadcrumbs</div>
         </div>
     </div>
-    <div class="row pt-lg-5">
+    <div class="row pt-lg-5 no-gutters">
         <div class="col-lg-8">
             <% if $Content.RichLinks %>
                 $Content.RichLinks
