@@ -62,3 +62,10 @@ body.mceContentBody a.ss-broken {
   float: right !important;
 }
 // sass-lint:enable no-important
+
+//Image
+img.left,
+figure.left {
+  clear: none;
+  float: none !important;
+}

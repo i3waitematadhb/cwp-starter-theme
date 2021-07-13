@@ -76,7 +76,7 @@ $colors: map-merge(
     $colors
 );
 
-$primary:       $blue !default;
+$primary:       $brand-color;//$blue !default;
 $secondary:     $gray-600 !default; // @todo check with Paul in case this should be white still
 $success:       $green !default;
 $info:          $cyan !default;
