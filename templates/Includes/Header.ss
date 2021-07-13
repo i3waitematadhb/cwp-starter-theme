@@ -5,7 +5,7 @@
             <a title="<%t CWP_Header.Title "Go to Home Page" %>" class="site-header-brand-link-default" href="$BaseHref">
 <%--                <svg data-src="{$SiteConfig.SiteLogo.URL}" style="width: {$SiteConfig.SiteLogoWidth}px;"></svg>--%>
 <%--                <object type="image/svg+xml" data="$SiteConfig.SiteLogo.URL" class="logo" ></object>--%>
-                <img src="$SiteConfig.SiteLogo.URL" class="site-logo site-logo-main" alt="$Title" data-logo="$SiteConfig.AltSiteLogo.URL" style="width: {$SiteConfig.SiteLogoWidth}px;">
+                <img src="$SiteConfig.SiteLogo.URL" class="site-logo site-logo-main" alt="$Title" data-logo="$SiteConfig.SiteLogo.URL" data-logo-alt="$SiteConfig.AltSiteLogo.URL" style="width: {$SiteConfig.SiteLogoWidth}px;">
             </a>
         <% else %>
             <a title="<%t CWP_Header.Title "Go to Home Page" %>" class="site-header-brand-link-default" href="$BaseHref">
