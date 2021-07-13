@@ -1,20 +1,18 @@
-<div class="page-sidebar-widget news-events-date-range">
+<div class="page-sidebar-widget news-events-date-range col-lg-auto p-0">
     <% with $DateRangeForm %>
-        <h3 class="h4 page-sidebar-header"><%t CWP\\CWP\\PageTypes\\EventHolder.Date "Date" %></h3>
-        <form $FormAttributes>
+<%--        <h3 class="h4 page-sidebar-header"><%t CWP\\CWP\\PageTypes\\EventHolder.Date "Date" %></h3>--%>
+        <form $FormAttributes class="d-flex align-items-center">
             <% if $Message %>
                 <div id="{$FormName}_error" class="message $MessageType">$Message</div>
             <% else %>
                 <div id="{$FormName}_error" class="message $MessageType" style="display: none"></div>
             <% end_if %>
-
-            <fieldset>
+            <fieldset class="d-flex">
                 $Fields.dataFieldByName('from').FieldHolder
                 $Fields.dataFieldByName('to').FieldHolder
                 $Fields.dataFieldByName('tag').FieldHolder
                 $Fields.dataFieldByName('SecurityID').FieldHolder
             </fieldset>
-
             <div class="Actions">
                 <% if $Actions %>
                     <% loop $Actions %>$Field<% end_loop %>

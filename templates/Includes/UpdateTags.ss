@@ -1,5 +1,5 @@
 <div class="page-sidebar-widget news-events-tags">
-    <h3 class="h4 page-sidebar-header"><%t CWP.Events_News.Tag "Tag" %></h3>
+    <h5 class="h5 page-sidebar-header font-weight-normal"><%t CWP.Events_News.Tag "Tag" %></h5>
     <nav role="navigation">
         <p>
             <% loop $UpdateTagsWithLinks %>

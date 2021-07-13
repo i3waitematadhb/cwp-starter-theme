@@ -1,6 +1,6 @@
-<div class="page-sidebar-widget news-events-archive">
-    <h3 class="h4 page-sidebar-header"><%t CWP.AvailableMonths.Title "Archive" %></h3>
-
+<div class="page-sidebar-widget news-events-archive col-lg-auto p-0 d-flex align-items-center">
+    <div class="news-events-archive-container">
+    <h5 class="page-sidebar-header"><%t CWP.AvailableMonths.Title "Archive" %></h5>
     <% loop $AvailableMonths %>
         <h4 class="h6 float-left news-events-archive-year"> {$YearName}: </h4>
         <ul class="nav nav-pills">
@@ -11,7 +11,6 @@
             <% end_loop %>
         </ul>
     <% end_loop %>
-
     <% if $FilteredUpdates %>
         <% if $FilterDescription %>
             <% if $ControllerName == "EventHolder" %>
@@ -21,5 +20,5 @@
             <% end_if %>
         <% end_if %>
     <% end_if %>
-
+    </div>
 </div>
