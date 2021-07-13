@@ -7,6 +7,7 @@ import 'select2';
 import FlexMasonry from 'flexmasonry/src/flexmasonry';
 import NProgress from 'nprogress/nprogress';
 import {shuffle} from "gsap/gsap-core";
+// import fullpage from 'fullpage.js';
 
 export default function () {
   let selectedFilters = [];
@@ -26,15 +27,19 @@ export default function () {
   });
 
   //Header
+  let siteLogo = $('.site-logo');
   const body = document.body;
   const scrollUp = "scroll-up";
   const scrollDown = "scroll-down";
   let lastScroll = 0;
   window.addEventListener("scroll", () => {
     let topPos = $(window).scrollTop();
+    let altLogo = siteLogo.attr('data-logo-alt');
+    let logo = siteLogo.attr('data-logo');
     const currentScroll = window.pageYOffset;
     if (currentScroll <= 0) {
       body.classList.remove(scrollUp);
+      siteLogo.attr('src', logo);
       return;
     }
     if (currentScroll > lastScroll && !body.classList.contains(scrollDown)) {
@@ -43,6 +48,7 @@ export default function () {
       if (topPos > 550) {
         body.classList.remove(scrollUp);
         body.classList.add(scrollDown);
+
       }
     } else if (
       currentScroll < lastScroll &&
@@ -52,6 +58,7 @@ export default function () {
       if (topPos > 550) {
         body.classList.remove(scrollDown);
         body.classList.add(scrollUp);
+        siteLogo.attr('src', altLogo);
       }
     }
     lastScroll = currentScroll;
@@ -92,7 +99,7 @@ export default function () {
     PreloadingSettings();
 
     //FullPage
-    //fullpageSettings();
+    fullpageSettings();
   }
 
   function BannerScrollSettings()
@@ -223,7 +230,6 @@ export default function () {
 
   function Navigation()
   {
-    let siteLogo = $('.site-logo');
     let navigation = $('.navigation');
     let navItem = navigation.find('.navi-item');
     navItem.click(function () {
@@ -1052,6 +1058,11 @@ export default function () {
         setTimeout(function(){ typeWriter(id, ar); }, 50);
       }
     }
+  }
+
+  function fullpageSettings()
+  {
+
   }
 
   function callAPIEndpoint(endpoint, method, postData, callback)
