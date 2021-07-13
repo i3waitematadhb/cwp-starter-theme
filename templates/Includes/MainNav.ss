@@ -5,7 +5,7 @@
                 <ul class="nav navbar-nav" role="menubar">
                     <% loop Menu(1) %>
                         <li role="menuitem" class="nav-item $FirstLast $LinkingMode<% if $LinkingMode = current %> active<% end_if %><% if $Children %> dropdown <% end_if %>">
-                            <a href="$Link" <% if $LinkingMode = current %>aria-current="page"<% end_if %> class="nav-link $LinkingMode"><span class="h6 spacing-1 poppins font-weight-light">$MenuTitle.XML</span></a>
+                            <a href="$Link" <% if $LinkingMode = current %>aria-current="page"<% end_if %> class="nav-link $LinkingMode"><span class="h6 spacing-1 poppins font-weight-light text-uppercase">$MenuTitle.XML</span></a>
                             <% if $Children %>
                                 <div class="dropdown-menu" role="menu" aria-hidden="true">
                                     <ul class="dropdown-items">
