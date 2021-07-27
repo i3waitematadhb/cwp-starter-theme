@@ -3,4 +3,3 @@
         $Content
     <% end_if %>
 </div>
-<% if $ScrollIcon %><% include MouseIconScroll %><% end_if %>

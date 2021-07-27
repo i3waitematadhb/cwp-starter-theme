@@ -1,10 +1,10 @@
 <div class="blogList-content">
     <div class="container-fluid p-0">
-        <div class="row">
+        <div class="row no-gutters">
             <% if $NewsPage %>
                 <% loop $NewsPage %>
-                    <div class="<% if $Pos == 1 || $Pos == 4 || $Pos == 7 %>col-lg-6<% if $Pos == 1 %> order-3<% end_if %><% if $Pos == 4 %> order-4<% end_if %><% if $Pos == 7 %> order-9<% end_if %><% else %>col-lg-3<% if $Pos == 2 %> order-1<% end_if %><% if $Pos == 3 %> order-2<% end_if %><% if $Pos == 5 || $Pos == 6 %> order-$Pos<% end_if %><% if $Pos == 8 %> order-7<% end_if %><% if $Pos == 9 %> order-8<% end_if %><% end_if %>">
-                        <div class="blog-item mb-4">
+                    <div class="wow animate__animated <% if $Pos == 1 || $Pos == 4 || $Pos == 7 %>col-lg-6<% if $Pos == 1 %> order-3 animate__fadeInRight<% end_if %><% if $Pos == 4 %> order-4 animate__fadeInLeft<% end_if %><% if $Pos == 7 %> order-9 animate__fadeInRight<% end_if %><% else %>col-lg-3<% if $Pos == 2 %> order-1 animate__fadeInUp<% end_if %><% if $Pos == 3 %> order-2 animate__fadeInUp<% end_if %><% if $Pos == 5 || $Pos == 6 %> order-$Pos animate__fadeInUp<% end_if %><% if $Pos == 8 %> order-7 animate__fadeInUp<% end_if %><% if $Pos == 9 %> order-8 animate__fadeInUp<% end_if %><% end_if %>">
+                        <div class="blog-item">
                             <a href="$Link">
                                 <div class="blog-image">
                                     <% if $Image %>
@@ -20,12 +20,12 @@
                                         <time datetime="$Date">$Date.Format('dd MMM y') <% if $StartTime %>$StartTime.Format(h:mma) <% if $EndTime %>- $EndTime.Format(h:mma) <% end_if %><% end_if %></time>
                                     </p>
                                 <% end_if %>
-                                <div class="blog-title mb-2"><a href="$URL"><span class="font-weight-bold lineheight-1 text-light h4">$Title</span></a></div>
+                                <div class="blog-title mb-3"><a href="$URL"><span class="font-weight-semibold text-light h5">$Title</span></a></div>
                                 <% if $Authors %>
                                 <div class="blog-authors mt-3">
                                     <% loop $Authors %>
                                     <a href="$Link" class="text-light">
-                                         <p class="author-text--name poppins small font-weight-semibold"><% loop $ProfileImages.Limit(1) %><img src="$URL" class="authors-image" alt="$SiteConfig.Title - $Title" ><% end_loop %> $Title &mdash; $Position</p>
+                                         <p class="author-text--name d-flex align-items-center"><% loop $ProfileImages.Limit(1) %><img src="$URL" class="authors-image" alt="$SiteConfig.Title - $Title" ><% end_loop %> <span class="poppins small font-weight-semibold">$Title<% if $Position %> &mdash; $Position<% end_if %></span></p>
                                     </a>
                                     <% end_loop %>
                                 </div>

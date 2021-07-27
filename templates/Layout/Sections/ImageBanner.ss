@@ -2,7 +2,7 @@
     <div class="image-banner--image {$ImageHeight}<% if $ImageOverlay != 'none' %> $ImageOverlay<% end_if %>" style="background-image: url('{$Image.URL}');" data-height="<% if $ImageHeight == 'bh-large' %>100<% end_if %><% if $ImageHeight == 'bh-medium' %>80<% end_if %><% if $ImageHeight == 'bh-small' %>40<% end_if %>"></div>
 <% end_if %>
 <div class="image-banner--text {$ContentPosition}">$Content</div>
-<% if $ScrollIcon %><% include MouseIconScroll %><% end_if %>
+<%--<% if $ScrollIcon %><% include MouseIconScroll %><% end_if %>--%>
 <%--<% if $ImageOverlay != 'none'%>--%>
 <%--    <div class="overlay-{$ImageOverlay}">--%>
 <%--<% end_if %>--%>

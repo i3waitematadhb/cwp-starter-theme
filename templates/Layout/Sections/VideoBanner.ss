@@ -8,4 +8,4 @@
         <div class="<% if $ContentAnimation != 'none' %> wow animate__animated $ContentAnimation<% end_if %>">$Content</div>
     </div>
 <% end_if %>
-<% if $ScrollIcon %><% include MouseIconScroll %><% end_if %>
+<%--<% if $ScrollIcon %><% include MouseIconScroll %><% end_if %>--%>
