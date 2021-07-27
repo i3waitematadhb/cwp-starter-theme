@@ -1,4 +1,6 @@
 // Bootstrap functions
+@use "sass:math";
+
 @import "~bootstrap/scss/functions";
 
 @import "./variables";
@@ -40,7 +42,7 @@ body.mceContentBody a.ss-broken {
 // sass-lint:enable no-important
 
 .text-hide {
-  font: $font-size-base/$line-height-computed $font-family-sans-serif;
+  font: math.div($font-size-base, $line-height-computed) $font-family-sans-serif;
   color: $gray-800;
   outline: 1px dotted $text-muted;
 }
