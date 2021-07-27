@@ -2,5 +2,10 @@
     "/dist/js/main.js": "/dist/js/main.js",
     "/dist/css/main.css": "/dist/css/main.css",
     "/dist/css/editor.css": "/dist/css/editor.css",
+    "/images/2.jpg": "/images/2.jpg",
+    "/images/DefaultImage.PNG": "/images/DefaultImage.PNG",
+    "/images/favicon.ico": "/images/favicon.ico",
+    "/images/newzealand-government-footer.png": "/images/newzealand-government-footer.png",
+    "/images/PlaceholderImage.png": "/images/PlaceholderImage.png",
     "/dist/js/jquery.min.js": "/dist/js/jquery.min.js"
 }
