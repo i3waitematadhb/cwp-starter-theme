@@ -7,7 +7,7 @@ import 'select2';
 import FlexMasonry from 'flexmasonry/src/flexmasonry';
 import NProgress from 'nprogress/nprogress';
 import {shuffle} from "gsap/gsap-core";
-// import fullpage from 'fullpage.js';
+import fullpage from 'fullpage.js/dist/fullpage.extensions.min';
 
 export default function () {
   let selectedFilters = [];
@@ -27,19 +27,25 @@ export default function () {
   });
 
   //Header
-  let siteLogo = $('.site-logo');
-  const body = document.body;
-  const scrollUp = "scroll-up";
-  const scrollDown = "scroll-down";
+  const body = document.body,
+        scrollUp   = "scroll-up",
+        scrollDown = "scroll-down";
+  let siteHeader = $('.site-header'),
+      siteLogo   = $('.site-logo');
   let lastScroll = 0;
   window.addEventListener("scroll", () => {
     let topPos = $(window).scrollTop();
-    let altLogo = siteLogo.attr('data-logo-alt');
-    let logo = siteLogo.attr('data-logo');
+    let logo = siteLogo.attr('data-logo'),
+        darkLogo = siteLogo.attr('data-logo-dark'),
+        altLogo  = siteLogo.attr('data-logo-alt');
     const currentScroll = window.pageYOffset;
     if (currentScroll <= 0) {
       body.classList.remove(scrollUp);
-      siteLogo.attr('src', logo);
+      if (siteHeader.hasClass('header-dark')){
+        siteLogo.attr('src', darkLogo);
+      } else {
+        siteLogo.attr('src', logo);
+      }
       return;
     }
     if (currentScroll > lastScroll && !body.classList.contains(scrollDown)) {
@@ -151,17 +157,15 @@ export default function () {
   function HamburgerSettings()
   {
     let menu = $('.menu'),
-        siteheader = $('.site-header'),
-        navbackdrop = $('.navigation-backdrop'),
         primaryNav  = menu.find('.primaryNav');
     $('.hamburger').click(function() {
       if ($(this).hasClass('is-active')) {
         $(this).removeClass('is-active');
-        siteheader.removeClass('open');
+        siteHeader.removeClass('open');
         menu.removeClass('open');
       } else {
         $(this).addClass('is-active');
-        siteheader.addClass('open');
+        siteHeader.addClass('open');
         menu.addClass('open');
         primaryNav.find('.primary-ul li').each(function (i) {
           if (i < 1 ) {
@@ -1062,7 +1066,23 @@ export default function () {
 
   function fullpageSettings()
   {
+      new fullpage('.fullpage-scroll', {
+        //options here
+        licenseKey: '2AE8017F-584546CA-AAD1AA0F-28DECE26',
+        scrollingSpeed: 1000,
+        keyboardScrolling: true,
+        navigation: true,
+        scrollBar: true,
+        autoScrolling: true,
+        easing: 'easeInOutCubic',
+        scrollHorizontally: true,
+        verticalCentered: true,
+        onLeave: function (origin, destination, direction) {
+        },
+        afterLoad: function(origin, destination, direction){
 
+        },
+      });
   }
 
   function callAPIEndpoint(endpoint, method, postData, callback)
