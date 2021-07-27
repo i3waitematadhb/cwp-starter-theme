@@ -20,7 +20,7 @@
 <%--        <% include Search %>--%>
 <%--        <% include NewNav %>--%>
 <%--        <% include Nav %>--%>
-        <main id="main" class="main row no-gutters" role="main">
+        <main id="main" class="main row no-gutters<% if $EnableFullPage %> fullpage-scroll<% end_if %>" role="main">
             $Layout
         </main>
         <% include PageShowcase %>
