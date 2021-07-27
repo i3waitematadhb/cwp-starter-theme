@@ -1,6 +1,6 @@
 <% if $VisibleSections %>
     <% loop $VisibleSections %>
-        <section id="section-{$DisplayTypeTrim}{$ID}" class="page-section section-{$DisplayTypeTrim} {$SectionWidth}<% if $SectionBgType == 'background-image' %> section-bgImg<% end_if %> wow animate__animated animate__fadeIn animate__slow" <% if $SectionBgType != 'none' %><% if $SectionBgType == 'background-image' || $SectionBgType == 'background-color' || $SectionBgType == 'background-gradient' %><% if $SectionBgImage || $SectionBgColor || $ColorGradient1 && $ColorGradient2 %> style="<% if $SectionBgType == 'background-image' %>background-image:url('{$SectionBgImage.URL}');<% else_if $SectionBgType == 'background-gradient' %>background-image: linear-gradient(-90deg, #{$ColorGradient1} -50%, #{$ColorGradient2} 100%);<% else %>background-color:#{$SectionBgColor};<% end_if %>"<% end_if %><% end_if %><% end_if %>>
+        <section id="section-{$DisplayTypeTrim}{$ID}" class="page-section section-{$DisplayTypeTrim} {$SectionWidth}<% if $SectionBgType == 'background-image' %> section-bgImg<% end_if %> wow animate__animated animate__fadeIn animate__slow section" <% if $SectionBgType != 'none' %><% if $SectionBgType == 'background-image' || $SectionBgType == 'background-color' || $SectionBgType == 'background-gradient' %><% if $SectionBgImage || $SectionBgColor || $ColorGradient1 && $ColorGradient2 %> style="<% if $SectionBgType == 'background-image' %>background-image:url('{$SectionBgImage.URL}');<% else_if $SectionBgType == 'background-gradient' %>background-image: linear-gradient(-90deg, #{$ColorGradient1} -50%, #{$ColorGradient2} 100%);<% else %>background-color:#{$SectionBgColor};<% end_if %>"<% end_if %><% end_if %><% end_if %>>
             <% if $CodeEditor %>
                 $CodeEditor
             <% end_if %>
@@ -14,7 +14,7 @@
                                         <% if $SectionHeader %>
                                             $SectionHeader
                                         <% else %>
-                                            <h1 class="section-header--title<% if $SectionHeaderPosition == 'position-top'%> text-center<% end_if %> theme-text-gradient">Your header goes here.</h1>
+                                            <h3 class="section-header--title<% if $SectionHeaderPosition == 'position-top'%> text-center<% end_if %> text-dark">Your header goes here.</h3>
                                         <% end_if %>
                                     </div>
                                 </div>
@@ -35,6 +35,7 @@
                     </div>
                 </div>
             </div>
+            <% if $ScrollIcon %><% include MouseIconScroll %><% end_if %>
         </section>
     <% end_loop %>
 <% else %>

@@ -6,7 +6,11 @@
                 <% if $Image %>
                     <a href="$Link" class="blog-link">
                         <figure class="news-events-item-figure">
-                            <img src="$Image.URL" alt="$SiteConfig.Title - $Title" class="blog-image">
+                            <% if $Image %>
+                                <img src="$Image.URL" alt="$SiteConfig.Title - $Title" class="blog-image">
+                            <% else %>
+                                <img src="{$resourceURL('themes/starter/images/PlaceholderImage.png')}" alt="$Title - $SiteConfig.Title" class="blog-image">
+                            <% end_if %>
                         </figure>
                     </a>
                 <% end_if %>
@@ -32,24 +36,15 @@
                             </p>
                         <% end_if %>
                     <% end_if %>
-                    <h4 class="listing__title"><a href="$Link" class="text-light"><span class="font-weight-bold lineheight-1">$Title</span></a></h4>
+                    <h5 class="listing__title mb-3"><a href="$Link" class="text-light"><span class="font-weight-semibold">$Title</span></a></h5>
                     <div class="listing__authors">
                         <% loop $Authors %>
                             <a href="$Link" class="text-light">
-                                 <p class="author-text--name poppins small font-weight-semibold"><% loop $ProfileImages.Limit(1) %><img src="$URL" class="authors-image" alt="$SiteConfig.Title - $Title" ><% end_loop %> $Title &mdash; $Position</p>
+                                 <p class="author-text--name d-flex align-items-center"><% loop $ProfileImages.Limit(1) %><img src="$URL" class="authors-image" alt="$SiteConfig.Title - $Title" ><% end_loop %> <span class="poppins small font-weight-semibold">$Title<% if $Position %> &mdash; $Position<% end_if %></span></p>
                             </a>
                         <% end_loop %>
                     </div>
                 </div>
-<%--                <p class="mt-3 mb-3">--%>
-<%--                    <% if $Abstract %>--%>
-<%--                        $Abstract.LimitWordCount(13)--%>
-<%--                    <% else %>--%>
-<%--                        $Content.LimitWordCount(13)--%>
-<%--                    <% end_if %>--%>
-<%--                </p>--%>
-<%--                <% if $Authors %><% loop $Authors %><% if $ProfileImages %><% loop $ProfileImages.Limit(1) %><img src="$URL" class="blog-author--img" alt="$SiteConfig.Title - Blog Author({$Title})" style="max-width: 40px;margin: 0 10px 0 0;border-radius: 100px;"><% end_loop %><% end_if %><a href="$Link"><span class="small">$Title</span></a><span class="small font-weight-light poppins">  &mdash; $Position</span><% end_loop %><% end_if %>--%>
-<%--                <p class="mt-4"><a href="$Link"><span class="h6 font-weight-normal mb-0 btn-radius btn-bg-gradient-sml poppins">Read post</span></a></p>--%>
             </article>
         </div>
         <% end_loop %>
