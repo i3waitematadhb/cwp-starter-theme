@@ -5,7 +5,10 @@
 @import "./variables";
 
 // Third-party libraries
-@import "~font-awesome/scss/font-awesome";
+//@import "~font-awesome/scss/font-awesome";
+@import "!~@fortawesome/fontawesome-pro/css/all.min.css";
+@import "~owl.carousel/src/scss/owl.carousel";
+@import "~owl.carousel/src/scss/owl.theme.default";
 
 @import "~bootstrap/scss/bootstrap";
 // sass-lint:enable clean-import-paths
@@ -31,4 +34,9 @@
 @import "./components/search";
 @import "./components/sitemap";
 @import "./components/buttons";
+@import "./components/style";
+
+// Utility classes
+// Has to be last to override when necessary
+//@import "~bootstrap/scss/utilities";
 

@@ -214,13 +214,25 @@ i.fa:hover {
 }
 
 // EXTERNAL LINKS
+a.normal {
+  display: inline-block;
+  text-decoration: none;
+  &:after {
+    content: "\f105";
+    font-size: $font-size-sm;
+    font-family: $font-family-font-awesomePro;
+    position: relative;
+    left: 6px;
+    display: inline-block;
+  }
+}
 a.external {
   display: inline-block;
 
   &::after {
     content: "\f08e";
     font-size: $font-size-sm;
-    font-family: FontAwesome;
+    font-family: $font-family-font-awesomePro;
     position: relative;
     top: -3px;
     left: 3px;
@@ -236,7 +248,7 @@ a[href$=".DOCX"],
   &::before {
     margin-right: 5px;
     content: "\f016";
-    font-family: FontAwesome;
+    font-family: $font-family-font-awesomePro;
   }
 }
 
@@ -248,7 +260,7 @@ a[href$=".XLSX"],
   &::before {
     margin-right: 5px;
     content: "\f1c3";
-    font-family: FontAwesome;
+    font-family: $font-family-font-awesomePro;
   }
 }
 
@@ -262,7 +274,7 @@ a[href$=".ZIP"],
   &::before {
     margin-right: 5px;
     content: "\f1c6";
-    font-family: FontAwesome;
+    font-family: $font-family-font-awesomePro;
   }
 }
 
@@ -272,7 +284,7 @@ a[href$=".EXE"],
   &::before {
     margin-right: 5px;
     content: "\f022";
-    font-family: FontAwesome;
+    font-family: $font-family-font-awesomePro;
   }
 }
 
@@ -282,7 +294,7 @@ a[href$=".PDF"],
   &::before {
     margin-right: 5px;
     content: "\f1c1";
-    font-family: FontAwesome;
+    font-family: $font-family-font-awesomePro;
   }
 }
 
@@ -311,4 +323,108 @@ pre {
 .meta-info {
   color: $text-muted;
   font-size: $font-size-sm;
+}
+
+//Custom Buttons here
+
+//Text gradient
+.text-gradient {
+  color: transparent;
+  background-color: $brand;
+  background-image: $theme-gradient;
+  background-clip: text;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$brand, endColorstr=$brand-secondary);
+  display: inline-block;
+  padding: 1px 0;
+}
+.text-gradient-inverted {
+  color: transparent;
+  background-color: $brand;
+  background-image: $theme-gradient-ivt;
+  background-clip: text;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$brand-secondary, endColorstr=$brand);
+  display: inline-block;
+  padding: 1px 0;
+}
+
+//Button gradient
+a.btn-lg-gradient,
+a.btn-lg-theme,
+a.btn-sm-gradient,
+a.btn-sm-theme {
+  display: inline-block;
+  transition: all 200ms cubic-bezier(0.76, 0, 0.24, 1);
+  color: $white;
+}
+a.btn-lg-theme,
+a.btn-lg-gradient {
+  padding: 20px 30px;
+}
+a.btn-sm-theme,
+a.btn-sm-gradient {
+  padding: 15px 25px;
+}
+a.btn-lg-gradient,
+a.btn-sm-gradient {
+  background-image: $theme-gradient;
+}
+a.btn-lg-theme,
+a.btn-sm-theme {
+  background-color: $brand;
+}
+a.btn-radius {
+  border-radius: 50px;
+  box-shadow: 0 6px 8px 0 #0000001f;
+  position: relative;
+  top: 0;
+  &:hover {
+    top: -10px;
+  }
+}
+
+// Additional text display size
+.display-5 {
+  @include font-size($display5-size);
+  font-weight: $display5-weight;
+  line-height: $display-line-height
+}
+.display-6 {
+  @include font-size($display6-size);
+  font-weight: $display6-weight;
+  line-height: $display-line-height;
+}
+
+// Font Weight
+.font-weight-medium {
+  font-weight: $font-weight-medium;
+}
+.font-weight-semibold {
+  font-weight: $font-weight-semibold;
+}
+
+// Line Height
+.lineheight-100 {
+  line-height: 100%;
+}
+.lineheight-1 {
+  line-height: 1.4em;
+}
+.lineheight-2 {
+  line-height: 1.6em;
+}
+.lineheight-3 {
+  line-height: 1.8em;
+}
+
+// Spacing
+.spacing-1 {
+  letter-spacing: 1px;
+}
+.spacing-2 {
+  letter-spacing: 2px;
+}
+
+// Custom Fonts
+.font-spartan {
+  font-family: $font-family-spartan;
 }

@@ -1,9 +1,13 @@
 // Main navigation (note: mobile first, responsive breakpoints for medium viewports and above are lower down)
+.main-menu {
+  position: relative;
+  top: 38px;
+}
 .main-nav {
   .navbar {
     min-height: 0;
     border: 0;
-    display: block;
+    //display: block;
     padding: 0;
   }
 
@@ -104,6 +108,12 @@
 .navbar-collapse {
   border-top: 0;
 }
+@media (min-width: 768px)
+{
+  .navbar-expand-md .navbar-collapse {
+    display: block !important;
+  }
+}
 
 // Medium and up viewports
 @include media-breakpoint-up(md) {
@@ -135,7 +145,7 @@
     }
 
     .navbar {
-      border-bottom: 1px solid $navbar-light-toggler-border-color;
+      //border-bottom: 1px solid $navbar-light-toggler-border-color;
     }
   }
 

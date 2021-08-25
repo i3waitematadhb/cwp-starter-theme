@@ -17,6 +17,15 @@ $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 $black:    #000 !default;
 
+// Theme color
+$brand:           #004184 !default;
+$brand-secondary: #4da1d8 !default;
+$theme-gradient: linear-gradient(155.92deg, $brand 5.36%, $brand-secondary 85.08%);
+$theme-gradient-ivt: linear-gradient(155.92deg, $brand-secondary 5.36%, $brand 85.08%);
+$theme-gradient-multi: linear-gradient(to right, $brand 0%, $brand-secondary 40%, $brand-secondary, $brand);
+$theme-gradient-opacity: linear-gradient(155.92deg, rgba($brand, 0.90) 5.36%, rgba($brand-secondary, 0.90) 85.08%);
+$theme-gradient-ivt-opacity: linear-gradient(155.92deg, rgba($brand-secondary, 0.90) 5.36%, rgba($brand, 0.90) 85.08%);
+
 $grays: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $grays: map-merge(
@@ -66,7 +75,7 @@ $colors: map-merge(
     $colors
 );
 
-$primary:       $blue !default;
+$primary:       $brand; //$blue !default;
 $secondary:     $gray-600 !default; // @todo check with Paul in case this should be white still
 $success:       $green !default;
 $info:          $cyan !default;
@@ -79,6 +88,8 @@ $theme-colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $theme-colors: map-merge(
   (
+    "brand": $brand,
+    "brand-secondary": $brand-secondary,
     "primary":    $primary,
     "secondary":  $secondary,
     "success":    $success,
@@ -137,7 +148,13 @@ $spacers: map-merge(
     2: ($spacer * .5),
     3: $spacer,
     4: ($spacer * 1.5),
-    5: ($spacer * 3)
+    5: ($spacer * 3),
+    6: ($spacer * 4),
+    7: ($spacer * 6),
+    8: ($spacer * 8),
+    9: ($spacer * 10),
+    10: ($spacer * 12),
+    11: ($spacer * 13)
   ),
     $spacers
 );
@@ -207,8 +224,8 @@ $grid-breakpoints: (
 $container-max-widths: (
   sm: 540px,
   md: 720px,
-  lg: 960px,
-  xl: 1140px
+  lg: 1160px,
+  xl: 1340px
 ) !default;
 
 @include _assert-ascending($container-max-widths, "$container-max-widths");
@@ -220,7 +237,6 @@ $container-max-widths: (
 
 $grid-columns:                12 !default;
 $grid-gutter-width:           30px !default;
-
 
 // Components
 //
@@ -270,9 +286,11 @@ $embed-responsive-aspect-ratios: join(
 // Font, line-height, and color for body text, headings, and more.
 
 // stylelint-disable value-keyword-case
-$font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-font-awesomePro: 'Font Awesome 5 Pro';
+$font-family-spartan:         'Spartan', sans-serif;
+$font-family-sans-serif:      'Spartan', sans-serif !default;//-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
-$font-family-base:            $font-family-sans-serif !default;
+$font-family-base:            $font-family-spartan !default;
 // stylelint-enable value-keyword-case
 
 $font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
@@ -282,8 +300,11 @@ $font-size-sm:                $font-size-base * .875 !default;
 $font-weight-lighter:         lighter !default;
 $font-weight-light:           300 !default;
 $font-weight-normal:          400 !default;
+$font-weight-medium:          500 !default;
+$font-weight-semibold:        600 !default;
 $font-weight-bold:            700 !default;
-$font-weight-bolder:          bolder !default;
+$font-weight-heavy:           800 !default;
+$font-weight-bolder:          900 !default;
 
 $font-weight-base:            $font-weight-normal !default;
 $line-height-base:            1.5 !default;
@@ -305,11 +326,15 @@ $display1-size:               6rem !default;
 $display2-size:               5.5rem !default;
 $display3-size:               4.5rem !default;
 $display4-size:               3.5rem !default;
+$display5-size:               3rem !default;
+$display6-size:               2.5rem !default;
 
 $display1-weight:             300 !default;
 $display2-weight:             300 !default;
 $display3-weight:             300 !default;
 $display4-weight:             300 !default;
+$display5-weight:             300 !default;
+$display6-weight:             300 !default;
 $display-line-height:         $headings-line-height !default;
 
 $lead-font-size:              $font-size-base * 1.25 !default;
@@ -1126,6 +1151,9 @@ $print-body-min-width:              map-get($grid-breakpoints, "lg") !default;
 // --- SilverStripe custom variables (@todo evaluate if we actually need any of these)
 //
 
+// Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 // We use this Bootstrap 3 variable for a lot of margin and padding calculations in our components
 // @todo remove this
 $line-height-computed:              floor(($font-size-base * $line-height-base)) !default; // ~20px BS3 -> 16px in BS4
@@ -1147,4 +1175,3 @@ $page-header-border-color:          $gray-300 !default;
 // root of a domain
 $icon-font-path: "/themes/starter/dist/fonts/" !default;
 // Font-awesome path (using CDN to avoid subfolder installation problems)
-$fa-font-path: "//netdna.bootstrapcdn.com/font-awesome/4.7.0/fonts" !default;
