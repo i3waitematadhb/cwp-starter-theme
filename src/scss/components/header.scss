@@ -37,7 +37,7 @@ header {
 }
 .site-header {
   position: relative;
-  max-width: 300px;
+  max-width: 400px;
   margin-left: unset;
   transition: max-width 400ms cubic-bezier(0.76, 0, 0.24, 1), padding 400ms cubic-bezier(0.76, 0, 0.24, 1);
   //background-color: #0d0d00;
@@ -45,12 +45,11 @@ header {
   &.open {
     max-width: 414px;
   }
-  @media only screen and (min-width: 991px) {
-    padding: 35px 40px;
+  @media only screen and (min-width: 1201px) {
+    padding: 35px 0 35px 100px;
   }
-  @media only screen and (max-width: 992px) {
-    padding-top: 15px;
-    padding-bottom: 15px;
+  @media only screen and (max-width: 1200px) {
+    padding: 35px 50px;
   }
   .language-selector {
     margin-right: 5px;
@@ -66,7 +65,7 @@ header {
   float: left;
   .site-logo {
     transition: width 400ms cubic-bezier(0.76, 0, 0.24, 1), src 400ms cubic-bezier(0.76, 0, 0.24, 1);
-    @media only screen and (max-width: 992px) {
+    @media only screen and (max-width: 1200px) {
       width: 150px !important;
     }
   }

@@ -614,7 +614,7 @@ export default function () {
       });
 
       column +=
-        '<div class="col-md-4 wow animate__animated animate__fadeInUp session-content" data-wow-delay="0.' + ctr +'s">' +
+        '<div class="col-lg-4 wow animate__animated animate__fadeInUp session-content" data-wow-delay="0.' + ctr +'s">' +
         '<div class="session-item">' +
         '<div class="session-item__image">' +
         '<a href="' + i.link + '" class="text-decoration-none">' +
@@ -737,7 +737,7 @@ export default function () {
     let row, column, pagination;
     pagination = $('.paginate-action');
     (type === 'projects') ? row = $('.paginated-projects .row') : [row = $('.paginated-resources'), row.css('height', 'auto')];
-    column = '<div class="col-md-12 pt-5 pb-5"><p class="text-center display-4"><i>No matching records found.</i></p></div>';
+    column = '<div class="col-lg-12 pt-5 pb-5"><p class="text-center display-4"><i>No matching records found.</i></p></div>';
     pagination.empty();
     row.empty();
     row.append(column);
@@ -773,7 +773,7 @@ export default function () {
         categorySpan += '<span class="project-category badge badge-pill badge-light m-1">' + i + '</span>';
       });
       column +=
-        '<div class="col-md-3 wow animate__animated animate__fadeInUp project-content" data-wow-delay="0.' + ctr +'s">' +
+        '<div class="col-xl-3 col-lg-4 wow animate__animated animate__fadeInUp project-content" data-wow-delay="0.' + ctr +'s">' +
           '<a href="' + i.link + '">' +
             '<div class="project-item">' +
               '<div class="project-item__image">' +

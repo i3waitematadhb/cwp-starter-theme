@@ -22,6 +22,7 @@
 
 .hamburger {
   //background-color: $brand-color;
+  right: 20px;
   height: 60px;
   width: 60px;
   line-height: 0;
@@ -59,7 +60,7 @@
     &,
     &:before,
     &:after{
-      background-color: $white;
+      background-color: $dark;
       //background-color: $brand-color;
       //background-image: $theme-gradient;
       width: 30px;

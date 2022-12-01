@@ -16,6 +16,13 @@
         <header role="banner">
             <% include Header %>
             <% include MainNav %>
+            <div class="d-md-block d-lg-none">
+            <button class="hamburger hamburger--collapse" type="button" data-open="">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+            </div>
         </header>
 <%--        <% include Search %>--%>
 <%--        <% include NewNav %>--%>

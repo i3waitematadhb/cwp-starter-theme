@@ -4,11 +4,11 @@
         <section class="project-lists col-lg-12 pb-lg-8" data-type="project">
             <div class="container-fluid p-0">
                 <div class="row no-gutters">
-                    <div class="col-lg-12 pt-lg-10 pb-7" style="background-color: #f7f7f7;">
+                    <div class="col-lg-12 pt-lg-10 pb-lg-7 p-5" style="background-color: #f7f7f7;">
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <div class="project-filters d-flex">
+                                    <div class="project-filters d-lg-flex d-block">
                                         <% if $AllYears %>
                                             <div class="project-filters--item date--filter w-25">
                                                 <label for="dropdown-year text-dark">Year</label>

@@ -34,7 +34,10 @@
       .dropdown-menu {
         background-color: $white; //#161719;
         .dropdown-item {
-          color: #49494b;
+          //color: #49494b;
+          .fa-icon {
+            color: #a1a0a0;
+          }
           //background-image: linear-gradient(
           //    155.92deg
           //  , #ffa500 5.36%, #ff7b1e 85.08%);
@@ -60,7 +63,9 @@
       .dropdown-menu {
         background-color: $white;//$dark;
         .dropdown-item {
-          color: $dark;
+          span {
+            color: #a1a0a0;
+          }
         }
       }
     }
@@ -192,9 +197,18 @@
           z-index: -1;
           transition: opacity 400ms cubic-bezier(0.76, 0, 0.24, 1), transform 400ms cubic-bezier(0.76, 0, 0.24, 1);
         }
+        i {
+          position: relative;
+          top: 0;
+          transition: all 0.2s ease-in-out;
+        }
         &:hover {
           background: transparent !important;
           color: $brand-color;
+          i {
+            top: -3px;
+            color: $brand-color;
+          }
           .dropdown-item--icon {
             filter: grayscale(0);
           }

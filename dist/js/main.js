@@ -4124,7 +4124,7 @@ function destroyAll() {
 var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 /*!
- * fullPage 3.1.1 - Extensions 0.2.2
+ * fullPage 3.1.2 - Extensions 0.2.2
  * https://github.com/alvarotrigo/fullPage.js
  * @license http://alvarotrigo.com/fullPage/extensions/#license
  *
@@ -4135,80 +4135,80 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
     return e.fullpage = o(t, n), e.fullpage;
   }).call(exports, __webpack_require__, exports, module),
 		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : 0;
-}(this, window, document, function (an, cn) {
+}(this, window, document, function (cn, sn) {
   "use strict";
 
-  var sn = "fullpage-wrapper",
-      un = "." + sn,
-      fn = "fp-responsive",
-      dn = "fp-notransition",
-      vn = "fp-destroyed",
-      pn = "fp-enabled",
-      hn = "fp-viewing",
-      gn = "active",
-      mn = "." + gn,
-      Sn = "fp-completely",
-      bn = "fp-section",
-      wn = "." + bn,
-      yn = wn + mn,
-      En = "fp-tableCell",
-      xn = "." + En,
-      Ln = "fp-auto-height",
-      An = "fp-normal-scroll",
-      Mn = "fp-nav",
-      Tn = "#" + Mn,
-      On = "fp-tooltip",
-      kn = "fp-slide",
-      Cn = "." + kn,
-      Hn = Cn + mn,
-      zn = "fp-slides",
-      Rn = "." + zn,
-      In = "fp-slidesContainer",
-      Nn = "." + In,
-      Bn = "fp-table",
-      jn = "fp-slidesNav",
-      Pn = "." + jn,
-      Yn = Pn + " a",
+  var un = "fullpage-wrapper",
+      fn = "." + un,
+      dn = "fp-responsive",
+      vn = "fp-notransition",
+      pn = "fp-destroyed",
+      hn = "fp-enabled",
+      gn = "fp-viewing",
+      mn = "active",
+      Sn = "." + mn,
+      bn = "fp-completely",
+      wn = "fp-section",
+      yn = "." + wn,
+      En = yn + Sn,
+      xn = "fp-tableCell",
+      Ln = "." + xn,
+      An = "fp-auto-height",
+      Mn = "fp-normal-scroll",
+      Tn = "fp-nav",
+      On = "#" + Tn,
+      kn = "fp-tooltip",
+      Cn = "fp-slide",
+      Hn = "." + Cn,
+      zn = Hn + Sn,
+      Rn = "fp-slides",
+      In = "." + Rn,
+      Nn = "fp-slidesContainer",
+      Bn = "." + Nn,
+      jn = "fp-table",
+      Pn = "fp-slidesNav",
+      Yn = "." + Pn,
+      Wn = Yn + " a",
       e = "fp-controlArrow",
-      Wn = "." + e,
-      Dn = "fp-prev",
-      Vn = Wn + ".fp-prev",
-      Zn = Wn + ".fp-next";
-
-  function Xn(e, t) {
-    an.console && an.console[e] && an.console[e]("fullPage: " + t);
-  }
+      Dn = "." + e,
+      Vn = "fp-prev",
+      Zn = Dn + ".fp-prev",
+      Xn = Dn + ".fp-next";
 
   function Gn(e, t) {
-    return (t = 1 < arguments.length ? t : cn) ? t.querySelectorAll(e) : null;
+    cn.console && cn.console[e] && cn.console[e]("fullPage: " + t);
   }
 
-  function Un(e) {
+  function Un(e, t) {
+    return (t = 1 < arguments.length ? t : sn) ? t.querySelectorAll(e) : null;
+  }
+
+  function Fn(e) {
     e = e || {};
 
     for (var t = 1, n = arguments.length; t < n; ++t) {
       var o = arguments[t];
       if (o) for (var r in o) {
-        o.hasOwnProperty(r) && ("[object Object]" !== Object.prototype.toString.call(o[r]) ? e[r] = o[r] : e[r] = Un(e[r], o[r]));
+        o.hasOwnProperty(r) && ("[object Object]" !== Object.prototype.toString.call(o[r]) ? e[r] = o[r] : e[r] = Fn(e[r], o[r]));
       }
     }
 
     return e;
   }
 
-  function Fn(e, t) {
+  function _n(e, t) {
     return null != e && (e.classList ? e.classList.contains(t) : new RegExp("(^| )" + t + "( |$)", "gi").test(e.className));
   }
 
-  function _n() {
-    return "innerHeight" in an ? an.innerHeight : cn.documentElement.offsetHeight;
-  }
-
   function Qn() {
-    return an.innerWidth;
+    return "innerHeight" in cn ? cn.innerHeight : sn.documentElement.offsetHeight;
   }
 
-  function Jn(e, t) {
+  function Jn() {
+    return cn.innerWidth;
+  }
+
+  function Kn(e, t) {
     var n;
 
     for (n in e = l(e), t) {
@@ -4221,41 +4221,41 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
   }
 
   function n(e, t, n) {
-    for (var o = e[n]; o && !yo(o, t);) {
+    for (var o = e[n]; o && !Eo(o, t);) {
       o = o[n];
     }
 
     return o;
   }
 
-  function Kn(e, t) {
+  function $n(e, t) {
     return n(e, t, "previousElementSibling");
   }
 
-  function $n(e, t) {
+  function qn(e, t) {
     return n(e, t, "nextElementSibling");
   }
 
-  function qn(e, t) {
-    if (null == t) return e.previousElementSibling;
-    var n = qn(e);
-    return n && yo(n, t) ? n : null;
-  }
-
   function eo(e, t) {
-    if (null == t) return e.nextElementSibling;
+    if (null == t) return e.previousElementSibling;
     var n = eo(e);
-    return n && yo(n, t) ? n : null;
+    return n && Eo(n, t) ? n : null;
   }
 
-  function to(e) {
+  function to(e, t) {
+    if (null == t) return e.nextElementSibling;
+    var n = to(e);
+    return n && Eo(n, t) ? n : null;
+  }
+
+  function no(e) {
     return e[e.length - 1];
   }
 
-  function no(e, t) {
-    e = io(e) ? e[0] : e;
+  function oo(e, t) {
+    e = lo(e) ? e[0] : e;
 
-    for (var n = null != t ? Gn(t, e.parentNode) : e.parentNode.childNodes, o = 0, r = 0; r < n.length; r++) {
+    for (var n = null != t ? Un(t, e.parentNode) : e.parentNode.childNodes, o = 0, r = 0; r < n.length; r++) {
       if (n[r] == e) return o;
       1 == n[r].nodeType && o++;
     }
@@ -4264,10 +4264,10 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
   }
 
   function l(e) {
-    return io(e) ? e : [e];
+    return lo(e) ? e : [e];
   }
 
-  function oo(e) {
+  function ro(e) {
     e = l(e);
 
     for (var t = 0; t < e.length; t++) {
@@ -4277,7 +4277,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
     return e;
   }
 
-  function ro(e) {
+  function io(e) {
     e = l(e);
 
     for (var t = 0; t < e.length; t++) {
@@ -4287,11 +4287,11 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
     return e;
   }
 
-  function io(e) {
+  function lo(e) {
     return "[object Array]" === Object.prototype.toString.call(e) || "[object NodeList]" === Object.prototype.toString.call(e);
   }
 
-  function lo(e, t) {
+  function ao(e, t) {
     e = l(e);
 
     for (var n = 0; n < e.length; n++) {
@@ -4302,7 +4302,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
     return e;
   }
 
-  function ao(e, t) {
+  function co(e, t) {
     e = l(e);
 
     for (var n = t.split(" "), o = 0; o < n.length; o++) {
@@ -4317,13 +4317,13 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
     return e;
   }
 
-  function co(e, t) {
+  function so(e, t) {
     t.appendChild(e);
   }
 
   function o(e, t, n) {
     var o;
-    t = t || cn.createElement("div");
+    t = t || sn.createElement("div");
 
     for (var r = 0; r < e.length; r++) {
       var i = e[r];
@@ -4333,89 +4333,89 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
     return e;
   }
 
-  function so(e, t) {
+  function uo(e, t) {
     o(e, t, !0);
   }
 
-  function uo(e, t) {
-    for ("string" == typeof t && (t = xo(t)), e.appendChild(t); e.firstChild !== t;) {
+  function fo(e, t) {
+    for ("string" == typeof t && (t = Lo(t)), e.appendChild(t); e.firstChild !== t;) {
       t.appendChild(e.firstChild);
     }
   }
 
-  function fo(e) {
-    for (var t = cn.createDocumentFragment(); e.firstChild;) {
+  function vo(e) {
+    for (var t = sn.createDocumentFragment(); e.firstChild;) {
       t.appendChild(e.firstChild);
     }
 
     e.parentNode.replaceChild(t, e);
   }
 
-  function vo(e, t) {
-    return e && 1 === e.nodeType ? yo(e, t) ? e : vo(e.parentNode, t) : null;
-  }
-
   function po(e, t) {
-    r(e, e.nextSibling, t);
+    return e && 1 === e.nodeType ? Eo(e, t) ? e : po(e.parentNode, t) : null;
   }
 
   function ho(e, t) {
+    r(e, e.nextSibling, t);
+  }
+
+  function go(e, t) {
     r(e, e, t);
   }
 
   function r(e, t, n) {
-    io(n) || ("string" == typeof n && (n = xo(n)), n = [n]);
+    lo(n) || ("string" == typeof n && (n = Lo(n)), n = [n]);
 
     for (var o = 0; o < n.length; o++) {
       e.parentNode.insertBefore(n[o], t);
     }
   }
 
-  function go() {
-    var e = cn.documentElement;
-    return (an.pageYOffset || e.scrollTop) - (e.clientTop || 0);
+  function mo() {
+    var e = sn.documentElement;
+    return (cn.pageYOffset || e.scrollTop) - (e.clientTop || 0);
   }
 
-  function mo(t) {
+  function So(t) {
     return Array.prototype.filter.call(t.parentNode.children, function (e) {
       return e !== t;
     });
   }
 
-  function So(e) {
+  function bo(e) {
     e.preventDefault ? e.preventDefault() : e.returnValue = !1;
   }
 
-  function bo(e) {
+  function wo(e) {
     if ("function" == typeof e) return !0;
     var t = Object.prototype.toString(e);
     return "[object Function]" === t || "[object GeneratorFunction]" === t;
   }
 
-  function wo(e, t, n) {
+  function yo(e, t, n) {
     var o;
-    n = void 0 === n ? {} : n, "function" == typeof an.CustomEvent ? o = new CustomEvent(t, {
+    n = void 0 === n ? {} : n, "function" == typeof cn.CustomEvent ? o = new CustomEvent(t, {
       detail: n
-    }) : (o = cn.createEvent("CustomEvent")).initCustomEvent(t, !0, !0, n), e.dispatchEvent(o);
-  }
-
-  function yo(e, t) {
-    return (e.matches || e.matchesSelector || e.msMatchesSelector || e.mozMatchesSelector || e.webkitMatchesSelector || e.oMatchesSelector).call(e, t);
+    }) : (o = sn.createEvent("CustomEvent")).initCustomEvent(t, !0, !0, n), e.dispatchEvent(o);
   }
 
   function Eo(e, t) {
+    return (e.matches || e.matchesSelector || e.msMatchesSelector || e.mozMatchesSelector || e.webkitMatchesSelector || e.oMatchesSelector).call(e, t);
+  }
+
+  function xo(e, t) {
     if ("boolean" == typeof t) for (var n = 0; n < e.length; n++) {
       e[n].style.display = t ? "block" : "none";
     }
     return e;
   }
 
-  function xo(e) {
-    var t = cn.createElement("div");
+  function Lo(e) {
+    var t = sn.createElement("div");
     return t.innerHTML = e.trim(), t.firstChild;
   }
 
-  function Lo(e) {
+  function Ao(e) {
     e = l(e);
 
     for (var t = 0; t < e.length; t++) {
@@ -4426,90 +4426,91 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
 
   function i(e, t, n) {
     for (var o = e[n], r = []; o;) {
-      (yo(o, t) || null == t) && r.push(o), o = o[n];
+      (Eo(o, t) || null == t) && r.push(o), o = o[n];
     }
 
     return r;
   }
 
-  function Ao(e, t) {
+  function Mo(e, t) {
     return i(e, t, "nextElementSibling");
   }
 
-  function Mo(e, t) {
+  function To(e, t) {
     return i(e, t, "previousElementSibling");
   }
 
-  function To(e, t) {
+  function Oo(e, t) {
     e.insertBefore(t, e.firstChild);
   }
 
-  return an.NodeList && !NodeList.prototype.forEach && (NodeList.prototype.forEach = function (e, t) {
-    t = t || an;
+  return cn.NodeList && !NodeList.prototype.forEach && (NodeList.prototype.forEach = function (e, t) {
+    t = t || cn;
 
     for (var n = 0; n < this.length; n++) {
       e.call(t, this[n], n, this);
     }
-  }), an.fp_utils = {
-    $: Gn,
-    deepExtend: Un,
-    hasClass: Fn,
-    getWindowHeight: _n,
-    css: Jn,
+  }), cn.fp_utils = {
+    $: Un,
+    deepExtend: Fn,
+    hasClass: _n,
+    getWindowHeight: Qn,
+    css: Kn,
     until: n,
-    prevUntil: Kn,
-    nextUntil: $n,
-    prev: qn,
-    next: eo,
-    last: to,
-    index: no,
+    prevUntil: $n,
+    nextUntil: qn,
+    prev: eo,
+    next: to,
+    last: no,
+    index: oo,
     getList: l,
-    hide: oo,
-    show: ro,
-    isArrayOrList: io,
-    addClass: lo,
-    removeClass: ao,
-    appendTo: co,
+    hide: ro,
+    show: io,
+    isArrayOrList: lo,
+    addClass: ao,
+    removeClass: co,
+    appendTo: so,
     wrap: o,
-    wrapAll: so,
-    wrapInner: uo,
-    unwrap: fo,
-    closest: vo,
-    after: po,
-    before: ho,
+    wrapAll: uo,
+    wrapInner: fo,
+    unwrap: vo,
+    closest: po,
+    after: ho,
+    before: go,
     insertBefore: r,
-    getScrollTop: go,
-    siblings: mo,
-    preventDefault: So,
-    isFunction: bo,
-    trigger: wo,
-    matches: yo,
-    toggle: Eo,
-    createElementFromHTML: xo,
-    remove: Lo,
+    getScrollTop: mo,
+    siblings: So,
+    preventDefault: bo,
+    isFunction: wo,
+    trigger: yo,
+    matches: Eo,
+    toggle: xo,
+    createElementFromHTML: Lo,
+    remove: Ao,
     filter: function filter(e, t) {
       Array.prototype.filter.call(e, t);
     },
     untilAll: i,
-    nextAll: Ao,
-    prevAll: Mo,
-    showError: Xn,
-    prependTo: To,
+    nextAll: Mo,
+    prevAll: To,
+    showError: Gn,
+    prependTo: Oo,
     toggleClass: function toggleClass(e, t, n) {
       if (e.classList && null == n) e.classList.toggle(t);else {
-        var o = Fn(e, t);
-        o && null == n || !n ? ao(e, t) : (!o && null == n || n) && lo(e, t);
+        var o = _n(e, t);
+
+        o && null == n || !n ? co(e, t) : (!o && null == n || n) && ao(e, t);
       }
     }
   }, function (e, b) {
-    var n = b && new RegExp("([\\d\\w]{8}-){3}[\\d\\w]{8}|^(?=.*?[A-Y])(?=.*?[a-y])(?=.*?[0-8])(?=.*?[#?!@$%^&*-]).{8,}$").test(b.licenseKey) || -1 < cn.domain.indexOf("alvarotrigo.com"),
-        s = Gn("html, body"),
-        c = Gn("html")[0],
-        g = Gn("body")[0];
+    var n = b && new RegExp("([\\d\\w]{8}-){3}[\\d\\w]{8}|^(?=.*?[A-Y])(?=.*?[a-y])(?=.*?[0-8])(?=.*?[#?!@$%^&*-]).{8,}$").test(b.licenseKey) || -1 < sn.domain.indexOf("alvarotrigo.com"),
+        s = Un("html, body"),
+        c = Un("html")[0],
+        g = Un("body")[0];
 
-    if (!Fn(c, pn)) {
+    if (!_n(c, hn)) {
       var m = {};
-      b = Un({
+      b = Fn({
         menu: !1,
         anchors: [],
         lockAnchors: !1,
@@ -4542,10 +4543,10 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
         normalScrollElements: null,
         scrollOverflow: !1,
         scrollOverflowReset: !1,
-        scrollOverflowHandler: an.fp_scrolloverflow ? an.fp_scrolloverflow.iscrollHandler : null,
+        scrollOverflowHandler: cn.fp_scrolloverflow ? cn.fp_scrolloverflow.iscrollHandler : null,
         scrollOverflowOptions: null,
         touchSensitivity: 5,
-        touchWrapper: "string" == typeof e ? Gn(e)[0] : e,
+        touchWrapper: "string" == typeof e ? Un(e)[0] : e,
         bigSectionsDestination: null,
         keyboardScrolling: !0,
         animateAnchor: !0,
@@ -4586,17 +4587,16 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
         afterResponsive: null,
         lazyLoading: !0
       }, b);
-
       var S,
           l,
           u,
           o,
           a = !1,
           r = navigator.userAgent.match(/(iPhone|iPod|iPad|Android|playbook|silk|BlackBerry|BB10|Windows Phone|Tizen|Bada|webOS|IEMobile|Opera Mini)/),
-          i = "ontouchstart" in an || 0 < navigator.msMaxTouchPoints || navigator.maxTouchPoints,
-          w = "string" == typeof e ? Gn(e)[0] : e,
-          y = _n(),
-          f = Qn(),
+          i = "ontouchstart" in cn || 0 < navigator.msMaxTouchPoints || navigator.maxTouchPoints,
+          w = "string" == typeof e ? Un(e)[0] : e,
+          y = Qn(),
+          f = Jn(),
           E = !1,
           t = !0,
           x = !0,
@@ -4609,8 +4609,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
           right: !0
         }
       };
-
-      v.k = Un({}, v.m);
+      v.k = Fn({}, v.m);
       var p,
           h,
           L,
@@ -4623,11 +4622,11 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
           H,
           z = Vt(),
           R = {
-        touchmove: "ontouchmove" in an ? "touchmove" : z.move,
-        touchstart: "ontouchstart" in an ? "touchstart" : z.down
+        touchmove: "ontouchmove" in cn ? "touchmove" : z.move,
+        touchstart: "ontouchstart" in cn ? "touchstart" : z.down
       },
           I = !1,
-          N = !Fn(g, ot("OHNsd3AtZnVsbHBhZ2UtanM5T20=")),
+          N = !_n(g, ot("OHNsd3AtZnVsbHBhZ2UtanM5T20=")),
           B = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]',
           j = !1;
 
@@ -4637,17 +4636,17 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
             j = !0;
           }
         });
-        an.addEventListener("testPassive", null, P), an.removeEventListener("testPassive", null, P);
+        cn.addEventListener("testPassive", null, P), cn.removeEventListener("testPassive", null, P);
       } catch (e) {}
 
       var Y,
           W,
           D,
-          V = Un({}, b),
+          V = Fn({}, b),
           Z = !1,
           X = !0,
           G = {};
-      en(), an.fp_easings = Un(an.fp_easings, {
+      tn(), cn.fp_easings = Fn(cn.fp_easings, {
         easeInOutCubic: function easeInOutCubic(e, t, n, o) {
           return (e /= o / 2) < 1 ? n / 2 * e * e * e + t : n / 2 * ((e -= 2) * e * e + 2) + t;
         }
@@ -4679,66 +4678,67 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
             getEventsPage: Zt,
             getMSPointer: Vt,
             isReallyTouch: Be,
-            usingExtension: Qt,
+            usingExtension: Jt,
             toggleControlArrows: yt,
             touchStartHandler: je,
-            touchMoveHandler: Ne
+            touchMoveHandler: Ne,
+            nullOrSection: Ge
           }
         };
       }, m.destroy = function (e) {
-        wo(w, "destroy", e), re(!1, "internal"), se(!0), ue(!1), fe(!1), lo(w, vn), [M, A, h, T, O, C, L, D].forEach(function (e) {
+        yo(w, "destroy", e), re(!1, "internal"), se(!0), ue(!1), fe(!1), ao(w, pn), [M, A, h, T, O, C, L, D].forEach(function (e) {
           clearTimeout(e);
-        }), an.removeEventListener("scroll", He), an.removeEventListener("hashchange", ut), an.removeEventListener("resize", Lt), cn.removeEventListener("keydown", dt), cn.removeEventListener("keyup", vt), ["click", "touchstart"].forEach(function (e) {
-          cn.removeEventListener(e, ye);
+        }), cn.removeEventListener("scroll", He), cn.removeEventListener("hashchange", ut), cn.removeEventListener("resize", Lt), sn.removeEventListener("keydown", dt), sn.removeEventListener("keyup", vt), ["click", "touchstart"].forEach(function (e) {
+          sn.removeEventListener(e, ye);
         }), ["mouseenter", "touchstart", "mouseleave", "touchend"].forEach(function (e) {
-          cn.removeEventListener(e, xe, !0);
-        }), Jt("dragAndMove", "destroy"), e && (Gt(0), Gn("img[data-src], source[data-src], audio[data-src], iframe[data-src]", w).forEach(function (e) {
+          sn.removeEventListener(e, xe, !0);
+        }), Kt("dragAndMove", "destroy"), e && (Gt(0), Un("img[data-src], source[data-src], audio[data-src], iframe[data-src]", w).forEach(function (e) {
           Qe(e, "src");
-        }), Gn("img[data-srcset]").forEach(function (e) {
+        }), Un("img[data-srcset]").forEach(function (e) {
           Qe(e, "srcset");
-        }), Lo(Gn(Tn + ", " + Pn + ", " + Wn)), Jn(Gn(wn), {
+        }), Ao(Un(On + ", " + Yn + ", " + Dn)), Kn(Un(yn), {
           height: "",
           "background-color": "",
           padding: ""
-        }), Jn(Gn(Cn), {
+        }), Kn(Un(Hn), {
           width: ""
-        }), Jn(w, {
+        }), Kn(w, {
           height: "",
           position: "",
           "-ms-touch-action": "",
           "touch-action": ""
-        }), Jn(s, {
+        }), Kn(s, {
           overflow: "",
           height: ""
-        }), ao(c, pn), ao(g, fn), g.className.split(/\s+/).forEach(function (e) {
-          0 === e.indexOf(hn) && ao(g, e);
-        }), Gn(wn + ", " + Cn).forEach(function (e) {
-          b.scrollOverflowHandler && b.scrollOverflow && b.scrollOverflowHandler.remove(e), ao(e, Bn + " " + gn + " " + Sn);
+        }), co(c, hn), co(g, dn), g.className.split(/\s+/).forEach(function (e) {
+          0 === e.indexOf(gn) && co(g, e);
+        }), Un(yn + ", " + Hn).forEach(function (e) {
+          b.scrollOverflowHandler && b.scrollOverflow && b.scrollOverflowHandler.remove(e), co(e, jn + " " + mn + " " + bn);
           var t = e.getAttribute("data-fp-styles");
-          t && e.setAttribute("style", e.getAttribute("data-fp-styles")), Fn(e, bn) && !Z && e.removeAttribute("data-anchor");
-        }), _t(w), [xn, Nn, Rn].forEach(function (e) {
-          Gn(e, w).forEach(function (e) {
-            fo(e);
+          t && e.setAttribute("style", e.getAttribute("data-fp-styles")), _n(e, wn) && !Z && e.removeAttribute("data-anchor");
+        }), _t(w), [Ln, Bn, In].forEach(function (e) {
+          Un(e, w).forEach(function (e) {
+            vo(e);
           });
-        }), an.scrollTo(0, 0), [bn, kn, In].forEach(function (e) {
-          ao(Gn("." + e), e);
+        }), cn.scrollTo(0, 0), [wn, Cn, Nn].forEach(function (e) {
+          co(Un("." + e), e);
         }));
       }, m.getActiveSection = function () {
-        return new rn(Gn(yn)[0]);
+        return new ln(Un(En)[0]);
       }, m.getActiveSlide = function () {
-        return Ue(Gn(Hn, Gn(yn)[0])[0]);
+        return Ue(Un(zn, Un(En)[0])[0]);
       }, m.landscapeScroll = wt, m.test = {
         top: "0px",
         translate3d: "translate3d(0px, 0px, 0px)",
         translate3dH: function () {
-          for (var e = [], t = 0; t < Gn(b.sectionSelector, w).length; t++) {
+          for (var e = [], t = 0; t < Un(b.sectionSelector, w).length; t++) {
             e.push("translate3d(0px, 0px, 0px)");
           }
 
           return e;
         }(),
         left: function () {
-          for (var e = [], t = 0; t < Gn(b.sectionSelector, w).length; t++) {
+          for (var e = [], t = 0; t < Un(b.sectionSelector, w).length; t++) {
             e.push(0);
           }
 
@@ -4749,11 +4749,11 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
       }, m.shared = {
         afterRenderActions: Ce,
         isNormalScrollElement: !1
-      }, an.fullpage_api = m, an.fullpage_extensions = !0, b.$ && Object.keys(m).forEach(function (e) {
+      }, cn.fullpage_api = m, cn.fullpage_extensions = !0, b.$ && Object.keys(m).forEach(function (e) {
         b.$.fn.fullpage[e] = m[e];
-      }), Ae("continuousHorizontal"), Ae("scrollHorizontally"), Ae("resetSliders"), Ae("interlockedSlides"), Ae("responsiveSlides"), Ae("fadingEffect"), Ae("dragAndMove"), Ae("offsetSections"), Ae("scrollOverflowReset"), Ae("parallax"), Ae("cards"), Ae("dropEffect"), Jt("dragAndMove", "init"), b.css3 && (b.css3 = function () {
+      }), Ae("continuousHorizontal"), Ae("scrollHorizontally"), Ae("resetSliders"), Ae("interlockedSlides"), Ae("responsiveSlides"), Ae("fadingEffect"), Ae("dragAndMove"), Ae("offsetSections"), Ae("scrollOverflowReset"), Ae("parallax"), Ae("cards"), Ae("dropEffect"), Ae("waterEffect"), Kt("dragAndMove", "init"), b.css3 && (b.css3 = function () {
         var e,
-            t = cn.createElement("p"),
+            t = sn.createElement("p"),
             n = {
           webkitTransform: "-webkit-transform",
           OTransform: "-o-transform",
@@ -4762,77 +4762,77 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
           transform: "transform"
         };
 
-        for (var o in t.style.display = "block", cn.body.insertBefore(t, null), n) {
-          void 0 !== t.style[o] && (t.style[o] = "translate3d(1px,1px,1px)", e = an.getComputedStyle(t).getPropertyValue(n[o]));
+        for (var o in t.style.display = "block", sn.body.insertBefore(t, null), n) {
+          void 0 !== t.style[o] && (t.style[o] = "translate3d(1px,1px,1px)", e = cn.getComputedStyle(t).getPropertyValue(n[o]));
         }
 
-        return cn.body.removeChild(t), void 0 !== e && 0 < e.length && "none" !== e;
+        return sn.body.removeChild(t), void 0 !== e && 0 < e.length && "none" !== e;
       }()), b.scrollBar = b.scrollBar || b.hybrid, function () {
         if (!b.anchors.length) {
           var e = "[data-anchor]",
-              t = Gn(b.sectionSelector.split(",").join(e + ",") + e, w);
-          t.length && t.length === Gn(b.sectionSelector, w).length && (Z = !0, t.forEach(function (e) {
+              t = Un(b.sectionSelector.split(",").join(e + ",") + e, w);
+          t.length && t.length === Un(b.sectionSelector, w).length && (Z = !0, t.forEach(function (e) {
             b.anchors.push(e.getAttribute("data-anchor").toString());
           }));
         }
 
         if (!b.navigationTooltips.length) {
           var n = "[data-tooltip]",
-              o = Gn(b.sectionSelector.split(",").join(n + ",") + n, w);
+              o = Un(b.sectionSelector.split(",").join(n + ",") + n, w);
           o.length && o.forEach(function (e) {
             b.navigationTooltips.push(e.getAttribute("data-tooltip").toString());
           });
         }
       }(), function () {
-        Jn(w, {
+        Kn(w, {
           height: "100%",
           position: "relative"
-        }), lo(w, sn), lo(c, pn), y = _n(), ao(w, vn), lo(Gn(b.sectionSelector, w), bn), lo(Gn(b.slideSelector, w), kn), Jt("parallax", "init");
+        }), ao(w, un), ao(c, hn), y = Qn(), co(w, pn), ao(Un(b.sectionSelector, w), wn), ao(Un(b.slideSelector, w), Cn), Kt("parallax", "init");
 
-        for (var e = Gn(wn), t = 0; t < e.length; t++) {
+        for (var e = Un(yn), t = 0; t < e.length; t++) {
           var n = t,
               o = e[t],
-              r = Gn(Cn, o),
+              r = Un(Hn, o),
               i = r.length;
-          o.setAttribute("data-fp-styles", o.getAttribute("style")), Oe(o, n), l = o, a = n, void 0 !== b.anchors[a] && Fn(l, gn) && kt(b.anchors[a], a), b.menu && b.css3 && null != vo(Gn(b.menu)[0], un) && Gn(b.menu).forEach(function (e) {
+          o.setAttribute("data-fp-styles", o.getAttribute("style")), Oe(o, n), l = o, a = n, void 0 !== b.anchors[a] && _n(l, mn) && kt(b.anchors[a], a), b.menu && b.css3 && null != po(Un(b.menu)[0], fn) && Un(b.menu).forEach(function (e) {
             g.appendChild(e);
           }), 0 < i ? Me(o, r, i) : b.verticalCentered && zt(o);
         }
 
         var l, a;
-        b.fixedElements && b.css3 && Gn(b.fixedElements).forEach(function (e) {
+        b.fixedElements && b.css3 && Un(b.fixedElements).forEach(function (e) {
           g.appendChild(e);
         }), b.navigation && function () {
-          var e = cn.createElement("div");
-          e.setAttribute("id", Mn);
-          var t = cn.createElement("ul");
-          e.appendChild(t), co(e, g);
-          var n = Gn(Tn)[0];
-          lo(n, "fp-" + b.navigationPosition), b.showActiveTooltip && lo(n, "fp-show-active");
+          var e = sn.createElement("div");
+          e.setAttribute("id", Tn);
+          var t = sn.createElement("ul");
+          e.appendChild(t), so(e, g);
+          var n = Un(On)[0];
+          ao(n, "fp-" + b.navigationPosition), b.showActiveTooltip && ao(n, "fp-show-active");
 
-          for (var o = "", r = 0; r < Gn(wn).length; r++) {
+          for (var o = "", r = 0; r < Un(yn).length; r++) {
             var i = "";
             b.anchors.length && (i = b.anchors[r]), o += '<li><a href="#' + i + '"><span class="fp-sr-only">' + ke(r, "Section") + "</span><span></span></a>";
             var l = b.navigationTooltips[r];
-            void 0 !== l && "" !== l && (o += '<div class="' + On + " fp-" + b.navigationPosition + '">' + l + "</div>"), o += "</li>";
+            void 0 !== l && "" !== l && (o += '<div class="' + kn + " fp-" + b.navigationPosition + '">' + l + "</div>"), o += "</li>";
           }
 
-          Gn("ul", n)[0].innerHTML = o, lo(Gn("a", Gn("li", Gn(Tn)[0])[no(Gn(yn)[0], wn)]), gn);
-        }(), Gn('iframe[src*="youtube.com/embed/"]', w).forEach(function (e) {
+          Un("ul", n)[0].innerHTML = o, ao(Un("a", Un("li", Un(On)[0])[oo(Un(En)[0], yn)]), mn);
+        }(), Un('iframe[src*="youtube.com/embed/"]', w).forEach(function (e) {
           var t, n, o;
           n = "enablejsapi=1", o = (t = e).getAttribute("src"), t.setAttribute("src", o + (/\?/.test(o) ? "&" : "?") + n);
-        }), Jt("fadingEffect", "apply"), Jt("dropEffect", "init"), Jt("cards", "init"), b.scrollOverflow && (p = b.scrollOverflowHandler.init(b));
-      }(), se(!0), ue(!0), re(b.autoScrolling, "internal"), Mt(), Dt(), "complete" === cn.readyState && st(), an.addEventListener("load", st), b.scrollOverflow || Ce(), function () {
+        }), Kt("fadingEffect", "apply"), Kt("dropEffect", "init"), Kt("waterEffect", "init"), Kt("cards", "init"), b.scrollOverflow && (p = b.scrollOverflowHandler.init(b));
+      }(), se(!0), ue(!0), re(b.autoScrolling, "internal"), Mt(), Dt(), "complete" === sn.readyState && st(), cn.addEventListener("load", st), b.scrollOverflow || Ce(), function () {
         for (var e = 1; e < 4; e++) {
           C = setTimeout(Le, 350 * e);
         }
-      }(), N || at("l"), an.addEventListener("scroll", He), an.addEventListener("hashchange", ut), an.addEventListener("focus", mt), an.addEventListener("blur", St), an.addEventListener("resize", Lt), cn.addEventListener("keydown", dt), cn.addEventListener("keyup", vt), ["click", "touchstart"].forEach(function (e) {
-        cn.addEventListener(e, ye);
+      }(), N || at("l"), cn.addEventListener("scroll", He), cn.addEventListener("hashchange", ut), cn.addEventListener("focus", mt), cn.addEventListener("blur", St), cn.addEventListener("resize", Lt), sn.addEventListener("keydown", dt), sn.addEventListener("keyup", vt), ["click", "touchstart"].forEach(function (e) {
+        sn.addEventListener(e, ye);
       }), b.normalScrollElements && (["mouseenter", "touchstart"].forEach(function (e) {
         Ee(e, !1);
       }), ["mouseleave", "touchend"].forEach(function (e) {
         Ee(e, !0);
-      })), Jt("dragAndMove", "turnOffTouch"));
+      })), Kt("dragAndMove", "turnOffTouch"));
 
       var U,
           F,
@@ -4851,56 +4851,56 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
     }
 
     function re(e, t) {
-      e || Gt(0), qt("autoScrolling", e, t);
-      var n = Gn(yn)[0];
-      if (b.autoScrolling && !b.scrollBar) Jn(s, {
+      e || Gt(0), en("autoScrolling", e, t);
+      var n = Un(En)[0];
+      if (b.autoScrolling && !b.scrollBar) Kn(s, {
         overflow: "hidden",
         height: "100%"
-      }), ie(V.recordHistory, "internal"), Jn(w, {
+      }), ie(V.recordHistory, "internal"), Kn(w, {
         "-ms-touch-action": "none",
         "touch-action": "none"
-      }), null != n && Gt(n.offsetTop);else if (Jn(s, {
+      }), null != n && Gt(n.offsetTop);else if (Kn(s, {
         overflow: "visible",
         height: "initial"
-      }), ie(!!b.autoScrolling && V.recordHistory, "internal"), Jn(w, {
+      }), ie(!!b.autoScrolling && V.recordHistory, "internal"), Kn(w, {
         "-ms-touch-action": "",
         "touch-action": ""
       }), _t(w), null != n) {
         var o = Fe(n.offsetTop);
         o.element.scrollTo(0, o.options);
       }
-      wo(w, "setAutoScrolling", e);
+      yo(w, "setAutoScrolling", e);
     }
 
     function ie(e, t) {
-      qt("recordHistory", e, t);
+      en("recordHistory", e, t);
     }
 
     function le(e, t) {
-      "internal" !== t && Qt("fadingEffect") && m.fadingEffect.update(e), Qt("cards") && m.cards.update(e), qt("scrollingSpeed", e, t);
+      "internal" !== t && Jt("fadingEffect") && m.fadingEffect.update(e), Jt("cards") && m.cards.update(e), en("scrollingSpeed", e, t);
     }
 
     function ae(e, t) {
-      qt("fitToSection", e, t);
+      en("fitToSection", e, t);
     }
 
     function ce(e) {
       e ? (function () {
         var e,
             t = "";
-        an.addEventListener ? e = "addEventListener" : (e = "attachEvent", t = "on");
-        var n = "onwheel" in cn.createElement("div") ? "wheel" : void 0 !== cn.onmousewheel ? "mousewheel" : "DOMMouseScroll",
+        cn.addEventListener ? e = "addEventListener" : (e = "attachEvent", t = "on");
+        var n = "onwheel" in sn.createElement("div") ? "wheel" : void 0 !== sn.onmousewheel ? "mousewheel" : "DOMMouseScroll",
             o = !!j && {
           passive: !1
         };
-        "DOMMouseScroll" == n ? cn[e](t + "MozMousePixelScroll", Ye, o) : cn[e](t + n, Ye, o);
-      }(), w.addEventListener("mousedown", pt), w.addEventListener("mouseup", ht)) : (cn.addEventListener ? (cn.removeEventListener("mousewheel", Ye, !1), cn.removeEventListener("wheel", Ye, !1), cn.removeEventListener("MozMousePixelScroll", Ye, !1)) : cn.detachEvent("onmousewheel", Ye), w.removeEventListener("mousedown", pt), w.removeEventListener("mouseup", ht));
+        "DOMMouseScroll" == n ? sn[e](t + "MozMousePixelScroll", Ye, o) : sn[e](t + n, Ye, o);
+      }(), w.addEventListener("mousedown", pt), w.addEventListener("mouseup", ht)) : (sn.addEventListener ? (sn.removeEventListener("mousewheel", Ye, !1), sn.removeEventListener("wheel", Ye, !1), sn.removeEventListener("MozMousePixelScroll", Ye, !1)) : sn.detachEvent("onmousewheel", Ye), w.removeEventListener("mousedown", pt), w.removeEventListener("mouseup", ht));
     }
 
     function se(t, e) {
       void 0 !== e ? (e = e.replace(/ /g, "").split(",")).forEach(function (e) {
         Ft(t, e, "m");
-      }) : Ft(t, "all", "m"), wo(w, "setAllowScrolling", {
+      }) : Ft(t, "all", "m"), yo(w, "setAllowScrolling", {
         value: t,
         directions: e
       });
@@ -4908,7 +4908,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
 
     function ue(e) {
       e ? (ce(!0), function () {
-        if ((r || i) && (!Qt("dragAndMove") || "mouseonly" === b.dragAndMove)) {
+        if ((r || i) && (!Jt("dragAndMove") || "mouseonly" === b.dragAndMove)) {
           b.autoScrolling && (g.removeEventListener(R.touchmove, Ie, {
             passive: !1
           }), g.addEventListener(R.touchmove, Ie, {
@@ -4943,13 +4943,13 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
     }
 
     function de() {
-      var e = Kn(Gn(yn)[0], wn);
-      e || !b.loopTop && !b.continuousVertical || (e = to(Gn(wn))), null != e && Ze(e, null, !0);
+      var e = $n(Un(En)[0], yn);
+      e || !b.loopTop && !b.continuousVertical || (e = no(Un(yn))), null != e && Ze(e, null, !0);
     }
 
     function ve() {
-      var e = $n(Gn(yn)[0], wn);
-      e || !b.loopBottom && !b.continuousVertical || (e = Gn(wn)[0]), null != e && Ze(e, null, !1);
+      var e = qn(Un(En)[0], yn);
+      e || !b.loopBottom && !b.continuousVertical || (e = Un(yn)[0]), null != e && Ze(e, null, !1);
     }
 
     function pe(e, t) {
@@ -4970,58 +4970,58 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
     }
 
     function Se(e) {
-      if (!Fn(w, vn)) {
-        E = !0, y = _n(), f = Qn();
+      if (!_n(w, pn)) {
+        E = !0, y = Qn(), f = Jn();
 
-        for (var t = Gn(wn), n = 0; n < t.length; ++n) {
+        for (var t = Un(yn), n = 0; n < t.length; ++n) {
           var o = t[n],
-              r = Gn(Rn, o)[0],
-              i = Gn(Cn, o);
-          b.verticalCentered && Jn(Gn(xn, o), {
+              r = Un(In, o)[0],
+              i = Un(Hn, o);
+          b.verticalCentered && Kn(Un(Ln, o), {
             height: Rt(o) + "px"
-          }), Jn(o, {
+          }), Kn(o, {
             height: Te(o) + "px"
-          }), 1 < i.length && wt(r, Gn(Hn, r)[0]);
+          }), 1 < i.length && wt(r, Un(zn, r)[0]);
         }
 
         b.scrollOverflow && p.createScrollBarForAll();
-        var l = no(Gn(yn)[0], wn);
-        !l || Qt("fadingEffect") || Qt("dropEffect") || pe(l + 1), E = !1, bo(b.afterResize) && e && b.afterResize.call(w, an.innerWidth, an.innerHeight), bo(b.afterReBuild) && !e && b.afterReBuild.call(w), wo(w, "afterRebuild");
+        var l = oo(Un(En)[0], yn);
+        !l || Jt("fadingEffect") || Jt("dropEffect") || Jt("waterEffect") || pe(l + 1), E = !1, wo(b.afterResize) && e && b.afterResize.call(w, cn.innerWidth, cn.innerHeight), wo(b.afterReBuild) && !e && b.afterReBuild.call(w), yo(w, "afterRebuild");
       }
     }
 
     function be() {
-      return Fn(g, fn);
+      return _n(g, dn);
     }
 
     function we(e) {
       var t = be();
-      e ? t || (re(!1, "internal"), ae(!1, "internal"), oo(Gn(Tn)), lo(g, fn), bo(b.afterResponsive) && b.afterResponsive.call(w, e), Jt("responsiveSlides", "toSections"), wo(w, "afterResponsive", e), b.scrollOverflow && p.createScrollBarForAll()) : t && (re(V.autoScrolling, "internal"), ae(V.autoScrolling, "internal"), ro(Gn(Tn)), ao(g, fn), bo(b.afterResponsive) && b.afterResponsive.call(w, e), Jt("responsiveSlides", "toSlides"), wo(w, "afterResponsive", e));
+      e ? t || (re(!1, "internal"), ae(!1, "internal"), ro(Un(On)), ao(g, dn), wo(b.afterResponsive) && b.afterResponsive.call(w, e), Kt("responsiveSlides", "toSections"), yo(w, "afterResponsive", e), b.scrollOverflow && p.createScrollBarForAll()) : t && (re(V.autoScrolling, "internal"), ae(V.autoScrolling, "internal"), io(Un(On)), co(g, dn), wo(b.afterResponsive) && b.afterResponsive.call(w, e), Kt("responsiveSlides", "toSlides"), yo(w, "afterResponsive", e));
     }
 
     function ye(e) {
       var t = e.target;
-      t && vo(t, Tn + " a") ? function (e) {
-        So(e);
-        var t = no(vo(this, Tn + " li"));
-        Ze(Gn(wn)[t]);
-      }.call(t, e) : yo(t, ".fp-tooltip") ? function () {
-        wo(qn(this), "click");
-      }.call(t) : yo(t, Wn) ? function () {
-        var e = vo(this, wn);
-        Fn(this, Dn) ? v.m.left && me(e) : v.m.right && ge(e);
-      }.call(t, e) : yo(t, Yn) || null != vo(t, Yn) ? function (e) {
-        So(e);
-        var t = Gn(Rn, vo(this, wn))[0],
-            n = Gn(Cn, t)[no(vo(this, "li"))];
+      t && po(t, On + " a") ? function (e) {
+        bo(e);
+        var t = oo(po(this, On + " li"));
+        Ze(Un(yn)[t]);
+      }.call(t, e) : Eo(t, ".fp-tooltip") ? function () {
+        yo(eo(this), "click");
+      }.call(t) : Eo(t, Dn) ? function () {
+        var e = po(this, yn);
+        _n(this, Vn) ? v.m.left && me(e) : v.m.right && ge(e);
+      }.call(t, e) : Eo(t, Wn) || null != po(t, Wn) ? function (e) {
+        bo(e);
+        var t = Un(In, po(this, yn))[0],
+            n = Un(Hn, t)[oo(po(this, "li"))];
         wt(t, n);
-      }.call(t, e) : vo(t, b.menu + " [data-menuanchor]") && function (e) {
-        !Gn(b.menu)[0] || !b.lockAnchors && b.anchors.length || (So(e), he(this.getAttribute("data-menuanchor")));
+      }.call(t, e) : po(t, b.menu + " [data-menuanchor]") && function (e) {
+        !Un(b.menu)[0] || !b.lockAnchors && b.anchors.length || (bo(e), he(this.getAttribute("data-menuanchor")));
       }.call(t, e);
     }
 
     function Ee(e, t) {
-      cn["fp_" + e] = t, cn.addEventListener(e, xe, !0);
+      sn["fp_" + e] = t, sn.addEventListener(e, xe, !0);
     }
 
     function xe(e) {
@@ -5029,22 +5029,21 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
           o = !1,
           r = b.scrollOverflow,
           i = "mouseleave" === t ? e.toElement || e.relatedTarget : e.target;
-      if (i == cn || !i) return ue(!0), void (r && b.scrollOverflowHandler.setIscroll(i, !0));
+      if (i == sn || !i) return ue(!0), void (r && b.scrollOverflowHandler.setIscroll(i, !0));
       "touchend" === t && (X = !1, setTimeout(function () {
         X = !0;
       }, 800)), ("mouseenter" !== t || X) && (b.normalScrollElements.split(",").forEach(function (e) {
         if (!o) {
-          var t = yo(i, e),
-              n = vo(i, e);
+          var t = Eo(i, e),
+              n = po(i, e);
           (t || n) && (m.shared.isNormalScrollElement || (ue(!1), r && b.scrollOverflowHandler.setIscroll(i, !1)), m.shared.isNormalScrollElement = !0, o = !0);
         }
       }), !o && m.shared.isNormalScrollElement && (ue(!0), r && b.scrollOverflowHandler.setIscroll(i, !0), m.shared.isNormalScrollElement = !1));
     }
 
     function Le() {
-      var e = _n(),
-          t = Qn();
-
+      var e = Qn(),
+          t = Jn();
       y === e && f === t || (y = e, f = t, Se(!0));
     }
 
@@ -5054,57 +5053,57 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
           o = ot(t[1]),
           r = void 0 !== b[n + o],
           i = "fp_" + e + "Extension";
-      G[e] = r ? b[n + o] : b[e + o], m[e] = void 0 !== an[i] ? new an[i]() : null, m[e] && m[e].c(e);
+      G[e] = r ? b[n + o] : b[e + o], m[e] = void 0 !== cn[i] ? new cn[i]() : null, m[e] && m[e].c(e);
     }
 
     function Me(e, t, n) {
       var o = 100 * n,
           r = 100 / n,
-          i = cn.createElement("div");
-      i.className = zn, so(t, i);
+          i = sn.createElement("div");
+      i.className = Rn, uo(t, i);
       var l,
           a,
-          c = cn.createElement("div");
-      c.className = In, so(t, c), Jn(Gn(Nn, e), {
+          c = sn.createElement("div");
+      c.className = Nn, uo(t, c), Kn(Un(Bn, e), {
         width: o + "%"
-      }), 1 < n && (b.controlArrows && (l = e, a = [xo('<div class="fp-controlArrow fp-prev"></div>'), xo('<div class="fp-controlArrow fp-next"></div>')], po(Gn(Rn, l)[0], a), "#fff" !== b.controlArrowColor && (Jn(Gn(Zn, l), {
+      }), 1 < n && (b.controlArrows && (l = e, a = [Lo('<div class="fp-controlArrow fp-prev"></div>'), Lo('<div class="fp-controlArrow fp-next"></div>')], ho(Un(In, l)[0], a), "#fff" !== b.controlArrowColor && (Kn(Un(Xn, l), {
         "border-color": "transparent transparent transparent " + b.controlArrowColor
-      }), Jn(Gn(Vn, l), {
+      }), Kn(Un(Zn, l), {
         "border-color": "transparent " + b.controlArrowColor + " transparent transparent"
-      })), b.loopHorizontal || oo(Gn(Vn, l))), b.slidesNavigation && function (e, t) {
-        co(xo('<div class="' + jn + '"><ul></ul></div>'), e);
-        var n = Gn(Pn, e)[0];
-        lo(n, "fp-" + b.slidesNavPosition);
+      })), b.loopHorizontal || ro(Un(Zn, l))), b.slidesNavigation && function (e, t) {
+        so(Lo('<div class="' + Pn + '"><ul></ul></div>'), e);
+        var n = Un(Yn, e)[0];
+        ao(n, "fp-" + b.slidesNavPosition);
 
         for (var o = 0; o < t; o++) {
-          var r = Gn(Cn, e)[o];
-          co(xo('<li><a href="#"><span class="fp-sr-only">' + ke(o, "Slide", r) + "</span><span></span></a></li>"), Gn("ul", n)[0]);
+          var r = Un(Hn, e)[o];
+          so(Lo('<li><a href="#"><span class="fp-sr-only">' + ke(o, "Slide", r) + "</span><span></span></a></li>"), Un("ul", n)[0]);
         }
 
-        Jn(n, {
+        Kn(n, {
           "margin-left": "-" + n.innerWidth / 2 + "px"
-        }), lo(Gn("a", Gn("li", n)[0]), gn);
+        }), ao(Un("a", Un("li", n)[0]), mn);
       }(e, n)), t.forEach(function (e) {
-        Jn(e, {
+        Kn(e, {
           width: r + "%"
         }), b.verticalCentered && zt(e);
       });
-      var s = Gn(Hn, e)[0];
-      null != s && (0 !== no(Gn(yn), wn) || 0 === no(Gn(yn), wn) && 0 !== no(s)) ? (Xt(s, "internal"), lo(s, "fp-initial")) : lo(t[0], gn);
+      var s = Un(zn, e)[0];
+      null != s && (0 !== oo(Un(En), yn) || 0 === oo(Un(En), yn) && 0 !== oo(s)) ? (Xt(s, "internal"), ao(s, "fp-initial")) : ao(t[0], mn);
     }
 
     function Te(e) {
-      return b.offsetSections && m.offsetSections ? Math.round(m.offsetSections.getWindowHeight(e)) : _n();
+      return b.offsetSections && m.offsetSections ? Math.round(m.offsetSections.getWindowHeight(e)) : Qn();
     }
 
     function Oe(e, t) {
-      t || null != Gn(yn)[0] || lo(e, gn), o = Gn(yn)[0], Jn(e, {
+      t || null != Un(En)[0] || ao(e, mn), o = Un(En)[0], Kn(e, {
         height: Te(e) + "px"
-      }), b.paddingTop && Jn(e, {
+      }), b.paddingTop && Kn(e, {
         "padding-top": b.paddingTop
-      }), b.paddingBottom && Jn(e, {
+      }), b.paddingBottom && Kn(e, {
         "padding-bottom": b.paddingBottom
-      }), void 0 !== b.sectionsColor[t] && Jn(e, {
+      }), void 0 !== b.sectionsColor[t] && Kn(e, {
         "background-color": b.sectionsColor[t]
       }), void 0 !== b.anchors[t] && e.setAttribute("data-anchor", b.anchors[t]);
     }
@@ -5117,39 +5116,39 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
     function Ce() {
       var e,
           t,
-          n = Gn(yn)[0];
-      lo(n, Sn), Ke(n), Je(), qe(n), b.scrollOverflow && b.scrollOverflowHandler.afterLoad(), e = ft(), t = Nt(e.section), e.section && t && (void 0 === t || no(t) !== no(o)) || !bo(b.afterLoad) || Xe("afterLoad", {
+          n = Un(En)[0];
+      ao(n, bn), Ke(n), Je(), qe(n), b.scrollOverflow && b.scrollOverflowHandler.afterLoad(), e = ft(), t = Nt(e.section), e.section && t && (void 0 === t || oo(t) !== oo(o)) || !wo(b.afterLoad) || Xe("afterLoad", {
         activeSection: n,
         element: n,
         direction: null,
         anchorLink: n.getAttribute("data-anchor"),
-        sectionIndex: no(n, wn)
-      }), bo(b.afterRender) && Xe("afterRender"), wo(w, "afterRender");
+        sectionIndex: oo(n, yn)
+      }), wo(b.afterRender) && Xe("afterRender"), yo(w, "afterRender");
     }
 
     function He() {
       var e;
 
-      if (wo(w, "onScroll"), !E && (!b.autoScrolling || b.scrollBar || Qt("dragAndMove")) && !$t()) {
-        var t = Qt("dragAndMove") ? Math.abs(m.dragAndMove.getCurrentScroll()) : go(),
+      if (yo(w, "onScroll"), !E && (!b.autoScrolling || b.scrollBar || Jt("dragAndMove")) && !qt()) {
+        var t = Jt("dragAndMove") ? Math.abs(m.dragAndMove.getCurrentScroll()) : mo(),
             n = 0,
-            o = t + _n() / 2,
-            r = (Qt("dragAndMove") ? m.dragAndMove.getDocumentHeight() : g.offsetHeight - _n()) === t,
-            i = Gn(wn);
+            o = t + Qn() / 2,
+            r = (Jt("dragAndMove") ? m.dragAndMove.getDocumentHeight() : g.offsetHeight - Qn()) === t,
+            i = Un(yn);
         if (r) n = i.length - 1;else if (t) for (var l = 0; l < i.length; ++l) {
           i[l].offsetTop <= o && (n = l);
         } else n = 0;
 
-        if (!Fn(e = i[n], gn)) {
+        if (!_n(e = i[n], mn)) {
           Q = !0;
           var a,
               c,
-              s = Gn(yn)[0],
-              u = no(s, wn) + 1,
+              s = Un(En)[0],
+              u = oo(s, yn) + 1,
               f = Ct(e),
               d = e.getAttribute("data-anchor"),
-              v = no(e, wn) + 1,
-              p = Gn(Hn, e)[0],
+              v = oo(e, yn) + 1,
+              p = Un(zn, e)[0],
               h = {
             activeSection: s,
             sectionIndex: v - 1,
@@ -5158,7 +5157,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
             leavingSection: u,
             direction: f
           };
-          p && (c = p.getAttribute("data-anchor"), a = no(p)), x && (lo(e, gn), ao(mo(e), gn), Jt("parallax", "afterLoad"), bo(b.onLeave) && Xe("onLeave", h), bo(b.afterLoad) && Xe("afterLoad", h), Qt("resetSliders") && m.resetSliders.apply({
+          p && (c = p.getAttribute("data-anchor"), a = oo(p)), x && (ao(e, mn), co(So(e), mn), Kt("parallax", "afterLoad"), wo(b.onLeave) && Xe("onLeave", h), wo(b.afterLoad) && Xe("afterLoad", h), Jt("resetSliders") && m.resetSliders.apply({
             localIsResizing: E,
             leavingSection: u
           }), tt(s), Ke(e), qe(e), kt(d, v - 1), b.anchors.length && (S = d), Pt(a, c, d)), clearTimeout(T), T = setTimeout(function () {
@@ -5167,21 +5166,21 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
         }
 
         b.fitToSection && (clearTimeout(O), O = setTimeout(function () {
-          b.fitToSection && Gn(yn)[0].offsetHeight <= y && ze();
+          b.fitToSection && Un(En)[0].offsetHeight <= y && ze();
         }, b.fitToSectionDelay));
       }
     }
 
     function ze() {
-      x && (E = !0, Ze(Gn(yn)[0]), E = !1);
+      x && (E = !0, Ze(Un(En)[0]), E = !1);
     }
 
     function Re(e) {
       if (v.m[e]) {
         var t = "down" === e ? ve : de;
 
-        if (Qt("scrollHorizontally") && (t = m.scrollHorizontally.getScrollSection(e, t)), b.scrollOverflow) {
-          var n = b.scrollOverflowHandler.scrollable(Gn(yn)[0]),
+        if (Jt("scrollHorizontally") && (t = m.scrollHorizontally.getScrollSection(e, t)), b.scrollOverflow) {
+          var n = b.scrollOverflowHandler.scrollable(Un(En)[0]),
               o = "down" === e ? "bottom" : "top";
 
           if (null != n) {
@@ -5193,16 +5192,16 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
     }
 
     function Ie(e) {
-      b.autoScrolling && Be(e) && v.m.up && So(e);
+      b.autoScrolling && Be(e) && v.m.up && bo(e);
     }
 
     function Ne(e) {
-      var t = vo(e.target, wn) || Gn(yn)[0];
+      var t = po(e.target, yn) || Un(En)[0];
 
       if (Be(e)) {
-        b.autoScrolling && So(e);
+        b.autoScrolling && bo(e);
         var n = Zt(e);
-        $ = n.y, q = n.x, Gn(Rn, t).length && Math.abs(K - q) > Math.abs(J - $) ? !a && Math.abs(K - q) > Qn() / 100 * b.touchSensitivity && (q < K ? v.m.right && ge(t) : v.m.left && me(t)) : b.autoScrolling && x && Math.abs(J - $) > an.innerHeight / 100 * b.touchSensitivity && ($ < J ? Re("down") : J < $ && Re("up"));
+        $ = n.y, q = n.x, Un(In, t).length && Math.abs(K - q) > Math.abs(J - $) ? !a && Math.abs(K - q) > Jn() / 100 * b.touchSensitivity && (q < K ? v.m.right && ge(t) : v.m.left && me(t)) : b.autoScrolling && x && Math.abs(J - $) > cn.innerHeight / 100 * b.touchSensitivity && ($ < J ? Re("down") : J < $ && Re("up"));
       }
     }
 
@@ -5227,18 +5226,19 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
 
     function Ye(e) {
       var t = new Date().getTime(),
-          n = Fn(Gn(".fp-completely")[0], An);
-      if (!v.m.down && !v.m.up) return So(e), !1;
+          n = _n(Un(".fp-completely")[0], Mn);
+
+      if (!v.m.down && !v.m.up) return bo(e), !1;
 
       if (b.autoScrolling && !u && !n) {
-        var o = (e = e || an.event).wheelDelta || -e.deltaY || -e.detail,
+        var o = (e = e || cn.event).wheelDelta || -e.deltaY || -e.detail,
             r = Math.max(-1, Math.min(1, o)),
             i = void 0 !== e.wheelDeltaX || void 0 !== e.deltaX,
             l = Math.abs(e.wheelDeltaX) < Math.abs(e.wheelDelta) || Math.abs(e.deltaX) < Math.abs(e.deltaY) || !i;
-        149 < d.length && d.shift(), d.push(Math.abs(o)), b.scrollBar && So(e);
+        149 < d.length && d.shift(), d.push(Math.abs(o)), b.scrollBar && bo(e);
         var a = t - ee;
 
-        if (ee = t, 200 < a && (d = []), x && !Kt()) {
+        if (ee = t, 200 < a && (d = []), x && !$t()) {
           var c = Pe(d, 10);
           Pe(d, 70) <= c && l && Re(r < 0 ? "down" : "up");
         }
@@ -5250,16 +5250,16 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
     }
 
     function We(e, t) {
-      var n = null == t ? Gn(yn)[0] : t,
-          o = Gn(Rn, n)[0];
+      var n = null == t ? Un(En)[0] : t,
+          o = Un(In, n)[0];
 
-      if (!(null == o || Kt() || a || Gn(Cn, o).length < 2)) {
-        var r = Gn(Hn, o)[0],
+      if (!(null == o || $t() || a || Un(Hn, o).length < 2)) {
+        var r = Un(zn, o)[0],
             i = null;
 
-        if (null == (i = "left" === e ? Kn(r, Cn) : $n(r, Cn))) {
+        if (null == (i = "left" === e ? $n(r, Hn) : qn(r, Hn))) {
           if (!b.loopHorizontal) return;
-          var l = mo(r);
+          var l = So(r);
           i = "left" === e ? l[l.length - 1] : l[0];
         }
 
@@ -5268,7 +5268,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
     }
 
     function De() {
-      for (var e = Gn(Hn), t = 0; t < e.length; t++) {
+      for (var e = Un(zn), t = 0; t < e.length; t++) {
         Xt(e[t], "internal");
       }
     }
@@ -5277,10 +5277,10 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
       var t = e.offsetHeight,
           n = e.offsetTop,
           o = n,
-          r = Qt("dragAndMove") && m.dragAndMove.isGrabbing ? m.dragAndMove.isScrollingDown() : te < n,
+          r = Jt("dragAndMove") && m.dragAndMove.isGrabbing ? m.dragAndMove.isScrollingDown() : te < n,
           i = o - y + t,
           l = b.bigSectionsDestination;
-      return y < t ? (r || l) && "bottom" !== l || (o = i) : (r || E && null == eo(e)) && (o = i), b.offsetSections && m.offsetSections && (o = m.offsetSections.getSectionPosition(r, o, e)), te = o;
+      return y < t ? (r || l) && "bottom" !== l || (o = i) : (r || E && null == to(e)) && (o = i), b.offsetSections && m.offsetSections && (o = m.offsetSections.getSectionPosition(r, o, e)), te = o;
     }
 
     function Ze(e, t, n) {
@@ -5294,21 +5294,21 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
           dtop: Ve(e),
           yMovement: Ct(e),
           anchorLink: e.getAttribute("data-anchor"),
-          sectionIndex: no(e, wn),
-          activeSlide: Gn(Hn, e)[0],
-          activeSection: Gn(yn)[0],
-          leavingSection: no(Gn(yn), wn) + 1,
+          sectionIndex: oo(e, yn),
+          activeSlide: Un(zn, e)[0],
+          activeSection: Un(En)[0],
+          leavingSection: oo(Un(En), yn) + 1,
           localIsResizing: E
         };
 
-        if (!(i.activeSection == e && !E || b.scrollBar && go() === i.dtop && !Fn(e, Ln))) {
-          if (null != i.activeSlide && (o = i.activeSlide.getAttribute("data-anchor"), r = no(i.activeSlide)), !i.localIsResizing) {
+        if (!(i.activeSection == e && !E || b.scrollBar && mo() === i.dtop && !_n(e, An))) {
+          if (null != i.activeSlide && (o = i.activeSlide.getAttribute("data-anchor"), r = oo(i.activeSlide)), !i.localIsResizing) {
             var l = i.yMovement;
-            if (void 0 !== n && (l = n ? "up" : "down"), i.direction = l, void 0 !== an.fp_dropEffectExtension && m.dropEffect.onLeave(i), bo(b.onLeave) && !1 === Xe("onLeave", i)) return;
+            if (void 0 !== n && (l = n ? "up" : "down"), i.direction = l, Qt("dropEffect") && m.dropEffect.onLeave(i), Qt("waterEffect") && m.waterEffect.onLeave(i), wo(b.onLeave) && !1 === Xe("onLeave", i)) return;
           }
 
           var a;
-          Jt("parallax", "apply", i), Jt("cards", "apply", i), Jt("dropEffect", "apply", i), b.autoScrolling && b.continuousVertical && void 0 !== i.isMovementUp && (!i.isMovementUp && "up" == i.yMovement || i.isMovementUp && "down" == i.yMovement) && ((c = i).isMovementUp ? ho(Gn(yn)[0], Ao(c.activeSection, wn)) : po(Gn(yn)[0], Mo(c.activeSection, wn).reverse()), Gt(Gn(yn)[0].offsetTop), De(), c.wrapAroundElements = c.activeSection, c.dtop = c.element.offsetTop, c.yMovement = Ct(c.element), c.leavingSection = no(c.activeSection, wn) + 1, c.sectionIndex = no(c.element, wn), wo(Gn(un)[0], "onContinuousVertical", c), i = c), Qt("scrollOverflowReset") && m.scrollOverflowReset.setPrevious(i.activeSection), i.localIsResizing || tt(i.activeSection), b.scrollOverflow && b.scrollOverflowHandler.beforeLeave(), Qt("dropEffect") && b.dropEffect || (lo(e, gn), ao(mo(e), gn)), Ke(e), b.scrollOverflow && b.scrollOverflowHandler.onLeave(), x = m.test.isTesting, Pt(r, o, i.anchorLink, i.sectionIndex), function (e) {
+          Kt("parallax", "apply", i), Kt("cards", "apply", i), Kt("dropEffect", "apply", i), Kt("waterEffect", "apply", i), b.autoScrolling && b.continuousVertical && void 0 !== i.isMovementUp && (!i.isMovementUp && "up" == i.yMovement || i.isMovementUp && "down" == i.yMovement) && ((c = i).isMovementUp ? go(Un(En)[0], Mo(c.activeSection, yn)) : ho(Un(En)[0], To(c.activeSection, yn).reverse()), Gt(Un(En)[0].offsetTop), De(), c.wrapAroundElements = c.activeSection, c.dtop = c.element.offsetTop, c.yMovement = Ct(c.element), c.leavingSection = oo(c.activeSection, yn) + 1, c.sectionIndex = oo(c.element, yn), yo(Un(fn)[0], "onContinuousVertical", c), i = c), Jt("scrollOverflowReset") && m.scrollOverflowReset.setPrevious(i.activeSection), i.localIsResizing || tt(i.activeSection), b.scrollOverflow && b.scrollOverflowHandler.beforeLeave(), Jt("dropEffect") && b.dropEffect || (ao(e, mn), co(So(e), mn)), Ke(e), b.scrollOverflow && b.scrollOverflowHandler.onLeave(), x = m.test.isTesting, Pt(r, o, i.anchorLink, i.sectionIndex), function (e) {
             var t = b.scrollingSpeed < 700,
                 n = t ? 700 : b.scrollingSpeed;
 
@@ -5319,9 +5319,9 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
               }, b.scrollingSpeed)) : _e(e);
             } else {
               var r = Fe(e.dtop);
-              m.test.top = -e.dtop + "px", Jn(s, {
+              m.test.top = -e.dtop + "px", Kn(s, {
                 "scroll-behavior": "unset"
-              }), tn(r.element, r.options, b.scrollingSpeed, function () {
+              }), nn(r.element, r.options, b.scrollingSpeed, function () {
                 b.scrollBar ? setTimeout(function () {
                   _e(e);
                 }, 30) : (_e(e), x = !t);
@@ -5331,7 +5331,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
             t && (clearTimeout(D), D = setTimeout(function () {
               x = !0;
             }, n));
-          }(i), S = i.anchorLink, kt(i.anchorLink, null == (a = i).wrapAroundElements ? a.sectionIndex : a.isMovementUp ? Gn(wn).length - 1 : 0);
+          }(i), S = i.anchorLink, kt(i.anchorLink, null == (a = i).wrapAroundElements ? a.sectionIndex : a.isMovementUp ? Un(yn).length - 1 : 0);
         }
       }
 
@@ -5362,8 +5362,8 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
       } : {
         afterRender: function afterRender() {
           return {
-            section: Ge(Gn(yn)[0]),
-            slide: Ue(Gn(Hn, Gn(yn)[0])[0])
+            section: Ge(Un(En)[0]),
+            slide: Ue(Un(zn, Un(En)[0])[0])
           };
         },
         onLeave: function onLeave() {
@@ -5391,7 +5391,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
 
       if (b.v2compatible) {
         if (!1 === b[e].apply(l[0], l.slice(1))) return !1;
-      } else if (wo(w, e, l), !1 === b[e].apply(l[Object.keys(l)[0]], (n = l, Object.keys(n).map(function (e) {
+      } else if (yo(w, e, l), !1 === b[e].apply(l[Object.keys(l)[0]], (n = l, Object.keys(n).map(function (e) {
         return n[e];
       })))) return !1;
 
@@ -5399,21 +5399,21 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
     }
 
     function Ge(e) {
-      return e ? new rn(e) : null;
+      return e ? new ln(e) : null;
     }
 
     function Ue(e) {
-      return e ? new ln(e) : null;
+      return e ? new an(e) : null;
     }
 
     function Fe(e) {
       var t = {};
-      return b.autoScrolling && !b.scrollBar ? (t.options = -e, t.element = Gn(un)[0]) : (t.options = e, t.element = an), t;
+      return b.autoScrolling && !b.scrollBar ? (t.options = -e, t.element = Un(fn)[0]) : (t.options = e, t.element = cn), t;
     }
 
     function _e(e) {
       var t;
-      null != (t = e).wrapAroundElements && (t.isMovementUp ? ho(Gn(wn)[0], t.wrapAroundElements) : po(Gn(wn)[Gn(wn).length - 1], t.wrapAroundElements), Gt(Gn(yn)[0].offsetTop), De(), t.sectionIndex = no(t.element, wn), t.leavingSection = no(t.activeSection, wn) + 1), bo(b.afterLoad) && !e.localIsResizing && Xe("afterLoad", e), b.scrollOverflow && b.scrollOverflowHandler.afterLoad(), Jt("parallax", "afterLoad"), Jt("dropEffect", "afterLoad"), Jt("scrollOverflowReset", "reset"), Qt("resetSliders") && m.resetSliders.apply(e), e.localIsResizing || qe(e.element), lo(e.element, Sn), ao(mo(e.element), Sn), Je(), x = !0, bo(e.callback) && e.callback();
+      null != (t = e).wrapAroundElements && (t.isMovementUp ? go(Un(yn)[0], t.wrapAroundElements) : ho(Un(yn)[Un(yn).length - 1], t.wrapAroundElements), Gt(Un(En)[0].offsetTop), De(), t.sectionIndex = oo(t.element, yn), t.leavingSection = oo(t.activeSection, yn) + 1), wo(b.afterLoad) && !e.localIsResizing && Xe("afterLoad", e), b.scrollOverflow && b.scrollOverflowHandler.afterLoad(), Kt("parallax", "afterLoad"), Kt("dropEffect", "afterLoad"), Kt("waterEffect", "afterLoad"), Kt("scrollOverflowReset", "reset"), Jt("resetSliders") && m.resetSliders.apply(e), e.localIsResizing || qe(e.element), ao(e.element, bn), co(So(e.element), bn), Je(), x = !0, wo(e.callback) && e.callback();
     }
 
     function Qe(e, t) {
@@ -5421,22 +5421,22 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
     }
 
     function Je() {
-      var e = Gn(".fp-auto-height")[0] || be() && Gn(".fp-auto-height-responsive")[0];
-      b.lazyLoading && e && Gn(wn + ":not(" + mn + ")").forEach(function (e) {
+      var e = Un(".fp-auto-height")[0] || be() && Un(".fp-auto-height-responsive")[0];
+      b.lazyLoading && e && Un(yn + ":not(" + Sn + ")").forEach(function (e) {
         var t, n, o;
         t = e.getBoundingClientRect(), n = t.top, o = t.bottom, (n + 2 < y && 0 < n || 2 < o && o < y) && Ke(e);
       });
     }
 
     function Ke(o) {
-      b.lazyLoading && Gn("img[data-src], img[data-srcset], source[data-src], source[data-srcset], video[data-src], audio[data-src], iframe[data-src]", nt(o)).forEach(function (n) {
+      b.lazyLoading && Un("img[data-src], img[data-srcset], source[data-src], source[data-srcset], video[data-src], audio[data-src], iframe[data-src]", nt(o)).forEach(function (n) {
         if (["src", "srcset"].forEach(function (e) {
           var t = n.getAttribute("data-" + e);
           null != t && t && (Qe(n, e), n.addEventListener("load", function () {
             $e(o);
           }));
-        }), yo(n, "source")) {
-          var e = vo(n, "video, audio");
+        }), Eo(n, "source")) {
+          var e = po(n, "video, audio");
           e && (e.load(), e.onloadeddata = function () {
             $e(o);
           });
@@ -5446,15 +5446,15 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
 
     function $e(e) {
       b.scrollOverflow && (clearTimeout(W), W = setTimeout(function () {
-        Fn(g, fn) || p.createScrollBar(e);
+        _n(g, dn) || p.createScrollBar(e);
       }, 200));
     }
 
     function qe(e) {
       var t = nt(e);
-      Gn("video, audio", t).forEach(function (e) {
+      Un("video, audio", t).forEach(function (e) {
         e.hasAttribute("data-autoplay") && "function" == typeof e.play && e.play();
-      }), Gn('iframe[src*="youtube.com/embed/"]', t).forEach(function (e) {
+      }), Un('iframe[src*="youtube.com/embed/"]', t).forEach(function (e) {
         e.hasAttribute("data-autoplay") && et(e), e.onload = function () {
           e.hasAttribute("data-autoplay") && et(e);
         };
@@ -5467,15 +5467,15 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
 
     function tt(e) {
       var t = nt(e);
-      Gn("video, audio", t).forEach(function (e) {
+      Un("video, audio", t).forEach(function (e) {
         e.hasAttribute("data-keepplaying") || "function" != typeof e.pause || e.pause();
-      }), Gn('iframe[src*="youtube.com/embed/"]', t).forEach(function (e) {
+      }), Un('iframe[src*="youtube.com/embed/"]', t).forEach(function (e) {
         /youtube\.com\/embed\//.test(e.getAttribute("src")) && !e.hasAttribute("data-keepplaying") && e.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', "*");
       });
     }
 
     function nt(e) {
-      var t = Gn(Hn, e);
+      var t = Un(zn, e);
       return t.length && (e = t[0]), e;
     }
 
@@ -5525,10 +5525,10 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
       var m = void 0 !== G[g] && G[g].length,
           e = [],
           S = !1;
-      return io(G[g]) ? e = G[g] : e.push(G[g]), e.forEach(function (e) {
+      return lo(G[g]) ? e = G[g] : e.push(G[g]), e.forEach(function (e) {
         var t = function () {
-          if (cn.domain.length) {
-            for (var e = cn.domain.replace(/^(www\.)/, "").split("."); 2 < e.length;) {
+          if (sn.domain.length) {
+            for (var e = sn.domain.replace(/^(www\.)/, "").split("."); 2 < e.length;) {
               e.shift();
             }
 
@@ -5563,7 +5563,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
         if (e.removedNodes[0] && e.removedNodes[0].isEqualNode(F)) {
           clearTimeout(_);
           var t = ot("bDIwc2V0VGltZW91dDAzbA==");
-          _ = an[t](lt, 900);
+          _ = cn[t](lt, 900);
         }
       });
     }
@@ -5573,18 +5573,18 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
     }
 
     function at(e) {
-      if (F = cn.createElement("div"), U = ot("MTIzPGRpdj48YSBocmVmPSJodHRwOi8vYWx2YXJvdHJpZ28uY29tL2Z1bGxQYWdlL2V4dGVuc2lvbnMvIiBzdHlsZT0iY29sb3I6ICNmZmYgIWltcG9ydGFudDsgdGV4dC1kZWNvcmF0aW9uOm5vbmUgIWltcG9ydGFudDsiPlVubGljZW5zZWQgZnVsbFBhZ2UuanMgRXh0ZW5zaW9uPC9hPjwvZGl2PjEyMw=="), N || (U = U.replace("extensions/", "").replace("Extension", "")), F.innerHTML = U, F = F.firstChild, "MutationObserver" in an && new MutationObserver(it).observe(cn.body, {
+      if (F = sn.createElement("div"), U = ot("MTIzPGRpdj48YSBocmVmPSJodHRwOi8vYWx2YXJvdHJpZ28uY29tL2Z1bGxQYWdlL2V4dGVuc2lvbnMvIiBzdHlsZT0iY29sb3I6ICNmZmYgIWltcG9ydGFudDsgdGV4dC1kZWNvcmF0aW9uOm5vbmUgIWltcG9ydGFudDsiPlVubGljZW5zZWQgZnVsbFBhZ2UuanMgRXh0ZW5zaW9uPC9hPjwvZGl2PjEyMw=="), N || (U = U.replace("extensions/", "").replace("Extension", "")), F.innerHTML = U, F = F.firstChild, "MutationObserver" in cn && new MutationObserver(it).observe(sn.body, {
         childList: !0,
         subtree: !1
-      }), (!N || Qt(e) && m[e]) && (!rt(e) || !N)) {
+      }), (!N || Jt(e) && m[e]) && (!rt(e) || !N)) {
         ct();
         var t = ot("MzQ1c2V0SW50ZXJ2YWwxMjM=");
-        an[t](ct, 2e3);
+        cn[t](ct, 2e3);
       }
     }
 
     function ct() {
-      F && (I || (Math.random() < .5 ? To(g, F) : co(F, g), I = !0), F.setAttribute("style", ot("MTIzei1pbmRleDo5OTk5OTk5O3Bvc2l0aW9uOmZpeGVkO3RvcDoyMHB4O2JvdHRvbTphdXRvO2xlZnQ6MjBweDtyaWdodDphdXRvO2JhY2tncm91bmQ6cmVkO3BhZGRpbmc6N3B4IDE1cHg7Zm9udC1zaXplOjE0cHg7Zm9udC1mYW1pbHk6YXJpYWw7Y29sb3I6I2ZmZjtkaXNwbGF5OmlubGluZS1ibG9jazt0cmFuc2Zvcm06dHJhbnNsYXRlM2QoMCwwLDApO29wYWNpdHk6MTtoZWlnaHQ6YXV0bzt3aWR0aDphdXRvO3pvb206MTttYXJnaW46YXV0bztib3JkZXI6bm9uZTt2aXNpYmlsaXR5OnZpc2libGU7Y2xpcC1wYXRoOm5vbmU7MTIz").replace(/;/g, ot("MTIzICFpbXBvcnRhbnQ7MzQ1"))));
+      F && (I || (Math.random() < .5 ? Oo(g, F) : so(F, g), I = !0), F.setAttribute("style", ot("MTIzei1pbmRleDo5OTk5OTk5O3Bvc2l0aW9uOmZpeGVkO3RvcDoyMHB4O2JvdHRvbTphdXRvO2xlZnQ6MjBweDtyaWdodDphdXRvO2JhY2tncm91bmQ6cmVkO3BhZGRpbmc6N3B4IDE1cHg7Zm9udC1zaXplOjE0cHg7Zm9udC1mYW1pbHk6YXJpYWw7Y29sb3I6I2ZmZjtkaXNwbGF5OmlubGluZS1ibG9jazt0cmFuc2Zvcm06dHJhbnNsYXRlM2QoMCwwLDApO29wYWNpdHk6MTtoZWlnaHQ6YXV0bzt3aWR0aDphdXRvO3pvb206MTttYXJnaW46YXV0bztib3JkZXI6bm9uZTt2aXNpYmlsaXR5OnZpc2libGU7Y2xpcC1wYXRoOm5vbmU7MTIz").replace(/;/g, ot("MTIzICFpbXBvcnRhbnQ7MzQ1"))));
     }
 
     function st() {
@@ -5601,14 +5601,14 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
             o = t.slide,
             r = void 0 === S,
             i = void 0 === S && void 0 === o && !a;
-        n && n.length && (n && n !== S && !r || i && !Kt() || !a && l != o && !Kt()) && Bt(n, o);
+        n && n.length && (n && n !== S && !r || i && !$t() || !a && l != o && !$t()) && Bt(n, o);
       }
     }
 
     function ft() {
       var e,
           t,
-          n = an.location.hash;
+          n = cn.location.hash;
 
       if (n.length) {
         var o = n.replace("#", "").split("/"),
@@ -5626,7 +5626,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
 
     function dt(e) {
       clearTimeout(k);
-      var t = cn.activeElement,
+      var t = sn.activeElement,
           n = e.keyCode;
       9 === n ? function (e) {
         var t,
@@ -5637,19 +5637,19 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
             l,
             a,
             c = e.shiftKey,
-            s = cn.activeElement,
-            u = gt(nt(Gn(yn)[0]));
+            s = sn.activeElement,
+            u = gt(nt(Un(En)[0]));
 
         function f(e) {
-          return So(e), u[0] ? u[0].focus() : null;
+          return bo(e), u[0] ? u[0].focus() : null;
         }
 
-        (t = e, n = gt(cn), o = n.indexOf(cn.activeElement), r = t.shiftKey ? o - 1 : o + 1, i = n[r], l = Ue(vo(i, Cn)), a = Ge(vo(i, wn)), l || a) && (s ? null == vo(s, yn + "," + yn + " " + Hn) && (s = f(e)) : f(e), (!c && s == u[u.length - 1] || c && s == u[0]) && So(e));
-      }(e) : yo(t, "textarea") || yo(t, "input") || yo(t, "select") || "true" === t.getAttribute("contentEditable") || "" === t.getAttribute("contentEditable") || !b.keyboardScrolling || !b.autoScrolling || (-1 < [40, 38, 32, 33, 34].indexOf(n) && So(e), u = e.ctrlKey, k = setTimeout(function () {
+        (t = e, n = gt(sn), o = n.indexOf(sn.activeElement), r = t.shiftKey ? o - 1 : o + 1, i = n[r], l = Ue(po(i, Hn)), a = Ge(po(i, yn)), l || a) && (s ? null == po(s, En + "," + En + " " + zn) && (s = f(e)) : f(e), (!c && s == u[u.length - 1] || c && s == u[0]) && bo(e));
+      }(e) : Eo(t, "textarea") || Eo(t, "input") || Eo(t, "select") || "true" === t.getAttribute("contentEditable") || "" === t.getAttribute("contentEditable") || !b.keyboardScrolling || !b.autoScrolling || (-1 < [40, 38, 32, 33, 34].indexOf(n) && bo(e), u = e.ctrlKey, k = setTimeout(function () {
         !function (e) {
           var t = e.shiftKey,
-              n = cn.activeElement,
-              o = yo(n, "video") || yo(n, "audio");
+              n = sn.activeElement,
+              o = Eo(n, "video") || Eo(n, "audio");
           if (x || !([37, 39].indexOf(e.keyCode) < 0)) switch (e.keyCode) {
             case 38:
             case 33:
@@ -5672,7 +5672,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
               break;
 
             case 35:
-              v.k.down && he(Gn(wn).length);
+              v.k.down && he(Un(yn).length);
               break;
 
             case 37:
@@ -5699,7 +5699,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
     }
 
     function gt(e) {
-      return [].slice.call(Gn(B, e)).filter(function (e) {
+      return [].slice.call(Un(B, e)).filter(function (e) {
         return "-1" !== e.getAttribute("tabindex") && null !== e.offsetParent;
       });
     }
@@ -5717,7 +5717,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
     }
 
     function wt(e, t, n) {
-      var o = vo(e, wn),
+      var o = po(e, yn),
           r = {
         slides: e,
         destiny: t,
@@ -5725,26 +5725,26 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
         destinyPos: {
           left: t.offsetLeft
         },
-        slideIndex: no(t),
+        slideIndex: oo(t),
         section: o,
-        sectionIndex: no(o, wn),
+        sectionIndex: oo(o, yn),
         anchorLink: o.getAttribute("data-anchor"),
-        slidesNav: Gn(Pn, o)[0],
+        slidesNav: Un(Yn, o)[0],
         slideAnchor: Wt(t),
-        prevSlide: Gn(Hn, o)[0],
-        prevSlideIndex: no(Gn(Hn, o)[0]),
+        prevSlide: Un(zn, o)[0],
+        prevSlideIndex: oo(Un(zn, o)[0]),
         localIsResizing: E
       };
-      r.xMovement = Ht(r.prevSlideIndex, r.slideIndex), r.direction = r.direction ? r.direction : r.xMovement, r.localIsResizing || (x = !1), Jt("parallax", "applyHorizontal", r), Jt("cards", "apply", r), Jt("dropEffect", "apply", r), b.onSlideLeave && !r.localIsResizing && "none" !== r.xMovement && bo(b.onSlideLeave) && !1 === Xe("onSlideLeave", r) ? a = !1 : (Qt("dropEffect") && b.dropEffect || (lo(t, gn), ao(mo(t), gn)), r.localIsResizing || (tt(r.prevSlide), Ke(t)), yt(r), Fn(o, gn) && !r.localIsResizing && Pt(r.slideIndex, r.slideAnchor, r.anchorLink, r.sectionIndex), m.continuousHorizontal && m.continuousHorizontal.apply(r), $t() ? Et(r) : xt(e, r, !0), b.interlockedSlides && m.interlockedSlides && (Qt("continuousHorizontal") && void 0 !== n && n !== r.xMovement || m.interlockedSlides.apply(r)));
+      r.xMovement = Ht(r.prevSlideIndex, r.slideIndex), r.direction = r.direction ? r.direction : r.xMovement, r.localIsResizing || (x = !1), Kt("parallax", "applyHorizontal", r), Kt("cards", "apply", r), Kt("dropEffect", "apply", r), Kt("waterEffect", "apply", r), b.onSlideLeave && !r.localIsResizing && "none" !== r.xMovement && wo(b.onSlideLeave) && !1 === Xe("onSlideLeave", r) ? a = !1 : (Jt("dropEffect") && b.dropEffect || (ao(t, mn), co(So(t), mn)), r.localIsResizing || (tt(r.prevSlide), Ke(t)), yt(r), _n(o, mn) && !r.localIsResizing && Pt(r.slideIndex, r.slideAnchor, r.anchorLink, r.sectionIndex), m.continuousHorizontal && m.continuousHorizontal.apply(r), qt() ? Et(r) : xt(e, r, !0), b.interlockedSlides && m.interlockedSlides && (Jt("continuousHorizontal") && void 0 !== n && n !== r.xMovement || m.interlockedSlides.apply(r)));
     }
 
     function yt(e) {
-      !b.loopHorizontal && b.controlArrows && (Eo(Gn(Vn, e.section), 0 !== e.slideIndex), Eo(Gn(Zn, e.section), null != eo(e.destiny)));
+      !b.loopHorizontal && b.controlArrows && (xo(Un(Zn, e.section), 0 !== e.slideIndex), xo(Un(Xn, e.section), null != to(e.destiny)));
     }
 
     function Et(e) {
       var t, n;
-      m.continuousHorizontal && m.continuousHorizontal.afterSlideLoads(e), t = e.slidesNav, n = e.slideIndex, b.slidesNavigation && null != t && (ao(Gn(mn, t), gn), lo(Gn("a", Gn("li", t)[n]), gn)), e.localIsResizing || (Jt("parallax", "afterSlideLoads"), Jt("scrollOverflowReset", "setPrevious", e.prevSlide), Jt("scrollOverflowReset", "reset"), bo(b.afterSlideLoad) && Xe("afterSlideLoad", e), x = !0, qe(e.destiny)), a = !1, Qt("interlockedSlides") && m.interlockedSlides.apply(e);
+      m.continuousHorizontal && m.continuousHorizontal.afterSlideLoads(e), t = e.slidesNav, n = e.slideIndex, b.slidesNavigation && null != t && (co(Un(Sn, t), mn), ao(Un("a", Un("li", t)[n]), mn)), e.localIsResizing || (Kt("parallax", "afterSlideLoads"), Kt("scrollOverflowReset", "setPrevious", e.prevSlide), Kt("scrollOverflowReset", "reset"), wo(b.afterSlideLoad) && Xe("afterSlideLoad", e), x = !0, qe(e.destiny)), a = !1, Jt("interlockedSlides") && m.interlockedSlides.apply(e);
     }
 
     function xt(e, t, n) {
@@ -5752,10 +5752,10 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
 
       if (b.css3) {
         var r = "translate3d(-" + Math.round(o.left) + "px, 0px, 0px)";
-        m.test.translate3dH[t.sectionIndex] = r, Qt("dragAndMove") && void 0 !== t.isInterlockedSlide || Tt(Gn(Nn, e)), Jn(Gn(Nn, e), Ut(r)), M = setTimeout(function () {
+        m.test.translate3dH[t.sectionIndex] = r, Jt("dragAndMove") && void 0 !== t.isInterlockedSlide || Tt(Un(Bn, e)), Kn(Un(Bn, e), Ut(r)), M = setTimeout(function () {
           n && Et(t);
         }, b.scrollingSpeed);
-      } else m.test.left[t.sectionIndex] = Math.round(o.left), tn(e, Math.round(o.left), b.scrollingSpeed, function () {
+      } else m.test.left[t.sectionIndex] = Math.round(o.left), nn(e, Math.round(o.left), b.scrollingSpeed, function () {
         n && Et(t);
       });
     }
@@ -5769,12 +5769,11 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
     }
 
     function At() {
-      if (E = !0, wo(w, "onResize"), Mt(), r) {
-        var e = cn.activeElement;
+      if (E = !0, yo(w, "onResize"), Mt(), r) {
+        var e = sn.activeElement;
 
-        if (!yo(e, "textarea") && !yo(e, "input") && !yo(e, "select")) {
-          var t = _n();
-
+        if (!Eo(e, "textarea") && !Eo(e, "input") && !Eo(e, "select")) {
+          var t = Qn();
           Math.abs(t - oe) > 20 * Math.max(oe, t) / 100 && (Se(!0), oe = t);
         }
       } else Le();
@@ -5785,33 +5784,33 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
     function Mt() {
       var e = b.responsive || b.responsiveWidth,
           t = b.responsiveHeight,
-          n = e && an.innerWidth < e,
-          o = t && an.innerHeight < t;
+          n = e && cn.innerWidth < e,
+          o = t && cn.innerHeight < t;
       e && t ? we(n || o) : e ? we(n) : t && we(o);
     }
 
     function Tt(e) {
       var t = "all " + b.scrollingSpeed + "ms " + b.easingcss3;
-      return ao(e, dn), Jn(e, {
+      return co(e, vn), Kn(e, {
         "-webkit-transition": t,
         transition: t
       });
     }
 
     function Ot(e) {
-      return lo(e, dn);
+      return ao(e, vn);
     }
 
     function kt(e, t) {
       var n, o, r, i;
-      n = e, Gn(b.menu).forEach(function (e) {
-        b.menu && null != e && (ao(Gn(mn, e), gn), lo(Gn('[data-menuanchor="' + n + '"]', e), gn));
-      }), o = e, r = t, i = Gn(Tn)[0], b.navigation && null != i && "none" !== i.style.display && (ao(Gn(mn, Gn(Tn)[0]), gn), lo(o ? Gn('a[href="#' + o + '"]', Gn(Tn)[0]) : Gn("a", Gn("li", Gn(Tn)[0])[r]), gn));
+      n = e, Un(b.menu).forEach(function (e) {
+        b.menu && null != e && (co(Un(Sn, e), mn), ao(Un('[data-menuanchor="' + n + '"]', e), mn));
+      }), o = e, r = t, i = Un(On)[0], b.navigation && null != i && "none" !== i.style.display && (co(Un(Sn, Un(On)[0]), mn), ao(o ? Un('a[href="#' + o + '"]', Un(On)[0]) : Un("a", Un("li", Un(On)[0])[r]), mn));
     }
 
     function Ct(e) {
-      var t = no(Gn(yn)[0], wn),
-          n = no(e, wn);
+      var t = oo(Un(En)[0], yn),
+          n = oo(e, yn);
       return t == n ? "none" : n < t ? "up" : "down";
     }
 
@@ -5820,9 +5819,9 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
     }
 
     function zt(e) {
-      if (!Fn(e, Bn)) {
-        var t = cn.createElement("div");
-        t.className = En, t.style.height = Rt(e) + "px", lo(e, Bn), uo(e, t);
+      if (!_n(e, jn)) {
+        var t = sn.createElement("div");
+        t.className = xn, t.style.height = Rt(e) + "px", ao(e, jn), fo(e, t);
       }
     }
 
@@ -5831,24 +5830,24 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
 
       if (b.paddingTop || b.paddingBottom) {
         var n = e;
-        Fn(n, bn) || (n = vo(e, wn)), t -= parseInt(getComputedStyle(n)["padding-top"]) + parseInt(getComputedStyle(n)["padding-bottom"]);
+        _n(n, wn) || (n = po(e, yn)), t -= parseInt(getComputedStyle(n)["padding-top"]) + parseInt(getComputedStyle(n)["padding-bottom"]);
       }
 
       return t;
     }
 
     function It(e, t) {
-      t ? Tt(w) : Ot(w), clearTimeout(H), Jn(w, Ut(e)), m.test.translate3d = e, H = setTimeout(function () {
-        ao(w, dn);
+      t ? Tt(w) : Ot(w), clearTimeout(H), Kn(w, Ut(e)), m.test.translate3d = e, H = setTimeout(function () {
+        co(w, vn);
       }, 10);
     }
 
     function Nt(e) {
-      var t = Gn(wn + '[data-anchor="' + e + '"]', w)[0];
+      var t = Un(yn + '[data-anchor="' + e + '"]', w)[0];
 
       if (!t) {
         var n = void 0 !== e ? e - 1 : 0;
-        t = Gn(wn)[n];
+        t = Un(yn)[n];
       }
 
       return t;
@@ -5861,15 +5860,15 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
         var o,
             r,
             i,
-            l = (null == (i = Gn(Cn + '[data-anchor="' + (o = t) + '"]', r = n)[0]) && (o = void 0 !== o ? o : 0, i = Gn(Cn, r)[o]), i);
-        Wt(n) === S || Fn(n, gn) ? jt(l) : Ze(n, function () {
+            l = (null == (i = Un(Hn + '[data-anchor="' + (o = t) + '"]', r = n)[0]) && (o = void 0 !== o ? o : 0, i = Un(Hn, r)[o]), i);
+        Wt(n) === S || _n(n, mn) ? jt(l) : Ze(n, function () {
           jt(l);
         });
       }
     }
 
     function jt(e) {
-      null != e && wt(vo(e, Rn), e);
+      null != e && wt(po(e, In), e);
     }
 
     function Pt(e, t, n, o) {
@@ -5878,32 +5877,32 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
     }
 
     function Yt(e) {
-      if (b.recordHistory) location.hash = e;else if (r || i) an.history.replaceState(void 0, void 0, "#" + e);else {
-        var t = an.location.href.split("#")[0];
-        an.location.replace(t + "#" + e);
+      if (b.recordHistory) location.hash = e;else if (r || i) cn.history.replaceState(void 0, void 0, "#" + e);else {
+        var t = cn.location.href.split("#")[0];
+        cn.location.replace(t + "#" + e);
       }
     }
 
     function Wt(e) {
       if (!e) return null;
       var t = e.getAttribute("data-anchor"),
-          n = no(e);
+          n = oo(e);
       return null == t && (t = n), t;
     }
 
     function Dt() {
-      var e = Gn(yn)[0],
-          t = Gn(Hn, e)[0],
+      var e = Un(En)[0],
+          t = Un(zn, e)[0],
           n = Wt(e),
           o = Wt(t),
           r = String(n);
       t && (r = r + "-" + o), r = r.replace("/", "-").replace("#", "");
-      var i = new RegExp("\\b\\s?" + hn + "-[^\\s]+\\b", "g");
-      g.className = g.className.replace(i, ""), lo(g, hn + "-" + r);
+      var i = new RegExp("\\b\\s?" + gn + "-[^\\s]+\\b", "g");
+      g.className = g.className.replace(i, ""), ao(g, gn + "-" + r);
     }
 
     function Vt() {
-      return an.PointerEvent ? {
+      return cn.PointerEvent ? {
         down: "pointerdown",
         move: "pointermove"
       } : {
@@ -5918,16 +5917,16 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
     }
 
     function Xt(e, t) {
-      le(0, "internal"), void 0 !== t && (E = !0), wt(vo(e, Rn), e), void 0 !== t && (E = !1), le(V.scrollingSpeed, "internal");
+      le(0, "internal"), void 0 !== t && (E = !0), wt(po(e, In), e), void 0 !== t && (E = !1), le(V.scrollingSpeed, "internal");
     }
 
     function Gt(e) {
       var t = Math.round(e);
-      if (b.css3 && b.autoScrolling && !b.scrollBar) It("translate3d(0px, -" + t + "px, 0px)", !1);else if (b.autoScrolling && !b.scrollBar) Jn(w, {
+      if (b.css3 && b.autoScrolling && !b.scrollBar) It("translate3d(0px, -" + t + "px, 0px)", !1);else if (b.autoScrolling && !b.scrollBar) Kn(w, {
         top: -t + "px"
       }), m.test.top = -t + "px";else {
         var n = Fe(t);
-        nn(n.element, n.options);
+        on(n.element, n.options);
       }
     }
 
@@ -5947,54 +5946,58 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
     }
 
     function _t(e) {
-      return Jn(e, {
+      return Kn(e, {
         "-webkit-transition": "none",
         transition: "none"
       });
     }
 
     function Qt(e) {
+      return void 0 !== cn["fp_" + e + "Extension"];
+    }
+
+    function Jt(e) {
       return null !== b[e] && "[object Array]" === Object.prototype.toString.call(b[e]) ? b[e].length && m[e] : b[e] && m[e];
     }
 
-    function Jt(e, t, n) {
-      if (Qt(e)) return m[e][t](n);
-    }
-
-    function Kt() {
-      return Qt("dragAndMove") && m.dragAndMove.isAnimating;
+    function Kt(e, t, n) {
+      if (Jt(e)) return m[e][t](n);
     }
 
     function $t() {
-      return Qt("dragAndMove") && m.dragAndMove.isGrabbing;
+      return Jt("dragAndMove") && m.dragAndMove.isAnimating;
     }
 
-    function qt(e, t, n) {
+    function qt() {
+      return Jt("dragAndMove") && m.dragAndMove.isGrabbing;
+    }
+
+    function en(e, t, n) {
       b[e] = t, "internal" !== n && (V[e] = t);
     }
 
-    function en() {
+    function tn() {
       var e = b.licenseKey,
           t = "font-size: 15px;background:yellow;";
-      n ? e && e.length < 20 && (console.warn("%c This website was made using fullPage.js slider. More info on the following website:", t), console.warn("%c https://alvarotrigo.com/fullPage/", t)) : (Xn("error", "Fullpage.js version 3 has changed its license to GPLv3 and it requires a `licenseKey` option. Read about it here:"), Xn("error", "https://github.com/alvarotrigo/fullPage.js#options")), Fn(c, pn) ? Xn("error", "Fullpage.js can only be initialized once and you are doing it multiple times!") : (b.continuousVertical && (b.loopTop || b.loopBottom) && (b.continuousVertical = !1, Xn("warn", "Option `loopTop/loopBottom` is mutually exclusive with `continuousVertical`; `continuousVertical` disabled")), !b.scrollOverflow || !b.scrollBar && b.autoScrolling || Xn("warn", "Options scrollBar:true and autoScrolling:false are mutually exclusive with scrollOverflow:true. Sections with scrollOverflow might not work well in Firefox"), !b.continuousVertical || !b.scrollBar && b.autoScrolling || (b.continuousVertical = !1, Xn("warn", "Scroll bars (`scrollBar:true` or `autoScrolling:false`) are mutually exclusive with `continuousVertical`; `continuousVertical` disabled")), b.scrollOverflow && null == b.scrollOverflowHandler && (b.scrollOverflow = !1, Xn("error", "The option `scrollOverflow:true` requires the file `scrolloverflow.min.js`. Please include it before fullPage.js.")), b.anchors.forEach(function (t) {
-        var e = [].slice.call(Gn("[name]")).filter(function (e) {
+      n ? e && e.length < 20 && (console.warn("%c This website was made using fullPage.js slider. More info on the following website:", t), console.warn("%c https://alvarotrigo.com/fullPage/", t)) : (Gn("error", "Fullpage.js version 3 has changed its license to GPLv3 and it requires a `licenseKey` option. Read about it here:"), Gn("error", "https://github.com/alvarotrigo/fullPage.js#options")), _n(c, hn) ? Gn("error", "Fullpage.js can only be initialized once and you are doing it multiple times!") : (b.continuousVertical && (b.loopTop || b.loopBottom) && (b.continuousVertical = !1, Gn("warn", "Option `loopTop/loopBottom` is mutually exclusive with `continuousVertical`; `continuousVertical` disabled")), !b.scrollOverflow || !b.scrollBar && b.autoScrolling || Gn("warn", "Options scrollBar:true and autoScrolling:false are mutually exclusive with scrollOverflow:true. Sections with scrollOverflow might not work well in Firefox"), !b.continuousVertical || !b.scrollBar && b.autoScrolling || (b.continuousVertical = !1, Gn("warn", "Scroll bars (`scrollBar:true` or `autoScrolling:false`) are mutually exclusive with `continuousVertical`; `continuousVertical` disabled")), b.scrollOverflow && null == b.scrollOverflowHandler && (b.scrollOverflow = !1, Gn("error", "The option `scrollOverflow:true` requires the file `scrolloverflow.min.js`. Please include it before fullPage.js.")), b.anchors.forEach(function (t) {
+        var e = [].slice.call(Un("[name]")).filter(function (e) {
           return e.getAttribute("name") && e.getAttribute("name").toLowerCase() == t.toLowerCase();
         }),
-            n = [].slice.call(Gn("[id]")).filter(function (e) {
+            n = [].slice.call(Un("[id]")).filter(function (e) {
           return e.getAttribute("id") && e.getAttribute("id").toLowerCase() == t.toLowerCase();
         });
 
         if (n.length || e.length) {
-          Xn("error", "data-anchor tags can not have the same value as any `id` element on the site (or `name` element for IE).");
+          Gn("error", "data-anchor tags can not have the same value as any `id` element on the site (or `name` element for IE).");
           var o = n.length ? "id" : "name";
-          (n.length || e.length) && Xn("error", '"' + t + '" is is being used by another element `' + o + "` property");
+          (n.length || e.length) && Gn("error", '"' + t + '" is is being used by another element `' + o + "` property");
         }
       }));
     }
 
-    function tn(t, n, o, r) {
+    function nn(t, n, o, r) {
       var e,
-          i = (e = t).self != an && Fn(e, zn) ? e.scrollLeft : !b.autoScrolling || b.scrollBar ? go() : e.offsetTop,
+          i = (e = t).self != cn && _n(e, Rn) ? e.scrollLeft : !b.autoScrolling || b.scrollBar ? mo() : e.offsetTop,
           l = n - i,
           a = 0;
       Y = !0;
@@ -6002,30 +6005,30 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
       var c = function c() {
         if (Y) {
           var e = n;
-          a += 20, o && (e = an.fp_easings[b.easing](a, i, l, o)), nn(t, e), a < o ? setTimeout(c, 20) : void 0 !== r && r();
+          a += 20, o && (e = cn.fp_easings[b.easing](a, i, l, o)), on(t, e), a < o ? setTimeout(c, 20) : void 0 !== r && r();
         } else a < o && r();
       };
 
       c();
     }
 
-    function nn(e, t) {
-      !b.autoScrolling || b.scrollBar || e.self != an && Fn(e, zn) ? e.self != an && Fn(e, zn) ? e.scrollLeft = t : e.scrollTo(0, t) : e.style.top = t + "px";
-    }
-
     function on(e, t) {
-      this.anchor = e.getAttribute("data-anchor"), this.item = e, this.index = no(e, t), this.isLast = this.index === e.parentElement.querySelectorAll(t).length - 1, this.isFirst = !this.index;
+      !b.autoScrolling || b.scrollBar || e.self != cn && _n(e, Rn) ? e.self != cn && _n(e, Rn) ? e.scrollLeft = t : e.scrollTo(0, t) : e.style.top = t + "px";
     }
 
-    function rn(e) {
-      on.call(this, e, wn);
+    function rn(e, t) {
+      this.anchor = e.getAttribute("data-anchor"), this.item = e, this.index = oo(e, t), this.isLast = this.index === e.parentElement.querySelectorAll(t).length - 1, this.isFirst = !this.index;
     }
 
     function ln(e) {
-      on.call(this, e, Cn);
+      rn.call(this, e, yn);
     }
 
-    en();
+    function an(e) {
+      rn.call(this, e, Hn);
+    }
+
+    tn();
   };
 }), window.jQuery && window.fullpage && function (t, n) {
   "use strict";
@@ -6088,6 +6091,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "clamp": function() { return /* binding */ clamp; },
 /* harmony export */   "splitColor": function() { return /* binding */ splitColor; },
 /* harmony export */   "toArray": function() { return /* binding */ toArray; },
+/* harmony export */   "selector": function() { return /* binding */ selector; },
 /* harmony export */   "mapRange": function() { return /* binding */ mapRange; },
 /* harmony export */   "pipe": function() { return /* binding */ pipe; },
 /* harmony export */   "unitize": function() { return /* binding */ unitize; },
@@ -6133,7 +6137,7 @@ function _inheritsLoose(subClass, superClass) {
   subClass.__proto__ = superClass;
 }
 /*!
- * GSAP 3.6.1
+ * GSAP 3.7.1
  * https://greensock.com
  *
  * @license Copyright 2008-2021, GreenSock. All rights reserved.
@@ -6202,8 +6206,9 @@ _numWithUnitExp = /[-+=.]*\d+[.e-]*\d*[a-z%]*/g,
     _complexStringNumExp = /[-+=.]*\d+\.?\d*(?:e-|e\+)?\d*/gi,
     //duplicate so that while we're looping through matches from exec(), it doesn't contaminate the lastIndex of _numExp which we use to search for colors too.
 _relExp = /[+-]=-?[.\d]+/,
-    _delimitedValueExp = /[#\-+.]*\b[a-z\d-=+%.]+/gi,
-    _unitExp = /[\d.+\-=]+(?:e[-+]\d*)*/i,
+    _delimitedValueExp = /[^,'"\[\]\s]+/gi,
+    // previously /[#\-+.]*\b[a-z\d\-=+%.]+/gi but didn't catch special characters.
+_unitExp = /[\d.+\-=]+(?:e[-+]\d*)*/i,
     _globalTimeline,
     _win,
     _coreInitted,
@@ -6279,31 +6284,6 @@ _round = function _round(value) {
   for (; toSearch.indexOf(toFind[i]) < 0 && ++i < l;) {}
 
   return i < l;
-},
-    _parseVars = function _parseVars(params, type, parent) {
-  //reads the arguments passed to one of the key methods and figures out if the user is defining things with the OLD/legacy syntax where the duration is the 2nd parameter, and then it adjusts things accordingly and spits back the corrected vars object (with the duration added if necessary, as well as runBackwards or startAt or immediateRender). type 0 = to()/staggerTo(), 1 = from()/staggerFrom(), 2 = fromTo()/staggerFromTo()
-  var isLegacy = _isNumber(params[1]),
-      varsIndex = (isLegacy ? 2 : 1) + (type < 2 ? 0 : 1),
-      vars = params[varsIndex],
-      irVars;
-
-  isLegacy && (vars.duration = params[1]);
-  vars.parent = parent;
-
-  if (type) {
-    irVars = vars;
-
-    while (parent && !("immediateRender" in irVars)) {
-      // inheritance hasn't happened yet, but someone may have set a default in an ancestor timeline. We could do vars.immediateRender = _isNotFalse(_inheritDefaults(vars).immediateRender) but that'd exact a slight performance penalty because _inheritDefaults() also runs in the Tween constructor. We're paying a small kb price here to gain speed.
-      irVars = parent.vars.defaults || {};
-      parent = _isNotFalse(parent.vars.inherit) && parent.parent;
-    }
-
-    vars.immediateRender = _isNotFalse(irVars.immediateRender);
-    type < 2 ? vars.runBackwards = 1 : vars.startAt = params[varsIndex - 1]; // "from" vars
-  }
-
-  return vars;
 },
     _lazyRender = function _lazyRender() {
   var l = _lazyTweens.length,
@@ -6553,12 +6533,12 @@ _postAddChecks = function _postAddChecks(timeline, child) {
 },
     _addToTimeline = function _addToTimeline(timeline, child, position, skipChecks) {
   child.parent && _removeFromParent(child);
-  child._start = _round(position + child._delay);
+  child._start = _round((_isNumber(position) ? position : position || timeline !== _globalTimeline ? _parsePosition(timeline, position, child) : timeline._time) + child._delay);
   child._end = _round(child._start + (child.totalDuration() / Math.abs(child.timeScale()) || 0));
 
   _addLinkedListItem(timeline, child, "_first", "_last", timeline._sort ? "_start" : 0);
 
-  timeline._recent = child;
+  _isFromOrFromStart(child) || (timeline._recent = child);
   skipChecks || _postAddChecks(timeline, child);
   return timeline;
 },
@@ -6584,10 +6564,14 @@ _postAddChecks = function _postAddChecks(timeline, child) {
   return parent && parent._ts && parent._initted && !parent._lock && (parent.rawTime() < 0 || _parentPlayheadIsBeforeStart(parent));
 },
     // check parent's _lock because when a timeline repeats/yoyos and does its artificial wrapping, we shouldn't force the ratio back to 0
-_renderZeroDurationTween = function _renderZeroDurationTween(tween, totalTime, suppressEvents, force) {
+_isFromOrFromStart = function _isFromOrFromStart(_ref2) {
+  var data = _ref2.data;
+  return data === "isFromStart" || data === "isStart";
+},
+    _renderZeroDurationTween = function _renderZeroDurationTween(tween, totalTime, suppressEvents, force) {
   var prevRatio = tween.ratio,
-      ratio = totalTime < 0 || !totalTime && (!tween._start && _parentPlayheadIsBeforeStart(tween) || (tween._ts < 0 || tween._dp._ts < 0) && tween.data !== "isFromStart" && tween.data !== "isStart") ? 0 : 1,
-      // if the tween or its parent is reversed and the totalTime is 0, we should go to a ratio of 0.
+      ratio = totalTime < 0 || !totalTime && (!tween._start && _parentPlayheadIsBeforeStart(tween) && !(!tween._initted && _isFromOrFromStart(tween)) || (tween._ts < 0 || tween._dp._ts < 0) && !_isFromOrFromStart(tween)) ? 0 : 1,
+      // if the tween or its parent is reversed and the totalTime is 0, we should go to a ratio of 0. Edge case: if a from() or fromTo() stagger tween is placed later in a timeline, the "startAt" zero-duration tween could initially render at a time when the parent timeline's playhead is technically BEFORE where this tween is, so make sure that any "from" and "fromTo" startAt tweens are rendered the first time at a ratio of 1.
   repeatDelay = tween._rDelay,
       tTime = 0,
       pt,
@@ -6687,36 +6671,70 @@ _renderZeroDurationTween = function _renderZeroDurationTween(tween, totalTime, s
 },
     _zeroPosition = {
   _start: 0,
-  endTime: _emptyFunc
+  endTime: _emptyFunc,
+  totalDuration: _emptyFunc
 },
-    _parsePosition = function _parsePosition(animation, position) {
+    _parsePosition = function _parsePosition(animation, position, percentAnimation) {
   var labels = animation.labels,
       recent = animation._recent || _zeroPosition,
       clippedDuration = animation.duration() >= _bigNum ? recent.endTime(false) : animation._dur,
       //in case there's a child that infinitely repeats, users almost never intend for the insertion point of a new child to be based on a SUPER long value like that so we clip it and assume the most recently-added child's endTime should be used instead.
   i,
-      offset;
+      offset,
+      isPercent;
 
   if (_isString(position) && (isNaN(position) || position in labels)) {
     //if the string is a number like "1", check to see if there's a label with that name, otherwise interpret it as a number (absolute value).
-    i = position.charAt(0);
-
-    if (i === "<" || i === ">") {
-      return (i === "<" ? recent._start : recent.endTime(recent._repeat >= 0)) + (parseFloat(position.substr(1)) || 0);
-    }
-
+    offset = position.charAt(0);
+    isPercent = position.substr(-1) === "%";
     i = position.indexOf("=");
+
+    if (offset === "<" || offset === ">") {
+      i >= 0 && (position = position.replace(/=/, ""));
+      return (offset === "<" ? recent._start : recent.endTime(recent._repeat >= 0)) + (parseFloat(position.substr(1)) || 0) * (isPercent ? (i < 0 ? recent : percentAnimation).totalDuration() / 100 : 1);
+    }
 
     if (i < 0) {
       position in labels || (labels[position] = clippedDuration);
       return labels[position];
     }
 
-    offset = +(position.charAt(i - 1) + position.substr(i + 1));
-    return i > 1 ? _parsePosition(animation, position.substr(0, i - 1)) + offset : clippedDuration + offset;
+    offset = parseFloat(position.charAt(i - 1) + position.substr(i + 1));
+
+    if (isPercent && percentAnimation) {
+      offset = offset / 100 * (_isArray(percentAnimation) ? percentAnimation[0] : percentAnimation).totalDuration();
+    }
+
+    return i > 1 ? _parsePosition(animation, position.substr(0, i - 1), percentAnimation) + offset : clippedDuration + offset;
   }
 
   return position == null ? clippedDuration : +position;
+},
+    _createTweenType = function _createTweenType(type, params, timeline) {
+  var isLegacy = _isNumber(params[1]),
+      varsIndex = (isLegacy ? 2 : 1) + (type < 2 ? 0 : 1),
+      vars = params[varsIndex],
+      irVars,
+      parent;
+
+  isLegacy && (vars.duration = params[1]);
+  vars.parent = timeline;
+
+  if (type) {
+    irVars = vars;
+    parent = timeline;
+
+    while (parent && !("immediateRender" in irVars)) {
+      // inheritance hasn't happened yet, but someone may have set a default in an ancestor timeline. We could do vars.immediateRender = _isNotFalse(_inheritDefaults(vars).immediateRender) but that'd exact a slight performance penalty because _inheritDefaults() also runs in the Tween constructor. We're paying a small kb price here to gain speed.
+      irVars = parent.vars.defaults || {};
+      parent = _isNotFalse(parent.vars.inherit) && parent.parent;
+    }
+
+    vars.immediateRender = _isNotFalse(irVars.immediateRender);
+    type < 2 ? vars.runBackwards = 1 : vars.startAt = params[varsIndex - 1]; // "from" vars
+  }
+
+  return new Tween(params[0], vars, params[varsIndex + 1]);
 },
     _conditionalReturn = function _conditionalReturn(value, func) {
   return value || value === 0 ? func(value) : func;
@@ -6755,8 +6773,15 @@ clamp = function clamp(min, max, value) {
   }) || accumulator;
 },
     //takes any value and returns an array. If it's a string (and leaveStrings isn't true), it'll use document.querySelectorAll() and convert that to an array. It'll also accept iterables like jQuery objects.
-toArray = function toArray(value, leaveStrings) {
-  return _isString(value) && !leaveStrings && (_coreInitted || !_wake()) ? _slice.call(_doc.querySelectorAll(value), 0) : _isArray(value) ? _flatten(value, leaveStrings) : _isArrayLike(value) ? _slice.call(value, 0) : value ? [value] : [];
+toArray = function toArray(value, scope, leaveStrings) {
+  return _isString(value) && !leaveStrings && (_coreInitted || !_wake()) ? _slice.call((scope || _doc).querySelectorAll(value), 0) : _isArray(value) ? _flatten(value, leaveStrings) : _isArrayLike(value) ? _slice.call(value, 0) : value ? [value] : [];
+},
+    selector = function selector(value) {
+  value = toArray(value)[0] || _warn("Invalid scope") || {};
+  return function (v) {
+    var el = value.current || value.nativeElement || value;
+    return toArray(v, el.querySelectorAll ? el : el === value ? _warn("Invalid scope") || _doc.createElement("div") : value);
+  };
 },
     shuffle = function shuffle(a) {
   return a.sort(function () {
@@ -7697,8 +7722,7 @@ var GSCache = function GSCache(target, harness) {
  */
 
 var Animation = /*#__PURE__*/function () {
-  function Animation(vars, time) {
-    var parent = vars.parent || _globalTimeline;
+  function Animation(vars) {
     this.vars = vars;
     this._delay = +vars.delay || 0;
 
@@ -7714,9 +7738,6 @@ var Animation = /*#__PURE__*/function () {
 
     this.data = vars.data;
     _tickerActive || _ticker.wake();
-    parent && _addToTimeline(parent, this, time || time === 0 ? time : parent._time, 1);
-    vars.reversed && this.reverse();
-    vars.paused && this.paused(true);
   }
 
   var _proto = Animation.prototype;
@@ -7788,7 +7809,7 @@ var Animation = /*#__PURE__*/function () {
   };
 
   _proto.time = function time(value, suppressEvents) {
-    return arguments.length ? this.totalTime(Math.min(this.totalDuration(), value + _elapsedCycleDuration(this)) % this._dur || (value ? this._dur : 0), suppressEvents) : this._time; // note: if the modulus results in 0, the playhead could be exactly at the end or the beginning, and we always defer to the END with a non-zero value, otherwise if you set the time() to the very end (duration()), it would render at the START!
+    return arguments.length ? this.totalTime(Math.min(this.totalDuration(), value + _elapsedCycleDuration(this)) % (this._dur + this._rDelay) || (value ? this._dur : 0), suppressEvents) : this._time; // note: if the modulus results in 0, the playhead could be exactly at the end or the beginning, and we always defer to the END with a non-zero value, otherwise if you set the time() to the very end (duration()), it would render at the START!
   };
 
   _proto.totalProgress = function totalProgress(value, suppressEvents) {
@@ -7825,6 +7846,8 @@ var Animation = /*#__PURE__*/function () {
     }
 
     var tTime = this.parent && this._ts ? _parentToChildTotalTime(this.parent._time, this) : this._tTime; // make sure to do the parentToChildTotalTime() BEFORE setting the new _ts because the old one must be used in that calculation.
+    // future addition? Up side: fast and minimal file size. Down side: only works on this animation; if a timeline is reversed, for example, its childrens' onReverse wouldn't get called.
+    //(+value < 0 && this._rts >= 0) && _callback(this, "onReverse", true);
     // prioritize rendering where the parent's playhead lines up instead of this._tTime because there could be a tween that's animating another tween's timeScale in the same rendering loop (same parent), thus if the timeScale tween renders first, it would alter _start BEFORE _tTime was set on that tick (in the rendering loop), effectively freezing it until the timeScale tween finishes.
 
     this._rts = +value || 0;
@@ -7850,7 +7873,7 @@ var Animation = /*#__PURE__*/function () {
 
         this._ts = this._rts; //only defer to _pTime (pauseTime) if tTime is zero. Remember, someone could pause() an animation, then scrub the playhead and resume(). If the parent doesn't have smoothChildTiming, we render at the rawTime() because the startTime won't get updated.
 
-        this.totalTime(this.parent && !this.parent.smoothChildTiming ? this.rawTime() : this._tTime || this._pTime, this.progress() === 1 && (this._tTime -= _tinyNum) && Math.abs(this._zTime) !== _tinyNum); // edge case: animation.progress(1).pause().play() wouldn't render again because the playhead is already at the end, but the call to totalTime() below will add it back to its parent...and not remove it again (since removing only happens upon rendering at a new time). Offsetting the _tTime slightly is done simply to cause the final render in totalTime() that'll pop it off its timeline (if autoRemoveChildren is true, of course). Check to make sure _zTime isn't -_tinyNum to avoid an edge case where the playhead is pushed to the end but INSIDE a tween/callback, the timeline itself is paused thus halting rendering and leaving a few unrendered. When resuming, it wouldn't render those otherwise.
+        this.totalTime(this.parent && !this.parent.smoothChildTiming ? this.rawTime() : this._tTime || this._pTime, this.progress() === 1 && Math.abs(this._zTime) !== _tinyNum && (this._tTime -= _tinyNum)); // edge case: animation.progress(1).pause().play() wouldn't render again because the playhead is already at the end, but the call to totalTime() below will add it back to its parent...and not remove it again (since removing only happens upon rendering at a new time). Offsetting the _tTime slightly is done simply to cause the final render in totalTime() that'll pop it off its timeline (if autoRemoveChildren is true, of course). Check to make sure _zTime isn't -_tinyNum to avoid an edge case where the playhead is pushed to the end but INSIDE a tween/callback, the timeline itself is paused thus halting rendering and leaving a few unrendered. When resuming, it wouldn't render those otherwise.
       }
     }
 
@@ -7873,7 +7896,7 @@ var Animation = /*#__PURE__*/function () {
   };
 
   _proto.rawTime = function rawTime(wrapRepeats) {
-    var parent = this.parent || this._dp; // _dp = detatched parent
+    var parent = this.parent || this._dp; // _dp = detached parent
 
     return !parent ? this._tTime : wrapRepeats && (!this._ts || this._repeat && this._time && this.totalProgress() < 1) ? this._tTime % (this._dur + this._rDelay) : !this._ts ? this._tTime : _parentToChildTotalTime(parent.rawTime(wrapRepeats), this);
   };
@@ -7901,8 +7924,12 @@ var Animation = /*#__PURE__*/function () {
 
   _proto.repeatDelay = function repeatDelay(value) {
     if (arguments.length) {
+      var time = this._time;
       this._rDelay = value;
-      return _onUpdateTotalDuration(this);
+
+      _onUpdateTotalDuration(this);
+
+      return time ? this.time(time) : this;
     }
 
     return this._rDelay;
@@ -8043,19 +8070,21 @@ _setDefaults(Animation.prototype, {
 var Timeline = /*#__PURE__*/function (_Animation) {
   _inheritsLoose(Timeline, _Animation);
 
-  function Timeline(vars, time) {
+  function Timeline(vars, position) {
     var _this;
 
     if (vars === void 0) {
       vars = {};
     }
 
-    _this = _Animation.call(this, vars, time) || this;
+    _this = _Animation.call(this, vars) || this;
     _this.labels = {};
     _this.smoothChildTiming = !!vars.smoothChildTiming;
     _this.autoRemoveChildren = !!vars.autoRemoveChildren;
     _this._sort = _isNotFalse(vars.sortChildren);
-    _this.parent && _postAddChecks(_this.parent, _assertThisInitialized(_this));
+    _globalTimeline && _addToTimeline(vars.parent || _globalTimeline, _assertThisInitialized(_this), position);
+    vars.reversed && _this.reverse();
+    vars.paused && _this.paused(true);
     vars.scrollTrigger && _scrollTrigger(_assertThisInitialized(_this), vars.scrollTrigger);
     return _this;
   }
@@ -8063,17 +8092,20 @@ var Timeline = /*#__PURE__*/function (_Animation) {
   var _proto2 = Timeline.prototype;
 
   _proto2.to = function to(targets, vars, position) {
-    new Tween(targets, _parseVars(arguments, 0, this), _parsePosition(this, _isNumber(vars) ? arguments[3] : position));
+    _createTweenType(0, arguments, this);
+
     return this;
   };
 
   _proto2.from = function from(targets, vars, position) {
-    new Tween(targets, _parseVars(arguments, 1, this), _parsePosition(this, _isNumber(vars) ? arguments[3] : position));
+    _createTweenType(1, arguments, this);
+
     return this;
   };
 
   _proto2.fromTo = function fromTo(targets, fromVars, toVars, position) {
-    new Tween(targets, _parseVars(arguments, 2, this), _parsePosition(this, _isNumber(fromVars) ? arguments[4] : position));
+    _createTweenType(2, arguments, this);
+
     return this;
   };
 
@@ -8087,7 +8119,7 @@ var Timeline = /*#__PURE__*/function (_Animation) {
   };
 
   _proto2.call = function call(callback, params, position) {
-    return _addToTimeline(this, Tween.delayedCall(0, callback, params), _parsePosition(this, position));
+    return _addToTimeline(this, Tween.delayedCall(0, callback, params), position);
   } //ONLY for backward compatibility! Maybe delete?
   ;
 
@@ -8200,6 +8232,8 @@ var Timeline = /*#__PURE__*/function (_Animation) {
           prevTime = rewinding ? 0 : dur;
           this._lock = 1;
           this.render(prevTime || (isYoyo ? 0 : _round(iteration * cycleDuration)), suppressEvents, !dur)._lock = 0;
+          this._tTime = tTime; // if a user gets the iteration() inside the onRepeat, for example, it should be accurate.
+
           !suppressEvents && this.parent && _callback(this, "onRepeat");
           this.vars.repeatRefresh && !isYoyo && (this.invalidate()._lock = 1);
 
@@ -8216,6 +8250,7 @@ var Timeline = /*#__PURE__*/function (_Animation) {
             this._lock = 2;
             prevTime = rewinding ? dur : -0.0001;
             this.render(prevTime, true);
+            this.vars.repeatRefresh && !isYoyo && this.invalidate();
           }
 
           this._lock = 0;
@@ -8248,7 +8283,14 @@ var Timeline = /*#__PURE__*/function (_Animation) {
         prevTime = 0; // upon init, the playhead should always go forward; someone could invalidate() a completed timeline and then if they restart(), that would make child tweens render in reverse order which could lock in the wrong starting values if they build on each other, like tl.to(obj, {x: 100}).to(obj, {x: 0}).
       }
 
-      !prevTime && time && !suppressEvents && _callback(this, "onStart");
+      if (!prevTime && time && !suppressEvents) {
+        _callback(this, "onStart");
+
+        if (this._tTime !== tTime) {
+          // in case the onStart triggered a render at a different spot, eject. Like if someone did animation.pause(0.5) or something inside the onStart.
+          return this;
+        }
+      }
 
       if (time >= prevTime && totalTime >= 0) {
         child = this._first;
@@ -8321,8 +8363,8 @@ var Timeline = /*#__PURE__*/function (_Animation) {
       if (tTime === tDur && tDur >= this.totalDuration() || !tTime && prevTime) if (prevStart === this._start || Math.abs(timeScale) !== Math.abs(this._ts)) if (!this._lock) {
         (totalTime || !dur) && (tTime === tDur && this._ts > 0 || !tTime && this._ts < 0) && _removeFromParent(this, 1); // don't remove if the timeline is reversed and the playhead isn't at 0, otherwise tl.progress(1).reverse() won't work. Only remove if the playhead is at the end and timeScale is positive, or if the playhead is at 0 and the timeScale is negative.
 
-        if (!suppressEvents && !(totalTime < 0 && !prevTime) && (tTime || prevTime)) {
-          _callback(this, tTime === tDur ? "onComplete" : "onReverseComplete", true);
+        if (!suppressEvents && !(totalTime < 0 && !prevTime) && (tTime || prevTime || !tDur)) {
+          _callback(this, tTime === tDur && totalTime >= 0 ? "onComplete" : "onReverseComplete", true);
 
           this._prom && !(tTime < tDur && this.timeScale() > 0) && this._prom();
         }
@@ -8335,7 +8377,7 @@ var Timeline = /*#__PURE__*/function (_Animation) {
   _proto2.add = function add(child, position) {
     var _this2 = this;
 
-    _isNumber(position) || (position = _parsePosition(this, position));
+    _isNumber(position) || (position = _parsePosition(this, position, child));
 
     if (!(child instanceof Animation)) {
       if (_isArray(child)) {
@@ -8509,7 +8551,7 @@ var Timeline = /*#__PURE__*/function (_Animation) {
   // targets() {
   // 	let result = [];
   // 	this.getChildren(true, true, false).forEach(t => result.push(...t.targets()));
-  // 	return result;
+  // 	return result.filter((v, i) => result.indexOf(v) === i);
   // }
   ;
 
@@ -8523,6 +8565,7 @@ var Timeline = /*#__PURE__*/function (_Animation) {
         _onStart = _vars.onStart,
         onStartParams = _vars.onStartParams,
         immediateRender = _vars.immediateRender,
+        initted,
         tween = Tween.to(tl, _setDefaults({
       ease: vars.ease || "none",
       lazy: false,
@@ -8532,8 +8575,13 @@ var Timeline = /*#__PURE__*/function (_Animation) {
       duration: vars.duration || Math.abs((endTime - (startAt && "time" in startAt ? startAt.time : tl._time)) / tl.timeScale()) || _tinyNum,
       onStart: function onStart() {
         tl.pause();
-        var duration = vars.duration || Math.abs((endTime - tl._time) / tl.timeScale());
-        tween._dur !== duration && _setDuration(tween, duration, 0, 1).render(tween._time, true, true);
+
+        if (!initted) {
+          var duration = vars.duration || Math.abs((endTime - (startAt && "time" in startAt ? startAt.time : tl._time)) / tl.timeScale());
+          tween._dur !== duration && _setDuration(tween, duration, 0, 1).render(tween._time, true, true);
+          initted = 1;
+        }
+
         _onStart && _onStart.apply(tween, onStartParams || []); //in case the user had an onStart in the vars - we don't want to overwrite it.
       }
     }, vars));
@@ -8803,12 +8851,18 @@ var _addComplexStringPropTween = function _addComplexStringPropTween(target, pro
     }
 
     if (end.charAt(1) === "=") {
-      end = parseFloat(parsedStart) + parseFloat(end.substr(2)) * (end.charAt(0) === "-" ? -1 : 1) + (getUnit(parsedStart) || 0);
+      pt = parseFloat(parsedStart) + parseFloat(end.substr(2)) * (end.charAt(0) === "-" ? -1 : 1) + (getUnit(parsedStart) || 0);
+
+      if (pt || pt === 0) {
+        // to avoid isNaN, like if someone passes in a value like "!= whatever"
+        end = pt;
+      }
     }
   }
 
   if (parsedStart !== end) {
-    if (!isNaN(parsedStart * end)) {
+    if (!isNaN(parsedStart * end) && end !== "") {
+      // fun fact: any number multiplied by "" is evaluated as the number 0!
       pt = new PropTween(this._pt, target, prop, +parsedStart || 0, end - (parsedStart || 0), typeof currentValue === "boolean" ? _renderBoolean : _renderPlain, 0, setter);
       funcParam && (pt.fp = funcParam);
       modifier && pt.modifier(modifier, this, target);
@@ -8901,6 +8955,8 @@ _initTween = function _initTween(tween, time) {
     tween._ease = yoyoEase;
   }
 
+  tween._from = !tl && !!vars.runBackwards; //nested timelines should never run backwards - the backwards-ness is in the child tweens.
+
   if (!tl) {
     //if there's an internal timeline, skip all the parsing because we passed that task down the chain.
     harness = targets[0] ? _getCache(targets[0]).harness : 0;
@@ -8925,13 +8981,21 @@ _initTween = function _initTween(tween, time) {
       }, startAt))); //copy the properties/values into a new object to avoid collisions, like var to = {x:0}, from = {x:500}; timeline.fromTo(e, from, to).fromTo(e, to, from);
 
 
+      time < 0 && !immediateRender && !autoRevert && tween._startAt.render(-1, true); // rare edge case, like if a render is forced in the negative direction of a non-initted tween.
+
       if (immediateRender) {
-        if (time > 0) {
-          autoRevert || (tween._startAt = 0); //tweens that render immediately (like most from() and fromTo() tweens) shouldn't revert when their parent timeline's playhead goes backward past the startTime because the initial render could have happened anytime and it shouldn't be directly correlated to this tween's startTime. Imagine setting up a complex animation where the beginning states of various objects are rendered immediately but the tween doesn't happen for quite some time - if we revert to the starting values as soon as the playhead goes backward past the tween's startTime, it will throw things off visually. Reversion should only happen in Timeline instances where immediateRender was false or when autoRevert is explicitly set to true.
-        } else if (dur && !(time < 0 && prevStartAt)) {
+        time > 0 && !autoRevert && (tween._startAt = 0); //tweens that render immediately (like most from() and fromTo() tweens) shouldn't revert when their parent timeline's playhead goes backward past the startTime because the initial render could have happened anytime and it shouldn't be directly correlated to this tween's startTime. Imagine setting up a complex animation where the beginning states of various objects are rendered immediately but the tween doesn't happen for quite some time - if we revert to the starting values as soon as the playhead goes backward past the tween's startTime, it will throw things off visually. Reversion should only happen in Timeline instances where immediateRender was false or when autoRevert is explicitly set to true.
+
+        if (dur && time <= 0) {
           time && (tween._zTime = time);
           return; //we skip initialization here so that overwriting doesn't occur until the tween actually begins. Otherwise, if you create several immediateRender:true tweens of the same target/properties to drop into a Timeline, the last one created would overwrite the first ones because they didn't get placed into the timeline yet before the first render occurs and kicks in overwriting.
-        }
+        } // if (time > 0) {
+        // 	autoRevert || (tween._startAt = 0); //tweens that render immediately (like most from() and fromTo() tweens) shouldn't revert when their parent timeline's playhead goes backward past the startTime because the initial render could have happened anytime and it shouldn't be directly correlated to this tween's startTime. Imagine setting up a complex animation where the beginning states of various objects are rendered immediately but the tween doesn't happen for quite some time - if we revert to the starting values as soon as the playhead goes backward past the tween's startTime, it will throw things off visually. Reversion should only happen in Timeline instances where immediateRender was false or when autoRevert is explicitly set to true.
+        // } else if (dur && !(time < 0 && prevStartAt)) {
+        // 	time && (tween._zTime = time);
+        // 	return; //we skip initialization here so that overwriting doesn't occur until the tween actually begins. Otherwise, if you create several immediateRender:true tweens of the same target/properties to drop into a Timeline, the last one created would overwrite the first ones because they didn't get placed into the timeline yet before the first render occurs and kicks in overwriting.
+        // }
+
       } else if (autoRevert === false) {
         tween._startAt = 0;
       }
@@ -8956,6 +9020,8 @@ _initTween = function _initTween(tween, time) {
         harnessVars && (p[harness.prop] = harnessVars); // in case someone does something like .from(..., {css:{}})
 
         _removeFromParent(tween._startAt = Tween.set(targets, p));
+
+        time < 0 && tween._startAt.render(-1, true); // rare edge case, like if a render is forced in the negative direction of a non-initted from() tween.
 
         if (!immediateRender) {
           _initTween(tween._startAt, _tinyNum); //ensures that the initial values are recorded
@@ -9016,8 +9082,6 @@ _initTween = function _initTween(tween, time) {
     tween._onInit && tween._onInit(tween); //plugins like RoundProps must wait until ALL of the PropTweens are instantiated. In the plugin's init() function, it sets the _onInit on the tween instance. May not be pretty/intuitive, but it's fast and keeps file size down.
   }
 
-  tween._from = !tl && !!vars.runBackwards; //nested timelines should never run backwards - the backwards-ness is in the child tweens.
-
   tween._onUpdate = onUpdate;
   tween._initted = (!tween._op || tween._pt) && !overwritten; // if overwrittenProps resulted in the entire tween being killed, do NOT flag it as initted or else it may render for one tick.
 },
@@ -9063,16 +9127,16 @@ _initTween = function _initTween(tween, time) {
 var Tween = /*#__PURE__*/function (_Animation2) {
   _inheritsLoose(Tween, _Animation2);
 
-  function Tween(targets, vars, time, skipInherit) {
+  function Tween(targets, vars, position, skipInherit) {
     var _this3;
 
     if (typeof vars === "number") {
-      time.duration = vars;
-      vars = time;
-      time = null;
+      position.duration = vars;
+      vars = position;
+      position = null;
     }
 
-    _this3 = _Animation2.call(this, skipInherit ? vars : _inheritDefaults(vars), time) || this;
+    _this3 = _Animation2.call(this, skipInherit ? vars : _inheritDefaults(vars)) || this;
     var _this3$vars = _this3.vars,
         duration = _this3$vars.duration,
         delay = _this3$vars.delay,
@@ -9083,7 +9147,7 @@ var Tween = /*#__PURE__*/function (_Animation2) {
         defaults = _this3$vars.defaults,
         scrollTrigger = _this3$vars.scrollTrigger,
         yoyoEase = _this3$vars.yoyoEase,
-        parent = _this3.parent,
+        parent = vars.parent || _globalTimeline,
         parsedTargets = (_isArray(targets) || _isTypedArray(targets) ? _isNumber(targets[0]) : "length" in vars) ? [targets] : toArray(targets),
         tl,
         i,
@@ -9113,7 +9177,11 @@ var Tween = /*#__PURE__*/function (_Animation2) {
           ease: "none"
         });
 
-        keyframes.forEach(function (frame) {
+        stagger ? parsedTargets.forEach(function (t, i) {
+          return keyframes.forEach(function (frame, j) {
+            return tl.to(t, frame, j ? ">" : i * stagger);
+          });
+        }) : keyframes.forEach(function (frame) {
           return tl.to(parsedTargets, frame, ">");
         });
       } else {
@@ -9173,7 +9241,10 @@ var Tween = /*#__PURE__*/function (_Animation2) {
       _overwritingTween = 0;
     }
 
-    parent && _postAddChecks(parent, _assertThisInitialized(_this3));
+    _addToTimeline(parent, _assertThisInitialized(_this3), position);
+
+    vars.reversed && _this3.reverse();
+    vars.paused && _this3.paused(true);
 
     if (immediateRender || !duration && !keyframes && _this3._start === _round(parent._time) && _isNotFalse(immediateRender) && _hasNoPausedAncestors(_assertThisInitialized(_this3)) && parent.data !== "nested") {
       _this3._tTime = -_tinyNum; //forces a render without having to set the render() "force" parameter to true because we want to allow lazying by default (using the "force" parameter always forces an immediate full render)
@@ -9288,7 +9359,15 @@ var Tween = /*#__PURE__*/function (_Animation2) {
         this.ratio = ratio = 1 - ratio;
       }
 
-      time && !prevTime && !suppressEvents && _callback(this, "onStart");
+      if (time && !prevTime && !suppressEvents) {
+        _callback(this, "onStart");
+
+        if (this._tTime !== tTime) {
+          // in case the onStart triggered a render at a different spot, eject. Like if someone did animation.pause(0.5) or something inside the onStart.
+          return this;
+        }
+      }
+
       pt = this._pt;
 
       while (pt) {
@@ -9429,7 +9508,7 @@ var Tween = /*#__PURE__*/function (_Animation2) {
   };
 
   Tween.from = function from(targets, vars) {
-    return new Tween(targets, _parseVars(arguments, 1));
+    return _createTweenType(1, arguments);
   };
 
   Tween.delayedCall = function delayedCall(delay, callback, params, scope) {
@@ -9447,7 +9526,7 @@ var Tween = /*#__PURE__*/function (_Animation2) {
   };
 
   Tween.fromTo = function fromTo(targets, fromVars, toVars) {
-    return new Tween(targets, _parseVars(arguments, 2));
+    return _createTweenType(2, arguments);
   };
 
   Tween.set = function set(targets, vars) {
@@ -9511,7 +9590,7 @@ var _setterPlain = function _setterPlain(target, property, value) {
   return _isFunction(target[property]) ? _setterFunc : _isUndefined(target[property]) && target.setAttribute ? _setterAttribute : _setterPlain;
 },
     _renderPlain = function _renderPlain(ratio, data) {
-  return data.set(data.t, data.p, Math.round((data.s + data.c * ratio) * 10000) / 10000, data);
+  return data.set(data.t, data.p, Math.round((data.s + data.c * ratio) * 1000000) / 1000000, data);
 },
     _renderBoolean = function _renderBoolean(ratio, data) {
   return data.set(data.t, data.p, !!(data.s + data.c * ratio), data);
@@ -9736,12 +9815,12 @@ var _gsap = {
   config: function config(value) {
     return _mergeDeep(_config, value || {});
   },
-  registerEffect: function registerEffect(_ref2) {
-    var name = _ref2.name,
-        effect = _ref2.effect,
-        plugins = _ref2.plugins,
-        defaults = _ref2.defaults,
-        extendTimeline = _ref2.extendTimeline;
+  registerEffect: function registerEffect(_ref3) {
+    var name = _ref3.name,
+        effect = _ref3.effect,
+        plugins = _ref3.plugins,
+        defaults = _ref3.defaults,
+        extendTimeline = _ref3.extendTimeline;
     (plugins || "").split(",").forEach(function (pluginName) {
       return pluginName && !_plugins[pluginName] && !_globals[pluginName] && _warn(name + " effect requires " + pluginName + " plugin.");
     });
@@ -9807,6 +9886,7 @@ var _gsap = {
     clamp: clamp,
     splitColor: splitColor,
     toArray: toArray,
+    selector: selector,
     mapRange: mapRange,
     pipe: pipe,
     unitize: unitize,
@@ -9935,13 +10015,9 @@ var gsap = _gsap.registerPlugin({
   }
 }, _buildModifierPlugin("roundProps", _roundModifier), _buildModifierPlugin("modifiers"), _buildModifierPlugin("snap", snap)) || _gsap; //to prevent the core plugins from being dropped via aggressive tree shaking, we must include them in the variable declaration in this way.
 
-Tween.version = Timeline.version = gsap.version = "3.6.1";
+Tween.version = Timeline.version = gsap.version = "3.7.1";
 _coreReady = 1;
-
-if (_windowExists()) {
-  _wake();
-}
-
+_windowExists() && _wake();
 var Power0 = _easeMap.Power0,
     Power1 = _easeMap.Power1,
     Power2 = _easeMap.Power2,
@@ -24511,7 +24587,7 @@ function _arrayLikeToArray(arr, len) {
       authors.forEach(function (i) {
         authorSpan += '<span class="session-author badge badge-pill badge-light m-1">' + i + '</span>';
       });
-      column += '<div class="col-md-4 wow animate__animated animate__fadeInUp session-content" data-wow-delay="0.' + ctr + 's">' + '<div class="session-item">' + '<div class="session-item__image">' + '<a href="' + i.link + '" class="text-decoration-none">' + '<img src="' + i.image + '" class="" alt="' + i.imageAlt + '">' + '</a>' + '</div>' + '<div class="session-item__content">' + '<div class="session-title">' + '<a href="' + i.link + '" class="text-decoration-none">' + '<h6 class="text-dark font-weight-bold mb-md-3">' + i.title + '</h6>' + '</a>' + '</div>' + '<div class="session-date"><span class="theme-text-gradient font-weight-bold"><i class="fal fa-calendar-alt"></i>' + i.date + '</span></div>' + '<div class="session-time"><span class="theme-text-gradient font-weight-bold"><i class="fal fa-clock"></i>' + i.time + '</span></div>' + '<div class="session-location"><span class="theme-text-gradient font-weight-bold"><i class="fal fa-map-marker-alt"></i>' + i.location + '</span></div>' + // '<div class="session-categories">' + categorySpan + '</div>' +
+      column += '<div class="col-lg-4 wow animate__animated animate__fadeInUp session-content" data-wow-delay="0.' + ctr + 's">' + '<div class="session-item">' + '<div class="session-item__image">' + '<a href="' + i.link + '" class="text-decoration-none">' + '<img src="' + i.image + '" class="" alt="' + i.imageAlt + '">' + '</a>' + '</div>' + '<div class="session-item__content">' + '<div class="session-title">' + '<a href="' + i.link + '" class="text-decoration-none">' + '<h6 class="text-dark font-weight-bold mb-md-3">' + i.title + '</h6>' + '</a>' + '</div>' + '<div class="session-date"><span class="theme-text-gradient font-weight-bold"><i class="fal fa-calendar-alt"></i>' + i.date + '</span></div>' + '<div class="session-time"><span class="theme-text-gradient font-weight-bold"><i class="fal fa-clock"></i>' + i.time + '</span></div>' + '<div class="session-location"><span class="theme-text-gradient font-weight-bold"><i class="fal fa-map-marker-alt"></i>' + i.location + '</span></div>' + // '<div class="session-categories">' + categorySpan + '</div>' +
       '<div class="session-summary"><span>' + i.summary + '</span></div>' + '<div class="session-link"><a href="' + i.link + '" class="theme-button-gradient text-decoration-none"><span class="font-weight-light">View session</span></a></div>' + '</div>' + '</div>' + '</div>';
       ctr = ctr + 1;
     });
@@ -24618,7 +24694,7 @@ function _arrayLikeToArray(arr, len) {
     var row, column, pagination;
     pagination = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.paginate-action');
     type === 'projects' ? row = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.paginated-projects .row') : [row = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.paginated-resources'), row.css('height', 'auto')];
-    column = '<div class="col-md-12 pt-5 pb-5"><p class="text-center display-4"><i>No matching records found.</i></p></div>';
+    column = '<div class="col-lg-12 pt-5 pb-5"><p class="text-center display-4"><i>No matching records found.</i></p></div>';
     pagination.empty();
     row.empty();
     row.append(column);
@@ -24651,7 +24727,7 @@ function _arrayLikeToArray(arr, len) {
       categories.forEach(function (i) {
         categorySpan += '<span class="project-category badge badge-pill badge-light m-1">' + i + '</span>';
       });
-      column += '<div class="col-md-3 wow animate__animated animate__fadeInUp project-content" data-wow-delay="0.' + ctr + 's">' + '<a href="' + i.link + '">' + '<div class="project-item">' + '<div class="project-item__image">' + '<img src="' + i.image + '" class="" alt="' + i.imageAlt + '">' + '</div>' + '<div class="project-item__content">' + '<div class="project-title">' + '<h5 class="text-white font-weight-semibold mb-md-3">' + i.title + '</h5>' + '</div>' + '<div class="project-categories">' + categorySpan + '</div>' + '</div>' + '</div>' + '</a>' + '</div>';
+      column += '<div class="col-xl-3 col-lg-4 wow animate__animated animate__fadeInUp project-content" data-wow-delay="0.' + ctr + 's">' + '<a href="' + i.link + '">' + '<div class="project-item">' + '<div class="project-item__image">' + '<img src="' + i.image + '" class="" alt="' + i.imageAlt + '">' + '</div>' + '<div class="project-item__content">' + '<div class="project-title">' + '<h5 class="text-white font-weight-semibold mb-md-3">' + i.title + '</h5>' + '</div>' + '<div class="project-categories">' + categorySpan + '</div>' + '</div>' + '</div>' + '</a>' + '</div>';
       ctr = ctr + 1;
     });
     return column;

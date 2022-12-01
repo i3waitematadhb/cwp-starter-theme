@@ -1,8 +1,7 @@
-<div class="main-nav {$HeaderTheme}">
+<div class="main-nav {$HeaderTheme} d-md-none d-lg-block">
     <nav class="navbar navbar-expand-md navbar-light" aria-label="<%t CWP_Theme.MAIN 'Main' %>" role="navigation">
         <div class="container p-0">
             <div class="collapse navbar-collapse" id="navbar-collapse">
-
                 <ul class="nav navbar-nav" role="menubar">
                     <% loop Menu(1) %>
                         <li role="menuitem" class="nav-item $FirstLast $LinkingMode<% if $LinkingMode = current %> active<% end_if %><% if $Children %> dropdown <% end_if %>">
@@ -24,7 +23,7 @@
                                             <li role="menuitem" class="<% if $LinkingMode = current %>active <% end_if %>">
                                                 <a class="dropdown-item text-center" role="menuitem" href="$Link" <% if $LinkingMode = current %>aria-label="current page" <% end_if %>>
 <%--                                                    <div class="nav-bg-img" style="background-image: url('{$MenuBackground.URL}')"></div>--%>
-                                                    <% if $PageIcon %><img src="{$PageIcon.URL}" class="dropdown-item--icon d-block" alt="icon"><% end_if %><div class="dropdown-item--title"><span class="h6 small poppins font-weight-semibold">$MenuTitle.XML</span></div>
+                                                    <% if $Icon %><span class="fa-icon h1 font-weight-light">$Icon.RAW</span><% else %><img src="{$PageIcon.URL}" class="dropdown-item--icon d-block" alt="icon"><% end_if %><div class="dropdown-item--title"><span class="h6 small poppins font-weight-semibold">$MenuTitle.XML</span></div>
                                                 <% if $MenuContent %>
                                                 <div class="dropdown-item--menu-content">
                                                     <span class="small font-weight-normal text-dark">$MenuContent</span>

@@ -1,13 +1,13 @@
-<div class="content search-results">
-    <div class="container">
+<div class="content search-results col-lg-12" style="background-image: url('{$resourceURL('themes/starter/images/DefaultBg.png')}');">
+    <div class="container pt-lg-10 pb-lg-10">
         <div class="row">
-            <section class="col-lg-8 offset-lg-2">
+            <section class="col-lg-12">
                 <div class="pb-2 mt-4 mb-4 pb-3 border-bottom">
-                    <h1>$Title.XML</h1>
+                    <p class="theme-text-gradient display-5 font-weight-bold">$Title.XML</p>
                 </div>
                 $SearchForm
                 <% if $Query %>
-                    <div class="page-summary clearfix mb-4">
+                    <div class="page-summary clearfix mb-6 mt-6">
                         <% if $Results %>
                             <% if $Original %>
                                 <div class="row search-results-no-result">
@@ -19,8 +19,8 @@
                                 </div>
                             <% end_if %>
                             <div class="row">
-                                <div class="col-sm-12 col-md-8 search-results-results-message">
-                                    <p class="lead" tabindex="-1">
+                                <div class="col-lg-12 text-left search-results-results-message">
+                                    <p class="lead font-weight-semibold" tabindex="-1">
                                         <% if $Original %>
                                             <%t CWP_Search.ShowingResultsInsteadFor 'Showing results for "{query}" instead' query=$Query.XML %>
                                         <% else %>
@@ -28,7 +28,7 @@
                                         <% end_if %>
                                     </p>
                                 </div>
-                                <div class="col-sm-12 col-md-4 float-right search-results-results-page">
+                                <div class="col-lg-12 text-left search-results-results-page">
                                     <p class="text-muted">
                                         <%t CWP_Search.Pages "Displaying page {current} of {total}" current=$Results.CurrentPage total=$Results.TotalPages %>
                                     </p>
@@ -45,18 +45,21 @@
                             </div>
                         <% end_if %>
                     </div>
-
                     <% if $Results %>
-                        <div class="results listing">
+                        <hr>
+                        <div class="results listing row">
                             <% loop $Results %>
-                                <article class="result listing__item mb-4" data-highlight="$Up.Query.ATT">
-                                    <header>
-                                        <h1 class="h3">
-                                            <a href="$Link" title="$Title">$Title</a>
-                                        </h1>
-                                    </header>
+                                <article class="result listing__item mb-4 mt-4 col-lg-12" data-highlight="$Up.Query.ATT">
+                                    <div class="title">
+                                        <p class="h5">
+                                            <a href="$Link" title="$Title"><span class="font-weight-medium lineheight-1">$Title</span></a>
+                                        </p>
+                                    </div>
                                     $Content.Summary
                                 </article>
+                                <div class="col-lg-12">
+                                    <hr>
+                                </div>
                             <% end_loop %>
                         </div>
                         <% with $Results %>

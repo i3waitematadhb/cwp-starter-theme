@@ -7103,7 +7103,7 @@ a.text-dark-blue:hover, a.text-dark-blue:focus {
 }
 .fa {
   display: inline-block;
-  font: normal normal normal 14px / 1 FontAwesome;
+  font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
@@ -10682,6 +10682,18 @@ a .btn-bg-theme {
   font-size: 2.5rem;
   font-weight: 300;
   line-height: 1.2;
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 768px) {
+  .display-1-mobile {
+    font-size: 60px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .body-text-mobile {
+    font-size: 16px;
+  }
 }
 
 .font-weight-medium {

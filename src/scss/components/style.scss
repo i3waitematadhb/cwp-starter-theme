@@ -894,11 +894,11 @@ header {
           margin: 0;
           &.cp-left {
             transform: translate3d(0, -50%, 0);
-            @media only screen and (min-width: 768px) {
+            @media only screen and (min-width: 1201px) {
               left: 100px;
             }
-            @media only screen and (max-width: 767px) {
-              left: 30px;
+            @media only screen and (max-width: 1200px) {
+              left: 50px;
             }
           }
           &.cp-center {
@@ -906,11 +906,11 @@ header {
             transform: translate3d(-50%, -50%, 0);
           }
           &.cp-right {
-            @media only screen and (min-width: 768px) {
+            @media only screen and (min-width: 1201px) {
               right: 100px;
             }
-            @media only screen and (max-width: 767px) {
-              right: 30px;
+            @media only screen and (max-width: 1200px) {
+              right: 50px;
             }
             transform: translate3d(0, -50%, 0);
           }
@@ -1022,7 +1022,7 @@ header {
                 margin-left: -5.6%;
               }
               @media only screen and (min-width: 1401px) {
-                padding: 100px 100px 100px 150px;
+                padding: 200px 100px 200px 200px;
               }
               @media only screen and (max-width: 1400px) and (min-width: 901px) //(min-width: 768px)
               {
@@ -1031,7 +1031,7 @@ header {
               }
               @media only screen and (max-width: 900px) and (min-width: 768px)
               {
-                padding: 55px 55px 55px 110px;
+                padding: 55px 55px 55px 100px;
               }
             }
             &.order-first {
@@ -1040,7 +1040,7 @@ header {
                 margin-right: -5.6%;
               }
               @media only screen and (min-width: 1401px) {
-                padding: 100px 150px 100px 100px;
+                padding: 200px 200px 200px 100px;
               }
               @media only screen and (max-width: 1400px) and (min-width: 901px)//(min-width: 768px)
               {
@@ -1056,7 +1056,7 @@ header {
           @media only screen and (min-width: 1000px) and (orientation: landscape) {
           }
           &__wrapper {
-            width: 700px;
+            //width: 700px;
             margin: auto;
           }
         }
@@ -2431,8 +2431,13 @@ figure.left {
 //Search Form
 .search-form {
   position: absolute;
-  right: 40px;
   transition: right 400ms cubic-bezier(0.76, 0, 0.24, 1);
+  @media only screen and (min-width: 1201px) {
+    right: 100px;
+  }
+  @media only screen and (max-width: 1200px) {
+    right: 50px;
+  }
 }
 .header-light {
   #SearchForm_SearchForm {
@@ -2482,7 +2487,7 @@ figure.left {
   }
 }
 #SearchForm_SearchForm {
-  width: 250px;
+  width: 100%;
   #SearchForm_SearchForm_Search {
     font-size: 1rem;
     background-color: transparent;
@@ -2501,6 +2506,27 @@ figure.left {
     right: 4px;
     top: 5px;
     z-index: 10;
+  }
+}
+
+//Search Results
+.pagination {
+  margin-top: 100px;
+}
+.page-item {
+  .page-link {
+    height: 40px;
+    width: 40px;
+    border-radius: 100px;
+    margin: auto 2px;
+    line-height: 1.4;
+    text-align: center;
+  }
+  &:first-child,
+  &:last-child {
+    .page-link {
+      border-radius: 100px;
+    }
   }
 }
 
